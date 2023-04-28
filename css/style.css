@@ -210,13 +210,24 @@ footer {
 
 /*SOBRE.html*/
 
-/* .centroNetflix{
+/* .centroNetflix{} */
 
-} */
+.centro3D_sb {
+  width: 100%;
+  height: 900px;
+  max-height: calc(100vh - 100px);
+  /* altura máxima ajustada para 100vh - 100px (altura do rodapé + espaço de margem) */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  /* adicionado para permitir sobreposição */
+}
 
 .container {
   display: flex;
-  flex-direction: row;
+  justify-content: center;
+  position: relative;
 }
 
 .carousel {
@@ -232,6 +243,7 @@ footer {
   position: relative;
   width: 100%;
   overflow: hidden;
+  opacity: 50%;
 }
 
 #carouselExampleIndicators {
@@ -261,7 +273,6 @@ footer {
   transition: transform 10s ease-in-out;
 }
 
-/*Div de filmes em rotação*/
 .movie {
   flex-direction: column;
   justify-content: center;
@@ -269,11 +280,10 @@ footer {
   height: 815px;
   margin-top: 37.5px;
   margin-left: 150px;
-  background-color: #86d7fc;
+  background-color: #000000;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
   padding: 20px;
   box-sizing: border-box;
-  opacity: 50%;/**/
 }
 
 .carousel-item {
@@ -297,14 +307,11 @@ footer {
   position: relative;
   margin-left: 85px;
   margin-top: 800px;
-  border: #fa1303 1px solid;
 }
 
 .carousel-control-next {
   position: relative;
   margin-right: 85px;
   margin-top: 800px;
-  border: #fa1303 1px solid;
 }
-
 
