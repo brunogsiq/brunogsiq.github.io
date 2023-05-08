@@ -2,4 +2,4 @@ Portfólio QAtrix
 
 Linkedin: https://www.linkedin/in/brunogsiq
 
-http://www.brunogsiq.github.io
+http://github.com/brunogsiq/brunogsiq.github.io
