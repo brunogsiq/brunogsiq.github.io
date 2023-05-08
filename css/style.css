@@ -76,21 +76,18 @@ body {
 .centro3D {
   width: 100%;
   max-height: calc(100vh - 100px);
-  /* altura máxima ajustada para 100vh - 100px (altura do rodapé + espaço de margem) */
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
-  /* adicionado para permitir sobreposição */
 }
 
 #matrix {
   width: 100%;
-  height: 110%;
+  height: 103%;
   border: 1px solid rgb(0, 0, 0);
   opacity: 0.3;
   position: absolute;
-  /* adicionado para sobrepor as pílulas */
   top: 0;
   left: 0;
 }
@@ -100,9 +97,7 @@ body {
   flex-wrap: wrap;
   justify-content: center;
   position: relative;
-  /* adicionado para manter as pílulas dentro da div .centro3D */
   z-index: 1;
-  /* adicionado para manter as pílulas acima do efeito matrix */
 }
 
 .pilula {
@@ -110,7 +105,6 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  /* texto de p abaixo */
   width: 300px;
   height: 50px;
   margin: 180px;
@@ -151,7 +145,6 @@ body {
   border-radius: 50px;
   border: 2px solid #86d7fc;
 }
-
 
 /* **RODAPÉ*** */
 footer {
@@ -210,7 +203,17 @@ footer {
 
 /*SOBRE.html*/
 
-/* .centroNetflix{} */
+.Sobre {
+  margin: 0;
+  font-family: var(--bs-font-sans-serif);
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #ffffff;
+  background-color: #000000;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+}
 
 .centro3D_sb {
   width: 100%;
@@ -227,6 +230,7 @@ footer {
 .container {
   display: flex;
   justify-content: center;
+  align-items: center;
   position: relative;
 }
 
@@ -236,7 +240,9 @@ footer {
 
 .menu_movies {
   width: 20%;
+  margin-left: 50px; /* ajuste a margem esquerda para separar a div do carrossel */
 }
+
 
 .carousel-inner {
   flex: 1;
@@ -249,6 +255,8 @@ footer {
 #carouselExampleIndicators {
   width: 100%;
   height: 100%;
+  /*PARTE DO FUNDO DA DIV MOVIE*/
+  background-color: #000000;
 }
 
 .netflix-effect {
@@ -280,10 +288,16 @@ footer {
   height: 815px;
   margin-top: 37.5px;
   margin-left: 150px;
+  /*PARTE DO FUNDO DA DIV MOVIE*/
   background-color: #000000;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
   padding: 20px;
   box-sizing: border-box;
+}
+
+.movie h2{
+  color: #ff0000;
+  text-decoration: underline;
 }
 
 .carousel-item {
@@ -313,5 +327,25 @@ footer {
   position: relative;
   margin-right: 85px;
   margin-top: 800px;
+}
+
+.carousel-item.active {
+  color: #ffffff;
+}
+
+.carousel-control-prev-icon {
+  color: #ff0000;
+}
+
+.carousel-control-next-icon {
+  color: #ff0000;
+}
+
+.sr-only {
+  color: #ff0000;
+}
+
+.slide-indicators {
+  color: #ff0000;
 }
 
