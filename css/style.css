@@ -1,5 +1,16 @@
 /* GERAL */
 
+/*
+Azul cl #00c8ff
+Azul es #006682
+
+verm  #ff0000
+vinho #820900
+
+brc #ffffff
+prt #000000
+*/
+
 * {
   margin: 0;
   padding: 0;
@@ -40,7 +51,7 @@ nav ul {
 
 /* ***LEMBRAR - LISTA E ITENS: LINKS*** */
 nav ul li a {
-  color: #86d7fc;
+  color: #00d0ff;
   text-decoration: none;
   text-align: center;
   padding: 5px 10px;
@@ -59,7 +70,7 @@ nav ul li:hover a {
 
 nav ul li.active a[href="index.html"],
 nav ul li:hover a[href="index.html"] {
-  background-color: #02bbf8;
+  background-color: #00c8ff;
   color: #ffffff;
   border-radius: 20px;
 }
@@ -114,17 +125,17 @@ body {
   font-size: 16px;
   font-weight: bold;
   text-align: center;
-  border: 2px solid #00aeff;
+  border: 2px solid #006682;
 }
 
 .pilula a {
-  color: #86d7fc;
+  color: #ffffff;
   text-decoration: none;
 }
 
 .pilula p {
   align-items: center;
-  color: #86d7fc;
+  color: #ffffff;
   font-size: 16px;
   font-weight: bold;
 }
@@ -140,16 +151,16 @@ body {
 }
 
 .pilula a[href="index.html"]:hover {
-  background-color: #02bbf8;
+  background-color: #00c8ff;
   color: #ffffff;
   border-radius: 50px;
-  border: 2px solid #86d7fc;
+  border: 2px solid #006682;
 }
 
 /* **RODAPÉ*** */
 footer {
   background-color: #000000;
-  color: #86d7fc;
+  color: #00c8ff;
   padding: 5px;
   position: absolute;
   bottom: 0;
@@ -168,7 +179,7 @@ footer {
   font-weight: bold;
   display: inline-block;
   background-color: #000000;
-  color: #86d7fc;
+  color: #00c8ff;
   padding: 5px;
   margin: 0 5px;
 }
@@ -178,7 +189,7 @@ footer {
   font-weight: bold;
   text-align: right;
   background-color: #000000;
-  color: #86d7fc;
+  color: #00c8ff;
   padding: 5px;
   margin: 0 5px;
   margin-left: auto;
@@ -203,10 +214,11 @@ footer {
 
 /*SOBRE.html*/
 
-.Sobre {
+.Sobre, .Contato, .Redes_Sociais {
+  font-family: Arial, sans-serif;
   margin: 0;
   font-family: var(--bs-font-sans-serif);
-  font-size: 1rem;
+  font-size: 16px;
   font-weight: 400;
   line-height: 1.5;
   color: #ffffff;
@@ -242,7 +254,6 @@ footer {
   width: 20%;
   margin-left: 50px; /* ajuste a margem esquerda para separar a div do carrossel */
 }
-
 
 .carousel-inner {
   flex: 1;
@@ -334,18 +345,59 @@ footer {
 }
 
 .carousel-control-prev-icon {
-  color: #ff0000;
+  margin-left: 0px;
 }
 
 .carousel-control-next-icon {
-  color: #ff0000;
+  margin-right: 0px;
 }
 
-.sr-only {
-  color: #ff0000;
+#carouselExampleIndicators .befactive{
+  background-color: #00c8ff;
 }
 
-.slide-indicators {
-  color: #ff0000;
+#carouselExampleIndicators .befactive.active{
+  background-color: #ff0000;
+}
+ 
+/*Contato*/
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
+label {
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="url"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-top: 5px;
+}
+
+input[type="checkbox"] {
+  margin-left: 5px;
+  margin-top: 10px;
+}
+
+button[type="submit"] {
+  background-color: #00c8ff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #ff0000;
+}
