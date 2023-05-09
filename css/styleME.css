@@ -15,7 +15,6 @@
   /* Aqui você pode definir estilos específicos para telas maiores */
 }
 
-
 /* Estilo para o fundo preto */
 body {
   background-color: black;
@@ -64,7 +63,7 @@ a:visited {
 
 /* Efeito de hover para o botão */
 .button:hover {
-  background-color: #820900;
+  background-color: #950a00;
   transform: translateY(-7px);
   box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.3);
   text-decoration: none;
@@ -72,13 +71,13 @@ a:visited {
 
 /* Estilo para o botão secundário */
 .button2 {
-  background-color: #00c8ff;
+  background-color: #00bfff;
   text-decoration: none;
 }
 
 /* Efeito de hover para o botão secundário */
 .button2:hover {
-  background-color: #006682;
+  background-color: #0080a0;
   transform: translateY(-7px);
   box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.3);
   text-decoration: none;
@@ -118,8 +117,8 @@ a:visited {
   font-size: 2vw;
   line-height: 2vw;
   font-family: monospace;
-  color: #00FF00;
-  text-shadow: 0px 0px 10px #00FF00;
+  color: #00ff00;
+  text-shadow: 0px 0px 10px #00ff00;
 }
 
 img#rede-social {

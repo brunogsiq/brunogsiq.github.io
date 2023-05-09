@@ -1,16 +1,5 @@
 /* GERAL */
 
-/*
-Azul cl #00c8ff
-Azul es #006682
-
-verm  #ff0000
-vinho #820900
-
-brc #ffffff
-prt #000000
-*/
-
 * {
   margin: 0;
   padding: 0;
@@ -51,7 +40,7 @@ nav ul {
 
 /* ***LEMBRAR - LISTA E ITENS: LINKS*** */
 nav ul li a {
-  color: #00d0ff;
+  color: #00bfff;
   text-decoration: none;
   text-align: center;
   padding: 5px 10px;
@@ -70,7 +59,7 @@ nav ul li:hover a {
 
 nav ul li.active a[href="index.html"],
 nav ul li:hover a[href="index.html"] {
-  background-color: #00c8ff;
+  background-color: #00bfff;
   color: #ffffff;
   border-radius: 20px;
 }
@@ -121,11 +110,11 @@ body {
   margin: 180px;
   border-radius: 50px;
   background-color: #000000;
-  color: #86d7fc;
+  color: #00bfff;
   font-size: 16px;
   font-weight: bold;
   text-align: center;
-  border: 2px solid #006682;
+  border: 2px solid #0080a0;
 }
 
 .pilula a {
@@ -151,16 +140,16 @@ body {
 }
 
 .pilula a[href="index.html"]:hover {
-  background-color: #00c8ff;
+  background-color: #00bfff;
   color: #ffffff;
   border-radius: 50px;
-  border: 2px solid #006682;
+  border: 2px solid #0080a0;
 }
 
 /* **RODAPÉ*** */
 footer {
   background-color: #000000;
-  color: #00c8ff;
+  color: #00bfff;
   padding: 5px;
   position: absolute;
   bottom: 0;
@@ -179,7 +168,7 @@ footer {
   font-weight: bold;
   display: inline-block;
   background-color: #000000;
-  color: #00c8ff;
+  color: #00bfff;
   padding: 5px;
   margin: 0 5px;
 }
@@ -189,7 +178,7 @@ footer {
   font-weight: bold;
   text-align: right;
   background-color: #000000;
-  color: #00c8ff;
+  color: #00bfff;
   padding: 5px;
   margin: 0 5px;
   margin-left: auto;
@@ -214,7 +203,9 @@ footer {
 
 /*SOBRE.html*/
 
-.Sobre, .Contato, .Redes_Sociais {
+.Sobre,
+.Contato,
+.Redes_Sociais {
   font-family: Arial, sans-serif;
   margin: 0;
   font-family: var(--bs-font-sans-serif);
@@ -306,7 +297,7 @@ footer {
   box-sizing: border-box;
 }
 
-.movie h2{
+.movie h2 {
   color: #ff0000;
   text-decoration: underline;
 }
@@ -352,14 +343,14 @@ footer {
   margin-right: 0px;
 }
 
-#carouselExampleIndicators .befactive{
-  background-color: #00c8ff;
+#carouselExampleIndicators .befactive {
+  background-color: #00bfff;
 }
 
-#carouselExampleIndicators .befactive.active{
+#carouselExampleIndicators .befactive.active {
   background-color: #ff0000;
 }
- 
+
 /*Contato*/
 
 form {
@@ -389,7 +380,7 @@ input[type="checkbox"] {
 }
 
 button[type="submit"] {
-  background-color: #00c8ff;
+  background-color: #00bfff;
   color: white;
   border: none;
   border-radius: 5px;
