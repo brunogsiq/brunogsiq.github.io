@@ -1,0 +1,50 @@
+body {
+  margin: 0px;
+  font-family: "Fira Sans", Arial, sans-serif;
+  font-display: swap;
+  color: #141414;
+}
+h1,
+h2,
+h3,
+p {
+  margin: 0px;
+}
+ul {
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: #141414;
+}
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+.subtitulo {
+  font-size: 8rem;
+  word-break: break-all;
+  line-height: 1;
+  text-transform: uppercase;
+  max-width: 4ch;
+}
+.bg-svg-detail {
+  background: url(../img/bg-deco.svg) no-repeat center;
+  background-size: cover;
+}
+@media (max-width: 480px) {
+  .bg-svg-detail {
+    background: none;
+  }
+}
+
+@media (max-width: 800px) {
+  .subtitulo {
+    font-size: 3rem;
+    text-transform: capitalize;
+    max-width: initial !important;
+  }
+}
