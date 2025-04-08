@@ -1,10 +1,9 @@
-_Ign
-
+img/
 node_modules/
 videos/
 screenshoot/
 report/
-
+_Ign
 
 # Logs
 logs

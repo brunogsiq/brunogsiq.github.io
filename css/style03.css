@@ -1,0 +1,110 @@
+
+
+
+
+/* CONTAINER GERAL */
+.container{
+    max-width: 1200px;   /* Define uma largura máxima */
+    width: 100%;         /* Opcional: garante que ocupe todo o espaço até o limite */
+    margin: 0 auto; 
+}
+
+
+/*3 - Conteúdo Principal*/
+
+    /*HOME*/
+        /* SOBRE MIM & QUEM SOU*/ 
+        #sobreMimHome,
+        #sobreQuemSou {
+            text-align: left;
+        }
+
+
+
+
+    /* RECOMENDAÇÕES */
+    #recomendacoes .carousel {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px 0;
+        overflow: visible;
+        max-height: none;
+    }
+
+    /*Versão em roxo*/
+    .depoimento {
+        background-color: rgba(48, 43, 99, 0.8); /* tom do gradiente com leve transparência */
+        border: 3px solid #5d5d8d; /* violeta acinzentado */
+        padding: 15px;
+        border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+    }
+
+    .depoimento-topo {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 10px;
+    }
+
+    .depoimento strong {
+        font-size: 1.1rem;
+        display: block;
+        color: #ffffff;
+    }
+
+    .foto-depoimento {
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 2px solid #5d5d8d; /* mesma cor do contorno do card */
+    }
+
+    .cargo {
+        font-size: 0.9rem;
+        color: #ccc; /* tom neutro claro */
+        margin-bottom: 10px;
+    }
+
+    blockquote {
+        font-style: italic;
+        color: #ddd;
+        line-height: 1.5;
+        text-align: left;
+    }
+
+    /* CAROUSEL */
+    .carousel {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        gap: 10px;
+        padding: 20px;
+    }
+
+    #portfolio .carousel div {
+        flex: 0 0 auto;
+        width: 300px;
+        height: 200px;
+        background: #666;
+        color: #fff;
+        text-align: center;
+        line-height: 200px;
+        font-weight: bold;
+        border-radius: 8px;
+        scroll-snap-align: start;
+    }
+
+    .portfolio strong {
+        font-size: 1.1rem;
+        display: block;
+        color: #ffffff;
+    }
+
+    .linkedin strong {
+        font-size: 1.1rem;
+        display: block;
+        color: #ffffff;
+    }

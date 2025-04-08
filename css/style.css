@@ -1,0 +1,466 @@
+/* RESET GLOBAL */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* BASE GERAL */
+html{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #1a1446, #0b0a1e);
+    color: #eee;
+}
+
+@media (max-width: 768px) {
+    #cabecalho {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    #listaEsquerda, #listaDireita {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    #conteudoPrimario, 
+    #conteudoSecundario,
+    #conteudoTerciario {
+        padding: 15px;
+    }
+}
+
+
+/*CABEÇALHO - SEÇÃO MENU SUPERIOR*/
+#cabecalho {
+    background: linear-gradient(to right, #0b0a1e, #1e1a3a, #191933); /* Tons mais escuros e fechados */
+    color: #e0e0e0;
+    padding: 20px 40px;
+    height: 60px;
+    box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.7);
+    border-bottom: 2px solid #4a4a74; /* tom violeta mais escuro */
+    border-top: 2px solid #4a4a74; /* tom violeta mais escuro */    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+#menu-esquerdo{
+    display: flex;
+}
+
+#nav-menu-esquerdo{
+}
+
+#listaEsquerda,
+#listaDireita {
+    /* remove as bolinhas */
+    list-style: none; 
+    /* coloca os <li> lado a lado */
+    display: flex; 
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+#menu-direito{
+    display: flex;
+}
+
+#nav-menu-direito{
+}
+
+#menu-esquerdo, 
+#menu-direito {
+    display: flex;
+    gap: 20px;
+}
+
+#menu-esquerdo a,
+#menu-direito a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 5px;
+}
+
+#menu-esquerdo a:hover,
+#menu-direito a:hover {
+    text-decoration: underline;
+    color: #b8b8f8;
+}
+
+/*
+.listaItem{
+
+}
+*/
+
+/*CORPO - SEÇÃO CONTEÚDOS*/
+#corpo{
+    background: linear-gradient(to bottom right, #0f0c29, #302b63, #24243e);
+    color: #eee;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.4);
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    /* importante para pegar a tela toda */
+    min-height: 100vh; 
+    font-family: Arial, sans-serif;
+}
+
+/*Foto Perfil*/
+#corpo #pictureBGS img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 20px auto;
+    display: block;
+    border: 3px solid #888;
+}
+
+#conteudoPrimario,
+#conteudoPrimarioQuemSouTexto,
+#conteudoPrimarioSoftSkill,
+#conteudoPrimarioHardSkill,
+#conteudoPrimarioContato,
+#conteudoPrimarioCertificacoes,
+#conteudoPrimarioBlog,
+#conteudoPrimarioCurriculo {
+    background: linear-gradient(135deg, rgba(48, 43, 99, 0.9), rgba(93, 93, 141, 0.9));
+    padding: 20px;
+    
+    /* Para mesma largura do rodapé */
+    width: calc(100% - 40px);
+    max-width: 1200px;
+    margin: 0 auto 12px;
+
+    /* Bordas arredondadas */
+    border-radius: 12px;
+
+    /* Se quiser sombra como no rodapé */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+
+    /* 3mm ≈ 11.3px, então 12px funciona bem */
+    margin-bottom: 12px; 
+}
+
+#conteudoPrimarioContato h2,
+#conteudoPrimarioCurriculo h2{
+    text-align: center;
+}
+
+#conteudoPrimarioContato p,
+#conteudoPrimarioCurriculo p{
+    text-align: center;
+}
+
+#conteudoPrimarioQuemSouTexto h2,
+#conteudoPrimarioSoftSkill h2,
+#conteudoPrimarioHardSkill h2,
+#conteudoPrimarioCertificacoes h2,
+#conteudoPrimarioBlog h2 {
+    text-align: center;
+}
+
+#conteudoPrimarioQuemSouTexto p,
+#conteudoPrimarioSoftSkill p,
+#conteudoPrimarioHardSkill p,
+#conteudoPrimarioCertificacoes p,
+#conteudoPrimarioBlog p {
+    text-align: left;
+}
+
+/* PALAVRAS INTERATIVAS */
+.wordSobreMim {
+    text-decoration: underline;
+    color: inherit;
+    cursor: pointer;
+}
+
+.wordSobreMim:hover,
+.wordSobreMim:focus {
+    text-decoration: underline;
+}
+
+.wordDownload,
+.wordOutros {
+    background: linear-gradient(135deg, rgba(48, 43, 99, 0.9), rgba(93, 93, 141, 0.9));
+    color: #fff;
+    border: 2px solid #5d5d8d;
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+    display: inline-block;
+    margin-top: 1px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease;
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+.wordDownload,
+.wordOutros:hover,
+.wordOutros:focus {
+    color: inherit;
+    text-decoration: none;
+}
+
+#conteudoSecundario{
+    background: linear-gradient(135deg, rgba(48, 43, 99, 0.9), rgba(93, 93, 141, 0.9));
+    padding: 20px;
+    
+    /* Para mesma largura do rodapé */
+    width: calc(100% - 40px);
+    max-width: 1200px;
+    margin: 0 auto 12px;
+
+    /* Bordas arredondadas */
+    border-radius: 12px;
+
+    /* Se quiser sombra como no rodapé */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+
+    /* 3mm ≈ 11.3px, então 12px funciona bem */
+    margin-bottom: 12px; 
+}
+
+#conteudoSecundario h2{
+    text-align: center;
+}
+
+#conteudoSecundario p{
+    text-align: center;
+}
+
+#conteudoSecundario #cta-whatsapp {
+    text-align: center;
+}
+
+#conteudoSecundario #cta-whatsapp #btn-whatsapp{
+    background: linear-gradient(135deg, rgba(48, 43, 99, 0.9), rgba(93, 93, 141, 0.9));
+    color: #fff;
+    border: 2px solid #5d5d8d;
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+    display: inline-block;
+    margin-top: 20px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease;
+}
+
+#conteudoSecundario #cta-whatsapp #btn-whatsapp:hover{
+    background: linear-gradient(135deg, rgba(70, 65, 130, 0.95), rgba(100, 100, 160, 0.95));
+    transform: scale(1.05);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.7);
+}
+
+#conteudoSecundario #cta-whatsapp a{
+    text-align: center;
+}
+
+#conteudoTerciario{
+    background: linear-gradient(135deg, rgba(48, 43, 99, 0.9), rgba(93, 93, 141, 0.9));
+    padding: 20px;
+    
+    /* Para mesma largura do rodapé */
+    width: calc(100% - 40px);
+    max-width: 1200px;
+    margin: 0 auto 12px;
+
+    /* Bordas arredondadas */
+    border-radius: 12px;
+
+    /* Se quiser sombra como no rodapé */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+
+    /* 3mm ≈ 11.3px, então 12px funciona bem */
+    margin-bottom: 12px; 
+}
+
+#conteudoTerciario h2{
+    text-align: center;
+}
+
+#conteudoTerciario h4{
+    text-align: center;
+}
+
+#conteudoTerciario form{
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: auto;
+}
+
+#conteudoTerciario form input{
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #999;
+    border-radius: 5px;
+    background-color: #222;
+    color: #eee;
+}
+
+#conteudoTerciario form .formularioAtencao{
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: left;
+}
+
+#conteudoTerciario form #messageContato {
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #999;
+    border-radius: 5px;
+    background-color: #222;
+    color: #eee;
+}
+
+#conteudoTerciario form button{
+    background: linear-gradient(135deg, rgba(48, 43, 99, 0.9), rgba(93, 93, 141, 0.9));
+    color: #fff;
+    border: 2px solid #5d5d8d;
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+    display: inline-block;
+    margin-top: 20px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease;
+}
+
+#conteudoTerciario form button:hover{
+    background: linear-gradient(135deg, rgba(70, 65, 130, 0.95), rgba(100, 100, 160, 0.95));
+    transform: scale(1.05);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.7);
+}
+
+#conteudoTerciario #formMessage{
+    max-width: 400px;
+    margin-top: 15px;
+    margin: 20px auto;
+    padding: 12px 16px;
+    border-radius: 6px;
+    font-size: 14px;
+    color: white;
+    background-color: #00bbff;
+    border: 1px solid #007ab8;
+    display: none;
+    position: relative;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+#formMessage.erro {
+    background-color: #e60023;
+    border-color: #8a0000;
+}
+
+#formMessage .fechar {
+    position: absolute;
+    top: 4px;
+    right: 10px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/*RODAPE - SEÇÃO DE LINKS E DIREITOS*/
+#rodape{
+    background: linear-gradient(135deg, #1a1446, #0b0a1e);
+    /* para respeitar o padding lateral */
+    width: calc(100% - 40px);
+    max-width: 1200px;
+    z-index: 1000;
+    /* tons escuros em sintonia com o header */
+    color: #eee;
+    /* Reduz o padding para deixá-lo mais fino */
+    padding: 10px 20px; 
+    border-top: 2px solid #4a4a74;
+    box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    /* Adiciona margem inferior mínima */
+    margin: 0 auto 2px auto; 
+    border-radius: 12px;
+    /* Espaço entre os itens */
+    gap: 10px; 
+}
+
+#mensagem{
+    text-align: center;
+}
+
+#mensagem p{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+#icones{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+#icones a{
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+#icones a img {
+    width: 32px; /* ícones um pouco menores */
+    height: 32px;
+    filter: grayscale(100%) brightness(1.4);
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+#icones a:hover img {
+    transform: scale(1.1);
+    filter: none;
+}
+
+/*#direitos{
+
+}*/
+
+#direitos p{
+    text-align: left;
+    margin: 0;
+    font-size: 0.75rem;
+    color: #ccc;
+}
