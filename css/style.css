@@ -110,7 +110,7 @@ body {
 */
 
 /*CORPO - SEÇÃO CONTEÚDOS*/
-#corpo{
+#corpo {
     background: linear-gradient(to bottom right, #0f0c29, #302b63, #24243e);
     color: #eee;
     padding: 40px;
@@ -137,6 +137,18 @@ body {
     border: 3px solid #888;
 }
 
+/*Foto Github*/
+.iconeGithub {
+    max-width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 1px auto;
+    display: block;
+    border: 2px solid #888;
+}
+
+
 #conteudoPrimario,
 #conteudoPrimarioQuemSouTexto,
 #conteudoPrimarioSoftSkill,
@@ -144,7 +156,15 @@ body {
 #conteudoPrimarioContato,
 #conteudoPrimarioCertificacoes,
 #conteudoPrimarioBlog,
-#conteudoPrimarioCurriculo {
+#conteudoPrimarioCurriculo,
+#conteudoPrimarioIndex,
+#conteudoSecundarioIndex,
+#conteudoTerciarioIndex,
+#conteudoPrimarioPorfolio,
+#conteudoSecundarioPortfolio,
+#conteudoQuartenarioIndex,
+#conteudoPrimarioRecomendacoes,
+#conteudoSecundarioRecomendacoes {
     background: linear-gradient(135deg, rgba(48, 43, 99, 0.9), rgba(93, 93, 141, 0.9));
     padding: 20px;
     
@@ -164,12 +184,25 @@ body {
 }
 
 #conteudoPrimarioContato h2,
-#conteudoPrimarioCurriculo h2{
+#conteudoPrimarioCurriculo h2,
+#conteudoPrimarioIndex h2,
+#conteudoSecundarioIndex h2,
+#conteudoTerciarioIndex h2,
+#conteudoPrimarioPorfolio h2,
+#conteudoSecundarioPortfolio h2,
+#conteudoQuartenarioIndex h2,
+#conteudoPrimarioRecomendacoes h2 {
     text-align: center;
 }
 
 #conteudoPrimarioContato p,
-#conteudoPrimarioCurriculo p{
+#conteudoPrimarioCurriculo p,
+#conteudoSecundarioIndex p,
+#conteudoTerciarioIndex p,
+#conteudoPrimarioPorfolio p,
+#conteudoSecundarioPortfolio p,
+#conteudoQuartenarioIndex p,
+#conteudoPrimarioRecomendacoes p {
     text-align: center;
 }
 
@@ -185,8 +218,17 @@ body {
 #conteudoPrimarioSoftSkill p,
 #conteudoPrimarioHardSkill p,
 #conteudoPrimarioCertificacoes p,
-#conteudoPrimarioBlog p {
+#conteudoPrimarioBlog p,
+#conteudoPrimarioIndex p{
     text-align: left;
+}
+
+#conteudoPrimarioPorfolio a {
+    text-align: center;
+}
+
+#conteudoPrimarioPorfolio img {
+    text-align: center;
 }
 
 /* PALAVRAS INTERATIVAS */
@@ -255,11 +297,17 @@ body {
     text-align: center;
 }
 
-#conteudoSecundario #cta-whatsapp {
+#conteudoSecundario #cta-whatsapp,
+#conteudoTerciarioIndex #cta-whatsapp,
+#conteudoSecundarioPortfolio #cta-whatsapp,
+#conteudoSecundarioRecomendacoes {
     text-align: center;
 }
 
-#conteudoSecundario #cta-whatsapp #btn-whatsapp{
+#conteudoSecundario #cta-whatsapp #btn-whatsapp,
+#conteudoTerciarioIndex #cta-whatsapp #btn-whatsapp,
+#conteudoSecundarioPortfolio #cta-whatsapp #btn-whatsapp,
+#conteudoSecundarioRecomendacoes #cta-whatsapp #btn-whatsapp {
     background: linear-gradient(135deg, rgba(48, 43, 99, 0.9), rgba(93, 93, 141, 0.9));
     color: #fff;
     border: 2px solid #5d5d8d;
@@ -275,15 +323,43 @@ body {
     transition: all 0.3s ease;
 }
 
-#conteudoSecundario #cta-whatsapp #btn-whatsapp:hover{
+#conteudoSecundario #cta-whatsapp #btn-whatsapp:hover,
+#conteudoTerciarioIndex #cta-whatsapp #btn-whatsapp:hover,
+#conteudoSecundarioPortfolio #cta-whatsapp #btn-whatsapp:hover,
+#conteudoSecundarioRecomendacoes #cta-whatsapp #btn-whatsapp:hover {
     background: linear-gradient(135deg, rgba(70, 65, 130, 0.95), rgba(100, 100, 160, 0.95));
     transform: scale(1.05);
     box-shadow: 0 6px 14px rgba(0, 0, 0, 0.7);
 }
 
-#conteudoSecundario #cta-whatsapp a{
+#conteudoSecundario #cta-whatsapp a, 
+#conteudoTerciarioIndex #cta-whatsapp a,
+#conteudoSecundarioPortfolio #cta-whatsapp a,
+#conteudoSecundarioRecomendacoes #cta-whatsapp a {
     text-align: center;
 }
+
+.carouselProjetosHome {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 10px;
+    padding: 20px;
+}
+
+.carouselProjetosHome div {
+    flex: 0 0 auto;
+    width: 300px;
+    height: 200px;
+    background: #666;
+    color: #fff;
+    text-align: center;
+    line-height: 200px;
+    font-weight: bold;
+    border-radius: 8px;
+    scroll-snap-align: start;
+}
+
 
 #conteudoTerciario{
     background: linear-gradient(135deg, rgba(48, 43, 99, 0.9), rgba(93, 93, 141, 0.9));
@@ -308,18 +384,21 @@ body {
     text-align: center;
 }
 
-#conteudoTerciario h4{
+#conteudoTerciario h4, 
+#conteudoQuartenarioIndex h4{
     text-align: center;
 }
 
-#conteudoTerciario form{
+#conteudoTerciario form, 
+#conteudoQuartenarioIndex form {
     display: flex;
     flex-direction: column;
     max-width: 400px;
     margin: auto;
 }
 
-#conteudoTerciario form input{
+#conteudoTerciario form input, 
+#conteudoQuartenarioIndex form input {
     margin: 10px 0;
     padding: 10px;
     border: 1px solid #999;
@@ -328,14 +407,16 @@ body {
     color: #eee;
 }
 
-#conteudoTerciario form .formularioAtencao{
+#conteudoTerciario form .formularioAtencao, 
+#conteudoQuartenarioIndex form .formularioAtencao{
     margin: 10px 0;
     padding: 10px;
     border-radius: 5px;
     text-align: left;
 }
 
-#conteudoTerciario form #messageContato {
+#conteudoTerciario form #messageContato,
+#conteudoQuartenarioIndex form #messageContato {
     margin: 10px 0;
     padding: 10px;
     border: 1px solid #999;
@@ -344,7 +425,8 @@ body {
     color: #eee;
 }
 
-#conteudoTerciario form button{
+#conteudoTerciario form button, 
+#conteudoQuartenarioIndex form button {
     background: linear-gradient(135deg, rgba(48, 43, 99, 0.9), rgba(93, 93, 141, 0.9));
     color: #fff;
     border: 2px solid #5d5d8d;
@@ -360,13 +442,15 @@ body {
     transition: all 0.3s ease;
 }
 
-#conteudoTerciario form button:hover{
+#conteudoTerciario form button:hover, 
+#conteudoQuartenarioIndex form button:hover {
     background: linear-gradient(135deg, rgba(70, 65, 130, 0.95), rgba(100, 100, 160, 0.95));
     transform: scale(1.05);
     box-shadow: 0 6px 14px rgba(0, 0, 0, 0.7);
 }
 
-#conteudoTerciario #formMessage{
+#conteudoTerciario #formMessage, 
+#conteudoQuartenarioIndex #formMessage {
     max-width: 400px;
     margin-top: 15px;
     margin: 20px auto;
@@ -463,4 +547,51 @@ body {
     margin: 0;
     font-size: 0.75rem;
     color: #ccc;
+}
+
+/* RECOMENDAÇÕES*/
+
+/*Versão em roxo*/
+.depoimento {
+    background-color: rgba(48, 43, 99, 0.8); /* tom do gradiente com leve transparência */
+    border: 3px solid #5d5d8d; /* violeta acinzentado */
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.depoimento strong {
+    font-size: 1.1rem;
+    display: block;
+    color: #ffffff;
+    
+}
+
+.foto-depoimento {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #5d5d8d; /* mesma cor do contorno do card */
+}
+
+.cargo {
+    font-size: 0.9rem;
+    color: #ccc; /* tom neutro claro */
+    margin-bottom: 10px;
+}
+
+blockquote {
+    font-style: italic;
+    color: #ddd;
+    line-height: 1.5;
+    text-align: left;
+}
+
+.linkedin strong {
+    font-size: 1.1rem;
+    display: block;
+    color: #ffffff;
 }

@@ -1,5 +1,41 @@
-# Portfólio Bruno G Siqueira
+# 🌐 Portfólio Pessoal - Bruno GSIQ
 
-<h1>Linkedin: https://www.linkedin/in/brunogsiq
+Este repositório contém o código-fonte do meu portfólio pessoal, criado com HTML, CSS e muito capricho! 💜
 
-<h2>https://brunogsiq.github.io
+Acesse online em:  
+👉 **[https://brunogsiq.github.io](https://brunogsiq.github.io)**
+
+---
+
+## 📌 Seções do site
+
+- 🏠 **Home**  
+- 💡 **Quem Sou**  
+- 🧠 **Soft Skills**  
+- 🛠️ **Hard Skills**  
+- 💬 **Recomendações**  
+- 🎨 **Portfólio**  
+- 💾 **Currículo**  
+- 🎓 **Certificações**  
+- 📝 **Blog**  
+- 📬 **Contato**
+
+---
+
+## 📎 Tecnologias Utilizadas
+
+- HTML5
+- CSS3
+- Git & GitHub
+- VS Code
+
+---
+
+## 📇 Contato
+
+- 💼 [LinkedIn](https://www.linkedin.com/in/brunogsiq)
+- 💻 [Site pessoal](https://brunogsiq.github.io)
+
+---
+
+### ✨ Obrigado por visitar!
