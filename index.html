@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <title>Contato</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/style.css"> <!-- se quiser usar um CSS separado -->
+    <link rel="stylesheet" href="./css/style.css"> 
 </head>
 
 <body>
@@ -151,7 +151,7 @@
         form.addEventListener('submit', function (e) {
             e.preventDefault();
     
-            emailjs.sendForm('service_g87zjpf', 'template_wyk7sje', this) // ✅ Seus IDs
+            emailjs.sendForm('service_g87zjpf', 'template_wyk7sje', this)
                 .then(() => {
                     mostrarMensagem('Mensagem enviada com sucesso!', true);
                     form.reset();
@@ -183,7 +183,7 @@
             // Estilização condicional
             formMessage.style.display = 'block';
             formMessage.style.color = 'white';
-            formMessage.style.background = sucesso ? '#00bbff' : '#e60023'; // azul ou vermelho
+            formMessage.style.background = sucesso ? '#00bbff' : '#e60023';
             formMessage.style.border = sucesso ? '1px solid #1f015c' : '1px solid #8a0000';
             formMessage.style.padding = '10px';
             formMessage.style.borderRadius = '5px';
