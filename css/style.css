@@ -163,7 +163,6 @@ body {
 #conteudoPrimarioPorfolio,
 #conteudoSecundarioPortfolio,
 #conteudoQuartenarioIndex,
-#conteudoPrimarioRecomendacoes,
 #conteudoSecundarioRecomendacoes {
     background: linear-gradient(135deg, rgba(48, 43, 99, 0.9), rgba(93, 93, 141, 0.9));
     padding: 20px;
@@ -181,6 +180,25 @@ body {
 
     /* 3mm ≈ 11.3px, então 12px funciona bem */
     margin-bottom: 12px; 
+}
+
+#conteudoPrimarioRecomendacoes{
+    background: linear-gradient(135deg, #1a1446, #0b0a1e);
+    padding: 20px;
+    
+    /* Para mesma largura do rodapé */
+    width: calc(100% - 40px);
+    max-width: 1200px;
+    margin: 0 auto 12px;
+
+    /* Bordas arredondadas */
+    border-radius: 12px;
+
+    /* Se quiser sombra como no rodapé */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+
+    /* 3mm ≈ 11.3px, então 12px funciona bem */
+    margin-bottom: 12px;
 }
 
 #conteudoPrimarioContato h2,
