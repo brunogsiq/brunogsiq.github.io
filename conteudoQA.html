@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Home</title>
+    <title>Conteúdo Q.A.</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/style.css"> 
 </head>
@@ -42,41 +42,32 @@
         <div id="pictureBGS">
             <img src="./img/fotoPessoal/fotoLinkedin.jpg" alt="Minha Foto" class="profile-pic">
         </div>
-        <div class="conteudo-primario" id="conteudoPrimarioIndex">
+        <div class="conteudo-primario" id="conteudoPrimarioContato">
             <h2>
-                ➡️ Sobre Mim ⬅️
+                📬 CRIAR UMA PÁGINA PARA RELAIZAÇÃO DE TESTES MANUAIS E AUTOMATIZADOS
+                1- ESCREVER TESTES
+                2- DISPONIBILIZAR APLICAÇÃO
+                3- AUTOMAÇÃO
+                4- CRIAR RESPOSTA ESTILO CURSO WALMYR 📬
             </h2><br>
             <p>
-                Profissional de Qualidade e Testes de Software com foco em automação utilizando Cypress/Playwright para testes end-to-end em plataformas web, empregando HTML, CSS e JavaScript na construção de scripts.<br><br>
-                Experiência em automação de APIs com Postman, abrangendo desde a criação de cenários de testes até a validação de respostas.<br><br>
-                Atuação no planejamento, execução e documentação de testes, com foco em garantir a qualidade contínua em projetos backend e frontend.<br><br>
-                Habilidade em identificar e prevenir bugs desde a análise de requisitos, utilizando práticas ágeis e frameworks como BDD com Gherkin.
+                📱 Celular & WhatsApp: (48) 99105-9871
                 <br><br>
+                📧 E-mail: brunogsiq@gmail.com
                 <br><br>
+                📧 E-mail: qatrixtecnologia@gmail.com
             </p>
         </div>
 
-        <div class="conteudo-secundario" id="conteudoSecundarioIndex">
-            <h2>
-                🗂️ Meus Projetos 🗂️
-            </h2>
-            <div class="carouselProjetosHome">
-                <div>Projeto 1</div>
-                <div>Projeto 2</div>
-                <div>Projeto 3</div>
-                <div>Projeto 4</div>
-            </div>
-        </div>
-
-        <div class="conteudo-terciario" id="conteudoTerciarioIndex">
-            <h2>🚨 Necessita Com Urgência De Um Especialista ?! 🚨</h2><br>
+        <div class="conteudo-secundario" id="conteudoSecundario">
+            <h2>💡 Dúvidas ou propostas? Estou a um clique! 💡</h2><br>
             <p>Texto do conteúdo secundário...</p>
             <div class="cta" id="cta-whatsapp">
                 <a href="https://wa.me/5548991059871" target="_blank" class="btn" id="btn-whatsapp">Chamar no WhatsApp</a>
             </div>
         </div>
 
-        <div class="conteudo-quartenario" id="conteudoQuartenarioIndex">
+        <div class="conteudo-terciario" id="conteudoTerciario">
             <h2>
                 📧 Entre em Contato Para Assuntos Diversos 📧
             </h2><br><br>
@@ -153,7 +144,7 @@
         form.addEventListener('submit', function (e) {
             e.preventDefault();
     
-            emailjs.sendForm('service_g87zjpf', 'template_wyk7sje', this)
+            emailjs.sendForm('service_g87zjpf', 'template_wyk7sje', this) // ✅ Seus IDs
                 .then(() => {
                     mostrarMensagem('Mensagem enviada com sucesso!', true);
                     form.reset();
@@ -185,7 +176,7 @@
             // Estilização condicional
             formMessage.style.display = 'block';
             formMessage.style.color = 'white';
-            formMessage.style.background = sucesso ? '#00bbff' : '#e60023';
+            formMessage.style.background = sucesso ? '#00bbff' : '#e60023'; // azul ou vermelho
             formMessage.style.border = sucesso ? '1px solid #1f015c' : '1px solid #8a0000';
             formMessage.style.padding = '10px';
             formMessage.style.borderRadius = '5px';

@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Vamos Praticar!?</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css"> 
+</head>
+
+<body>
+    <!-- CABEÇALHO -->
+    <div class="cabecalho" id="cabecalho">
+        <div class="menu-superior-esquerdo" id="menu-esquerdo">
+            <nav class="nav-superior-esquerdo" id="nav-menu-esquerdo">
+                <ul id="listaEsquerda">
+                    <li class="listaItem"><a href="index.html">🏠 Home</a></li>
+                    <li class="listaItem"><a href="quemsou.html">💡 Quem Sou</a></li>
+                    <li class="listaItem"><a href="softskill.html">🧠 Softs Skills</a></li>
+                    <li class="listaItem"><a href="hardskill.html">🛠️ Hards Skills</a></li>
+                    <li class="listaItem"><a href="recomendacoes.html">💬 Recomendações</a></li>
+                    <li class="listaItem"><a href="portfolio.html">🎨 Portfólio</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="menu-superior-direito" id="menu-direito">
+            <nav class="nva-superior-direito" id="nav-menu-direito">
+                <ul id="listaDireita">
+                    <li class="listaItem"><a href="curriculo.html">💾 Currículo</a></li>
+                    <li class="listaItem"><a href="certificacoes.html">🎓 Certificações</a></li>
+                    <li class="listaItem"><a href="blog.html">📝 Blog</a></li>
+                    <li class="listaItem"><a href="contato.html">📬 Contato</a></li>
+                    <li class="listaItem"><a href="conteudoQA.html">Conteúdo Q.A.</a></li>
+                    <li class="listaItem"><a href="testeMe.html">Teste-Me</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <!-- CORPO -->
+    <div class="corpo" id="corpo">
+        <div id="pictureBGS">
+            <img src="./img/fotoPessoal/fotoLinkedin.jpg" alt="Minha Foto" class="profile-pic">
+        </div>
+        <div class="conteudo-primario" id="conteudoPrimarioRecomendacoes">
+            <h2>💭 Página de Treinamento para Automação 💭</h2><br>
+
+            <!-- Seção: Inputs de Texto -->
+            <div class="testeMe">
+                <div id="testeSecao">
+                    <h3>📝 Preenchimento de Inputs</h3><br>
+                    <h3>
+                        • Dado que estou na página de inputs<br>
+                        • Quando preencho os campos de nome, e-mail e senha<br>
+                        • Então os valores devem ser aceitos corretamente
+                    </h3><br>
+                    <input type="text" id="inputNome" placeholder="Digite seu nome">
+                    <input type="email" id="inputEmail" placeholder="Digite seu e-mail">
+                    <input type="password" id="inputSenha" placeholder="Digite sua senha">
+                    <button onclick="alert('Formulário enviado!')">Enviar</button>
+                </div>
+            </div><br><br>
+
+            <!-- Seção: Botões e Alertas -->
+            <div class="testeMe">
+                <div id="testeSecao">
+                <h3>🛎️ Botões e Alertas</h3><br>
+                <h3>
+                    • Dado que estou na seção de alertas<br>
+                    • Quando clico nos botões<br>
+                    • Então devo visualizar um alerta, confirmação ou prompt
+                </h3><br>
+                    <button id="btnAlertaSimples" onclick="alert('Alerta simples!')">Mostrar Alerta</button>
+                    <button id="btnConfirmar" onclick="confirm('Você confirma?')">Mostrar Confirmação</button>
+                    <button id="btnPrompt" onclick="prompt('Digite algo:')">Mostrar Prompt</button>
+                </div>
+            </div><br><br>
+
+            <!-- Seção: Checkboxes -->
+            <div class="testeMe">
+                <div id="testeSecao">
+                    <h3>✅ Checkboxes</h3><br>
+                    <h3>
+                        • Dado que visualizo os checkboxes<br>
+                        • Quando marco ou desmarco uma opção<br>
+                        • Então o sistema deve reconhecer minha escolha
+                    </h3><br>
+                    <label><input type="checkbox" id="check1"> Aceito os termos</label><br>
+                    <label><input type="checkbox" id="check2"> Desejo receber novidades</label><br>
+                    <button id="btnVerificarChecks">Verificar</button>
+                </div>
+            </div><br><br>
+
+            <!-- Seção: Radio Buttons -->
+            <div class="testeMe">
+                <div id="testeSecao">
+                    <h3>🎯 Radio Buttons</h3><br>
+                    <h3>
+                        • Dado que estou no formulário de seleção de gênero<br>
+                        • Quando escolho uma opção<br>
+                        • Então apenas uma opção deve permanecer selecionada
+                    </h3><br>
+                    <label><input type="radio" name="sexo" value="masculino"> Masculino</label><br>
+                    <label><input type="radio" name="sexo" value="feminino"> Feminino</label><br>
+                    <label><input type="radio" name="sexo" value="outro"> Outro</label><br>
+                    <button id="btnSelecionarGenero">Selecionar</button>
+                </div>
+            </div><br><br>
+
+            <!-- Seção: Select / Dropdown -->
+            <div class="testeMe">
+                <div id="testeSecao">
+                    <h3>📋 Selecionar Opções (Dropdown)</h3><br>
+                    <h3>
+                        • Dado que estou na lista de opções<br>
+                        • Quando seleciono uma cor<br>
+                        • Então a opção deve ser registrada corretamente
+                    </h3><br>
+                    <select id="seletorCores">
+                        <option value="">Selecione uma cor</option>
+                        <option value="vermelho">Vermelho</option>
+                        <option value="azul">Azul</option>
+                        <option value="verde">Verde</option>
+                    </select>
+                    <button id="btnSelecionarCor">Selecionar Cor</button>
+                </div>
+            </div><br><br>
+
+            <!-- Seção: Upload de Arquivo -->
+            <div class="testeMe">
+                <div id="testeSecao">
+                    <h3>📂 Upload de Arquivo</h3><br>
+                    <h3>
+                        • Dado que estou na área de upload<br>
+                        • Quando envio um arquivo<br>
+                        • Então o arquivo deve ser carregado com sucesso
+                    </h3><br>
+                    <input type="file" id="uploadArquivo">
+                    <button id="btnUpload">Enviar Arquivo</button>
+                    </div>
+            </div><br><br>
+
+            <!-- Seção: Tabelas -->
+            <div class="testeMe">
+                <div id="testeSecao">
+                    <h3>📊 Tabela de Dados</h3><br>
+                    <h3>
+                        • Dado que acesso a tabela de dados<br>
+                        • Quando visualizo as linhas<br>
+                        • Então devo encontrar as informações corretamente listadas
+                    </h3><br>
+                    <table border="1" id="tabelaDados">
+                    <thead>
+                        <tr>
+                        <th>Nome</th>
+                        <th>Email</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                        <td>Nome Teste Zero Um</td>
+                        <td>zeroume@email.com</td>
+                        </tr>
+                        <tr>
+                        <td>Nome Teste Zero Dois</td>
+                        <td>zerodois@email.com</td>
+                        </tr>
+                    </tbody>
+                    </table>
+                </div>
+            </div><br><br>
+
+            <!-- Seção: Elementos Dinâmicos (inserção/remover elementos) -->
+            <div class="testeMe">
+                <div id="testeSecao">
+                    <h3>🔄 Elementos Dinâmicos</h3><br>
+                    <h3>
+                        • Dado que estou na seção dinâmica<br>
+                        • Quando clico em adicionar elemento<br>
+                        • Então um novo elemento deve aparecer na tela
+                    </h3><br>
+                    <button onclick="adicionarElemento()">Adicionar Elemento</button>
+                    <div id="elementosDinamicos"></div>
+                </div>
+            </div><br><br>
+
+            <script>
+                function adicionarElemento() {
+                const novo = document.createElement('p');
+                novo.textContent = 'Elemento dinâmico adicionado!';
+                document.getElementById('elementosDinamicos').appendChild(novo);
+                }
+            </script>
+
+            <H1>ver</H1>
+            <!-- Seção: Interceptação de Requisição -->
+            <!-- <div class="testeMe">
+                <div id="testeSecao">
+                <h3>🌐 Interceptação de Requisições</h3><br>
+                <h3>
+                    • Dado que estou na seção de requisições,<br>
+                    • Quando clico no botão "Get TODO",<br>
+                    • Então devo validar o sucesso, erro ou queda de rede.
+                </h3><br>
+                <button id="btnGetTodo">Get TODO</button>
+                <div id="resultadoTodo"></div>
+                </div>
+            </div><br><br> -->
+            
+            <!-- Seção: Requisição Direta (cy.request) -->
+            <!-- <div class="testeMe">
+                <div id="testeSecao">
+                <h3>🌍 Requisição Direta</h3><br>
+                <h3>
+                    • Dado que estou na área de requisições,<br>
+                    • Quando faço uma chamada à API pública,<br>
+                    • Então devo receber uma resposta com status 200.
+                </h3><br>
+                <button id="btnRequisicaoApi">Fazer Requisição</button>
+                </div>
+            </div><br><br> -->
+            
+            <!-- Seção: Slider (Range) -->
+            <div class="testeMe">
+                <div id="testeSecao">
+                <h3>🎚️ Selecionar Nível</h3><br>
+                <h3>
+                    • Dado que estou no controle de nível,<br>
+                    • Quando arrasto o slider,<br>
+                    • Então o nível correto deve ser exibido.
+                </h3><br>
+                <input type="range" id="sliderNivel" min="0" max="10" step="1">
+                <p id="valorNivel">Valor selecionado: 5</p>
+                </div>
+            </div><br><br>
+            
+            <!-- Seção: Input de Data -->
+            <div class="testeMe">
+                <div id="testeSecao">
+                <h3>📅 Seletor de Data</h3><br>
+                <h3>
+                    • Dado que estou na área de datas,<br>
+                    • Quando preencho a data e saio do campo,<br>
+                    • Então a data selecionada deve ser exibida.
+                </h3><br>
+                <input type="date" id="inputData">
+                <p id="dataSelecionada"></p>
+                </div>
+            </div><br><br>
+            
+            <!-- Seção: Senha Segura (Cypress.env) -->
+            <div class="testeMe">
+                <div id="testeSecao">
+                <h3>🔒 Campo de Senha Segura</h3><br>
+                <h3>
+                    • Dado que estou na seção de senha,<br>
+                    • Quando preencho com a senha protegida,<br>
+                    • Então a senha não deve ser logada no teste.
+                </h3><br>
+                <input type="password" id="senhaSegura" placeholder="Digite sua senha">
+                <label><input type="checkbox" id="mostrarSenha"> Mostrar senha</label>
+                </div>
+            </div><br><br>
+            
+            <!-- Seção: Contar Elementos -->
+            <div class="testeMe">
+                <div id="testeSecao">
+                <h3>🔢 Contar Elementos</h3><br>
+                <h3>
+                    • Dado que estou na lista de animais,<br>
+                    • Quando conto os itens,<br>
+                    • Então devo encontrar 5 elementos.
+                </h3><br>
+                <ul id="listaAnimais">
+                    <li>Gato</li>
+                    <li>Cachorro</li>
+                    <li>Elefante</li>
+                    <li>Leão</li>
+                    <li>Tigre</li>
+                </ul>
+                </div>
+            </div><br><br>
+            
+            <!-- Seção: Congelar Data -->
+            <div class="testeMe">
+                <div id="testeSecao">
+                <h3>🕰️ Congelar Data</h3><br>
+                <h3>
+                    • Dado que estou visualizando a data atual,<br>
+                    • Quando congelo o relógio,<br>
+                    • Então a data exibida deve ser a fixa.
+                </h3><br>
+                <p id="dataAtual">Data: 1910-09-01</p>
+                </div>
+            </div><br><br>
+            
+            <!-- Seção: Copiar Valor com .then() -->
+            <div class="testeMe">
+                <div id="testeSecao">
+                <h3>📋 Copiar e Validar Código</h3><br>
+                <h3>
+                    • Dado que estou na seção de código,<br>
+                    • Quando copio e preencho o campo,<br>
+                    • Então a validação deve ocorrer corretamente.
+                </h3><br>
+                <p id="codigoOriginal">Código: 010919100407201216122012</p><br>
+                <input type="text" id="inputCodigo" placeholder="Digite o código">
+                <button id="btnValidarCodigo">Validar Código</button>
+                </div>
+            </div><br><br>
+            
+            <!-- Seção: Download de Arquivo -->
+            <div class="testeMe">
+                <div id="testeSecao">
+                <h3>📥 Download de Arquivo</h3><br>
+                <h3>
+                    • Dado que estou na seção de downloads,<br>
+                    • Quando clico no link de download,<br>
+                    • Então devo validar o conteúdo do arquivo.
+                </h3><br>
+                <a href="cypress/downloads/exemplo.txt" download id="linkDownloadArquivo">Download de Arquivo</a>
+                </div>
+            </div><br><br>
+        </div>
+
+        <div class="conteudo-secundario" id="conteudoSecundario">
+            <h2>💡 Gostou do projeto e quer realizar uma parceria!? Chame aqui! 💡</h2><br>
+            <p>Texto do conteúdo secundário...</p>
+            <div class="cta" id="cta-whatsapp">
+                <a href="https://wa.me/5548991059871" target="_blank" class="btn" id="btn-whatsapp">Chamar no WhatsApp</a>
+            </div>
+        </div>
+
+        <!-- RODAPÉ -->
+        <div class="rodape" id="rodape">
+            <div class="mensagem" id="mensagem">
+                <p>Obrigado por visitar! Veja mais em...</p>
+            </div>
+            <div class="icones" id="icones">
+                <a href="https://github.com/brunogsiq" target="_blank">
+                    <img src="img/iconesRedesSociais/rs_github.png" alt="GitHub">
+                </a>
+                <a href="https://www.linkedin.com/in/brunogsiq" target="_blank">
+                    <img src="img/iconesRedesSociais/rs_linkedin.png" alt="LinkedIn">
+                </a>
+                <a href="mailto:brunogsiq@gmail.com" target="_blank">
+                    <img src="img/iconesRedesSociais/rs-email.webp" alt="E-mail">
+                </a>
+                <a href="https://linktr.ee/brunogsiq" target="_blank">
+                    <img src="img/iconesRedesSociais/rs_linktree.png" alt="Linktree">
+                </a>
+                <a href="https://wa.me/5548991059871" target="_blank">
+                    <img src="img/iconesRedesSociais/rs_whatsapp.png" alt="WhatsApp">
+                </a>
+            </div>
+            <div class="direitos" id="direitos">
+                <p>&copy; 2025 - Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
