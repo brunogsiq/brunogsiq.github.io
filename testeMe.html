@@ -15,7 +15,7 @@
             <nav class="nav-superior-esquerdo" id="nav-menu-esquerdo">
                 <ul id="listaEsquerda">
                     <li class="listaItem"><a href="index.html">🏠 Home</a></li>
-                    <li class="listaItem"><a href="quemsou.html">💡 Quem Sou</a></li>
+                    <li class="listaItem"><a href="sobremim.html">💡 Sobre Mim</a></li>
                     <li class="listaItem"><a href="softskill.html">🧠 Softs Skills</a></li>
                     <li class="listaItem"><a href="hardskill.html">🛠️ Hards Skills</a></li>
                     <li class="listaItem"><a href="recomendacoes.html">💬 Recomendações</a></li>
@@ -30,24 +30,34 @@
                     <li class="listaItem"><a href="certificacoes.html">🎓 Certificações</a></li>
                     <li class="listaItem"><a href="blog.html">📝 Blog</a></li>
                     <li class="listaItem"><a href="contato.html">📬 Contato</a></li>
-                    <li class="listaItem"><a href="conteudoQA.html">Conteúdo Q.A.</a></li>
-                    <li class="listaItem"><a href="testeMe.html">Teste-Me</a></li>
+                    <li class="listaItem"><a href="conteudoQA.html">🗂️ Conteúdo Q.A.</a></li>
+                    <li class="listaItem"><a href="testeMe.html">⚙️ Teste-Me</a></li>
                 </ul>
             </nav>
         </div>
     </div>
+    <br><br><br>
 
     <!-- CORPO -->
     <div class="corpo" id="corpo">
+        <iframe src="player.html" style="width: 100%; height: 150px; border: none;"></iframe>  
         <div id="pictureBGS">
             <img src="./img/fotoPessoal/fotoLinkedin.jpg" alt="Minha Foto" class="profile-pic">
         </div>
-        <div class="conteudo-primario" id="conteudoPrimarioRecomendacoes">
-            <h2>💭 Página de Treinamento para Automação 💭</h2><br>
+        <div class="conteudo-primario" id="conteudoPrimarioTesteMe">
+                <h2>💭 Página de Treinamento para Automação 💭</h2><br>
+        </div>
 
+        <div class="conteudo-primario" id="conteudoPrimarioTesteMe">
+            <h2>Teste de Web</h2><br>
+        </div>
+
+    <!-- todas as divs conteudo-primario vão aqui dentro -->
+    <div class="testeMeGrid">
             <!-- Seção: Inputs de Texto -->
+        <div class="conteudo-primario" id="conteudoPrimarioTesteMe">
             <div class="testeMe">
-                <div id="testeSecao">
+                <div class="testeSecao">
                     <h3>📝 Preenchimento de Inputs</h3><br>
                     <h3>
                         • Dado que estou na página de inputs<br>
@@ -59,26 +69,28 @@
                     <input type="password" id="inputSenha" placeholder="Digite sua senha">
                     <button onclick="alert('Formulário enviado!')">Enviar</button>
                 </div>
-            </div><br><br>
+            </div>            
+
 
             <!-- Seção: Botões e Alertas -->
             <div class="testeMe">
-                <div id="testeSecao">
-                <h3>🛎️ Botões e Alertas</h3><br>
-                <h3>
-                    • Dado que estou na seção de alertas<br>
-                    • Quando clico nos botões<br>
-                    • Então devo visualizar um alerta, confirmação ou prompt
-                </h3><br>
-                    <button id="btnAlertaSimples" onclick="alert('Alerta simples!')">Mostrar Alerta</button>
-                    <button id="btnConfirmar" onclick="confirm('Você confirma?')">Mostrar Confirmação</button>
-                    <button id="btnPrompt" onclick="prompt('Digite algo:')">Mostrar Prompt</button>
+                <div class="testeSecao">
+                    <h3>🛎️ Botões e Alertas</h3><br>
+                    <h3>
+                        • Dado que estou na seção de alertas<br>
+                        • Quando clico nos botões<br>
+                        • Então devo visualizar um alerta, confirmação ou prompt
+                    </h3><br>
+                        <button id="btnAlertaSimples" onclick="alert('Alerta simples!')">Mostrar Alerta</button>
+                        <button id="btnConfirmar" onclick="confirm('Você confirma?')">Mostrar Confirmação</button>
+                        <button id="btnPrompt" onclick="prompt('Digite algo:')">Mostrar Prompt</button>
                 </div>
-            </div><br><br>
+            </div>
+
 
             <!-- Seção: Checkboxes -->
             <div class="testeMe">
-                <div id="testeSecao">
+                <div class="testeSecao">
                     <h3>✅ Checkboxes</h3><br>
                     <h3>
                         • Dado que visualizo os checkboxes<br>
@@ -89,11 +101,14 @@
                     <label><input type="checkbox" id="check2"> Desejo receber novidades</label><br>
                     <button id="btnVerificarChecks">Verificar</button>
                 </div>
-            </div><br><br>
+            </div>        
+        </div>
+
 
             <!-- Seção: Radio Buttons -->
+        <div class="conteudo-primario" id="conteudoPrimarioTesteMe">
             <div class="testeMe">
-                <div id="testeSecao">
+                <div class="testeSecao">
                     <h3>🎯 Radio Buttons</h3><br>
                     <h3>
                         • Dado que estou no formulário de seleção de gênero<br>
@@ -105,11 +120,13 @@
                     <label><input type="radio" name="sexo" value="outro"> Outro</label><br>
                     <button id="btnSelecionarGenero">Selecionar</button>
                 </div>
-            </div><br><br>
+            </div>
+
 
             <!-- Seção: Select / Dropdown -->
+
             <div class="testeMe">
-                <div id="testeSecao">
+                <div class="testeSecao">
                     <h3>📋 Selecionar Opções (Dropdown)</h3><br>
                     <h3>
                         • Dado que estou na lista de opções<br>
@@ -124,11 +141,13 @@
                     </select>
                     <button id="btnSelecionarCor">Selecionar Cor</button>
                 </div>
-            </div><br><br>
+            </div>
+
 
             <!-- Seção: Upload de Arquivo -->
+
             <div class="testeMe">
-                <div id="testeSecao">
+                <div class="testeSecao">
                     <h3>📂 Upload de Arquivo</h3><br>
                     <h3>
                         • Dado que estou na área de upload<br>
@@ -138,11 +157,13 @@
                     <input type="file" id="uploadArquivo">
                     <button id="btnUpload">Enviar Arquivo</button>
                     </div>
-            </div><br><br>
+            </div>
+        </div>
 
             <!-- Seção: Tabelas -->
+        <div class="conteudo-primario" id="conteudoPrimarioTesteMe">
             <div class="testeMe">
-                <div id="testeSecao">
+                <div class="testeSecao">
                     <h3>📊 Tabela de Dados</h3><br>
                     <h3>
                         • Dado que acesso a tabela de dados<br>
@@ -168,11 +189,13 @@
                     </tbody>
                     </table>
                 </div>
-            </div><br><br>
+            </div>
+
 
             <!-- Seção: Elementos Dinâmicos (inserção/remover elementos) -->
+
             <div class="testeMe">
-                <div id="testeSecao">
+                <div class="testeSecao">
                     <h3>🔄 Elementos Dinâmicos</h3><br>
                     <h3>
                         • Dado que estou na seção dinâmica<br>
@@ -182,47 +205,21 @@
                     <button onclick="adicionarElemento()">Adicionar Elemento</button>
                     <div id="elementosDinamicos"></div>
                 </div>
-            </div><br><br>
+            </div>
+        
 
-            <script>
-                function adicionarElemento() {
-                const novo = document.createElement('p');
-                novo.textContent = 'Elemento dinâmico adicionado!';
-                document.getElementById('elementosDinamicos').appendChild(novo);
-                }
-            </script>
+        <script>
+            function adicionarElemento() {
+            const novo = document.createElement('p');
+            novo.textContent = 'Elemento dinâmico adicionado!';
+            document.getElementById('elementosDinamicos').appendChild(novo);
+            }
+        </script>
 
-            <H1>ver</H1>
-            <!-- Seção: Interceptação de Requisição -->
-            <!-- <div class="testeMe">
-                <div id="testeSecao">
-                <h3>🌐 Interceptação de Requisições</h3><br>
-                <h3>
-                    • Dado que estou na seção de requisições,<br>
-                    • Quando clico no botão "Get TODO",<br>
-                    • Então devo validar o sucesso, erro ou queda de rede.
-                </h3><br>
-                <button id="btnGetTodo">Get TODO</button>
-                <div id="resultadoTodo"></div>
-                </div>
-            </div><br><br> -->
-            
-            <!-- Seção: Requisição Direta (cy.request) -->
-            <!-- <div class="testeMe">
-                <div id="testeSecao">
-                <h3>🌍 Requisição Direta</h3><br>
-                <h3>
-                    • Dado que estou na área de requisições,<br>
-                    • Quando faço uma chamada à API pública,<br>
-                    • Então devo receber uma resposta com status 200.
-                </h3><br>
-                <button id="btnRequisicaoApi">Fazer Requisição</button>
-                </div>
-            </div><br><br> -->
-            
             <!-- Seção: Slider (Range) -->
+        
             <div class="testeMe">
-                <div id="testeSecao">
+                <div class="testeSecao">
                 <h3>🎚️ Selecionar Nível</h3><br>
                 <h3>
                     • Dado que estou no controle de nível,<br>
@@ -232,11 +229,13 @@
                 <input type="range" id="sliderNivel" min="0" max="10" step="1">
                 <p id="valorNivel">Valor selecionado: 5</p>
                 </div>
-            </div><br><br>
+            </div>
+        </div>
             
             <!-- Seção: Input de Data -->
+        <div class="conteudo-primario" id="conteudoPrimarioTesteMe">
             <div class="testeMe">
-                <div id="testeSecao">
+                <div class="testeSecao">
                 <h3>📅 Seletor de Data</h3><br>
                 <h3>
                     • Dado que estou na área de datas,<br>
@@ -246,11 +245,13 @@
                 <input type="date" id="inputData">
                 <p id="dataSelecionada"></p>
                 </div>
-            </div><br><br>
+            </div>
+        
             
             <!-- Seção: Senha Segura (Cypress.env) -->
+        
             <div class="testeMe">
-                <div id="testeSecao">
+                <div class="testeSecao">
                 <h3>🔒 Campo de Senha Segura</h3><br>
                 <h3>
                     • Dado que estou na seção de senha,<br>
@@ -260,11 +261,13 @@
                 <input type="password" id="senhaSegura" placeholder="Digite sua senha">
                 <label><input type="checkbox" id="mostrarSenha"> Mostrar senha</label>
                 </div>
-            </div><br><br>
+            </div>
+        
             
             <!-- Seção: Contar Elementos -->
+        
             <div class="testeMe">
-                <div id="testeSecao">
+                <div class="testeSecao">
                 <h3>🔢 Contar Elementos</h3><br>
                 <h3>
                     • Dado que estou na lista de animais,<br>
@@ -279,11 +282,13 @@
                     <li>Tigre</li>
                 </ul>
                 </div>
-            </div><br><br>
+            </div>
+        </div>
             
             <!-- Seção: Congelar Data -->
+        <div class="conteudo-primario" id="conteudoPrimarioTesteMe">
             <div class="testeMe">
-                <div id="testeSecao">
+                <div class="testeSecao">
                 <h3>🕰️ Congelar Data</h3><br>
                 <h3>
                     • Dado que estou visualizando a data atual,<br>
@@ -292,11 +297,13 @@
                 </h3><br>
                 <p id="dataAtual">Data: 1910-09-01</p>
                 </div>
-            </div><br><br>
+            </div>
+        
             
             <!-- Seção: Copiar Valor com .then() -->
+        
             <div class="testeMe">
-                <div id="testeSecao">
+                <div class="testeSecao">
                 <h3>📋 Copiar e Validar Código</h3><br>
                 <h3>
                     • Dado que estou na seção de código,<br>
@@ -307,11 +314,13 @@
                 <input type="text" id="inputCodigo" placeholder="Digite o código">
                 <button id="btnValidarCodigo">Validar Código</button>
                 </div>
-            </div><br><br>
+            </div>
+        
             
             <!-- Seção: Download de Arquivo -->
+        
             <div class="testeMe">
-                <div id="testeSecao">
+                <div class="testeSecao">
                 <h3>📥 Download de Arquivo</h3><br>
                 <h3>
                     • Dado que estou na seção de downloads,<br>
@@ -320,8 +329,163 @@
                 </h3><br>
                 <a href="cypress/downloads/exemplo.txt" download id="linkDownloadArquivo">Download de Arquivo</a>
                 </div>
-            </div><br><br>
+            </div>
         </div>
+
+        <div class="conteudo-primario" id="conteudoPrimarioTesteMe">
+            <h2>Teste De API</h2><br>
+        </div>
+
+        <!-- Seção: Interceptação de Requisição -->
+        <div class="conteudo-primario" id="conteudoPrimarioTesteMe">
+            <div class="testeMe">
+                <div class="testeSecao">
+                <h3>🌐 Interceptação de Requisições</h3><br>
+                <h3>
+                    • Dado que estou na seção de requisições,<br>
+                    • Quando clico no botão "Get TODO",<br>
+                    • Então devo validar o sucesso, erro ou queda de rede.
+                </h3><br>
+                <button id="btnGetTodo">Get TODO</button>
+                <div id="resultadoTodo"></div>
+                </div>
+            </div>
+        
+            
+            <!-- Seção: Requisição Direta (cy.request) -->
+        
+            <div class="testeMe">
+                <div class="testeSecao">
+                <h3>🌍 Requisição Direta</h3><br>
+                <h3>
+                    • Dado que estou na área de requisições,<br>
+                    • Quando faço uma chamada à API pública,<br>
+                    • Então devo receber uma resposta com status 200.
+                </h3><br>
+                <button id="btnRequisicaoApi">Fazer Requisição</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        <div class="conteudo-primario" id="conteudoPrimarioTesteMe">
+            <h2>🧪 CTFL - Treine Atrevés de Perguntas Aleatórias 🧪</h2><br>
+        </div>
+
+        <!--Seção CTFL -->
+        <div class="conteudo-primario" id="conteudoPrimarioTesteMe">
+            <div class="testeMe">
+                <div class="testeSecaoCTFL">
+                    <h3 id="pergunta">Carregando pergunta...</h3><br>
+        
+                    <form id="formRespostas">
+                        <label><input type="radio" name="resposta" value="0"> <span id="resposta0"></span></label><br>
+                        <label><input type="radio" name="resposta" value="1"> <span id="resposta1"></span></label><br>
+                        <label><input type="radio" name="resposta" value="2"> <span id="resposta2"></span></label><br>
+                        <label><input type="radio" name="resposta" value="3"> <span id="resposta3"></span></label><br>
+                    </form><br>
+        
+                    <button onclick="verificarResposta()">✔️ Verificar Resposta</button><br>
+                    <button onclick="mostrarResposta()">👁️ Veja a Resposta</button><br>
+        
+                    <div id="respostaCorreta" style="display:none; font-weight:bold; color: #d4f542;"></div>
+        
+                    <button onclick="sortearPergunta()">🔁 Próxima Pergunta</button>
+                </div>
+            </div>
+        </div>
+
+        <!--Script CTFL -->
+        <script>
+            const perguntas = [
+                {
+                    pergunta: "O que é teste de caixa preta?",
+                    respostas: [
+                        "Testa a lógica interna do código.",
+                        "Analisa apenas a estrutura da base de dados.",
+                        "Testa as funcionalidades sem considerar a implementação.",
+                        "É um tipo de teste baseado em casos de uso técnico."
+                    ],
+                    correta: 2
+                },
+                {
+                    pergunta: "Qual é o objetivo principal da técnica de particionamento de equivalência?",
+                    respostas: [
+                        "Reduzir a quantidade de testes mantendo boa cobertura.",
+                        "Aumentar o tempo de execução dos testes.",
+                        "Testar todos os fluxos possíveis de um sistema.",
+                        "Elaborar testes baseados em estruturas de decisão."
+                    ],
+                    correta: 0
+                },
+                {
+                    pergunta: "O que define a certificação CTFL?",
+                    respostas: [
+                        "Uma metodologia de desenvolvimento ágil.",
+                        "Uma base de conhecimento para testadores de software.",
+                        "Um software de automação de testes.",
+                        "Uma ferramenta para gerenciamento de requisitos."
+                    ],
+                    correta: 1
+                },
+                {
+                    pergunta: "Qual das alternativas é um tipo de teste funcional?",
+                    respostas: [
+                        "Teste de estresse",
+                        "Teste de carga",
+                        "Teste de sistema",
+                        "Teste de volume"
+                    ],
+                    correta: 2
+                }
+            ];
+        
+            let perguntaAtual = 0;
+        
+            function sortearPergunta() {
+                document.getElementById('respostaCorreta').style.display = 'none';
+                const sorteio = Math.floor(Math.random() * perguntas.length);
+                perguntaAtual = sorteio;
+        
+                const p = perguntas[sorteio];
+                document.getElementById('pergunta').textContent = p.pergunta;
+                for (let i = 0; i < 4; i++) {
+                    document.getElementById(`resposta${i}`).textContent = p.respostas[i];
+                }
+        
+                // Limpa seleção anterior
+                const inputs = document.getElementsByName('resposta');
+                inputs.forEach(input => input.checked = false);
+            }
+        
+            function verificarResposta() {
+                const respostaSelecionada = document.querySelector('input[name="resposta"]:checked');
+                if (!respostaSelecionada) {
+                    alert("Por favor, selecione uma resposta.");
+                    return;
+                }
+        
+                const valor = parseInt(respostaSelecionada.value);
+                const correta = perguntas[perguntaAtual].correta;
+        
+                if (valor === correta) {
+                    alert("✅ Você acertou, está no caminho certo!");
+                } else {
+                    alert("❌ Não desanime, continue estudando.");
+                }
+            }
+        
+            function mostrarResposta() {
+                const p = perguntas[perguntaAtual];
+                document.getElementById('respostaCorreta').textContent = `✔️ Resposta Correta: ${p.respostas[p.correta]}`;
+                document.getElementById('respostaCorreta').style.display = 'block';
+            }
+        
+            // Inicializa
+            window.onload = () => {
+                sortearPergunta();
+            };
+        </script>
 
         <div class="conteudo-secundario" id="conteudoSecundario">
             <h2>💡 Gostou do projeto e quer realizar uma parceria!? Chame aqui! 💡</h2><br>
@@ -329,6 +493,36 @@
             <div class="cta" id="cta-whatsapp">
                 <a href="https://wa.me/5548991059871" target="_blank" class="btn" id="btn-whatsapp">Chamar no WhatsApp</a>
             </div>
+        </div>
+
+        <div class="conteudo-quartenario" id="conteudoQuartenarioIndex">
+            <h2>💡 Teve Uma Ideia? Faltou Algo? Ajude-nos a Melhorar Nosso Parque de Testes 💡</h2><br>
+            <form id="contactForm">
+                <input type="text" name="name" placeholder="Nome Completo ou Empresa" required>
+                <div>
+                    <p class="formularioAtencao">
+                        Por favor, inclua na mensagem: 
+                        <br><br>  1 - E-mail ou Telefone:
+                        <br><br>Estamos melhorando nosso serviço para melhor atendê-lo
+                    </p>
+                </div>
+                <br>
+                <!-- <select required>
+                    <option value="">Escolha a seção</option>
+                    <option value="inputs">Inputs</option>
+                    <option value="alertas">Alertas</option>
+                    <option value="checkboxes">Checkboxes</option>
+                    <option value="checkboxes">Outros</option>
+                </select> -->
+                <br>
+                <textarea id="messageContato" name="message" placeholder="Sua sugestão..." required></textarea>
+                <button type="submit" class="btn" id="buttonEnviar">
+                    Enviar Sugestão
+                </button>
+            </form>
+            <p id="formMessage">
+                
+            </p>
         </div>
 
         <!-- RODAPÉ -->
@@ -358,6 +552,67 @@
             </div>
         </div>
     </div>
+
+    <!-- EmailJS SDK -->
+    <script
+        src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js">
+    </script>
+
+    <script>
+        // Inicializa EmailJS com sua Public Key
+        (function () {
+            emailjs.init("mStIjKEyJWrKzpkMY"); // ✅ Sua Public Key
+        })();
+    
+        const form = document.getElementById('contactForm');
+        const formMessage = document.getElementById('formMessage');
+    
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+    
+            emailjs.sendForm('service_g87zjpf', 'template_wyk7sje', this)
+                .then(() => {
+                    mostrarMensagem('Mensagem enviada com sucesso!', true);
+                    form.reset();
+                }, (error) => {
+                    mostrarMensagem('Falha ao enviar mensagem. Tente novamente.', false);
+                    console.error('Erro:', error);
+                });
+        });
+    
+        function mostrarMensagem(mensagem, sucesso) {
+            // Limpa o conteúdo anterior
+            formMessage.innerHTML = '';
+    
+            // Cria botão de fechar
+            const closeBtn = document.createElement('span');
+            closeBtn.textContent = '×';
+            closeBtn.style.float = 'right';
+            closeBtn.style.cursor = 'pointer';
+            closeBtn.style.marginLeft = '10px';
+            closeBtn.style.fontWeight = 'bold';
+            closeBtn.onclick = () => {
+                formMessage.style.display = 'none';
+            };
+    
+            // Adiciona a mensagem e botão ao elemento
+            formMessage.textContent = mensagem;
+            formMessage.appendChild(closeBtn);
+    
+            // Estilização condicional
+            formMessage.style.display = 'block';
+            formMessage.style.color = 'white';
+            formMessage.style.background = sucesso ? '#00bbff' : '#e60023';
+            formMessage.style.border = sucesso ? '1px solid #1f015c' : '1px solid #8a0000';
+            formMessage.style.padding = '10px';
+            formMessage.style.borderRadius = '5px';
+    
+            // Esconde após 5 segundos
+            setTimeout(() => {
+                formMessage.style.display = 'none';
+            }, 5000);
+        }
+    </script>
 
 </body>
 </html>

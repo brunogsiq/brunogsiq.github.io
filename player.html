@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Player de Música</title>
+    <style>
+        #playerMusicaContainer {
+            background: linear-gradient(135deg, rgba(48, 43, 99, 0.9), rgba(93, 93, 141, 0.9));
+            width: calc(100% - 40px);
+            display: flex;
+            align-items: center;
+            justify-content: center; /* 👉 Centraliza conteúdo internamente */
+            padding: 10px 20px;
+            border-radius: 8px;
+            margin: 20px auto; /* 👉 Centraliza a div toda */
+            max-width: 900px; /* 👉 Limita largura */
+            gap: 8px; /* Espaço entre blocos */
+        }
+        
+        .playerTitulo {
+            margin: 0;
+            font-size: 18px;
+            flex: 1 1 100%;
+            text-align: center;
+        }
+        
+        .playerControles {
+            display: flex;
+            gap: 6px;
+            align-items: center;
+        }
+        
+        #nomeMusica {
+            flex: 1 1 100%;
+            font-size: 14px;
+            text-align: center;
+            margin-top: 5px;
+            color: #eee;
+        }
+        
+        #volumeControl {
+            width: 120px;
+        }
+
+        button {
+            cursor: pointer;
+            padding: 5px 10px;
+            border-radius: 6px;
+            border: none;
+            background: #6b63b5;
+            color: #fff;
+            font-size: 18px;
+        }
+
+        button:hover {
+            background: #8178e3;
+        }
+    </style>
+</head>
+<body>
+    <div id="playerMusicaContainer">
+        <div class="playerControles">
+            <audio id="audioPlayer" src=""></audio>
+            <button onclick="anteriorMusica()">⏮️</button>
+            <button onclick="tocarMusica()">▶️</button>
+            <button onclick="pausarMusica()">⏸️</button>
+            <button onclick="pararMusica()">⏹️</button>
+            <button onclick="proximaMusica()">⏭️</button>
+        </div>
+        <div id="nomeMusica">
+            Carregando música...
+        </div>
+        <div class="playerControles">
+            <label for="volumeControl">🔊</label>
+            <input type="range" id="volumeControl" min="0" max="1" step="0.1" onchange="setVolume(this.value)">
+        </div>
+    </div>
+
+    <script>
+        const audio = document.getElementById('audioPlayer');
+        const nomeMusica = document.getElementById('nomeMusica');
+
+        let playlist = [];
+        let indiceAtual = 0;
+
+        async function buscarMusicaJamendo() {
+            try {
+                const resposta = await fetch('https://api.jamendo.com/v3.0/tracks/?client_id=860d25b0&format=json&limit=10&fuzzytags=pop');
+                const dados = await resposta.json();
+                playlist = dados.results;
+        
+                if (playlist.length > 0) {
+                    carregarMusica();
+                    tocarMusica();
+                } else {
+                    nomeMusica.textContent = 'Nenhuma música encontrada.';
+                }
+            } catch (erro) {
+                console.error('Erro ao buscar música:', erro);
+                nomeMusica.textContent = 'Erro ao carregar música.';
+            }
+        }
+        
+        function carregarMusica() {
+            const musica = playlist[indiceAtual];
+            if (musica.audio) {
+                audio.src = musica.audio;
+                audio.load();
+                nomeMusica.textContent = `${musica.name} - ${musica.artist_name}`;
+            }
+        }
+        
+        function tocarMusica() {
+            audio.play();
+        }
+        
+        function pausarMusica() {
+            audio.pause();
+        }
+        
+        function pararMusica() {
+            audio.pause();
+            audio.currentTime = 0;
+        }
+        
+        function proximaMusica() {
+            indiceAtual = (indiceAtual + 1) % playlist.length;
+            carregarMusica();
+            tocarMusica();
+        }
+        
+        function anteriorMusica() {
+            indiceAtual = (indiceAtual - 1 + playlist.length) % playlist.length;
+            carregarMusica();
+            tocarMusica();
+        }
+        
+        function setVolume(valor) {
+            audio.volume = valor;
+        }
+        
+        window.onload = () => {
+            setVolume(0.5);
+            buscarMusicaJamendo();
+        };
+    </script>
+</body>
+</html>
