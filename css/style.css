@@ -3,14 +3,14 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-}
+};
 
 /* BASE GERAL */
 html{
     height: 100%;
     margin: 0;
     padding: 0;
-}
+};
 
 body {
     display: flex;
@@ -20,7 +20,7 @@ body {
     padding: 0;
     background: linear-gradient(135deg, #1a1446, #0b0a1e);
     color: #eee;
-}
+};
 
 @media (max-width: 768px) {
     
