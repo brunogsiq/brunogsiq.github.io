@@ -139,6 +139,10 @@ body {
     border: 2px solid #888;
 }
 
+h5 {
+    text-align: center;
+}
+
 #conteudoPrimarioTesteMe {
     background: linear-gradient(135deg, rgba(48, 43, 99, 0.9), rgba(93, 93, 141, 0.9));
     padding: 20px;
@@ -198,6 +202,8 @@ font-size: 0.95rem;
 line-height: 1.4;
 }
 
+#conteudoPrimarioFundamentosQA,
+#conteudoPrimarioConteudoQA,
 #conteudoPrimario,
 #conteudoPrimarioQuemSouTexto,
 #conteudoPrimarioSoftSkill,
@@ -232,7 +238,7 @@ line-height: 1.4;
 }
 
 #conteudoPrimarioRecomendacoes{
-    background: linear-gradient(135deg, #1a1446, #0b0a1e);
+    background: radial-gradient(circle at center, #1a1446 0%, #0b0a1e 100%);
     padding: 20px;
     
     /* Para mesma largura do rodapé */
@@ -250,6 +256,7 @@ line-height: 1.4;
     margin-bottom: 12px;
 }
 
+#conteudoPrimarioConteudoQA h2,
 #conteudoPrimarioTesteMe h2,
 #conteudoPrimarioContato h2,
 #conteudoPrimarioCurriculo h2,
@@ -292,12 +299,58 @@ line-height: 1.4;
     text-align: left;
 }
 
+.principal {
+    text-align: center;
+}
+
 #conteudoPrimarioPorfolio a {
     text-align: center;
 }
 
 #conteudoPrimarioPorfolio img {
     text-align: center;
+}
+
+.conteudoQA {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+}
+
+.conteudoQA.ativo {
+    max-height: 3000px;
+}
+
+.conteudoQA ul {
+    padding-left: 20px;
+    margin-bottom: 16px;
+}
+
+.conteudoQA li {
+margin-bottom: 6px;
+line-height: 1.5;
+}
+
+.conteudoQA > ul > li {
+margin-top: 16px;
+font-size: 1rem;
+}
+
+.conteudoQA strong {
+font-size: 1.05rem;
+display: inline-block;
+margin-bottom: 8px;
+}
+
+.conteudoQA a {
+    text-decoration: none;
+    color: inherit; /* usa a mesma cor do texto */
+    border-bottom: 1px solid transparent;
+    transition: border 0.3s;
+}
+
+.conteudoQA a:hover {
+border-bottom: 1px solid #d4f542; /* sublinhado amarelo suave ao passar o mouse */
 }
 
 /* PALAVRAS INTERATIVAS */
