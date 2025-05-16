@@ -102,8 +102,8 @@ body {
 
 /*CORPO - SEÇÃO CONTEÚDOS*/
 #corpo {
-    background: linear-gradient(to bottom right, #0f0c29, #302b63, #24243e);
-    color: #eee;
+    background: radial-gradient(circle at center, #1a1a40, #000000);
+    color: #ddd;
     padding: 40px;
     border-radius: 8px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.4);
@@ -350,7 +350,11 @@ margin-bottom: 8px;
 }
 
 .conteudoQA a:hover {
-border-bottom: 1px solid #d4f542; /* sublinhado amarelo suave ao passar o mouse */
+border-bottom: 1px solid #7700ff; /* sublinhado amarelo suave ao passar o mouse */
+}
+
+.pdfSyllabus {
+    text-align: center;
 }
 
 /* PALAVRAS INTERATIVAS */
