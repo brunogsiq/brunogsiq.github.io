@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Sobre e Skills</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/newStyle.css"> 
+</head>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PQMKLMGY0H"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-PQMKLMGY0H');
+</script>
+
+<body>
+    <div class="faixa-capa">
+        <img src="./img/capa/capa04.png" alt="Foto de capa" class="foto-capa">
+    </div>
+    <header id="menuSuperior">
+        <div id="fotoMenuSuperior">
+            <a href="home.html" class="foto-perfil-container">
+                <img src="./img/fotoPessoal/fotoLinkedin.jpg" alt="Bruno Siqueira" class="foto-perfil">
+            <a>
+        </div>
+        <div class="linha-informacoes">
+            <div id="nomeMenuSuperior">
+                <h1>Bruno Gonçalves Siqueira</h1>
+                <p>QA Software Testing || Quality Assurance || QA Test Analyst || Analista de Testes e Qualidade de Software</p>
+                <p>JavaScript - TypeScript - HTML5 - CSS3</p>
+                <p>Cypress - Playwright - Robot</p>
+                <p>Santos, SP - Brasil.</p>
+            </div>
+            <div class="linksSociais_menuSuperior">
+                <a href="https://www.linkedin.com/in/brunogsiq" target="_blank">
+                    <img src="img/iconesRedesSociais/rs_linkedin.png" alt="LinkedIn">
+                </a>
+                <a href="https://github.com/brunogsiq" target="_blank">
+                    <img src="img/iconesRedesSociais/rs_github.png" alt="GitHub">
+                </a>
+                <a href="https://wa.me/5548991059871" target="_blank">
+                    <img src="img/iconesRedesSociais/rs_whatsapp.png" alt="WhatsApp">
+                </a>
+            </div>
+        </div>
+    </header>
+    <div id="linksMenuSuperior">
+        <a href="index.html" class="button-MenuSuperior">Home</a>
+        <a href="sobreSkills.html" class="button-MenuSuperior">Sobre e Skilss</a>
+        <a href="recomendacoes.html" class="button-MenuSuperior">Recomendações</a>
+        <a href="projetos.html" class="button-MenuSuperior">Projetos</a>
+        <a href="certificacoes.html" class="button-MenuSuperior">Certificações</a>
+        <a href="curriculo.html" class="button-MenuSuperior">Currículo</a>
+        <a href="contato.html" class="button-MenuSuperior">Contato</a>
+        <a href="blog.html" class="button-MenuSuperior">Blog</a>
+        <a href="conteudoqa.html" class="button-MenuSuperior">Conteúdo Q.A</a>
+        <a href="testeMe.html" class="button-MenuSuperior">Parque de Teste</a>  
+    </div>
+    <div id="topo"></div>
+    <div id="secao_Card">
+        <section>
+            <div class="secao_Info_Card">
+                <div class="depoimento">
+                    <img src="img/depoimentos/will.jpg" alt="Foto de Willian" class="foto-depoimento">
+                    <strong>Willian Rodrigues Azevedo</strong>
+                    <p class="cargo">??? Gestão de Sistemas de Informação | Líder Técnico ???</p>
+                    <blockquote>Bruno é um profissional dedicado! comunicativo, proativo, engajado e comprometido, sempre demonstrou aberturar para evoluções e engajado em suas atividades.</blockquote>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <div class="mensagem" id="mensagem">
+            <p>Obrigado por nos visitar! Veja mais em...</p>
+        </div>
+        <div class="icones" id="icones">
+                    <div class="icones" id="icones">
+            <a href="https://wa.me/5548991059871" target="_blank">
+                <img src="img/iconesRedesSociais/rs_whatsapp.png" alt="WhatsApp">
+            </a>
+            <a href="https://www.linkedin.com/in/brunogsiq" target="_blank">
+                <img src="img/iconesRedesSociais/rs_linkedin.png" alt="LinkedIn">
+            </a>
+            <a href="https://github.com/brunogsiq" target="_blank">
+                <img src="img/iconesRedesSociais/rs_github.png" alt="GitHub">
+            </a>
+            
+            <a href="mailto:brunogsiq@gmail.com" target="_blank">
+                <img src="img/iconesRedesSociais/rs-email.webp" alt="E-mail">
+            </a>
+        </div>
+        </div>
+        <div class="direitos" id="direitos">
+            <p>&copy;Bruno Siqueira - 2025 - Todos os direitos reservados.</p>
+        </div>
+        <button id="botaoTopo" onclick="voltarAoTopo()" title="Voltar ao topo">?</button>
+    </footer>
+    <script>
+        const botaoTopo = document.getElementById("botaoTopo");
+        const topo = document.getElementById('topo');
+
+        window.addEventListener("scroll", () => {
+            // Verifica a posição do topo da seção "Um pouco sobre mim"
+            const posicaoSecao = topo.getBoundingClientRect().top;
+
+            if (posicaoSecao < window.innerHeight / 2) {
+            botaoTopo.style.display = "block";
+            } else {
+            botaoTopo.style.display = "none";
+            }
+        });
+
+        function voltarAoTopo() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
+
+<!--
+
+<section id="servicos">
+            <h2>Serviços</h2>
+            <div class="card-projeto">
+                <h3>texto...</h3>
+                <p>...</p>
+                <br>
+                <button class="verMais" aria-expanded="false" role="button" type="button">
+                    <a href="./.html">...Ver mais</a> 
+                </button>
+            </div>
+        </section>
+
+        <section id="destaques">
+            <h2>Destaques</h2>
+            <div class="card-projeto">
+                <h3>texto...</h3>
+                <p>...</p>
+                <br>
+                <button class="verMais" aria-expanded="false" role="button" type="button">
+                    <a href="./.html">...Ver mais</a> 
+                </button>
+            </div>
+        </section>
+        <section id="experiências">
+            <h2>Experiências Profissionais</h2>
+            <div class="card-projeto">
+                <h3>texto...</h3>
+                <p>...</p>
+                <br>
+                <button class="verMais" aria-expanded="false" role="button" type="button">
+                    <a href="./.html">...Ver mais</a> 
+                </button>
+            </div>
+        </section>
+
+        <section id="licencasCertificados">
+            <h2>Licenças e Certificados</h2>
+            <div class="card-projeto">
+                <h3>texto...</h3>
+                <p>...</p>
+                <br>
+                <button class="verMais" aria-expanded="false" role="button" type="button">
+                    <a href="./.html">...Ver mais</a> 
+                </button>
+            </div>
+        </section>
+
+        <section id="competencias">
+            <h2>Competências</h2>
+            <div class="card-projeto">
+                <h3>texto...</h3>
+                <p>...</p>
+                <br>
+                <button class="verMais" aria-expanded="false" role="button" type="button">
+                    <a href="./.html">...Ver mais</a> 
+                </button>
+            </div>
+        </section>
+
+        <section id="recomendacoes">
+            <h2>Recomendações</h2>
+            <div class="card-projeto">
+                <h3>texto...</h3>
+                <p>...</p>
+                <br>
+                <button class="verMais" aria-expanded="false" role="button" type="button">
+                    <a href="./.html">...Ver mais</a> 
+                </button>
+            </div>
+        </section>
+
+        <section id="idiomas">
+            <h2>Idiomas</h2>
+            <div class="card-projeto">
+                <h3>texto...</h3>
+                <p>...</p>
+                <br>
+                <button class="verMais" aria-expanded="false" role="button" type="button">
+                    <a href="./.html">...Ver mais</a> 
+                </button>
+            </div>
+        </section>
+
+        <section id="interesses">
+            <h2>Interesses</h2>
+            <div class="card-projeto">
+                <h3>texto...</h3>
+                <p>...</p>
+                <br>
+                <button class="verMais" aria-expanded="false" role="button" type="button">
+                    <a href="./.html">...Ver mais</a> 
+                </button>
+            </div>
+        </section>
+
+        <section id="projetos">
+            <h2>Tecnologias e Ferramentas</h2>
+            <div class="card-projeto">
+                <h3>Cypress.io</h3>
+                <h3>Playwright</h3>
+                <h3>Postman</h3>
+                <h3>Robot Framework</h3>
+                <h3>JavaScript, HTML, CSS</h3>
+                <h3>Swagger, BDD, API REST</h3>
+                <br>
+                <button class="verMais" aria-expanded="false" role="button" type="button">
+                    <a href="./.html">...Ver mais</a> 
+                </button>
+            </div>
+        </section>
+
+        <section id="projetos">
+            <h2>Projetos Automatizados</h2>
+            <div class="card-projeto">
+                <h3>Exemplo: Automação Cypress</h3>
+                <p>Testes E2E em aplicação React usando Cypress com CI/CD.</p>
+                <br>
+                <button class="verMais" aria-expanded="false" role="button" type="button">
+                    <a href="./.html">...Ver mais</a> 
+                </button>
+            </div>
+        </section>
+-->

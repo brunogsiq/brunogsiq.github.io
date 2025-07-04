@@ -1,214 +1,270 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
     <title>Home</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/style.css"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/css.css" />
 </head>
-
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-PQMKLMGY0H"></script>
 <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+window.dataLayer = window.dataLayer || [];
+function gtag() {
+	dataLayer.push(arguments);
+}
+gtag("js", new Date());
 
-    gtag('config', 'G-PQMKLMGY0H');
+gtag("config", "G-PQMKLMGY0H");
 </script>
-
 <body>
-    <!-- CABEÇALHO -->
-    <div class="cabecalho" id="cabecalho">
-        <div class="menu-superior-esquerdo" id="menu-esquerdo">
-            <nav class="nav-superior-esquerdo" id="nav-menu-esquerdo">
-                <ul id="listaEsquerda">
-                    <li class="listaItem"><a href="index.html">🏠 Home</a></li>
-                    <li class="listaItem"><a href="sobremim.html">💡 Sobre Mim</a></li>
-                    <li class="listaItem"><a href="softskill.html">🧠 Softs Skills</a></li>
-                    <li class="listaItem"><a href="hardskill.html">🛠️ Hards Skills</a></li>
-                    <li class="listaItem"><a href="recomendacoes.html">💬 Recomendações</a></li>
-                    <li class="listaItem"><a href="portfolio.html">🎨 Portfólio</a></li>
-                </ul>
-            </nav>
-        </div>
-        <div class="menu-superior-direito" id="menu-direito">
-            <nav class="nav-superior-direito" id="nav-menu-direito">
-                <ul id="listaDireita">
-                    <li class="listaItem"><a href="curriculo.html">💾 Currículo</a></li>
-                    <li class="listaItem"><a href="certificacoes.html">🎓 Certificações</a></li>
-                    <li class="listaItem"><a href="blog.html">📝 Blog</a></li>
-                    <li class="listaItem"><a href="contato.html">📬 Contato</a></li>
-                    <li class="listaItem"><a href="conteudoQA.html">🗂️ Conteúdo Q.A.</a></li>
-                    <li class="listaItem"><a href="testeMe.html">⚙️ Teste-Me</a></li>
-                </ul>
-            </nav>
-        </div>
-    </div>
-    <br><br><br>
+	<!-- Cabeçalho (Navbar estilo LinkedIn) -->
+	<header class="navbar">
+		<div class="navbar-left">
+			<!-- Botão logo que leva para a Home -->
+			<a href="index.html" class="home">
+				<img src="img/icones/home.png" alt="Home" />
+			</a>
 
-    <!-- CORPO -->
-    <div class="corpo" id="corpo">
-        <iframe src="./pages/player.html" style="width: 100%; height: 150px; border: none;"></iframe>
-        <div id="pictureBGS">
-            <img src="./img/fotoPessoal/fotoLinkedin.jpg" alt="Minha Foto" class="profile-pic">
-        </div>
-        <div class="conteudo-primario" id="conteudoPrimarioIndex">
-            <h2>
-                ➡️ Sobre Mim ⬅️
-            </h2><br>
-            <p>
-                Sou um profissional movido pela excelência, focado na prevenção de falhas e entrega contínua de valor através de testes de software automatizados e bem planejados.<br><br>
-                Atuo com Cypress, Playwright e Postman, cobrindo testes frontend, backend e APIs, desde a análise de requisitos até a validação final da experiência do usuário.<br><br>
-                Tenho experiência prática em ambientes ágeis, utilizando BDD com Gherkin, versionamento com Git, ferramentas como Jira, Azure DevOps, além de criar, executar e documentar planos de testes completos.<br><br>
-                Mais do que um executor, tenho orgulho em compartilhar conhecimento e evangelizar a cultura da qualidade, promovendo colaboração entre QA, Devs e Produto.<br><br>
-                Acredito que a qualidade é responsabilidade de todos – e é isso que me move.<br><br>
-                Sou movido pelo propósito de evangelizar a cultura da qualidade nas equipes, promovendo prevenção de falhas, melhoria contínua e responsabilidade compartilhada.<br><br>
-                Qualidade, para mim, é mais que validar uma funcionalidade — é garantir excelência com propósito e colaboração.<br><br>
-            </p>
-        </div>
+			<!-- Campo de busca -->
+			<div class="search-box">
+				<input type="text" placeholder="Pesquisar" />
+				<button type="submit">
+					<img src="./img/icones/searchSmall.png" alt="Buscar" />
+				</button>
+			</div>
+		</div>
 
-        <div class="conteudo-secundario" id="conteudoSecundarioIndex">
-            <h2>
-                🗂️ Meus Projetos 🗂️
-            </h2>
-            <div class="carouselProjetosHome">
-                <div>Projeto 1</div>
-                <div>Projeto 2</div>
-                <div>Projeto 3</div>
-                <div>Projeto 4</div>
-            </div>
-        </div>
+		<nav class="navbar-center">
+			<ul class="nav-links">
+				<li>
+					<a href="#inicio"><span>🏠</span> Início</a>
+				</li>
+				<li>
+					<a href="#rede"><span>👥</span> Minha rede</a>
+				</li>
+				<li>
+					<a href="#vagas"><span>💼</span> Vagas</a>
+				</li>
+				<li>
+					<a href="#mensagens"><span>💬</span> Mensagens</a>
+				</li>
+				<li>
+					<a href="#notificacoes"><span>🔔</span> Notificações</a>
+				</li>
+			</ul>
+		</nav>
+	</header>
+	<button id="botaoBase" onclick="voltarABase()" title="Voltar a Base">
+			<img src="./img/icones/upTop.png" alt="Voltar à base">
+		</button>
+	<main class="perfil-container">
+		<!-- Foto de capa -->
+		<section class="caixa-conteudo">
+			<div class="foto-capa">
+				<img src="img/capa/capa.png" alt="Capa do perfil" />
+			</div>
+		</section>
 
-        <div class="conteudo-terciario" id="conteudoTerciarioIndex">
-            <h2>🚨 Necessita Com Urgência De Um Especialista ?! 🚨</h2><br>
-            <p>Texto do conteúdo secundário...</p>
-            <div class="cta" id="cta-whatsapp">
-                <a href="https://wa.me/5548991059871" target="_blank" class="btn" id="btn-whatsapp">Chamar no WhatsApp</a>
-            </div>
-        </div>
+		<!-- Área que junta a foto pessoal e as informações -->
+		<section class="caixa-conteudo">
+			<div class="info-perfil-wrapper">
+				<!-- Foto pessoal (sobreposta à capa e info) -->
+				<div class="foto-perfil">
+					<img src="img/pessoas/fotoLinkedin.jpg" alt="Foto de perfil" />
+				</div>
 
-        <div class="conteudo-quartenario" id="conteudoQuartenarioIndex">
-            <h2>
-                📧 Entre em Contato Para Assuntos Diversos 📧
-            </h2><br><br>
-            <h4>
-                Apoio - Consultoria - Evento - Mentoria -  Parceria - Palestra - Treinamento - Workshop
-            </h4><br><br>
-            <form id="contactForm">
-                <input type="text" name="name" placeholder="Nome Completo ou Empresa" required>
-                <!--<input type="text" name="company" placeholder="Empresa" required>-->
-                <!--<input type="text" name="contact" placeholder="E-mail ou Telefone" required>-->
-                <!--<input type="text" name="subject" placeholder="Assunto" required>-->
-        
-                <!-- Instrução antes do textarea -->
-                <div>
-                    <p class="formularioAtencao">
-                        Por favor, inclua na mensagem: 
-                        <br><br>  1 - E-mail ou Telefone:
-                        <br><br>  2 - Assunto:
-                        <br><br>Estamos melhorando nosso serviço para melhor atendê-lo
-                    </p>
-                </div>
-                <textarea id="messageContato" name="message" placeholder="Digite sua mensagem aqui..." required></textarea>
-                <button type="submit" class="btn" id="buttonEnviar">
-                    Enviar
-                </button>
-            </form>          
-            <p id="formMessage">
-                
-            </p>
-        </div>
+				<!-- Informações do perfil -->
+				<div class="esquerda-perfil">
+					<div class="info-perfil">
+						<h1>Bruno Gonçalves Siqueira</h1>
+						<p>
+							Quality Assurance - QA Software Testing - QA Test Analyst - QA Automation Test
+						</p>
+						<p class="localizacao">
+							📍 São Paulo, Brasil • <a href="#">Informações de contato</a>
+						</p>
+						<p>
+							<a href="#">Acesse meu Portfólio…</a>
+						</p>
+						<p class="conexoes">9.444 seguidores • + de 500 conexões</p>
+					</div>
+					<div class="acoes-perfil">
+						<button class="btn-action">Tenho interesse em...</button>
+						<button class="btn-action">Adicionar seção ao perfil</button>
+						<button class="btn-action">Aprimorar perfil</button>
+						<button class="btn-action">Recursos</button>
+					</div>					
+				</div>
+				<div class="linksSociais_Superior">
+					<a href="https://wa.me/5548991059871" target="_blank">
+						<img src="img/icones/rs_whatsapp.png" alt="WhatsApp">
+					</a>
+					<a href="https://www.linkedin.com/in/brunogsiq" target="_blank">
+						<img src="img/icones/rs_linkedin.png" alt="LinkedIn">
+					</a>
+					<a href="https://github.com/brunogsiq" target="_blank">
+						<img src="img/icones/rs_github.png" alt="GitHub">
+					</a>
+					<a href="https://medium.com/@brunogsiq" target="_blank">
+						<img src="img/icones/rs_medium.webp" alt="Medium">
+					</a>
+					<a href="mailto:brunogsiq@gmail.com" target="_blank">
+						<img src="img/icones/rs_emaill.png" alt="E-mail">
+					</a>
+				</div>
+			</div>
+		</section>
+		<section class="caixa-conteudo sobre">
+			<h2>Sobre</h2>
+			<div id="sobreTexto" class="texto-sobre recolhido">
+				<p>
+					⚠️ Primeiro, aceita um ☕?!
+					<br><br>
+					Analista de Qualidade e Teste de Software – Q.A.
+					<br><br>
+					💬 Atuo no foco da prevenção de bugs, é possível evangelizar uma equipe em prol da qualidade.
+					<br><br>
+					✅ Prevenir é melhor do que reportar! Bora testar?!
+					<br><br>
+					🧰 Dia a dia com:
+					Shift-Lefting Testes
+					Testes automatizados e manuais
+					Planejamento, Estimativa, Documentação
+					Execução e Evidenciamento
+					Testes com BDD
+				</p>
+			</div>
+			<button class="verMais verExpandido" onclick="toggleTexto()">Ver mais</button>
+		</section>
+		<section class="caixa-conteudo projetos">
+			<h2>Projetos - Testes Automatizados</h2>
+			<div class="cards-projetos">
+				<div class="card-projeto">
+					<img src="img/icones/rs_test.png" alt="Projeto 1" />
+					<button class="verMais">Projeto </button>
+				</div>
+				<div class="card-projeto">
+					<img src="img/icones/rs_test.png" alt="Projeto 2" />
+					<button class="verMais">Projeto </button>
+				</div>
+					<div class="card-projeto">
+					<img src="img/icones/rs_test.png" alt="Projeto 3" />
+					<button class="verMais">Projeto </button>
+				</div>
+				<div class="card-projeto">
+					<img src="img/icones/rs_test.png" alt="Projeto 4" />
+					<button class="verMais">Projeto </button>
+				</div>
+				<div class="card-projeto">
+					<img src="img/icones/rs_test.png" alt="Projeto 5" />
+					<button class="verMais">Projeto </button>
+				</div>
+			</div>
+		</section>
+		<section class="caixa-conteudo projetos">
+			<h2>Projetos - Front End</h2>
+			<div class="cards-projetos">
+				<div class="card-projeto">
+					<img src="img/icones/rs_test.png" alt="Projeto 1" />
+					<button class="verMais">Projeto </button>
+				</div>
+				<div class="card-projeto">
+					<img src="img/icones/rs_test.png" alt="Projeto 2" />
+					<button class="verMais">Projeto </button>
+				</div>
+				<div class="card-projeto">
+					<img src="img/icones/rs_test.png" alt="Projeto 3" />
+					<button class="verMais">Projeto </button>
+				</div>
+				<div class="card-projeto">
+					<img src="img/icones/rs_test.png" alt="Projeto 4" />
+					<button class="verMais">Projeto </button>
+				</div>
+				<div class="card-projeto">
+					<img src="img/icones/rs_test.png" alt="Projeto 5" />
+					<button class="verMais">Projeto </button>
+				</div>				
+			</div>
+		</section>
+		<section class="caixa-conteudo servicos">
+			<h2>Serviços</h2>
+			<div class="cards-servicos">
+				<div class="card-servico">
+					<p>...</p>
+					<button class="verMais">Ver mais</button>
+				</div>
+			</div>
+		</section>
+		<section class="caixa-conteudo formularios">
+			<div class="entreEmContato">
+				<h2>
+					Entre em Contato Para Assuntos Diversos
+				</h2>
+				<p>
+					Apoio - Consultoria - Evento - Mentoria -  Parceria - Palestra - Treinamento - Workshop
+				<p>
+				<form id="contactForm">
+					<input id="contactInput" type="text" name="name" placeholder="Nome Completo ou Empresa" required>
+					<!--<input type="text" name="company" placeholder="Empresa" required>-->
+					<!--<input type="text" name="contact" placeholder="E-mail ou Telefone" required>-->
+					<!--<input type="text" name="subject" placeholder="Assunto" required>-->
+			
+					<!-- Instrução antes do textarea -->
+					<div>
+						<p class="formularioAtencao">
+							Por favor, inclua na mensagem: 
+							<br><br>  1 - E-mail ou Telefone:
+							<br>2 - Assunto:
+							<br>Estamos melhorando para melhor atendê-lo
+						</p>
+					</div>
+					<textarea id="messageContato" name="message" placeholder="Digite sua mensagem aqui..." required></textarea>
+					<button type="submit" id="buttonFomrEnviar">
+						Enviar
+					</button>
+				</form>          
+				<p id="formMessage">
+					
+				</p>
+			</div>
+		</section>
+		<section class="caixa-conteudo whatsapp">
 
-        <!-- RODAPÉ -->
-        <div class="rodape" id="rodape">
-            <div class="mensagem" id="mensagem">
-                <p>Obrigado por visitar! Veja mais em...</p>
-            </div>
-            <div class="icones" id="icones">
-                <a href="https://github.com/brunogsiq" target="_blank">
-                    <img src="img/iconesRedesSociais/rs_github.png" alt="GitHub">
-                </a>
-                <a href="https://www.linkedin.com/in/brunogsiq" target="_blank">
-                    <img src="img/iconesRedesSociais/rs_linkedin.png" alt="LinkedIn">
-                </a>
-                <a href="mailto:brunogsiq@gmail.com" target="_blank">
-                    <img src="img/iconesRedesSociais/rs-email.webp" alt="E-mail">
-                </a>
-                <a href="https://linktr.ee/brunogsiq" target="_blank">
-                    <img src="img/iconesRedesSociais/rs_linktree.png" alt="Linktree">
-                </a>
-                <a href="https://wa.me/5548991059871" target="_blank">
-                    <img src="img/iconesRedesSociais/rs_whatsapp.png" alt="WhatsApp">
-                </a>
-            </div>
-            <div class="direitos" id="direitos">
-                <p>&copy; 2025 - Todos os direitos reservados.</p>
-            </div>
-        </div>
-    </div>
-
-    <!-- EmailJS SDK -->
-    <script
-        src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js">
-    </script>
-
-    <script>
-        // Inicializa EmailJS com sua Public Key
-        (function () {
-            emailjs.init("mStIjKEyJWrKzpkMY"); // ✅ Sua Public Key
-        })();
-    
-        const form = document.getElementById('contactForm');
-        const formMessage = document.getElementById('formMessage');
-    
-        form.addEventListener('submit', function (e) {
-            e.preventDefault();
-    
-            emailjs.sendForm('service_g87zjpf', 'template_wyk7sje', this)
-                .then(() => {
-                    mostrarMensagem('Mensagem enviada com sucesso!', true);
-                    form.reset();
-                }, (error) => {
-                    mostrarMensagem('Falha ao enviar mensagem. Tente novamente.', false);
-                    console.error('Erro:', error);
-                });
-        });
-    
-        function mostrarMensagem(mensagem, sucesso) {
-            // Limpa o conteúdo anterior
-            formMessage.innerHTML = '';
-    
-            // Cria botão de fechar
-            const closeBtn = document.createElement('span');
-            closeBtn.textContent = '×';
-            closeBtn.style.float = 'right';
-            closeBtn.style.cursor = 'pointer';
-            closeBtn.style.marginLeft = '10px';
-            closeBtn.style.fontWeight = 'bold';
-            closeBtn.onclick = () => {
-                formMessage.style.display = 'none';
-            };
-    
-            // Adiciona a mensagem e botão ao elemento
-            formMessage.textContent = mensagem;
-            formMessage.appendChild(closeBtn);
-    
-            // Estilização condicional
-            formMessage.style.display = 'block';
-            formMessage.style.color = 'white';
-            formMessage.style.background = sucesso ? '#00bbff' : '#e60023';
-            formMessage.style.border = sucesso ? '1px solid #1f015c' : '1px solid #8a0000';
-            formMessage.style.padding = '10px';
-            formMessage.style.borderRadius = '5px';
-    
-            // Esconde após 5 segundos
-            setTimeout(() => {
-                formMessage.style.display = 'none';
-            }, 5000);
-        }
-    </script>
-
+		</section>
+	</main>
+	<footer class="perfil-container">
+		<section class="caixa-conteudo rodape">
+			<div class="footer-content">
+				<div class="mensagem" id="mensagem">
+					<p>Obrigado por nos visitar!</p>
+				</div>
+				<div id="iconesFooter">
+					<a href="https://wa.me/5548991059871" target="_blank">
+						<img src="img/icones/rs_whatsapp.png" alt="WhatsApp">
+					</a>
+					<a href="https://www.linkedin.com/in/brunogsiq" target="_blank">
+						<img src="img/icones/rs_linkedin.png" alt="LinkedIn">
+					</a>
+					<a href="https://github.com/brunogsiq" target="_blank">
+						<img src="img/icones/rs_github.png" alt="GitHub">
+					</a>
+					<a href="https://medium.com/@brunogsiq" target="_blank">
+						<img src="img/icones/rs_medium.webp" alt="Medium">
+					</a>
+					<a href="mailto:brunogsiq@gmail.com" target="_blank">
+						<img src="img/icones/rs_emaill.png" alt="E-mail">
+					</a>
+				</div>
+				<div class="direitos" id="direitos">
+					<p>&copy;Bruno Siqueira - 2025<br> Todos os direitos reservados.</p>
+				</div>
+			</div>
+		</section>
+		<button id="botaoTopo" onclick="voltarAoTopo()" title="Voltar ao topo">
+			<img src="./img/icones/upTop.png" alt="Voltar ao topo">
+		</button>
+    </footer>
+	<script src="./js/script.js"></script>
 </body>
 </html>
