@@ -9,7 +9,7 @@
     --borderRadius-padrao: 10px;
     --borderShadow-padrao: 0 2px 6px rgba(0, 0, 0, 0.15);
     --padding-padrao: 8px 14px;
-    
+
     /*Links*/
     --btn-hover-destaque: #005fcc;
     --link-cor: #58a6ff;
@@ -59,7 +59,7 @@ body {
     background-color: var(--backg-Princ-cor);
 }
 
-    /*Seção - Cabeçalho*/
+/*Seção - Cabeçalho*/
 
 /*OK-REVISADO*/
 .navbar {
@@ -73,6 +73,7 @@ body {
     color: var(--texto-cor-padrao);
     height: 50px;
 }
+
 /*OK-REVISADO*/
 .navbar-left {
     display: flex;
@@ -80,6 +81,7 @@ body {
     gap: 10px;
     flex-shrink: 0;
 }
+
 /*OK-REVISADO*/
 .home img {
     height: 36px;
@@ -89,6 +91,7 @@ body {
     transition: var(--transicao-padrao);
     will-change: transform, filter;
 }
+
 /*OK-REVISADO*/
 .home img:hover {
     transform: var(--transform-hover-padrao);
@@ -103,6 +106,7 @@ body {
     border-radius: var(--borderRadius-padrao);
     height: 30px;
 }
+
 /*OK-REVISADO*/
 .search-box input {
     padding: var(--padding-padrao);
@@ -113,6 +117,7 @@ body {
     height: 100%;
     width: 160px;
 }
+
 /*OK-REVISADO*/
 .search-box button {
     background-color: transparent;
@@ -123,11 +128,13 @@ body {
     cursor: pointer;
     border-radius: var(--borderRadius-padrao);
 }
+
 /*OK-REVISADO*/
 .search-box button img {
     width: 18px;
     height: 18px;
 }
+
 /*OK-REVISADO*/
 .navbar-center {
     display: flex;
@@ -135,12 +142,14 @@ body {
     flex: 1;
     padding-right: 100px;
 }
+
 /*OK-REVISADO*/
 .nav-links {
     list-style: none;
     display: flex;
     gap: 20px;
 }
+
 /*OK-REVISADO*/
 .nav-links li a {
     color: var(--texto-cor-padrao);
@@ -150,6 +159,7 @@ body {
     align-items: center;
     font-size: var(--texto-Tamanho-Nav);
 }
+
 /*OK-REVISADO*/
 body {
     font-family: var(--texto-Style-Padrao);
@@ -160,7 +170,7 @@ body {
     min-width: 320px;
 }
 
-    /*Seção Superior*/
+/*Seção Superior*/
 
 /*OK-REVISADO*/
 .perfil-container {
@@ -168,8 +178,8 @@ body {
     font-family: var(--texto-Style-Padrao);
     max-width: 1220px;
     margin: 0 auto;
-    padding: var(--padding-padrao);
 }
+
 /*OK-REVISADO*/
 .caixa-conteudo {
     margin-bottom: 20px;
@@ -178,6 +188,7 @@ body {
     width: 100%;
 
 }
+
 /*OK-REVISADO*/
 .foto-capa img {
     width: 100%;
@@ -186,6 +197,7 @@ body {
     display: block;
     border-radius: 10px 10px 0 0;
 }
+
 /*OK-REVISADO*/
 .info-perfil-wrapper {
     display: flex;
@@ -198,6 +210,7 @@ body {
     border-radius: 0 0 10px 10px;
     margin-top: -50px;
 }
+
 /*OK-REVISADO*/
 .esquerda-perfil {
     display: flex;
@@ -205,6 +218,7 @@ body {
     margin-left: 0px;
     flex: 1;
 }
+
 /*OK-REVISADO*/
 .foto-perfil {
     position: absolute;
@@ -215,38 +229,45 @@ body {
     border-radius: 50%;
     overflow: hidden;
 }
+
 /*OK-REVISADO*/
 .foto-perfil img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
+
 /*OK-REVISADO*/
 .info-perfil {
     margin-left: 15px;
     padding-top: 20px;
 }
+
 /*OK-REVISADO*/
 .info-perfil h1 {
     font-size: var(--texto-Tamanho-Prin);
     margin-bottom: 5px;
     color: var(--texto-cor-padrao);
 }
+
 /*OK-REVISADO*/
 .info-perfil p {
     font-size: var(--texto-Tamanho-Sub);
     margin: 5px 0;
     color: var(--texto-cor-padrao);
 }
+
 /*OK-REVISADO*/
 .info-perfil a {
     color: var(--texto-cor-padrao);
     text-decoration: none;
 }
+
 /*OK-REVISADO*/
 .conexoes {
     font-weight: bold;
 }
+
 /*OK-REVISADO*/
 .acoes-perfil {
     display: flex;
@@ -254,6 +275,7 @@ body {
     gap: 10px;
     margin-top: 20px;
 }
+
 /*OK-REVISADO*/
 .btn-action {
     background-color: var(--backg-Princ-cor);
@@ -266,11 +288,13 @@ body {
     font-weight: 500;
     transition: var(--transicao-padrao);
 }
+
 /*OK-REVISADO*/
 .btn-action:hover {
     background-color: var(--backg-Sub-cor);
     border: var(--borderSolid-padrao);
 }
+
 /*OK-REVISADO*/
 .linksSociais_Superior {
     display: flex;
@@ -281,10 +305,12 @@ body {
     padding-top: 20px;
     min-width: 40px;
 }
+
 /*OK-REVISADO*/
 .linksSociais_Superior a {
     transition: var(--transicao-padrao);
 }
+
 /*OK-REVISADO*/
 .linksSociais_Superior a img {
     width: 30px;
@@ -293,41 +319,47 @@ body {
     transition: var(--transicao-padrao);
     will-change: transform, filter;
 }
+
 /*OK-REVISADO*/
 .linksSociais_Superior a:hover img {
     transform: var(--transform-hover-padrao);
     filter: brightness(1.2);
 }
 
-    /* Seção - Projetos Sobre Serviços*/
+/* Seção - Projetos Sobre Serviços*/
 
 /*OK-REVISADO*/
 .projetos,
 .sobre,
-.servicos {
+.servicos,
+.contWhats {
     background-color: var(--backg-Sub-cor);
     border-radius: var(--borderRadius-padrao);
 }
+
 /*OK-REVISADO*/
 .projetos h2,
 .sobre h2,
-.servicos h2 {
+.servicos h2,
+.contWhats h2 {
     padding-left: 20px;
     padding-top: 10px;
     font-size: var(--texto-Tamanho-Prin);
     color: var(--texto-cor-padrao);
 }
+
 /*OK-REVISADO*/
 .projetos p,
 .sobre p,
-.servicos p {
+.servicos p,
+.contWhats p {
     font-size: var(--texto-Tamanho-Sub);
     padding-left: 20px;
     margin-top: 10px;
     margin-bottom: 8px;
 }
 
-    /* Botão Ver mais*/
+/* Botão Ver mais*/
 
 /*OK-REVISADO*/
 .verMais {
@@ -339,11 +371,13 @@ body {
     border-radius: var(--borderRadius-padrao);
     cursor: pointer;
 }
+
 /*OK-REVISADO*/
 .verMais:hover {
     background-color: var(--backg-Sub-cor);
     border: var(--borderSolid-padrao);
 }
+
 /*OK-REVISADO*/
 .sobre .verMais {
     margin-left: 10px;
@@ -352,7 +386,7 @@ body {
     margin-top: 20px;
 }
 
-    /* Seção - Sobre*/
+/* Seção - Sobre*/
 
 /*OK-REVISADO*/
 .texto-sobre {
@@ -361,12 +395,13 @@ body {
     overflow: hidden;
     transition: max-height 0.4s ease-out;
 }
+
 /*OK-REVISADO*/
 .texto-sobre.expandido {
     max-height: 2000px;
 }
 
-    /* Seção - Projetos*/
+/* Seção - Projetos*/
 
 /*OK-REVISADO*/
 .cards-projetos {
@@ -375,6 +410,7 @@ body {
     flex-wrap: wrap;
     gap: 20px;
 }
+
 /*OK-REVISADO*/
 .card-projeto {
     flex: 1 1 300px;
@@ -387,6 +423,7 @@ body {
     flex-direction: column;
     align-items: center;
 }
+
 /*OK-REVISADO*/
 .card-projeto img {
     width: 30px;
@@ -395,7 +432,7 @@ body {
     border-radius: var(--borderRadius-padrao);
 }
 
-    /* Seção - Serviços*/
+/* Seção - Serviços*/
 
 /*OK-REVISADO*/
 .cards-servicos {
@@ -404,6 +441,7 @@ body {
     flex-wrap: wrap;
     gap: 20px;
 }
+
 /*OK-REVISADO*/
 .card-servico {
     flex: 1 1 300px;
@@ -414,28 +452,41 @@ body {
     transition: var(--transicao-padrao);
 }
 
-    /* Seção - Formulário */
+/* Seção - Formulário */
 
 /*OK-REVISADO*/
 .entreEmContato {
     background-color: var(--backg-Sub-cor);
     border-radius: var(--borderRadius-padrao);
 }
+
 /*OK-REVISADO*/
 .entreEmContato h2 {
     padding-left: 20px;
     padding-top: 10px;
     font-size: var(--texto-Tamanho-Prin);
     color: var(--texto-cor-padrao);
+    text-align: center;
 }
+
 /*OK-REVISADO*/
-.entreEmContato p,
-#contactForm {
+.entreEmContato p {
     padding-left: 20px;
     padding-top: 10px;
     font-size: var(--texto-Tamanho-Sub);
     color: var(--texto-cor-padrao);
+    text-align: center;
 }
+
+/*OK-REVISADO*/
+#contactForm p {
+    padding-left: 20px;
+    padding-top: 10px;
+    font-size: var(--texto-Tamanho-Sub);
+    color: var(--texto-cor-padrao);
+    text-align: left;
+}
+
 /*OK-REVISADO*/
 #contactForm {
     display: flex;
@@ -443,6 +494,7 @@ body {
     max-width: 400px;
     margin: auto;
 }
+
 /*OK-REVISADO*/
 #contactInput {
     margin: 10px 0;
@@ -452,6 +504,7 @@ body {
     background-color: var(--backg-Princ-cor);
     color: var(--texto-cor-padrao);
 }
+
 /*OK-REVISADO*/
 .formularioAtencao {
     margin: 10px 0;
@@ -459,6 +512,7 @@ body {
     border-radius: var(--borderRadius-padrao);
     text-align: left;
 }
+
 /*OK-REVISADO*/
 #messageContato {
     margin: 10px 0;
@@ -468,6 +522,7 @@ body {
     background-color: var(--backg-Princ-cor);
     color: var(--texto-cor-padrao);
 }
+
 /*OK-REVISADO*/
 #buttonFomrEnviar {
     background: var(--backg-Princ-cor);
@@ -483,13 +538,64 @@ body {
     box-shadow: var(--borderShadow-padrao);
     transition: var(--transicao-padrao);
 }
+
 /*OK-REVISADO*/
 #buttonFomrEnviar:hover {
     background: var(--backg-Sub-cor);
     box-shadow: var(--borderShadow-padrao);
 }
 
-    /* Seção - Rodapé */
+/* Seção - Whatsapp */
+
+/*OK-REVISADO*/
+.contWhats h2 {
+    padding-left: 20px;
+    padding-top: 10px;
+    font-size: var(--texto-Tamanho-Prin);
+    color: var(--texto-cor-padrao);
+    text-align: center;
+}
+/*OK-REVISADO*/
+.contWhats p {
+    padding-left: 20px;
+    padding-top: 10px;
+    font-size: var(--texto-Tamanho-Sub);
+    color: var(--texto-cor-padrao);
+    text-align: center;
+}
+
+/*OK-REVISADO*/
+.card-servico.whatsapp {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+/*OK-REVISADO*/
+#btn-whatsapp {
+    background: var(--backg-Princ-cor);
+    color: var(--texto-cor-padrao);
+    border: var(--borderSolid-padrao);
+    padding: var(--padding-padrao);
+    border-radius: var(--borderRadius-padrao);
+    text-decoration: none;
+    font-size: var(--texto-Tamanho-Sub);
+    display: inline-block;
+    cursor: pointer;
+    box-shadow: var(--borderShadow-padrao);
+    transition: var(--transicao-padrao);
+}
+
+/*OK-REVISADO*/
+#btn-whatsapp:hover {
+    background-color: var(--backg-Sub-cor);
+    box-shadow: var(--borderShadow-padrao);
+    border: var(--borderSolid-padrao);
+}
+
+/* Seção - Rodapé */
 
 /*OK-REVISADO*/
 footer {
@@ -497,6 +603,7 @@ footer {
     justify-content: space-between;
     flex-wrap: wrap;
 }
+
 /*OK-REVISADO*/
 .footer-content {
     align-items: center;
@@ -509,22 +616,26 @@ footer {
     align-items: center;
     border-radius: var(--borderRadius-padrao);
 }
+
 /*OK-REVISADO*/
 #mensagem p {
     font-size: var(--texto-Tamanho-Sub);
     color: var(--texto-cor-padrao);
 }
+
 /*OK-REVISADO*/
 #iconesFooter {
     display: flex;
     justify-content: flex-end;
     gap: 10px;
 }
+
 /*OK-REVISADO*/
 #iconesFooter a {
     padding-top: 5px;
     align-items: center;
 }
+
 /*OK-REVISADO*/
 #iconesFooter a img {
     width: 30px;
@@ -533,18 +644,20 @@ footer {
     transition: var(--transicao-padrao);
     will-change: transform, filter;
 }
+
 /*OK-REVISADO*/
 #iconesFooter a:hover img {
     transform: var(--transform-hover-padrao);
     filter: brightness(1.2);
 }
+
 /*OK-REVISADO*/
 #direitos p {
     font-size: 0.75rem;
     color: var(--texto-cor-padrao);
 }
 
-    /* Seção - Botões TOP e BASE*/
+/* Seção - Botões TOP e BASE*/
 
 /*OK-REVISADO*/
 #botaoBase {
@@ -560,16 +673,19 @@ footer {
     transform: rotate(180deg);
     transition: var(--transicao-padrao);
 }
+
 /*OK-REVISADO*/
 #botaoBase img {
     width: 40px;
     height: 40px;
 }
+
 /*OK-REVISADO*/
 #botaoBase:hover img {
     transform: var(--transform-hover-padrao);
     filter: none;
 }
+
 /*OK-REVISADO*/
 #botaoTopo {
     position: fixed;
@@ -583,11 +699,13 @@ footer {
     display: none;
     transition: var(--transicao-padrao);
 }
+
 /*OK-REVISADO*/
 #botaoTopo img {
     width: 40px;
     height: 40px;
 }
+
 /*OK-REVISADO*/
 #botaoTopo:hover {
     transform: var(--transform-hover-padrao);
