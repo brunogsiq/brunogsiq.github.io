@@ -287,6 +287,7 @@ body {
     font-size: var(--texto-Tamanho-Sub);
     font-weight: 500;
     transition: var(--transicao-padrao);
+    text-decoration: none;
 }
 
 /*OK-REVISADO*/
@@ -402,9 +403,11 @@ body {
 }
 
 /* Seção - Projetos*/
+/* Seção - Serviços*/
 
 /*OK-REVISADO*/
-.cards-projetos {
+.cards-projetos,
+.cards-servicos {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -412,7 +415,8 @@ body {
 }
 
 /*OK-REVISADO*/
-.card-projeto {
+.card-projeto,
+.card-servico {
     flex: 1 1 300px;
     max-width: 200px;
     border-radius: var(--borderRadius-padrao);
@@ -425,31 +429,12 @@ body {
 }
 
 /*OK-REVISADO*/
-.card-projeto img {
+.card-projeto img, 
+.card-servico img {
     width: 30px;
     height: 30px;
     object-fit: cover;
     border-radius: var(--borderRadius-padrao);
-}
-
-/* Seção - Serviços*/
-
-/*OK-REVISADO*/
-.cards-servicos {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 20px;
-}
-
-/*OK-REVISADO*/
-.card-servico {
-    flex: 1 1 300px;
-    min-width: 300px;
-    border-radius: var(--borderRadius-padrao);
-    padding: 10px;
-    text-align: left;
-    transition: var(--transicao-padrao);
 }
 
 /* Seção - Formulário */
@@ -583,16 +568,28 @@ body {
     text-decoration: none;
     font-size: var(--texto-Tamanho-Sub);
     display: inline-block;
+    margin-top: 20px;
+    cursor: pointer;
+    box-shadow: var(--borderShadow-padrao);
+    transition: var(--transicao-padrao);
+}
+
+#btn-whatsapp a {
+    background: var(--backg-Princ-cor);
+    color: var(--texto-cor-padrao);
+    text-decoration: none;
+    font-size: var(--texto-Tamanho-Sub);
+    display: inline-block;
     cursor: pointer;
     box-shadow: var(--borderShadow-padrao);
     transition: var(--transicao-padrao);
 }
 
 /*OK-REVISADO*/
-#btn-whatsapp:hover {
+#btn-whatsapp:hover,
+#btn-whatsapp a:hover {
     background-color: var(--backg-Sub-cor);
     box-shadow: var(--borderShadow-padrao);
-    border: var(--borderSolid-padrao);
 }
 
 /* Seção - Rodapé */

@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Mapa Visual de HTML — Seções vs Divs</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root{
+      --bg: #0f172a;         /* fundo da página */
+      --txt: #e5e7eb;
+      --muted:#cbd5e1;
+
+      --header:#1e293b;      /* céu/topo */
+      --main:#0b1222;
+      --section-a:#073b4c;   /* andares alternados */
+      --section-b:#264653;
+      --div-1:#2a9d8f;       /* salas (div nível 1) */
+      --div-2:#8ab17d;       /* salas (div nível 2) */
+      --aside:#6d597a;       /* área lateral/aside */
+      --footer:#3a3a3a;      /* rua/rodapé */
+      --card:#0b0f1a;        /* cards de exemplo */
+      --accent:#fde047;
+    }
+
+    *{ box-sizing: border-box; }
+
+    body{
+      margin:0;
+      font: 16px/1.5 system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial, sans-serif;
+      color: var(--txt);
+      background: radial-gradient(1200px 600px at 10% -10%, #1f2937 0, #0b1222 60%, var(--bg) 100%);
+    }
+
+    .container{
+      max-width: 1100px;
+      margin: 32px auto 56px;
+      padding: 0 16px;
+    }
+
+    /* BLOCO base para todos os “andares/salas” */
+    .bloco{
+      position: relative;
+      border: 2px dashed rgba(255,255,255,.15);
+      border-radius: 14px;
+      padding: 16px;
+      margin: 14px 0;
+      box-shadow: 0 0 0 1px rgba(255,255,255,.05) inset;
+    }
+    /* etiqueta automática: mostra o nome da tag (via data-tag) */
+    .bloco::before{
+      content: attr(data-tag);
+      position: absolute; top: -12px; left: 12px;
+      background: rgba(0,0,0,.55);
+      border:1px solid rgba(255,255,255,.2);
+      padding: 2px 8px;
+      border-radius: 999px;
+      font-size: 12px;
+      letter-spacing: .3px;
+    }
+
+    header.bloco{ background: linear-gradient(180deg, #1e293b, var(--header)); }
+    main.bloco   { background: linear-gradient(180deg, #0b1222, var(--main)); }
+
+    .section{ background: linear-gradient(180deg, var(--section-a), #0b2233 60%, rgba(0,0,0,.2)); }
+    .section.alt{ background: linear-gradient(180deg, var(--section-b), #0c2633 60%, rgba(0,0,0,.2)); }
+
+    .div-n1{ background: linear-gradient(180deg, color-mix(in oklab, var(--div-1), black 20%), var(--div-1)); }
+    .div-n2{ background: linear-gradient(180deg, color-mix(in oklab, var(--div-2), black 20%), var(--div-2)); }
+
+    aside.bloco{ background: linear-gradient(180deg, color-mix(in oklab, var(--aside), black 15%), var(--aside)); }
+
+    footer.bloco{ background: linear-gradient(180deg, #2e2e2e, var(--footer)); }
+
+    h1,h2,h3{ margin: 0 0 8px; }
+    p{ margin: 0 0 10px; color: var(--muted); }
+
+    .grid{
+      display: grid;
+      gap: 12px;
+    }
+    .grid-2{ grid-template-columns: repeat(2, minmax(0,1fr)); }
+    .grid-3{ grid-template-columns: repeat(3, minmax(0,1fr)); }
+    @media (max-width: 720px){
+      .grid-2, .grid-3{ grid-template-columns: 1fr; }
+    }
+
+    .card{
+      background: var(--card);
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 12px;
+      padding: 12px;
+    }
+    .card h4{ margin: 0 0 6px; font-size: 15px; }
+    .card .chip{
+      display: inline-block;
+      background: rgba(253,224,71,.12);
+      border: 1px solid rgba(253,224,71,.35);
+      color: var(--accent);
+      padding: 2px 8px;
+      border-radius: 999px;
+      font-size: 12px;
+    }
+
+    .legenda{
+      margin: 6px 0 10px;
+      font-size: 14px;
+      color: #e2e8f0;
+    }
+    .legenda strong{ color: var(--accent); }
+
+    .linha{ height: 2px; background: rgba(255,255,255,.08); margin: 12px 0; }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+
+    <!-- CÉU / TOPO DA PÁGINA -->
+    <header class="bloco" data-tag="<header>">
+      <h1>Topo do site (branding, navegação, busca)</h1>
+      <p class="legenda">
+        <strong>Header</strong> é a “faixa” de topo. Costuma conter logo, menu de navegação e elementos persistentes.
+      </p>
+      <div class="linha"></div>
+      <div class="grid grid-3">
+        <div class="card">
+          <h4>Logo</h4>
+          <p>Identidade visual / link para a Home.</p>
+        </div>
+        <div class="card">
+          <h4>Navegação</h4>
+          <p>Links principais (ex.: Início, Projetos, Contato).</p>
+        </div>
+        <div class="card">
+          <h4>Busca</h4>
+          <p>Campo de pesquisa do site.</p>
+        </div>
+      </div>
+    </header>
+
+    <!-- PRÉDIO / CONTEÚDO PRINCIPAL -->
+    <main class="bloco" data-tag="<main>">
+
+      <!-- ANDAR 1 -->
+      <section class="bloco section" data-tag="<section>">
+        <h2>Seção 1 — “um andar” do prédio</h2>
+        <p class="legenda">
+          <strong>Section</strong> agrupa um tema completo (ex.: “Sobre”, “Projetos”, “Serviços”). Dentro dela usamos
+          <strong>&lt;div&gt;</strong> como “salas” para organizar a estrutura visual.
+        </p>
+
+        <!-- SALAS (DIV NÍVEL 1) -->
+        <div class="grid grid-2">
+          <div class="bloco div-n1" data-tag="<div>">
+            <h3>Sala A (Divisão 1)</h3>
+            <p>Uma <strong>div</strong> é um contêiner genérico: pode conter textos, imagens, botões, etc.</p>
+            <div class="grid grid-3" style="margin-top:10px">
+              <div class="card"><h4>Texto</h4><span class="chip">&lt;p&gt;</span></div>
+              <div class="card"><h4>Imagem</h4><span class="chip">&lt;img&gt;</span></div>
+              <div class="card"><h4>Botão</h4><span class="chip">&lt;button&gt;</span></div>
+            </div>
+
+            <!-- SUB-SALA (DIV NÍVEL 2) -->
+            <div class="bloco div-n2" data-tag="<div>">
+              <h3>Subdivisão 1.2</h3>
+              <p>Div dentro de div: útil para colunas, cards, agrupamentos menores.</p>
+            </div>
+          </div>
+
+          <div class="bloco div-n1" data-tag="<div>">
+            <h3>Sala B (Divisão 1)</h3>
+            <p>Exemplo com lista e um mini-card de destaque.</p>
+
+            <div class="grid grid-2" style="margin-top:10px">
+              <div class="card">
+                <h4>Lista</h4>
+                <ul style="margin:6px 0 0 18px">
+                  <li>Item 1</li>
+                  <li>Item 2</li>
+                  <li>Item 3</li>
+                </ul>
+              </div>
+              <div class="card">
+                <h4>Destaque</h4>
+                <p>Chamada rápida com CTA.</p>
+                <button style="margin-top:6px">Saiba mais</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ANDAR 2 (alternando cor da seção) -->
+      <section class="bloco section alt" data-tag="<section>">
+        <h2>Seção 2 — outro tema do site</h2>
+        <p class="legenda">
+          Mantenha cada <strong>section</strong> com um objetivo claro. Ex.: “Portfólio”, “Depoimentos”, “Contato”.
+        </p>
+
+        <div class="grid grid-3">
+          <div class="bloco div-n1" data-tag="<div>">
+            <h3>Cards (Projetos)</h3>
+            <div class="grid grid-3" style="margin-top:10px">
+              <div class="card"><h4>Projeto 1</h4><p>Descrição curta.</p></div>
+              <div class="card"><h4>Projeto 2</h4><p>Descrição curta.</p></div>
+              <div class="card"><h4>Projeto 3</h4><p>Descrição curta.</p></div>
+            </div>
+          </div>
+
+          <div class="bloco div-n1" data-tag="<div>">
+            <h3>Formulário (Contato)</h3>
+            <form>
+              <label>Nome<br><input type="text" placeholder="Seu nome" /></label><br><br>
+              <label>Mensagem<br><textarea rows="3" placeholder="Fale comigo"></textarea></label><br><br>
+              <button>Enviar</button>
+            </form>
+          </div>
+
+          <aside class="bloco" data-tag="<aside>">
+            <h3>Lateral / Complemento</h3>
+            <p>Notas, links rápidos, banners ou informações auxiliares.</p>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <!-- RUA / RODAPÉ -->
+    <footer class="bloco" data-tag="<footer>">
+      <h2>Rodapé — “a rua”</h2>
+      <p class="legenda">
+        O <strong>footer</strong> encerra a página. Costuma ter créditos, links legais, redes sociais e scripts.
+      </p>
+      <div class="grid grid-3" style="margin-top:10px">
+        <div class="card"><h4>Créditos</h4><p>&copy; 2025 — Seu Nome</p></div>
+        <div class="card"><h4>Links úteis</h4><p>Política • Termos • Contato</p></div>
+        <div class="card"><h4>Redes</h4><p>LinkedIn • GitHub • Medium</p></div>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>

@@ -18,7 +18,7 @@ function toggleTexto() {
 
 // Mostrar/esconder botão de "Voltar à base"
 const botaoBase = document.getElementById("botaoBase");
-const secaoFooter = document.querySelector("footer"); // ou por id se for <footer id="footer">
+const secaoFooter = document.querySelector("footer"); 
 
 window.addEventListener("scroll", () => {
     const posicaoRodape = secaoFooter.getBoundingClientRect().top;
