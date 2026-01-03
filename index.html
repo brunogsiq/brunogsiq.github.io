@@ -14,7 +14,7 @@
 	<link rel="stylesheet" href="./css/02_head.css" />
 	<link rel="stylesheet" href="./css/03_body.css" />
 	<link rel="stylesheet" href="./css/04_forms.css" />
-	<link rel="stylesheet" href="./css/05_formWhats.css" />
+	<link rel="stylesheet" href="./css/05_formRedesExterna.css" />
 	<link rel="stylesheet" href="./css/06_footer.css" />
 	<link rel="stylesheet" href="./css/button.css" />
 	<!-- Google tag (gtag.js) -->
@@ -25,7 +25,7 @@
 </head>
 
 <body>
-	<!-- Cabeçalho (Navbar estilo LinkedIn) -->
+	<!-- Cabeçalho -->
 	<header class="navbar">
 		<div class="navbar-left">
 			<!-- Botão logo que leva para a Home -->
@@ -40,27 +40,28 @@
 				</button>
 			</div>
 		</div>
-
+		<!-- Menu de navegação central -->
 		<nav class="navbar-center">
 			<ul class="nav-links">
-				<li>
-					<a href="index.html" title="Voltar à página inicial">🏠 Início</a>
+				<li class="nav-item">
+					<a href="index.html" class="nav-link" title="Voltar à página inicial">🏠 Início</a>
 				</li>
-				<li>
-					<a href="recomendacoes.html" title="Ver recomendações recebidas">👥 Recomendações</a>
+				<li class="nav-item">
+					<a href="./pages/_principal/recomendacoes.html" class="nav-link" title="Ver recomendações recebidas">👥 Recomendações</a>
 				</li>
-				<li>
-					<a href="curriculo.html" title="Visualizar currículo completo">💼 Currículo</a>
+				<li class="nav-item">
+					<a href="./pages/_principal/curriculo.html" class="nav-link" title="Visualizar currículo completo">💼 Currículo</a>
 				</li>
-				<li>
-					<a href="pages/_principal/saibaMais.html" title="Acessar blog e artigos">💬 Blog</a>
+				<li class="nav-item">
+					<a href="pages/_principal/blog.html" class="nav-link" title="Acessar blog e artigos">💬 Blog</a>
 				</li>
-				<li>
-					<a href="testeMe.html" title="Acessar seção de testes interativos">🔔 Test.Me</a>
+				<li class="nav-item">
+					<a href="./pages/_principal/testeMe.html" class="nav-link" title="Acessar seção de testes interativos">🔔 Test.Me</a>
 				</li>
 			</ul>
 		</nav>
 	</header>
+	<!-- Botão para voltar ao topo da página -->
 	<button id="botaoBase" onclick="voltarABase()" title="Voltar ao topo da página"
 		aria-label="Botão para voltar ao topo">
 		<img src="./img/icones/upTop.png" alt="Ícone de seta para cima - Voltar para o topo da página" />
@@ -72,7 +73,6 @@
 				<img src="img/capa/capa.png" alt="Capa do portfólio profissional - QA Software Analyst" />
 			</div>
 		</section>
-
 		<!-- Área que junta a foto pessoal e as informações -->
 		<section class="caixa-conteudo">
 			<div class="info-perfil-wrapper">
@@ -100,10 +100,10 @@
 						</p>
 					</div>
 					<div class="acoes-perfil">
-						<a href="./pages/_principal/saibaMais.html" class="btn-action">Saiba mais</a>
-						<a href="skills.html" class="btn-action">Skills</a>
-						<a href="projetos.html" class="btn-action">Projetos</a>
-						<a href="contatos.html" class="btn-action">Contatos</a>
+						<a href="./pages/_principal/blog.html" class="btn-action action-item">Blog</a>
+						<a href="skills.html" class="btn-action action-item">Skills</a>
+						<a href="projetos.html" class="btn-action action-item">Projetos</a>
+						<a href="contatos.html" class="btn-action action-item">Contatos</a>
 					</div>
 				</div>
 				<div class="linksSociais_Superior">
@@ -129,6 +129,7 @@
 				</div>
 			</div>
 		</section>
+		<!-- Seção Sobre -->
 		<section class="caixa-conteudo sobre">
 			<h2>Sobre</h2>
 			<div id="sobreTexto" class="texto-sobre recolhido">
@@ -218,91 +219,96 @@
 					🍀 Prazer vê-lo aqui e muito obrigado!
 				</p>
 			</div>
-			<button class="verMais verExpandido" onclick="toggleTexto()">Ver mais</button>
+			<button class="verMais verExpandido more-btn" onclick="toggleTexto()">Ver mais</button>
 		</section>
+		<!-- Seção de Projetos -->
 		<section class="caixa-conteudo projetos">
 			<h2>Projetos - Testes Automatizados</h2>
 			<div class="cards-projetos">
 				<div class="card-projeto">
 					<img src="img/icones/rs_test.png"
 						alt="Projeto de Automação - Testes Automatizados com Cypress e BDD" />
-					<button class="verMais">Projeto </button>
+					<button class="verMais more-btn">Projeto </button>
 				</div>
 				<div class="card-projeto">
 					<img src="img/icones/rs_test.png"
 						alt="Projeto de Automação - Testes com Robot Framework e Gherkin" />
-					<button class="verMais">Projeto </button>
+					<button class="verMais more-btn">Projeto </button>
 				</div>
 				<div class="card-projeto">
 					<img src="img/icones/rs_test.png" alt="Projeto de Automação - Testes Web com PlayWright" />
-					<button class="verMais">Projeto </button>
+					<button class="verMais more-btn">Projeto </button>
 				</div>
 				<div class="card-projeto">
 					<img src="img/icones/rs_test.png" alt="Projeto de QA - Testes de Integração e Sistema com CI/CD" />
-					<button class="verMais">Projeto </button>
+					<button class="verMais more-btn">Projeto </button>
 				</div>
 				<div class="card-projeto">
 					<img src="img/icones/rs_test.png"
 						alt="Projeto de QA - Testes de Aceitação e Regressão Automatizados" />
-					<button class="verMais">Projeto </button>
+					<button class="verMais more-btn">Projeto </button>
 				</div>
 			</div>
 		</section>
+		<!-- Seção de Projetos Front End -->
 		<section class="caixa-conteudo projetos">
 			<h2>Projetos - Front End</h2>
 			<div class="cards-projetos">
 				<div class="card-projeto">
 					<img src="img/icones/rs_test.png"
 						alt="Projeto Front-End - Desenvolvimento e Testes de Interface de Usuário" />
-					<button class="verMais">Projeto </button>
+					<button class="verMais more-btn">Projeto </button>
 				</div>
 				<div class="card-projeto">
 					<img src="img/icones/rs_test.png"
 						alt="Projeto Front-End - HTML CSS JavaScript com Design Responsivo" />
-					<button class="verMais">Projeto </button>
+					<button class="verMais more-btn">Projeto </button>
 				</div>
 				<div class="card-projeto">
 					<img src="img/icones/rs_test.png" alt="Projeto Front-End - Componentes React e Vue.js com Testes" />
-					<button class="verMais">Projeto </button>
+					<button class="verMais more-btn">Projeto </button>
 				</div>
 				<div class="card-projeto">
 					<img src="img/icones/rs_test.png"
 						alt="Projeto Front-End - Design Responsivo e Acessibilidade Web" />
-					<button class="verMais">Projeto </button>
+					<button class="verMais more-btn">Projeto </button>
 				</div>
 				<div class="card-projeto">
 					<img src="img/icones/rs_test.png"
 						alt="Projeto Front-End - Otimização Performance e Testes de Velocidade" />
-					<button class="verMais">Projeto </button>
+					<button class="verMais more-btn">Projeto </button>
 				</div>
 			</div>
 		</section>
-		<section class="caixa-conteudo servicos">
+		<!-- Seção de Serviços -->
+		<section class="caixa-conteudo projetos">
 			<h2>Serviços</h2>
-			<div class="cards-servicos">
-				<div class="card-servico">
+			<div class="cards-projetos">
+				<div class="card-projeto">
 					<img src="img/icones/rs_test.png" alt="Serviço - Consultoria em QA e Estratégia de Testes" />
-					<button class="verMais">Ver mais</button>
+					<button class="verMais more-btn">Ver mais</button>
 				</div>
-				<div class="card-servico">
+				<div class="card-projeto">
 					<img src="img/icones/rs_test.png" alt="Serviço - Mentoria em Quality Assurance e Carreira" />
-					<button class="verMais">Ver mais</button>
+					<button class="verMais more-btn">Ver mais</button>
 				</div>
-				<div class="card-servico">
+				<div class="card-projeto">
 					<img src="img/icones/rs_test.png" alt="Serviço - Automação de Testes e CI/CD Pipeline" />
-					<button class="verMais">Ver mais</button>
+					<button class="verMais more-btn">Ver mais</button>
 				</div>
-				<div class="card-servico">
+				<div class="card-projeto">
 					<img src="img/icones/rs_test.png" alt="Serviço - Treinamento em Frameworks de Automação" />
-					<button class="verMais">Ver mais</button>
+					<button class="verMais more-btn">Ver mais</button>
 				</div>
-				<div class="card-servico">
+				<div class="card-projeto">
 					<img src="img/icones/rs_test.png" alt="Serviço - Avaliação e Desenvolvimento de Profissionais QA" />
-					<button class="verMais">Ver mais</button>
+					<button class="verMais more-btn">Ver mais</button>
 				</div>
 			</div>
 		</section>
+		<!-- Seção de Contato -->
 		<div class="contact-wrapper">
+			<!-- Seção de Contato Diversos -->
 			<section class="caixa-conteudo formularios">
 				<article class="entreEmContato">
 					<h2>Entre em Contato Para Assuntos Diversos</h2>
@@ -322,37 +328,39 @@
 					<p><em>Vamos criar algo extraordinário juntos?</em></p>
 				</article>
 			</section>
-			<section class="caixa-conteudo whatsapp">
+			<!-- Contato via WhatsApp -->
+			<section class="caixa-conteudo redeExterna whatsapp">
 				<article class="contWhats">
 					<h2>Entre em contato pelo WhatsApp</h2>
 					<p>Resposta rápida e direta para suas dúvidas e projetos</p>
-					<div class="card-servico whatsapp">
+					<div class="card-projeto whatsapp">
 						<a href="https://wa.me/5548991059871" target="_blank" rel="noopener noreferrer"
-							id="btn-whatsapp" title="Abrir WhatsApp">
+							id="btn-whatsapp" class="contact-btn" title="Abrir WhatsApp">
 							Chamar no WhatsApp
 						</a>
 					</div>
 				</article>
 			</section>
-			<section class="caixa-conteudo googleAgenda">
+			<!-- Agendar horário via Google Agenda -->
+			<section class="caixa-conteudo redeExterna googleAgenda">
 				<article class="contGoogleAgenda">
 					<h2>Marque um horário para conversar</h2>
 					<p>Escolha o horário de sua preferência</p>
-					<div class="card-servico googleAgenda">
-						<a href="https://calendar.app.google/diWTpZ6U93gk7xMv9" target="_blank" rel="noopener noreferrer"
-							id="btn-googleAgenda" title="Abrir Google Agenda">
+					<div class="card-projeto googleAgenda">
+						<a href="https://calendar.app.google/diWTpZ6U93gk7xMv9" target="_blank"
+							rel="noopener noreferrer" id="btn-googleAgenda" class="contact-btn" title="Abrir Google Agenda">
 							Agendar horário
 						</a>
 					</div>
 				</article>
 			</section>
+			<!-- Formulário de Contato -->
 			<section class="caixa-conteudo formularios">
 				<article class="entreEmContato">
 					<h2>Entre em Contato</h2>
 					<p class="microcopy">
 						Fale sobre seu projeto, dúvidas ou interesse em consultoria, mentoria e treinamento.
 					</p>
-
 					<form id="contactForm" aria-label="Formulário de contato" novalidate>
 						<!-- Nome -->
 						<div class="form-group">
@@ -361,14 +369,12 @@
 								minlength="3" required aria-required="true">
 							<span class="form-error" id="errorContactInput"></span>
 						</div>
-
 						<!-- E-mail (opcional) -->
 						<div class="form-group">
 							<label for="emailInput">E-mail</label>
 							<input id="emailInput" type="email" name="email" placeholder="Seu melhor e-mail">
 							<span class="form-error" id="errorEmailInput"></span>
 						</div>
-
 						<!-- Telefone (opcional) -->
 						<div class="form-group">
 							<label for="phonContact">Telefone</label>
@@ -376,53 +382,44 @@
 								maxlength="15">
 							<span class="form-error" id="errorPhonContact"></span>
 						</div>
-
 						<!-- TIPO DE SERVIÇO -->
 						<div class="form-group">
 							<label for="servicoSelect">Qual é seu interesse? *</label>
 							<select id="servicoSelect" name="servico" class="campo-select">
 								<option value="" disabled selected>Qual é seu interesse?</option>
-
 								<optgroup label="Consultoria & Apoio">
 									<option value="consultoria">Consultoria em QA</option>
 									<option value="auditoria">Auditoria de Testes</option>
 								</optgroup>
-
 								<optgroup label="Educação & Mentoria">
 									<option value="mentoria">Mentoria em QA</option>
 									<option value="treinamento">Treinamento em Frameworks</option>
 									<option value="avaliacao-linkedin">Avaliação de LinkedIn</option>
 									<option value="avaliacao-curriculo">Avaliação de Currículo</option>
 								</optgroup>
-
 								<optgroup label="Parceria">
 									<option value="parceria">Parceria/Projeto</option>
 									<option value="workshop">Workshop/Evento</option>
 								</optgroup>
-
 								<optgroup label="Outros">
 									<option value="outros">Outro assunto</option>
 								</optgroup>
 							</select>
 							<span class="form-error" id="errorServicoSelect"></span>
 						</div>
-
 						<!-- COMO PREFERE O RETORNO -->
 						<div class="form-group">
 							<label for="retornoSelect">Como prefere receber o retorno? *</label>
 							<select id="retornoSelect" name="retorno" class="campo-select">
 								<option value="" disabled selected>Como prefere receber o retorno?</option>
-
 								<optgroup label="Digital">
 									<option value="whatsapp">WhatsApp</option>
 									<option value="email">E-mail</option>
 								</optgroup>
-
 								<optgroup label="Telefone">
 									<option value="celular">Telefone celular</option>
 									<option value="horario-comercial">Somente em horário comercial</option>
 								</optgroup>
-
 								<optgroup label="Preferências">
 									<option value="texto">Apenas mensagens de texto</option>
 									<option value="chamada">Pode ser por chamada</option>
@@ -430,7 +427,6 @@
 							</select>
 							<span class="form-error" id="errorRetornoSelect"></span>
 						</div>
-
 						<!-- Mensagem -->
 						<div class="form-group">
 							<label for="messageContato">Mensagem *</label>
@@ -439,14 +435,14 @@
 								aria-required="true"></textarea>
 							<span class="form-error" id="errorMessageContato"></span>
 						</div>
-
-						<button type="submit" id="buttonFomrEnviar">Enviar Solicitação</button>
+						<button type="submit" id="buttonFomrEnviar" class="contact-btn">Enviar Solicitação</button>
 					</form>
 					<p id="formMessage"></p>
 				</article>
 			</section>
 		</div>
 	</main>
+	<!-- Rodapé -->
 	<footer class="perfil-container">
 		<section class="caixa-conteudo rodape">
 			<div class="footer-content">
@@ -475,15 +471,17 @@
 					</a>
 				</nav>
 				<div class="direitos" id="direitos">
-					<p>&copy; Bruno Siqueira - 2025<br>Todos os direitos reservados.</p>
+					<p>&copy; QAtrix Tecnologia - 2025<br>Todos os direitos reservados.</p>
 				</div>
 			</div>
 		</section>
-		<button id="botaoTopo" onclick="voltarAoTopo()" title="Voltar ao topo da página"
+		
+	</footer>
+	<!-- Botão para voltar ao topo da página -->
+	<button id="botaoTopo" onclick="voltarAoTopo()" title="Voltar ao topo da página"
 			aria-label="Botão para voltar ao topo">
 			<img src="./img/icones/upTop.png" alt="Ícone de seta para cima">
 		</button>
-	</footer>
 	<script src="./js/script.js"></script>
 </body>
 

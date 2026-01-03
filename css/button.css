@@ -1,6 +1,25 @@
 @import url('./00_globals.css');
 
-/* Seção - Botões Topo e Base*/
+/* ========================================
+   BOTÕES - ELEMENTOS INTERATIVOS
+   Componentes de ação e navegação da página
+   ======================================== */
+
+/* ==========================================
+   BOTÕES FLUTUANTES - FIXOS NA PÁGINA
+   Botões posicionados fixamente durante scroll
+   ========================================== */
+
+/* Botão Base - Botão Fixo no Topo
+   Posicionado no topo direito da página
+   - position: fixed mantém sempre visível durante scroll
+   - top: 5px cola no topo com pequeno espaçamento
+   - right: 10px alinha à direita
+   - z-index 9999 fica acima de todos os elementos
+   - display: none inicialmente oculto (ativado por JS)
+   - transform: rotate(180deg) inverte ícone 180°
+   - Usado para scroll para base da página
+*/
 #botaoBase {
     position: fixed;
     top: 5px;
@@ -15,15 +34,34 @@
     transition: var(--transicao-padrao);
 }
 
+/* Botão Base - Ícone
+   Imagem dentro do botão
+   - Tamanho quadrado 40x40px
+   - Escalabilidade sem distorção
+*/
 #botaoBase img {
     width: 40px;
     height: 40px;
 }
 
+/* Botão Base - Estado Hover
+   Efeito ao passar o mouse
+   - opacity: 0.85 reduz opacidade para feedback visual
+   - Transição suave definida na classe pai
+*/
 #botaoBase:hover img {
     opacity: 0.85;
 }
 
+/* Botão Topo - Botão Fixo na Base
+   Posicionado na base direita da página
+   - position: fixed mantém sempre visível durante scroll
+   - bottom: 20px posiciona na base com espaçamento
+   - right: 10px alinha à direita
+   - z-index 99 fica abaixo do botaoBase (que tem 9999)
+   - display: none inicialmente oculto (ativado por JS)
+   - Usado para scroll para topo da página
+*/
 #botaoTopo {
     position: fixed;
     bottom: 20px;
@@ -37,16 +75,42 @@
     transition: var(--transicao-padrao);
 }
 
+/* Botão Topo - Ícone
+   Imagem dentro do botão
+   - Tamanho quadrado 40x40px
+   - Escalabilidade sem distorção
+*/
 #botaoTopo img {
     width: 40px;
     height: 40px;
 }
 
+/* Botão Topo - Estado Hover
+   Efeito ao passar o mouse
+   - opacity: 0.85 reduz opacidade para feedback visual
+   - Transição suave definida na classe pai
+*/
 #botaoTopo:hover {
     opacity: 0.85;
 }
 
-/* Botão Ver mais*/
+/* ==========================================
+   BOTÃO VER MAIS
+   Botão para expansão de conteúdo
+   ========================================== */
+
+/* Ver Mais - Botão Padrão
+   Usado em toda página para expandir conteúdo
+   - background-color: cor principal
+   - border: borda padrão conforme variáveis globais
+   - color: cor de texto padrão
+   - cursor: pointer indica ação clicável
+   - transition: transição suave ao hover
+   - margin-top: 10px distancia do conteúdo anterior
+   - padding: espaçamento interno padrão
+   - border-radius: cantos arredondados padrão
+   - Pode ser usado com diferentes contextos
+*/
 .verMais {
     margin-top: 10px;
     padding: var(--padding-padrao);
@@ -58,30 +122,91 @@
     transition: var(--transicao-padrao);
 }
 
+/* Padronização de Tamanho para Botões Ver Mais
+   Garante que todos os botões Ver Mais tenham tamanho consistente
+   - min-width: 120px evita botões muito pequenos
+   - min-height: 44px padrão de acessibilidade
+   - text-align: center centraliza texto
+   - display: inline-flex permite melhor alinhamento
+   - align-items: center centraliza verticalmente
+   - justify-content: center centraliza horizontalmente
+*/
+.more-btn {
+    min-width: 120px;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+/* Ver Mais - Estado Hover
+   Efeito ao passar o mouse
+   - background-color: #1a1a1a darkifica o background
+   - border: mantém a borda padrão
+   - Proporciona feedback visual claro ao usuário
+*/
 .verMais:hover {
     background-color: #1a1a1a;
     border: var(--borderSolid-padrao);
 }
 
+.more-btn:hover {
+    transform: scale(1.05);
+}
+
+/* Ver Mais - Variação Dentro de .sobre
+   Estilos específicos quando dentro da seção sobre
+   - margin-left: 10px afasta da esquerda
+   - margin-bottom: 10px espaço inferior
+   - margin-top: 20px maior espaço superior (20px vs 10px padrão)
+   - Ajustes de posicionamento contextuais
+*/
 .sobre .verMais {
     margin-left: 10px;
     margin-bottom: 10px;
     margin-top: 20px;
 }
 
-/* Google Agenda - Seção de Agendamento */
+/* ==========================================
+   GOOGLE AGENDA - SEÇÃO DE AGENDAMENTO
+   Componentes para integração com Google Calendar
+   ========================================== */
+
+/* Caixa Google Agenda - Container Principal
+   Wrapper externo da seção de agendamento
+   - background-color: cor secundária para destaque visual
+   - border-radius: cantos arredondados padrão
+   - margin-bottom: 20px espaçamento inferior
+   - Agrupa todo o conteúdo da seção
+*/
 .caixa-conteudo.googleAgenda {
     background-color: var(--backg-Sub-cor);
     border-radius: var(--borderRadius-padrao);
     margin-bottom: 20px;
 }
 
+/* Container Google Agenda - Flexbox Wrapper
+   Wrapper interno que organiza conteúdo
+   - display: flex ativa layout flexível
+   - flex-direction: column empilha elementos verticalmente
+   - height: 100% ocupa altura disponível do container pai
+   - Agrupa título, descrição e card
+*/
 .contGoogleAgenda {
     display: flex;
     flex-direction: column;
     height: 100%;
 }
 
+/* Container Google Agenda - Título H2
+   Título principal da seção
+   - font-size: tamanho principal
+   - text-align: center centraliza o texto
+   - color: cor padrão de texto
+   - padding: 10px 20px 0 espaçamento (sem bottom)
+   - Elemento semântico H2
+*/
 .contGoogleAgenda h2 {
     padding: 10px 20px 0;
     font-size: var(--texto-Tamanho-Prin);
@@ -89,6 +214,14 @@
     text-align: center;
 }
 
+/* Container Google Agenda - Descrição Parágrafo
+   Texto descritivo secundário
+   - font-size: tamanho secundário
+   - text-align: center centraliza o texto
+   - color: cor padrão de texto
+   - padding: 10px 20px 0 espaçamento (sem bottom)
+   - Elemento semântico P para descrição
+*/
 .contGoogleAgenda p {
     padding: 10px 20px 0;
     font-size: var(--texto-Tamanho-Sub);
@@ -96,6 +229,17 @@
     text-align: center;
 }
 
+/* Card Serviço Google Agenda - Card Customizado
+   Card específico para Google Agenda
+   - display: flex ativa layout flexível
+   - flex-direction: column empilha elementos verticalmente
+   - align-items: center centraliza horizontalmente
+   - justify-content: flex-end alinha ao final (bottom)
+   - text-align: center centraliza texto
+   - flex-grow: 1 expande para preencher espaço disponível
+   - padding-bottom: 30px afasta do botão inferior
+   - Customização da classe .card-servico padrão
+*/
 .card-servico.googleAgenda {
     display: flex;
     flex-direction: column;
@@ -106,10 +250,30 @@
     padding-bottom: 30px;
 }
 
+/* Card Serviço Google Agenda - Estado Hover
+   Efeito ao passar o mouse
+   - background-color: transparent remove background padrão
+   - !important sobrescreve outros estilos de .card-servico
+   - Remove visual padrão de card ao hover
+*/
 .card-servico.googleAgenda:hover {
     background-color: transparent !important;
 }
 
+/* Botão Google Agenda - Botão de Ação Principal
+   Botão para agendar/ativar Google Calendar
+   - background: cor principal conforme variável global
+   - color: cor de texto padrão com !important
+   - border: borda padrão conforme variável global
+   - padding: espaçamento interno padrão
+   - border-radius: cantos arredondados padrão
+   - text-decoration: none remove sublinhado padrão
+   - font-size: tamanho secundário
+   - display: inline-block para posicionamento correto
+   - margin-top: 20px distancia do card
+   - cursor: pointer indica ação clicável
+   - transition: transição suave ao hover
+*/
 #btn-googleAgenda {
     background: var(--backg-Princ-cor);
     color: var(--texto-cor-padrao) !important;
@@ -124,16 +288,35 @@
     transition: var(--transicao-padrao);
 }
 
+/* Botão Google Agenda - Link Interno
+   Link dentro do botão
+   - color: cor padrão forçada com !important
+   - text-decoration: none remove sublinhado padrão
+   - display: inline-block para posicionamento correto
+   - Elemento filho de #btn-googleAgenda
+*/
 #btn-googleAgenda a {
     color: var(--texto-cor-padrao) !important;
     text-decoration: none;
     display: inline-block;
 }
 
+/* Botão Google Agenda Link - Estado Hover
+   Efeito ao passar o mouse sobre o link
+   - transform: none remove transformação padrão (scale, translate, etc)
+   - !important sobrescreve estilos padrão de links
+   - Remove animação padrão de hover
+*/
 #btn-googleAgenda a:hover {
     transform: none !important;
 }
 
+/* Botão Google Agenda - Estado Hover
+   Efeito ao passar o mouse sobre o botão
+   - opacity: 0.85 reduz opacidade para feedback visual
+   - Transição suave definida na classe pai
+   - Diferente do estado hover do link (que remove transform)
+*/
 #btn-googleAgenda:hover {
     opacity: 0.85;
 }

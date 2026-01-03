@@ -1,5 +1,14 @@
 @import url('./00_globals.css');
 
+/* ========================================
+   HEAD - PERFIL E INFORMAÇÕES
+   ======================================== */
+
+/* Perfil Container - Container Principal
+   - max-width mantém responsividade
+   - Margem auto centraliza conteúdo
+   - Base para toda a seção de perfil
+*/
 .perfil-container {
     color: var(--texto-cor-padrao);
     font-family: var(--texto-Style-Padrao);
@@ -14,6 +23,15 @@
     width: 100%;
 }
 
+/* ==========================================
+   FOTO DE CAPA
+   ========================================== */
+
+/* Foto Capa - Imagem de Capa
+   - Altura fixa de 220px
+   - object-fit cover mantém proporções
+   - Cantos superiores arredondados
+*/
 .foto-capa img {
     width: 100%;
     height: 220px;
@@ -21,6 +39,15 @@
     border-radius: 10px 10px 0 0;
 }
 
+/* ==========================================
+   INFO PERFIL - SEÇÃO PRINCIPAL
+   ========================================== */
+
+/* Info Perfil Wrapper - Container de Informações
+   - Flexbox distribui foto, info e links
+   - margin-top negativo sobrepõe foto de perfil
+   - Bordas laterais e inferior para destaque
+*/
 .info-perfil-wrapper {
     display: flex;
     flex-direction: row;
@@ -43,6 +70,11 @@
     flex: 1;
 }
 
+/* Foto Perfil - Avatar do Usuário
+   - Posicionamento absoluto sobrepõe a capa
+   - Circular com border-radius 50%
+   - top: -90px traz para cima
+*/
 .foto-perfil {
     position: absolute;
     top: -90px;
@@ -59,6 +91,11 @@
     object-fit: cover;
 }
 
+/* Info Perfil - Informações de Texto
+   - Conteúdo: nome, profissão, bio
+   - margin-left cria espaço após foto
+   - padding-top alinha com foto
+*/
 .info-perfil {
     margin-left: 15px;
     padding-top: 20px;
@@ -70,12 +107,20 @@
     color: var(--texto-cor-padrao);
 }
 
+/* Info Perfil Parágrafo - Textos de Informação
+   - Profissão, bio, descrição
+   - Espaçamento consistente
+*/
 .info-perfil p {
     font-size: var(--texto-Tamanho-Sub);
     margin: 5px 0;
     color: var(--texto-cor-padrao);
 }
 
+/* Info Perfil Link - Links dentro do Perfil
+   - Sem sublinhado padrão
+   - Transição suave ao hover
+*/
 .info-perfil a {
     color: var(--texto-cor-padrao);
     text-decoration: none;
@@ -86,10 +131,23 @@
     color: #aaa;
 }
 
+/* ==========================================
+   CONEXÕES E AÇÕES
+   ========================================== */
+
+/* Conexões - Classe para Conexões/Seguidores
+   - Destaque com font-weight bold
+   - Usado dentro de .info-perfil
+*/
 .conexoes {
     font-weight: bold;
 }
 
+/* Ações Perfil - Container de Botões de Ação
+   - Flexbox com wrap para responsividade
+   - gap 10px entre botões
+   - margin-top distancia das informações
+*/
 .acoes-perfil {
     display: flex;
     flex-wrap: wrap;
@@ -97,6 +155,12 @@
     margin-top: 20px;
 }
 
+/* Botão Action - Botão de Ação
+   - Background principal com border
+   - Padding padrão e arredondado
+   - Cursor pointer indica ação
+   - Transição ao hover
+*/
 .btn-action {
     background-color: var(--backg-Princ-cor);
     border: var(--borderSolid-padrao);
@@ -110,11 +174,43 @@
     text-decoration: none;
 }
 
+/* Padronização de Tamanho para Botões de Ação
+   Garante que todos os botões tenham tamanho consistente
+   - min-width: 100px evita botões muito pequenos
+   - min-height: 44px padrão de acessibilidade
+   - text-align: center centraliza texto
+   - display: inline-flex permite melhor alinhamento
+   - align-items: center centraliza verticalmente
+   - justify-content: center centraliza horizontalmente
+*/
+.action-item {
+    min-width: 100px;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
 .btn-action:hover {
     background-color: var(--backg-Sub-cor);
     border: var(--borderSolid-padrao);
 }
 
+.action-item:hover {
+    transform: scale(1.05);
+}
+
+/* ==========================================
+   LINKS SOCIAIS SUPERIORES
+   ========================================== */
+
+/* Links Sociais Superior - Container de Ícones
+   - Flexbox em coluna para ícones verticais
+   - min-width 40px mantém espaço
+   - gap 5px entre ícones
+   - Posicionado no lado direito do wrapper
+*/
 .linksSociais_Superior {
     display: flex;
     flex-direction: column;
@@ -129,6 +225,11 @@
     transition: opacity 0.3s ease-out;
 }
 
+/* Links Sociais Superior Ícone - Imagens de Redes Sociais
+   - Tamanho 30x30px
+   - opacity 0.7 visual suave
+   - Transição ao hover
+*/
 .linksSociais_Superior a img {
     width: 30px;
     height: 30px;
@@ -136,6 +237,10 @@
     transition: opacity 0.3s ease-out;
 }
 
+/* Links Sociais Superior Ícone - Estado Hover
+   - Aumenta opacidade para destacar
+   - Feedback visual ao interagir
+*/
 .linksSociais_Superior a:hover img {
     opacity: 1;
 }

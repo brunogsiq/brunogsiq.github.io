@@ -1,5 +1,22 @@
 @import url('./00_globals.css');
 
+/* ========================================
+   FORMULÁRIOS - COMPONENTES DE INPUT
+   Estilos para formulários, inputs e validação
+   ======================================== */
+
+/* ==========================================
+   SEÇÃO "ENTRE EM CONTATO"
+   Box com call-to-action e benefícios
+   ========================================== */
+
+/* Entre Em Contato - Container Principal
+   - background-color: --backg-Sub-cor fundo secundário
+   - padding: 20px espaçamento interno
+   - display: flex + flex-direction: column layout vertical
+   - border-left/right/bottom bordas azuis
+   - flex: 1 ocupa espaço disponível
+*/
 .entreEmContato {
     background-color: var(--backg-Sub-cor);
     border-radius: var(--borderRadius-padrao);
@@ -15,6 +32,11 @@
     border-bottom: 1px solid #0066cc;
 }
 
+/* Entre Em Contato - Título
+   - font-size: --texto-Tamanho-Prin tamanho principal
+   - min-height: 70px altura mínima para alinhamento
+   - display: flex + align-items/justify-content centralização
+*/
 .entreEmContato h2 {
     padding: 0;
     font-size: var(--texto-Tamanho-Prin);
@@ -28,6 +50,10 @@
     justify-content: center;
 }
 
+/* Entre Em Contato - Parágrafo
+   - font-size: --texto-Tamanho-Sub tamanho menor
+   - text-align: center alinhado ao centro
+*/
 .entreEmContato p {
     padding: 0;
     font-size: var(--texto-Tamanho-Sub);
@@ -37,6 +63,10 @@
     line-height: var(--line-height-padrao);
 }
 
+/* Entre Em Contato - Lista de Benefícios
+   - margin: 10px 0 espaçamento vertical
+   - padding: 0 20px espaçamento horizontal para recuo
+*/
 .entreEmContato ul {
     margin: 10px 0;
     padding: 0 20px;
@@ -44,12 +74,29 @@
     line-height: var(--line-height-padrao);
 }
 
+/* ==========================================
+   GRUPO DE FORMULÁRIO
+   Estrutura base para campos de entrada
+   ========================================== */
+
+/* Form Group - Container de Campo
+   - display: flex ativa layout flexbox
+   - flex-direction: column empilha elementos verticalmente
+   - gap: 5px espaçamento pequeno entre elementos
+*/
 .form-group {
     display: flex;
     flex-direction: column;
     gap: 5px;
 }
 
+/* Form Error - Mensagem de Validação
+   - font-size: 0.85rem texto menor
+   - color: #ff6b6b vermelho de erro
+   - opacity: 0 inicialmente invisível
+   - height: 0 não ocupa espaço
+   - transition: anima opacidade e altura
+*/
 .form-error {
     font-size: 0.85rem;
     color: #ff6b6b;
@@ -61,12 +108,21 @@
     display: block;
 }
 
+/* Form Error - Estado Ativo
+   - opacity: 1 fica visível
+   - height: auto ocupa espaço necessário
+   - padding: 5px 0 espaçamento ativo
+*/
 .form-error.active {
     opacity: 1;
     height: auto;
     padding: 5px 0;
 }
 
+/* Input Fields - Estado Inválido
+   - border-color: #ff6b6b borda vermelha
+   - background-color: rgba vermelho muito transparente
+*/
 #contactInput.invalid,
 #phonContact.invalid,
 #messageContato.invalid,
@@ -77,6 +133,17 @@
     background-color: rgba(255, 107, 107, 0.05);
 }
 
+/* ==========================================
+   FORMULÁRIO PRINCIPAL (#contactForm)
+   Container principal do formulário de contato
+   ========================================== */
+
+/* Contact Form - Container Principal
+   - display: flex + flex-direction: column layout vertical
+   - margin: 0 auto centraliza horizontalmente
+   - gap: 15px espaçamento entre campos
+   - flex: 1 ocupa espaço disponível
+*/
 #contactForm {
     display: flex;
     flex-direction: column;
@@ -88,6 +155,10 @@
     justify-content: space-between;
 }
 
+/* Contact Form - Título
+   - min-height: 70px altura padronizada
+   - display: flex com align/justify para centralização
+*/
 #contactForm h2 {
     padding: 0;
     font-size: var(--texto-Tamanho-Prin);
@@ -101,6 +172,10 @@
     justify-content: center;
 }
 
+/* Contact Form - Parágrafo
+   - padding: 10px 0 espaçamento vertical
+   - text-align: left alinhado à esquerda
+*/
 #contactForm p {
     padding: 10px 0;
     font-size: var(--texto-Tamanho-Sub);
@@ -110,6 +185,11 @@
     line-height: var(--line-height-padrao);
 }
 
+/* Contact Form - Microcopy
+   - text-align: center centralizado
+   - font-size: 0.9rem menor que tamanho padrão
+   - opacity: 0.85 mais transparente
+*/
 #contactForm p.microcopy {
     text-align: center;
     font-size: 0.9rem;
@@ -117,6 +197,18 @@
     margin-bottom: 10px;
 }
 
+/* ==========================================
+   CAMPOS DE ENTRADA - ESTILOS BASE
+   Inputs de texto, email, telefone, etc.
+   ========================================== */
+
+/* Input Fields - Estilos Padrão
+   - margin: 0 sem margem padrão
+   - padding: 10px espaçamento interno
+   - border: usa variável global
+   - background-color: --backg-Princ-cor fundo principal
+   - transition: anima mudanças
+*/
 #contactInput,
 #phonContact,
 #messageContato,
@@ -134,6 +226,9 @@
     line-height: var(--line-height-padrao);
 }
 
+/* Input Fields - Estado Hover
+   - border: 1px solid #aaa borda cinza clara
+*/
 #contactInput:hover,
 #phonContact:hover,
 #messageContato:hover,
@@ -143,6 +238,11 @@
     border: 1px solid #aaa;
 }
 
+/* Input Fields - Estado Focus
+   - outline: none remove outline padrão
+   - border: 1px solid #aaa borda cinza
+   - background-color: --backg-Sub-cor fundo secundário
+*/
 #contactInput:focus,
 #phonContact:focus,
 #messageContato:focus,
@@ -154,6 +254,16 @@
     background-color: var(--backg-Sub-cor);
 }
 
+/* ==========================================
+   FORMULÁRIO ATENÇÃO (Aviso/Info)
+   Seção informativa com ícone de atenção
+   ========================================== */
+
+/* Formulario Atencao - Container
+   - margin: 0 sem margem extra
+   - padding: 15px espaçamento interno
+   - background-color: rgba cinza transparente 10%
+*/
 .formularioAtencao {
     margin: 0;
     padding: 15px;
@@ -163,15 +273,33 @@
     line-height: var(--line-height-padrao);
 }
 
+/* Formulario Atencao - Parágrafo
+   - margin: 8px 0 espaçamento reduzido
+*/
 .formularioAtencao p {
     margin: 8px 0;
 }
 
+/* Formulario Atencao - Lista
+   - margin: 10px 0 10px 20px espaçamento com recuo
+   - padding: 0 sem padding extra
+*/
 .formularioAtencao ul {
     margin: 10px 0 10px 20px;
     padding: 0;
 }
 
+/* ==========================================
+   BOTÃO ENVIAR FORMULÁRIO
+   Botão de ação principal do formulário
+   ========================================== */
+
+/* Button Form Enviar - Estado Base
+   - background: --backg-Princ-cor cor principal
+   - padding: --padding-padrao espaçamento
+   - display: inline-block permite width/height
+   - cursor: pointer indica clicabilidade
+*/
 #buttonFomrEnviar {
     background: var(--backg-Princ-cor);
     color: var(--texto-cor-padrao);
@@ -187,10 +315,26 @@
     align-self: center;
 }
 
+/* Button Form Enviar - Estado Hover
+   - opacity: 0.85 fica levemente transparente
+   - transform: scale(1.05) amplia botão ligeiramente
+*/
 #buttonFomrEnviar:hover {
     opacity: 0.85;
+    transform: scale(1.05);
 }
 
+/* ==========================================
+   SEÇÃO WhatsApp
+   Box de contato via WhatsApp
+   ========================================== */
+
+/* Cont Whats - Container Principal
+   - background-color: --backg-Sub-cor fundo secundário
+   - padding: 20px espaçamento interno
+   - display: flex + flex-direction: column layout vertical
+   - border-left/right/bottom bordas azuis
+*/
 /* Estilos para seção WhatsApp */
 .contWhats {
     background-color: var(--backg-Sub-cor);
@@ -206,6 +350,10 @@
     border-bottom: 1px solid #0066cc;
 }
 
+/* Cont Whats - Título
+   - min-height: 70px altura padronizada
+   - display: flex com align/justify para centralização
+*/
 .contWhats h2 {
     padding: 0;
     font-size: var(--texto-Tamanho-Prin);
@@ -219,6 +367,9 @@
     justify-content: center;
 }
 
+/* Cont Whats - Parágrafo
+   - text-align: center centralizado
+*/
 .contWhats p {
     padding: 0;
     font-size: var(--texto-Tamanho-Sub);
@@ -228,6 +379,17 @@
     line-height: var(--line-height-padrao);
 }
 
+/* ==========================================
+   MENSAGEM DE FEEDBACK (Sucesso/Erro)
+   Notificação flutuante com status de envio
+   ========================================== */
+
+/* Form Message - Container Principal
+   - position: fixed fica na tela
+   - bottom: 20px topo do container
+   - z-index: 1000 fica acima de tudo
+   - display: none inicialmente invisível
+*/
 /* Estilos da mensagem de sucesso/erro */
 #formMessage {
     position: fixed;
@@ -250,18 +412,33 @@
     animation: slideInBottom 0.4s ease-out;
 }
 
+/* Form Message - Estado Sucesso
+   - background-color: #1a1a1a preto
+   - color: #ffffff texto branco
+   - border: 1px solid #333 borda cinza
+*/
 #formMessage.success {
     background-color: #1a1a1a;
     color: #ffffff;
     border: 1px solid #333;
 }
 
+/* Form Message - Estado Erro
+   - background-color: #1a1a1a preto
+   - color: #ffffff texto branco
+   - border: 1px solid #ff6b6b borda vermelha
+*/
 #formMessage.error {
     background-color: #1a1a1a;
     color: #ffffff;
     border: 1px solid #ff6b6b;
 }
 
+/* Form Message - Pseudo-elemento Indicador
+   - width/height: 24px círculo
+   - border-radius: 50% torna circular
+   - flex-shrink: 0 mantém tamanho
+*/
 #formMessage::before {
     content: '';
     width: 24px;
@@ -270,16 +447,30 @@
     flex-shrink: 0;
 }
 
+/* Form Message Sucesso - Indicador Verde
+   - background-color: #4caf50 verde
+   - box-shadow: inset com borda preta
+*/
 #formMessage.success::before {
     background-color: #4caf50;
     box-shadow: inset 0 0 0 2px #1a1a1a;
 }
 
+/* Form Message Erro - Indicador Vermelho
+   - background-color: #ff6b6b vermelho
+   - box-shadow: inset com borda preta
+*/
 #formMessage.error::before {
     background-color: #ff6b6b;
     box-shadow: inset 0 0 0 2px #1a1a1a;
 }
 
+/* Form Message - Botão Fechar
+   - cursor: pointer indica clicabilidade
+   - font-size: 24px tamanho do X
+   - color: #aaa cinza claro
+   - margin-left: auto puxa para direita
+*/
 #formMessage .close-btn {
     cursor: pointer;
     font-size: 24px;
@@ -292,10 +483,24 @@
     line-height: 1;
 }
 
+/* Form Message - Botão Fechar Hover
+   - color: #ffffff branco completo
+*/
 #formMessage .close-btn:hover {
     color: #ffffff;
 }
 
+/* ==========================================
+   CAMPO SELECT - DROPDOWN
+   Estilos customizados para selectores
+   ========================================== */
+
+/* Campo Select - Customização Visual
+   - appearance: none remove dropdown padrão
+   - background-image: SVG com seta customizada
+   - background-position: right 10px center posição da seta
+   - padding-right: 35px espaço para seta
+*/
 /* Estilo para classe campo-select */
 .campo-select {
     appearance: none;
@@ -306,6 +511,15 @@
     padding-right: 35px;
 }
 
+/* ==========================================
+   ANIMAÇÕES
+   Keyframes para transições de mensagem
+   ========================================== */
+
+/* Animação Slide In Bottom
+   - from: opacity 0 + translateY(20px) começa invisível embaixo
+   - to: opacity 1 + translateY(0) termina visível no topo
+*/
 @keyframes slideInBottom {
     from {
         opacity: 0;
@@ -317,6 +531,10 @@
     }
 }
 
+/* Animação Slide Out Bottom
+   - from: opacity 1 + translateY(0) começa visível
+   - to: opacity 0 + translateY(20px) termina invisível embaixo
+*/
 @keyframes slideOutBottom {
     from {
         opacity: 1;

@@ -1,7 +1,14 @@
 @import url('./00_globals.css');
 
-/*Seção - Cabeçalho*/
+/* ========================================
+   HEADER - BARRA DE NAVEGAÇÃO
+   ======================================== */
 
+/* Navbar - Container Principal
+   - Flexbox para distribuir elementos na horizontal
+   - max-width mantém responsividade
+   - Altura fixa de 50px
+*/
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -14,6 +21,14 @@
     height: 50px;
 }
 
+/* ==========================================
+   NAVBAR LEFT - LOGO E BUSCA
+   ========================================== */
+
+/* Navbar Left - Seção Esquerda
+   - Agrupa logo e barra de busca
+   - flex-shrink: 0 previne encolhimento
+*/
 .navbar-left {
     display: flex;
     align-items: center;
@@ -21,6 +36,11 @@
     flex-shrink: 0;
 }
 
+/* Home Logo - Ícone Principal
+   - Mantém aspecto original (width: auto)
+   - Opacity padrão de 0.8 para visual mais suave
+   - Transição suave no hover
+*/
 .home img {
     height: 36px;
     width: auto;
@@ -29,10 +49,18 @@
     transition: opacity 0.3s ease-out;
 }
 
+/* Home Logo - Estado Hover
+   - Aumenta opacidade para destacar
+*/
 .home img:hover {
     opacity: 1;
 }
 
+/* Search Box - Container da Busca
+   - Flexbox para alinhar input e botão
+   - Altura padrão 30px
+   - background secundária para destacar
+*/
 .search-box {
     display: flex;
     align-items: center;
@@ -41,6 +69,11 @@
     height: 30px;
 }
 
+/* Search Box Input - Campo de Texto
+   - Sem bordas para visual limpo
+   - Background transparente herda a cor pai
+   - Largura fixa 160px
+*/
 .search-box input {
     padding: 4px 8px;
     border: none;
@@ -51,6 +84,11 @@
     width: 160px;
 }
 
+/* Search Box Button - Botão de Busca
+   - Sem bordas e background transparente
+   - Transição ao hover
+   - Cursor pointer indicando ação
+*/
 .search-box button {
     background-color: transparent;
     border: none;
@@ -62,15 +100,30 @@
     transition: var(--transicao-padrao);
 }
 
+/* Search Box Button - Estado Hover
+   - Transform animado para feedback visual
+*/
 .search-box button:hover {
     transform: var(--transform-hover-padrao);
 }
 
+/* Search Box Button Icon - Ícone do Botão
+   - Tamanho padrão 18x18px
+*/
 .search-box button img {
     width: 18px;
     height: 18px;
 }
 
+/* ==========================================
+   NAVBAR CENTER - LINKS DE NAVEGAÇÃO
+   ========================================== */
+
+/* Navbar Center - Seção Central
+   - Centraliza links de navegação
+   - flex: 1 ocupa espaço disponível
+   - padding-right compensa visualmente
+*/
 .navbar-center {
     display: flex;
     justify-content: center;
@@ -78,12 +131,60 @@
     padding-right: 100px;
 }
 
+/* Nav Links - Lista de Links
+   - Sem marcadores padrão (list-style: none)
+   - Distribuição horizontal com gap
+*/
 .nav-links {
     list-style: none;
     display: flex;
     gap: 20px;
 }
 
+/* Nav Item - Item da Lista
+   - Padroniza altura mínima dos botões
+   - display: flex centraliza conteúdo
+*/
+.nav-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 50px;
+}
+
+/* Nav Link - Links Individuais
+   - Largura mínima padrão para uniformidade
+   - Padding para espaçamento interno
+   - Centralização de conteúdo
+   - Sem sublinhado padrão
+   - Transição suave ao hover
+*/
+.nav-link {
+    color: var(--texto-cor-padrao);
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--texto-Tamanho-Nav);
+    transition: var(--transicao-padrao);
+    min-width: 80px;
+    padding: 8px 10px;
+    text-align: center;
+}
+
+/* Nav Link - Estado Hover
+   - Mudança de cor para indicar ação
+   - Transform com feedback visual
+*/
+.nav-link:hover {
+    color: #aaa;
+    transform: var(--transform-hover-padrao);
+}
+
+/* Fallback para navegação antiga sem classes (compatibilidade)
+   - Mantém funcionalidade se classes não forem aplicadas
+*/
 .nav-links li a {
     color: var(--texto-cor-padrao);
     text-decoration: none;
@@ -94,6 +195,7 @@
     transition: var(--transicao-padrao);
 }
 
+/* Fallback Hover */
 .nav-links li a:hover {
     color: #aaa;
     transform: var(--transform-hover-padrao);

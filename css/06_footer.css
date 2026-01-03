@@ -1,5 +1,23 @@
 @import url('./00_globals.css');
 
+/* ========================================
+   RODAPÉ (FOOTER)
+   Seção final com informações e links
+   ======================================== */
+
+/* ==========================================
+   CONTAINER FOOTER - ESTRUTURA PRINCIPAL
+   Layout e dimensionamento do rodapé
+   ========================================== */
+
+/* Footer - Container Principal
+   Estrutura base do rodapé
+   - display: flex + justify-content: space-between distribui elementos
+   - flex-wrap: wrap permite quebra de linha
+   - margin-top: 60px espaçamento superior
+   - padding-top: 30px espaçamento interno superior
+   - border-top: 1px solid #333 linha de separação
+*/
 footer {
     display: flex;
     justify-content: space-between;
@@ -9,6 +27,19 @@ footer {
     border-top: 1px solid #333;
 }
 
+/* ==========================================
+   CONTEÚDO DO FOOTER
+   Organização interna dos elementos
+   ========================================== */
+
+/* Footer Content - Container de Conteúdo
+   Agrupa elementos dentro do footer
+   - text-align: center centraliza conteúdo
+   - margin-bottom: 10px espaçamento inferior
+   - padding: 20px espaçamento interno
+   - display: flex + justify-content: space-between distribui elementos
+   - align-items: center alinha verticalmente
+*/
 .footer-content {
     text-align: center;
     margin-bottom: 10px;
@@ -20,22 +51,54 @@ footer {
     border-radius: var(--borderRadius-padrao);
 }
 
+/* ==========================================
+   SEÇÃO MENSAGEM
+   Texto e informações principais
+   ========================================== */
+
+/* Mensagem - Parágrafo
+   Texto principal do footer
+   - font-size: --texto-Tamanho-Sub tamanho menor
+   - color: --texto-cor-padrao cor padrão
+   - transition: --transicao-padrao anima mudanças
+*/
 #mensagem p {
     font-size: var(--texto-Tamanho-Sub);
     color: var(--texto-cor-padrao);
     transition: var(--transicao-padrao);
 }
 
+/* Mensagem - Parágrafo Hover State
+   Interação ao passar mouse
+   - color: #aaa cinza claro
+*/
 #mensagem p:hover {
     color: #aaa;
 }
 
+/* ==========================================
+   SEÇÃO ÍCONES SOCIAIS
+   Links e imagens de redes sociais
+   ========================================== */
+
+/* Ícones Footer - Container
+   Organiza ícones sociais
+   - display: flex layout horizontal
+   - justify-content: flex-end alinha à direita
+   - gap: 10px espaçamento entre ícones
+*/
 #iconesFooter {
     display: flex;
     justify-content: flex-end;
     gap: 10px;
 }
 
+/* Ícones Footer - Links
+   Estilo dos links para redes sociais
+   - display: flex centraliza conteúdo
+   - align-items: center + justify-content: center alinhamento
+   - transition: --transicao-padrao anima mudanças
+*/
 #iconesFooter a {
     display: flex;
     align-items: center;
@@ -43,10 +106,20 @@ footer {
     transition: var(--transicao-padrao);
 }
 
+/* Ícones Footer - Link Hover State
+   Interação ao passar mouse
+   - transform: scale(1.1) aumenta 10%
+*/
 #iconesFooter a:hover {
     transform: scale(1.1);
 }
 
+/* Ícones Footer - Imagens
+   Estilo das imagens de ícones
+   - width/height: 30px tamanho dos ícones
+   - opacity: 0.85 ligeiramente transparente
+   - transition: opacity 0.3s anima opacidade
+*/
 #iconesFooter a img {
     width: 30px;
     height: 30px;
@@ -54,16 +127,35 @@ footer {
     transition: opacity 0.3s ease-out;
 }
 
+/* Ícones Footer - Imagem Hover State
+   Aumenta opacidade ao passar mouse
+   - opacity: 1 fica totalmente opaco
+*/
 #iconesFooter a:hover img {
     opacity: 1;
 }
 
+/* ==========================================
+   SEÇÃO DIREITOS AUTORAIS
+   Informações de copyright
+   ========================================== */
+
+/* Direitos - Parágrafo
+   Texto de copyright e direitos
+   - font-size: 0.75rem tamanho muito pequeno
+   - color: --texto-cor-padrao cor padrão
+   - transition: --transicao-padrao anima mudanças
+*/
 #direitos p {
     font-size: 0.75rem;
     color: var(--texto-cor-padrao);
     transition: var(--transicao-padrao);
 }
 
+/* Direitos - Parágrafo Hover State
+   Interação ao passar mouse
+   - color: #aaa cinza claro
+*/
 #direitos p:hover {
     color: #aaa;
 }

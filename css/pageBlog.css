@@ -1,0 +1,588 @@
+/* ========================================
+   ESTRUTURA PÁGINA BLOG - LAYOUT 3 COLUNAS
+   Inspirado no layout do LinkedIn
+   ======================================== */
+
+/* ========================================
+   CONTAINER PRINCIPAL - BLOG LAYOUT
+   Layout em 3 colunas: esquerda, centro, direita
+   ======================================== */
+
+/* Blog Container - Wrapper Principal
+   Layout flexbox com 3 colunas
+   - display: grid para controle de tamanhos
+   - grid-template-columns: proporciona 3 colunas (pequena, grande, pequena)
+   - grid-auto-rows: 1fr faz todas as linhas ter a mesma altura
+   - gap: 20px espaçamento entre colunas
+   - max-width: 1400px máximo de largura
+   - margin: 0 auto centraliza conteúdo
+   - padding: 20px espaçamento interno
+   - align-items: stretch faz itens ocuparem altura total
+*/
+.blog-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-auto-rows: 1fr;
+    gap: 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px;
+    align-items: stretch;
+}
+
+/* ========================================
+   COLUNA ESQUERDA - RESUMO HOME
+   Card pequeno com informações resumidas
+   ======================================== */
+
+/* Blog Sidebar Left - Coluna Esquerda
+   - position: relative para manter fluxo normal
+   - Contém informações resumidas do perfil
+*/
+.blog-sidebar-left {
+    position: relative;
+}
+
+/* Blog Card Left - Card Principal Esquerda
+   - background: cor escura do tema
+   - border: borda padrão
+   - border-radius: cantos arredondados
+   - padding: espaçamento interno
+   - display: flex para organizar conteúdo
+   - flex-direction: column alinha itens em coluna
+   - height: 100% ocupa altura total do grid
+*/
+.blog-card-left {
+    background-color: var(--backg-Sub-cor);
+    border-left: 1px solid #0066cc;
+    border-right: 1px solid #0066cc;
+    border-bottom: 1px solid #0066cc;
+    border-radius: var(--borderRadius-padrao);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    height: 100%;
+    position: sticky;
+    top: 80px;
+}
+
+/* Blog Card Left - Foto
+   - width: 100% ocupa largura total
+   - height: auto mantém proporção
+   - border-radius: cantos arredondados
+   - object-fit: cover preenche espaço mantendo proporção
+*/
+.blog-card-left img {
+    width: 100%;
+    height: auto;
+    border-radius: var(--borderRadius-padrao);
+    object-fit: cover;
+}
+
+/* Profile Photo - Foto do Perfil com borda */
+.profile-photo {
+    width: 100%;
+    margin-bottom: 15px;
+    overflow: hidden;
+    border-radius: 50%;
+    aspect-ratio: 1 / 1;
+}
+
+.profile-photo img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* Profile Name - Nome do Usuário */
+.profile-name {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--texto-cor-padrao);
+    margin: 0 0 8px 0;
+    line-height: 1.3;
+}
+
+/* Profile Title - Título Profissional */
+.profile-title {
+    font-size: 0.9rem;
+    color: var(--texto-cor-padrao-destaque);
+    margin: 0 0 12px 0;
+    line-height: 1.4;
+    opacity: 0.85;
+}
+
+/* Profile Location - Localização */
+.profile-location {
+    font-size: 0.85rem;
+    color: var(--texto-cor-padrao);
+    margin: 0 0 4px 0;
+    opacity: 0.7;
+}
+
+/* Profile Company - Empresa/Organização */
+.profile-company {
+    font-size: 0.8rem;
+    color: var(--texto-cor-padrao);
+    margin: 0 0 15px 0;
+    opacity: 0.6;
+}
+
+/* Profile Skills - Seção de Habilidades */
+.profile-skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 15px;
+}
+
+/* Skill Tag - Tag Individual de Habilidade */
+.skill-tag {
+    background-color: rgba(0, 102, 204, 0.1);
+    border: 1px solid rgba(0, 102, 204, 0.3);
+    color: var(--texto-cor-padrao);
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    transition: var(--transicao-padrao);
+    cursor: default;
+}
+
+.skill-tag:hover {
+    background-color: rgba(0, 102, 204, 0.2);
+    border-color: rgba(0, 102, 204, 0.5);
+}
+
+/* Profile Actions - Botões de Ação */
+.profile-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+/* Button Secondary - Botão Estilo LinkedIn */
+.btn-secondary {
+    background-color: transparent;
+    border: 1px solid var(--borderSolid-padrao);
+    color: var(--texto-cor-padrao);
+    padding: 10px 16px;
+    border-radius: var(--borderRadius-padrao);
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-align: center;
+    transition: var(--transicao-padrao);
+    display: inline-block;
+    width: 100%;
+}
+
+.btn-secondary:hover {
+    background-color: rgba(0, 102, 204, 0.1);
+    border-color: #0066cc;
+    color: #0066cc;
+    transform: translateY(-2px);
+}
+
+/* Blog Card Left - Título
+   - font-size: texto grande
+   - color: cor padrão
+   - margin: 0 remove margin
+   - line-height: altura da linha padrão
+*/
+.blog-card-left h3 {
+    font-size: var(--texto-Tamanho-Prin);
+    color: var(--texto-cor-padrao);
+    margin: 0;
+    line-height: var(--line-height-padrao);
+}
+
+/* Blog Card Left - Descrição
+   - font-size: texto pequeno
+   - color: cor secundária
+   - margin: 0 remove margin
+   - opacity: 0.8 fica ligeiramente transparente
+*/
+.blog-card-left p {
+    font-size: var(--texto-Tamanho-Sub);
+    color: var(--texto-cor-padrao-destaque);
+    margin: 0;
+    opacity: 0.8;
+}
+
+/* Blog Card Left - Lista
+   - list-style: none remove bullets
+   - padding: 0 remove padding
+   - margin: 0 remove margin
+   - display: flex para organizar horizontalmente
+   - flex-wrap: wrap permite quebra de linha
+   - gap: 10px espaçamento entre itens
+*/
+.blog-card-left ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+/* Blog Card Left - Item da Lista
+   - background: cor escura
+   - padding: 8px 12px espaçamento
+   - border-radius: cantos arredondados
+   - font-size: texto pequeno
+   - color: cor padrão
+*/
+.blog-card-left li {
+    background-color: var(--backg-Princ-cor);
+    padding: 8px 12px;
+    border-radius: var(--borderRadius-padrao);
+    font-size: 0.85rem;
+    color: var(--texto-cor-padrao);
+}
+
+/* Blog Card Left - Botão
+   - Utiliza classe .btn-action existente
+   - width: 100% ocupa largura total
+   - margin-top: 10px espaçamento superior
+*/
+.blog-card-left .btn-action {
+    width: 100%;
+    margin-top: 10px;
+    text-align: center;
+}
+
+/* ========================================
+   COLUNA CENTRAL - CONTEÚDO DO BLOG
+   Card grande com artigos e posts
+   ======================================== */
+
+/* Blog Main Content - Coluna Central
+   - Contém os artigos principais do blog
+*/
+.blog-main-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Blog Card Main - Card Principal Central
+   - background: cor escura do tema
+   - border: borda padrão
+   - border-radius: cantos arredondados
+   - padding: espaçamento interno
+   - min-height: 500px altura mínima para conteúdo
+   - display: flex para organizar conteúdo
+   - flex-direction: column para manter estrutura
+   - height: 100% ocupa altura total do grid
+*/
+.blog-card-main {
+    background-color: var(--backg-Sub-cor);
+    border-left: 1px solid #0066cc;
+    border-right: 1px solid #0066cc;
+    border-bottom: 1px solid #0066cc;
+    border-radius: var(--borderRadius-padrao);
+    padding: 30px;
+    min-height: 500px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+/* Blog Card Main - Header
+   - margin-bottom: 20px espaçamento inferior
+   - border-bottom: linha divisória
+   - padding-bottom: 20px espaçamento interno inferior
+*/
+.blog-card-main-header {
+    margin-bottom: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 20px;
+}
+
+/* Blog Card Main - Título
+   - font-size: texto grande
+   - color: cor padrão
+   - margin: 0 remove margin
+   - line-height: altura da linha padrão
+*/
+.blog-card-main h2 {
+    font-size: var(--texto-Tamanho-Prin);
+    color: var(--texto-cor-padrao);
+    margin: 0 0 10px 0;
+    line-height: var(--line-height-padrao);
+}
+
+/* Blog Card Main - Data e Autor
+   - font-size: texto pequeno
+   - color: cor secundária
+   - display: flex para alinhamento
+   - gap: 15px espaçamento entre elementos
+   - align-items: center centraliza verticamente
+*/
+.blog-card-main-meta {
+    font-size: 0.9rem;
+    color: var(--texto-cor-padrao-destaque);
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* Blog Card Main - Conteúdo
+   - margin: 0 remove margin
+   - line-height: altura da linha padrão
+   - color: cor padrão
+   - font-size: texto padrão
+*/
+.blog-card-main-content {
+    margin: 0;
+    line-height: var(--line-height-padrao);
+    color: var(--texto-cor-padrao);
+    font-size: var(--texto-Tamanho-Sub);
+}
+
+/* Blog Card Main - Paragráfo
+   - margin-bottom: 15px espaçamento entre parágrafos
+*/
+.blog-card-main-content p {
+    margin-bottom: 15px;
+}
+
+/* Blog Card Main - Heading
+   - margin: 20px 0 espaçamento vertical
+   - font-size: texto maior
+   - color: cor padrão
+*/
+.blog-card-main-content h3 {
+    margin: 20px 0 10px 0;
+    font-size: 1.2rem;
+    color: var(--texto-cor-padrao);
+}
+
+/* Blog Card Main - Lista
+   - margin-left: 20px indentação
+   - margin-bottom: 15px espaçamento inferior
+*/
+.blog-card-main-content ul,
+.blog-card-main-content ol {
+    margin-left: 20px;
+    margin-bottom: 15px;
+}
+
+/* Blog Card Main - Item da Lista
+   - margin-bottom: 8px espaçamento
+*/
+.blog-card-main-content li {
+    margin-bottom: 8px;
+}
+
+/* Blog Card Main - Footer
+   - margin-top: 30px espaçamento superior
+   - padding-top: 20px espaçamento interno
+   - border-top: linha divisória
+   - display: flex para alinhamento
+   - gap: 15px espaçamento entre botões
+   - flex-wrap: wrap permite quebra de linha
+*/
+.blog-card-main-footer {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+/* Blog Card Main - Botão
+   - Utiliza classe .verMais existente
+*/
+.blog-card-main .verMais {
+    flex: 1;
+    min-width: 150px;
+}
+
+/* ========================================
+   COLUNA DIREITA - SEÇÕES DO PASSADO
+   Card pequeno com arquivo de artigos antigos
+   ======================================== */
+
+/* Blog Sidebar Right - Coluna Direita
+   - position: relative para manter fluxo normal
+   - Contém arquivo de artigos passados
+*/
+.blog-sidebar-right {
+    position: relative;
+}
+
+/* Blog Card Right - Card Principal Direita
+   - background: cor escura do tema
+   - border: borda padrão
+   - border-radius: cantos arredondados
+   - padding: espaçamento interno
+   - height: 100% ocupa altura total do grid
+   - display: flex para organizar conteúdo
+   - flex-direction: column para manter estrutura
+*/
+.blog-card-right {
+    background-color: var(--backg-Sub-cor);
+    border-left: 1px solid #0066cc;
+    border-right: 1px solid #0066cc;
+    border-bottom: 1px solid #0066cc;
+    border-radius: var(--borderRadius-padrao);
+    padding: 20px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    position: sticky;
+    top: 80px;
+}
+
+/* Blog Card Right - Título
+   - font-size: texto grande
+   - color: cor padrão
+   - margin: 0 0 15px 0 espaçamento inferior
+   - line-height: altura da linha padrão
+   - border-bottom: linha divisória
+   - padding-bottom: 15px espaçamento interno inferior
+*/
+.blog-card-right h3 {
+    font-size: 1.1rem;
+    color: var(--texto-cor-padrao);
+    margin: 0 0 15px 0;
+    line-height: var(--line-height-padrao);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 15px;
+}
+
+/* Blog Card Right - Lista de Artigos
+   - list-style: none remove bullets
+   - padding: 0 remove padding
+   - margin: 0 remove margin
+   - display: flex para organizar em coluna
+   - flex-direction: column alinha itens em coluna
+   - gap: 10px espaçamento entre itens
+*/
+.blog-card-right ul,
+.archive-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Blog Card Right - Item da Lista
+   - padding: 10px espaçamento interno
+   - border-radius: cantos arredondados
+   - background: cor secundária
+   - transition: transição suave
+   - cursor: pointer indica clicabilidade
+*/
+.blog-card-right li {
+    padding: 10px;
+    border-radius: var(--borderRadius-padrao);
+    background-color: var(--backg-Princ-cor);
+    transition: var(--transicao-padrao);
+    cursor: pointer;
+}
+
+/* Blog Card Right - Item Hover
+   - opacity: 0.8 fica ligeiramente transparente
+   - transform: scale(1.02) amplia ligeiramente
+*/
+.blog-card-right li:hover {
+    opacity: 0.8;
+    transform: scale(1.02);
+}
+
+/* Blog Card Right - Link
+   - color: cor padrão
+   - text-decoration: none remove sublinhado
+   - font-size: texto pequeno
+   - line-height: altura da linha padrão
+*/
+.blog-card-right a {
+    color: var(--texto-cor-padrao);
+    text-decoration: none;
+    font-size: 0.95rem;
+    line-height: var(--line-height-padrao);
+}
+
+/* Blog Card Right - Link Hover
+   - color: cor de destaque
+*/
+.blog-card-right a:hover {
+    color: var(--btn-hover-destaque);
+}
+
+/* ========================================
+   RESPONSIVIDADE - TABLETS E MOBILE
+   Ajustes para telas menores
+   ======================================== */
+
+/* Tablets (máximo 1024px)
+   - 2 colunas: coluna central cresce, direita fica abaixo
+*/
+@media (max-width: 1024px) {
+    .blog-container {
+        grid-template-columns: 1fr 1.5fr;
+        gap: 15px;
+    }
+
+    .blog-sidebar-right {
+        position: static;
+        grid-column: 1 / -1;
+    }
+
+    .blog-card-right {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+
+    .blog-card-right h3 {
+        grid-column: 1 / -1;
+    }
+}
+
+/* Mobile (máximo 768px)
+   - 1 coluna: todos os elementos empilhados
+*/
+@media (max-width: 768px) {
+    .blog-container {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        padding: 10px;
+    }
+
+    .blog-sidebar-left,
+    .blog-sidebar-right {
+        position: static;
+    }
+
+    .blog-card-main {
+        padding: 15px;
+        min-height: auto;
+    }
+
+    .blog-card-left,
+    .blog-card-right {
+        padding: 15px;
+    }
+
+    .blog-card-main-meta {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .blog-card-right {
+        display: flex;
+        flex-direction: column;
+    }
+}

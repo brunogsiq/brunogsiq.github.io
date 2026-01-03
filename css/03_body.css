@@ -1,11 +1,34 @@
 @import url('./00_globals.css');
 
-/* Seção - Sobre*/
+/* ========================================
+   BODY - CONTEÚDO PRINCIPAL DA PÁGINA
+   Seções e componentes do corpo da página
+   ======================================== */
+
+/* ==========================================
+   SEÇÃO SOBRE - SOBRE O USUÁRIO
+   Apresentação pessoal e descrição
+   ========================================== */
+
+/* Sobre - Container Principal
+   Seção para apresentação pessoal
+   - border-top: 1px solid #333 separador visual superior
+   - padding-top: 30px espaçamento interno superior
+   - Elemento base para toda seção
+*/
 .sobre {
     border-top: 1px solid #333;
     padding-top: 30px;
 }
 
+/* Texto Sobre - Conteúdo de Texto
+   Texto principal da seção sobre
+   - line-height: 1.6 espaçamento entre linhas para legibilidade
+   - max-height: 200px altura máxima inicial (antes de expandir)
+   - overflow: hidden corta o texto quando atinge altura máxima
+   - transition: max-height 0.4s ease-out anima a expansão suave
+   - Conteúdo ocultado inicialmente com possibilidade de expandir
+*/
 .texto-sobre {
     line-height: 1.6;
     max-height: 200px;
@@ -13,7 +36,32 @@
     transition: max-height 0.4s ease-out;
 }
 
-/* Container para Formulário e WhatsApp lado a lado */
+/* Texto Sobre - Estado Expandido
+   Quando texto é expandido pelo usuário
+   - max-height: 2000px permite visualizar todo conteúdo
+   - Transição suave (definida em .texto-sobre)
+   - Ativado via JavaScript/classe
+*/
+.texto-sobre.expandido {
+    max-height: 2000px;
+}
+
+/* ==========================================
+   CONTACT WRAPPER - LAYOUT DE CONTATO
+   Grid com formulários, WhatsApp e Google Agenda
+   ========================================== */
+
+/* Contact Wrapper - Container Principal
+   Layout em grid para seção de contato
+   - display: grid ativa layout em grid
+   - grid-template-columns: 1fr 1fr 1fr três colunas iguais
+   - column-gap: 20px espaçamento entre colunas
+   - row-gap: 0 sem espaço entre linhas (definido por elementos)
+   - border-top: 1px solid #333 separador visual
+   - padding-top: 30px espaçamento interno
+   - margin-top: 30px espaçamento externo superior
+   - margin-bottom: 30px espaçamento externo inferior
+*/
 .contact-wrapper {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -25,7 +73,15 @@
     margin-bottom: 30px;
 }
 
-/* Seção esquerda - Assuntos Diversos */
+/* Contact Wrapper - Coluna Esquerda (Formulário Assuntos)
+   Primeira caixa de formulário
+   - grid-column: 1 primeira coluna
+   - grid-row: 1 / 3 ocupa duas linhas (topo até fim)
+   - display: flex ativa flexbox
+   - flex-direction: column empilha elementos verticalmente
+   - min-height: 450px altura mínima
+   - margin-bottom: 0 sem espaço inferior (grid controla)
+*/
 .contact-wrapper .caixa-conteudo.formularios:first-child {
     grid-column: 1;
     grid-row: 1 / 3;
@@ -35,7 +91,14 @@
     margin-bottom: 0;
 }
 
-/* Seção central - WhatsApp */
+/* Contact Wrapper - Coluna Central Linha 1 (WhatsApp)
+   Caixa de WhatsApp
+   - grid-column: 2 coluna central
+   - grid-row: 1 primeira linha
+   - display: flex ativa flexbox
+   - flex-direction: column empilha elementos verticalmente
+   - margin-bottom: 0 sem espaço inferior (grid controla)
+*/
 .contact-wrapper .caixa-conteudo.whatsapp {
     grid-column: 2;
     grid-row: 1;
@@ -44,7 +107,18 @@
     margin-bottom: 0;
 }
 
-/* Seção central - Google Agenda */
+/* Contact Wrapper - Coluna Central Linha 2 (Google Agenda)
+   Caixa de agendamento Google Calendar
+   - grid-column: 2 coluna central
+   - grid-row: 2 segunda linha (abaixo de WhatsApp)
+   - display: flex ativa flexbox
+   - flex-direction: column empilha elementos verticalmente
+   - margin-bottom: 0 sem espaço inferior (grid controla)
+   - background-color: cor secundária para destaque
+   - border-radius: cantos arredondados padrão
+   - border-left/right/bottom: bordas azuis estilo (#0066cc)
+   - padding: 20px espaçamento interno
+*/
 .contact-wrapper .caixa-conteudo.googleAgenda {
     grid-column: 2;
     grid-row: 2;
@@ -59,7 +133,15 @@
     padding: 20px;
 }
 
-/* Seção direita - Formulário */
+/* Contact Wrapper - Coluna Direita (Formulário)
+   Segunda caixa de formulário (lado direito)
+   - grid-column: 3 terceira coluna (direita)
+   - grid-row: 1 / 3 ocupa duas linhas (topo até fim)
+   - display: flex ativa flexbox
+   - flex-direction: column empilha elementos verticalmente
+   - margin-bottom: 0 sem espaço inferior (grid controla)
+   - min-height: 450px altura mínima
+*/
 .contact-wrapper .caixa-conteudo.formularios:last-child {
     grid-column: 3;
     grid-row: 1 / 3;
@@ -69,51 +151,45 @@
     min-height: 450px;
 }
 
+/* Contact Wrapper - Article Filho
+   Elemento article dentro de caixa-conteudo
+   - display: flex ativa flexbox
+   - flex-direction: column empilha elementos verticalmente
+   - height: 100% ocupa altura total do pai
+*/
 .contact-wrapper .caixa-conteudo article {
     display: flex;
     flex-direction: column;
     height: 100%;
 }
 
+/* Contact Wrapper - Form Filho
+   Elemento form dentro de caixa-conteudo
+   - display: flex ativa flexbox
+   - flex-direction: column empilha elementos verticalmente
+   - gap: 12px espaçamento entre inputs/elementos do formulário
+*/
 .contact-wrapper .caixa-conteudo form {
     display: flex;
     flex-direction: column;
     gap: 12px;
 }
 
-@media (max-width: 1024px) {
-    .contact-wrapper {
-        grid-template-columns: 1fr 1fr;
-    }
-    
-    .contact-wrapper .caixa-conteudo.formularios:first-child {
-        grid-column: 1;
-        grid-row: 1;
-    }
-    
-    .contact-wrapper .caixa-conteudo.whatsapp {
-        grid-column: 2;
-        grid-row: 1;
-    }
-    
-    .contact-wrapper .caixa-conteudo.googleAgenda {
-        grid-column: 2;
-        grid-row: 2;
-    }
-    
-    .contact-wrapper .caixa-conteudo.formularios:last-child {
-        grid-column: 1 / 3;
-        grid-row: 3;
-    }
-}
+/* ==========================================
+   SEÇÃO SOBRE, PROJETOS, WHATSAPP
+   Estilos compartilhados entre seções
+   ========================================== */
 
-.texto-sobre.expandido {
-    max-height: 2000px;
-}
-
+/* Seções Principais - Estilos Comuns
+   Aplicado a .projetos, .sobre, .contWhats (e Google Agenda)
+   - background-color: cor secundária para destaque
+   - border-radius: cantos arredondados padrão
+   - margin-bottom: 20px espaçamento inferior
+   - border-left/right/bottom: bordas azuis estilo (#0066cc)
+   - Define visual padrão de caixas de seção
+*/
 .projetos,
 .sobre,
-.servicos,
 .contWhats {
     background-color: var(--backg-Sub-cor);
     border-radius: var(--borderRadius-padrao);
@@ -123,27 +199,47 @@
     border-bottom: 1px solid #0066cc;
 }
 
-.sobre, .projetos, .servicos {
+/* Seções Sobre e Projetos - Estilos Adicionais
+   Aplicado a .sobre, .projetos
+   - border-top: 1px solid #333 separador visual superior
+   - padding-top: 20px espaçamento interno superior
+   - margin-top: 30px espaçamento externo superior
+   - Diferencia essas seções de contWhats
+*/
+.sobre, .projetos {
     border-top: 1px solid #333;
     padding-top: 20px;
     margin-top: 30px;
 }
 
+/* Títulos H2 em Seções Principais
+   Aplicado a h2 dentro de .projetos, .sobre, .contWhats, .contGoogleAgenda
+   - padding-left: 20px espaçamento à esquerda
+   - padding-top: 10px espaçamento superior
+   - font-size: tamanho principal
+   - color: cor padrão de texto
+   - Estilo visual consistente para títulos
+*/
 .projetos h2,
 .sobre h2,
-.servicos h2,
 .contWhats h2,
 .contGoogleAgenda h2 {
     padding-left: 20px;
     padding-top: 10px;
     font-size: var(--texto-Tamanho-Prin);
     color: var(--texto-cor-padrao);
-    
 }
 
+/* Parágrafos em Seções Principais
+   Aplicado a p dentro de .projetos, .sobre, .contWhats, .contGoogleAgenda
+   - font-size: tamanho secundário
+   - padding-left: 20px espaçamento à esquerda
+   - margin-top: 10px espaçamento superior
+   - margin-bottom: 8px espaçamento inferior
+   - Estilo visual consistente para texto
+*/
 .projetos p,
 .sobre p,
-.servicos p,
 .contWhats p,
 .contGoogleAgenda p {
     font-size: var(--texto-Tamanho-Sub);
@@ -152,8 +248,21 @@
     margin-bottom: 8px;
 }
 
-.cards-projetos,
-.cards-servicos {
+/* ==========================================
+   SEÇÃO PROJETOS - PORTFÓLIO
+   Cards e grid de projetos
+   ========================================== */
+
+/* Cards Projetos - Container
+   Container para grid de cards de projeto
+   - display: flex ativa flexbox
+   - justify-content: space-between distribui espaço
+   - flex-wrap: wrap quebra em múltiplas linhas
+   - gap: 20px espaçamento entre cards
+   - padding: 0 20px 20px espaçamento interno (lateral e inferior)
+   - Agrupa todos os cards em grid responsivo
+*/
+.cards-projetos { 
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -161,8 +270,19 @@
     padding: 0 20px 20px;
 }
 
-.card-projeto,
-.card-servico {
+/* Card Projeto - Card Individual
+   Card para exibição de um projeto
+   - flex: 0 1 200px tamanho mínimo/máximo (200px base)
+   - border-radius: cantos arredondados padrão
+   - padding: 10px espaçamento interno
+   - text-align: center centraliza conteúdo
+   - transition: transição suave ao hover
+   - display: flex ativa flexbox
+   - flex-direction: column empilha elementos verticalmente
+   - align-items: center centraliza elementos filhos
+   - Elemento clicável com efeito hover
+*/
+.card-projeto {
     flex: 0 1 200px;
     border-radius: var(--borderRadius-padrao);
     padding: 10px;
@@ -173,15 +293,66 @@
     align-items: center;
 }
 
-.card-projeto:hover,
-.card-servico:hover {
+/* Card Projeto - Estado Hover
+   Efeito ao passar o mouse
+   - background-color: #1a1a1a darkifica o card
+   - opacity: 0.85 reduz opacidade para feedback visual
+   - Indica card clicável/interativo
+*/
+.card-projeto:hover {
     background-color: #1a1a1a;
     opacity: 0.85;
 }
 
-.card-projeto img, 
-.card-servico img {
+/* Card Projeto - Ícone
+   Imagem do ícone dentro do card
+   - width: 30px largura do ícone
+   - height: 30px altura do ícone
+   - margin-bottom: 10px espaço entre ícone e texto
+   - Elemento decorativo do card
+*/
+.card-projeto img {
     width: 30px;
     height: 30px;
     margin-bottom: 10px;
+}
+
+/* ==========================================
+   MEDIA QUERIES - RESPONSIVIDADE
+   Breakpoints para diferentes tamanhos de tela
+   ========================================== */
+
+/* Media Query - Telas até 1024px
+   Tablets e dispositivos menores
+   - .contact-wrapper muda para 2 colunas
+   - grid-template-columns: 1fr 1fr reduz colunas
+   - Reorganiza cards para melhor visualização
+   - .formularios:first-child volta a grid-column: 1
+   - .formularios:last-child ocupa ambas colunas (1/3)
+   - WhatsApp e Google Agenda comentados (ocultos em mobile)
+*/
+@media (max-width: 1024px) {
+    .contact-wrapper {
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .contact-wrapper .caixa-conteudo.formularios:first-child {
+        grid-column: 1;
+        grid-row: 1;
+    }
+    
+    /* .contact-wrapper .caixa-conteudo.whatsapp {
+        grid-column: 2;
+        grid-row: 1;
+    }
+    
+    .contact-wrapper .caixa-conteudo.googleAgenda {
+        grid-column: 2;
+        grid-row: 2;
+    } */
+    
+    .contact-wrapper .caixa-conteudo.formularios:last-child {
+        grid-column: 1 / 3;
+        grid-row: 3;
+    }
 }
