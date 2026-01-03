@@ -1,0 +1,139 @@
+@import url('./00_globals.css');
+
+/* Seção - Botões Topo e Base*/
+#botaoBase {
+    position: fixed;
+    top: 5px;
+    right: 10px;
+    padding: var(--padding-padrao);
+    z-index: 9999;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    display: none;
+    transform: rotate(180deg);
+    transition: var(--transicao-padrao);
+}
+
+#botaoBase img {
+    width: 40px;
+    height: 40px;
+}
+
+#botaoBase:hover img {
+    opacity: 0.85;
+}
+
+#botaoTopo {
+    position: fixed;
+    bottom: 20px;
+    right: 10px;
+    padding: var(--padding-padrao);
+    z-index: 99;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    display: none;
+    transition: var(--transicao-padrao);
+}
+
+#botaoTopo img {
+    width: 40px;
+    height: 40px;
+}
+
+#botaoTopo:hover {
+    opacity: 0.85;
+}
+
+/* Botão Ver mais*/
+.verMais {
+    margin-top: 10px;
+    padding: var(--padding-padrao);
+    background-color: var(--backg-Princ-cor);
+    border: var(--borderSolid-padrao);
+    color: var(--texto-cor-padrao);
+    border-radius: var(--borderRadius-padrao);
+    cursor: pointer;
+    transition: var(--transicao-padrao);
+}
+
+.verMais:hover {
+    background-color: #1a1a1a;
+    border: var(--borderSolid-padrao);
+}
+
+.sobre .verMais {
+    margin-left: 10px;
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
+
+/* Google Agenda - Seção de Agendamento */
+.caixa-conteudo.googleAgenda {
+    background-color: var(--backg-Sub-cor);
+    border-radius: var(--borderRadius-padrao);
+    margin-bottom: 20px;
+}
+
+.contGoogleAgenda {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.contGoogleAgenda h2 {
+    padding: 10px 20px 0;
+    font-size: var(--texto-Tamanho-Prin);
+    color: var(--texto-cor-padrao);
+    text-align: center;
+}
+
+.contGoogleAgenda p {
+    padding: 10px 20px 0;
+    font-size: var(--texto-Tamanho-Sub);
+    color: var(--texto-cor-padrao);
+    text-align: center;
+}
+
+.card-servico.googleAgenda {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    text-align: center;
+    flex-grow: 1;
+    padding-bottom: 30px;
+}
+
+.card-servico.googleAgenda:hover {
+    background-color: transparent !important;
+}
+
+#btn-googleAgenda {
+    background: var(--backg-Princ-cor);
+    color: var(--texto-cor-padrao) !important;
+    border: var(--borderSolid-padrao);
+    padding: var(--padding-padrao);
+    border-radius: var(--borderRadius-padrao);
+    text-decoration: none;
+    font-size: var(--texto-Tamanho-Sub);
+    display: inline-block;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: var(--transicao-padrao);
+}
+
+#btn-googleAgenda a {
+    color: var(--texto-cor-padrao) !important;
+    text-decoration: none;
+    display: inline-block;
+}
+
+#btn-googleAgenda a:hover {
+    transform: none !important;
+}
+
+#btn-googleAgenda:hover {
+    opacity: 0.85;
+}

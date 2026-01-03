@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+	<meta charset="UTF-8" />
+	<title>Saiba mais</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" href="../../css/css.css" />
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PQMKLMGY0H"></script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PQMKLMGY0H"></script>
+<script src="./js/analytics.js"></script>
+
+<body>
+	<!-- Cabeçalho (Navbar estilo LinkedIn) -->
+	<header class="navbar">
+		<div class="navbar-left">
+			<!-- Botão logo que leva para a Home -->
+			<a href="index.html" class="home">
+				<img src="img/icones/home.png" alt="Home" />
+			</a>
+
+			<!-- Campo de busca -->
+			<div class="search-box">
+				<input type="text" placeholder="Pesquisar" />
+				<button type="submit">
+					<img src="./img/icones/searchSmall.png" alt="Buscar" />
+				</button>
+			</div>
+		</div>
+
+		<nav class="navbar-center">
+			<ul class="nav-links">
+				<li>
+					<a href="index.html"><span>🏠</span> Início</a>
+				</li>
+				<li>
+					<a href="recomendacoes.html"><span>👥</span> Recomendações</a>
+				</li>
+				<li>
+					<a href="curriculo.html"><span>💼</span> Currículo</a>
+				</li>
+				<li>
+					<a href="#mensagens"><span>💬</span> Blog</a>
+				</li>
+				<li>
+					<a href="testeMe.html"><span>🔔</span> Test.Me</a>
+				</li>
+			</ul>
+		</nav>
+	</header>
+	<button id="botaoBase" onclick="voltarABase()" title="Voltar a Base">
+		<img src="./img/icones/upTop.png" alt="Voltar à base">
+	</button>
+	<main class="perfil-container">
+		<!-- Foto de capa -->
+		<section class="caixa-conteudo">
+			<div class="foto-capa">
+				<img src="img/capa/capa.png" alt="Capa do perfil" />
+			</div>
+		</section>
+
+		<!-- Área que junta a foto pessoal e as informações -->
+		<section class="caixa-conteudo">
+			<div class="info-perfil-wrapper">
+				<!-- Foto pessoal (sobreposta à capa e info) -->
+				<div class="foto-perfil">
+					<img src="img/pessoas/fotoLinkedin.jpg" alt="Foto de perfil" />
+				</div>
+
+				<!-- Informações do perfil -->
+				<div class="esquerda-perfil">
+					<div class="info-perfil">
+						<h1>Bruno Gonçalves Siqueira</h1>
+						<p>
+							Seja bem vindo ao meu portfólio, é um prazer recebê-lo.
+						</p>
+						<p class="localizacao">
+							Brasil - SP.
+						</p>
+						<p>
+							Aqui você terá informações sobre minha carreira, projetos e como posso ajudar sua empresa.
+						</p>
+						<p class="conexoes">
+							Quality Assurance - QA Software Analyst - QA Software Testing - QA Automation Test - QA Test
+							Analyst
+						</p>
+					</div>
+					<div class="acoes-perfil">
+						<a href="saibaMais.html" class="btn-action">Saiba mais</a>
+						<a href="skills.html" class="btn-action">Skills</a>
+						<a href="projetos.html" class="btn-action">Projetos</a>
+						<a href="contatos.html" class="btn-action">Contatos</a>
+					</div>
+				</div>
+				<div class="linksSociais_Superior">
+					<a href="https://wa.me/5548991059871" target="_blank">
+						<img src="img/icones/rs_whatsapp.png" alt="WhatsApp">
+					</a>
+					<a href="https://www.linkedin.com/in/brunogsiq" target="_blank">
+						<img src="img/icones/rs_linkedin.png" alt="LinkedIn">
+					</a>
+					<a href="https://github.com/brunogsiq" target="_blank">
+						<img src="img/icones/rs_github.png" alt="GitHub">
+					</a>
+					<a href="https://medium.com/@brunogsiq" target="_blank">
+						<img src="img/icones/rs_medium.webp" alt="Medium">
+					</a>
+					<a href="mailto:brunogsiq@gmail.com" target="_blank">
+						<img src="img/icones/rs_emaill.png" alt="E-mail">
+					</a>
+				</div>
+			</div>
+		</section>
+		<section class="caixa-conteudo sobre">
+			<h2>Sobre</h2>
+			<div id="sobreTexto" class="texto-sobre recolhido">
+
+			</div>
+			<button class="verMais verExpandido" onclick="toggleTexto()">Ver mais</button>
+		</section>
+		<section class="caixa-conteudo projetos">
+			<h2>Projetos - Testes Automatizados</h2>
+			<div class="cards-projetos">
+				<div class="card-projeto">
+					<img src="img/icones/rs_test.png" alt="Projeto 1" />
+					<button class="verMais">Projeto </button>
+				</div>
+				<div class="card-projeto">
+					<img src="img/icones/rs_test.png" alt="Projeto 2" />
+					<button class="verMais">Projeto </button>
+				</div>
+				<div class="card-projeto">
+					<img src="img/icones/rs_test.png" alt="Projeto 3" />
+					<button class="verMais">Projeto </button>
+				</div>
+				<div class="card-projeto">
+					<img src="img/icones/rs_test.png" alt="Projeto 4" />
+					<button class="verMais">Projeto </button>
+				</div>
+				<div class="card-projeto">
+					<img src="img/icones/rs_test.png" alt="Projeto 5" />
+					<button class="verMais">Projeto </button>
+				</div>
+			</div>
+		</section>
+		<section class="caixa-conteudo projetos">
+			<h2>Projetos - Front End</h2>
+			<div class="cards-projetos">
+				<div class="card-projeto">
+					<img src="img/icones/rs_test.png" alt="Projeto 1" />
+					<button class="verMais">Projeto </button>
+				</div>
+				<div class="card-projeto">
+					<img src="img/icones/rs_test.png" alt="Projeto 2" />
+					<button class="verMais">Projeto </button>
+				</div>
+				<div class="card-projeto">
+					<img src="img/icones/rs_test.png" alt="Projeto 3" />
+					<button class="verMais">Projeto </button>
+				</div>
+				<div class="card-projeto">
+					<img src="img/icones/rs_test.png" alt="Projeto 4" />
+					<button class="verMais">Projeto </button>
+				</div>
+				<div class="card-projeto">
+					<img src="img/icones/rs_test.png" alt="Projeto 5" />
+					<button class="verMais">Projeto </button>
+				</div>
+			</div>
+		</section>
+		<section class="caixa-conteudo servicos">
+			<h2>Serviços</h2>
+			<div class="cards-servicos">
+				<div class="card-servico">
+					<p>...</p>
+					<button class="verMais">Ver mais</button>
+				</div>
+			</div>
+		</section>
+		<section class="caixa-conteudo formularios">
+			<div class="entreEmContato">
+				<h2>
+					Entre em Contato Para Assuntos Diversos
+				</h2>
+				<p>
+					Apoio - Consultoria - Evento - Mentoria
+					<br><br>
+					Parceria - Palestra - Treinamento - Workshop
+				<p>
+				<form id="contactForm">
+					<input id="contactInput" type="text" name="name" placeholder="Nome Completo ou Empresa" required>
+					<!--<input type="text" name="company" placeholder="Empresa" required>-->
+					<!--<input type="text" name="contact" placeholder="E-mail ou Telefone" required>-->
+					<!--<input type="text" name="subject" placeholder="Assunto" required>-->
+
+					<!-- Instrução antes do textarea -->
+					<div>
+						<p class="formularioAtencao">
+							Por favor, inclua na mensagem:
+							<br><br> 1 - E-mail ou Telefone:
+							<br>2 - Assunto:
+							<br>[ Estamos melhorando para melhor atendê-lo ]
+						</p>
+					</div>
+					<textarea id="messageContato" name="message" placeholder="Digite sua mensagem aqui..."
+						required></textarea>
+					<button type="submit" id="buttonFomrEnviar">
+						Enviar
+					</button>
+				</form>
+				<p id="formMessage">
+
+				</p>
+			</div>
+		</section>
+		<section class="caixa-conteudo whatsapp">
+			<div class="contWhats">
+				<h2>Entre em contato pelo Whatsapp</h2>
+				<p>...</p>
+				<br>
+				<div class="card-servico whatsapp">
+					<a href="https://wa.me/5548991059871" target="_blank" id="btn-whatsapp">Chamar no WhatsApp</a>
+				</div>
+			</div>
+		</section>
+	</main>
+	<footer class="perfil-container">
+		<section class="caixa-conteudo rodape">
+			<div class="footer-content">
+				<div class="mensagem" id="mensagem">
+					<p>Obrigado por nos visitar!</p>
+				</div>
+				<div id="iconesFooter">
+					<a href="https://wa.me/5548991059871" target="_blank">
+						<img src="img/icones/rs_whatsapp.png" alt="WhatsApp">
+					</a>
+					<a href="https://www.linkedin.com/in/brunogsiq" target="_blank">
+						<img src="img/icones/rs_linkedin.png" alt="LinkedIn">
+					</a>
+					<a href="https://github.com/brunogsiq" target="_blank">
+						<img src="img/icones/rs_github.png" alt="GitHub">
+					</a>
+					<a href="https://medium.com/@brunogsiq" target="_blank">
+						<img src="img/icones/rs_medium.webp" alt="Medium">
+					</a>
+					<a href="mailto:brunogsiq@gmail.com" target="_blank">
+						<img src="img/icones/rs_emaill.png" alt="E-mail">
+					</a>
+				</div>
+				<div class="direitos" id="direitos">
+					<p>&copy;Bruno Siqueira - 2025<br> Todos os direitos reservados.</p>
+				</div>
+			</div>
+		</section>
+		<button id="botaoTopo" onclick="voltarAoTopo()" title="Voltar ao topo">
+			<img src="./img/icones/upTop.png" alt="Voltar ao topo">
+		</button>
+	</footer>
+	<script src="./js/script.js"></script>
+</body>
+
+</html>

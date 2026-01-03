@@ -1,0 +1,69 @@
+@import url('./00_globals.css');
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 60px;
+    padding-top: 30px;
+    border-top: 1px solid #333;
+}
+
+.footer-content {
+    text-align: center;
+    margin-bottom: 10px;
+    padding: 20px;
+    background-color: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: var(--borderRadius-padrao);
+}
+
+#mensagem p {
+    font-size: var(--texto-Tamanho-Sub);
+    color: var(--texto-cor-padrao);
+    transition: var(--transicao-padrao);
+}
+
+#mensagem p:hover {
+    color: #aaa;
+}
+
+#iconesFooter {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+#iconesFooter a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transicao-padrao);
+}
+
+#iconesFooter a:hover {
+    transform: scale(1.1);
+}
+
+#iconesFooter a img {
+    width: 30px;
+    height: 30px;
+    opacity: 0.85;
+    transition: opacity 0.3s ease-out;
+}
+
+#iconesFooter a:hover img {
+    opacity: 1;
+}
+
+#direitos p {
+    font-size: 0.75rem;
+    color: var(--texto-cor-padrao);
+    transition: var(--transicao-padrao);
+}
+
+#direitos p:hover {
+    color: #aaa;
+}

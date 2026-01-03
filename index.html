@@ -1,36 +1,42 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8" />
-    <title>Home</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./css/css.css" />
-</head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-PQMKLMGY0H"></script>
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag() {
-	dataLayer.push(arguments);
-}
-gtag("js", new Date());
 
-gtag("config", "G-PQMKLMGY0H");
-</script>
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="description"
+		content="Portfólio profissional de Bruno Gonçalves Siqueira - QA Software Analyst especializado em testes automatizados, manual testing e quality assurance." />
+	<meta name="keywords"
+		content="QA, Quality Assurance, Testes, Automação, Software Testing, Cypress, Robot Framework, PlayWright" />
+	<title>Bruno Gonçalves Siqueira - Portfólio QA Software Analyst</title>
+	<link rel="stylesheet" href="./css/00_globals.css" />
+	<link rel="stylesheet" href="./css/01_header.css" />
+	<link rel="stylesheet" href="./css/02_head.css" />
+	<link rel="stylesheet" href="./css/03_body.css" />
+	<link rel="stylesheet" href="./css/04_forms.css" />
+	<link rel="stylesheet" href="./css/05_formWhats.css" />
+	<link rel="stylesheet" href="./css/06_footer.css" />
+	<link rel="stylesheet" href="./css/button.css" />
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-PQMKLMGY0H"></script>
+	<script src="./js/analytics.js"></script>
+	<!-- EmailJS SDK -->
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+</head>
+
 <body>
 	<!-- Cabeçalho (Navbar estilo LinkedIn) -->
 	<header class="navbar">
 		<div class="navbar-left">
 			<!-- Botão logo que leva para a Home -->
 			<a href="index.html" class="home">
-				<img src="img/icones/home.png" alt="Home" />
+				<img src="img/icones/home.png" alt="Ícone de casa - Voltar para página inicial" />
 			</a>
-
 			<!-- Campo de busca -->
 			<div class="search-box">
 				<input type="text" placeholder="Pesquisar" />
 				<button type="submit">
-					<img src="./img/icones/searchSmall.png" alt="Buscar" />
+					<img src="./img/icones/searchSmall.png" alt="Ícone de lupa - Buscar no portfólio" />
 				</button>
 			</div>
 		</div>
@@ -38,31 +44,32 @@ gtag("config", "G-PQMKLMGY0H");
 		<nav class="navbar-center">
 			<ul class="nav-links">
 				<li>
-					<a href="index.html"><span>🏠</span> Início</a>
+					<a href="index.html" title="Voltar à página inicial">🏠 Início</a>
 				</li>
 				<li>
-					<a href="recomendacoes.html"><span>👥</span> Recomendações</a>
+					<a href="recomendacoes.html" title="Ver recomendações recebidas">👥 Recomendações</a>
 				</li>
 				<li>
-					<a href="curriculo.html"><span>💼</span> Currículo</a>
+					<a href="curriculo.html" title="Visualizar currículo completo">💼 Currículo</a>
 				</li>
 				<li>
-					<a href="#mensagens"><span>💬</span> Blog</a>
+					<a href="pages/_principal/saibaMais.html" title="Acessar blog e artigos">💬 Blog</a>
 				</li>
 				<li>
-					<a href="testeMe.html"><span>🔔</span> Test.Me</a>
+					<a href="testeMe.html" title="Acessar seção de testes interativos">🔔 Test.Me</a>
 				</li>
 			</ul>
 		</nav>
 	</header>
-	<button id="botaoBase" onclick="voltarABase()" title="Voltar a Base">
-			<img src="./img/icones/upTop.png" alt="Voltar à base">
+	<button id="botaoBase" onclick="voltarABase()" title="Voltar ao topo da página"
+		aria-label="Botão para voltar ao topo">
+		<img src="./img/icones/upTop.png" alt="Ícone de seta para cima - Voltar para o topo da página" />
 	</button>
 	<main class="perfil-container">
 		<!-- Foto de capa -->
 		<section class="caixa-conteudo">
 			<div class="foto-capa">
-				<img src="img/capa/capa.png" alt="Capa do perfil" />
+				<img src="img/capa/capa.png" alt="Capa do portfólio profissional - QA Software Analyst" />
 			</div>
 		</section>
 
@@ -71,9 +78,9 @@ gtag("config", "G-PQMKLMGY0H");
 			<div class="info-perfil-wrapper">
 				<!-- Foto pessoal (sobreposta à capa e info) -->
 				<div class="foto-perfil">
-					<img src="img/pessoas/fotoLinkedin.jpg" alt="Foto de perfil" />
+					<img src="img/pessoas/fotoLinkedin.jpg"
+						alt="Bruno Gonçalves Siqueira - QA Software Analyst especializado em testes automatizados" />
 				</div>
-
 				<!-- Informações do perfil -->
 				<div class="esquerda-perfil">
 					<div class="info-perfil">
@@ -88,31 +95,36 @@ gtag("config", "G-PQMKLMGY0H");
 							Aqui você terá informações sobre minha carreira, projetos e como posso ajudar sua empresa.
 						</p>
 						<p class="conexoes">
-							Quality Assurance - QA Software Analyst - QA Software Testing - QA Automation Test - QA Test Analyst
+							Quality Assurance - QA Software Analyst - QA Software Testing - QA Automation Test - QA Test
+							Analyst
 						</p>
 					</div>
 					<div class="acoes-perfil">
-						<a href="saibaMais.html" class="btn-action">Saiba mais</a>
+						<a href="./pages/_principal/saibaMais.html" class="btn-action">Saiba mais</a>
 						<a href="skills.html" class="btn-action">Skills</a>
 						<a href="projetos.html" class="btn-action">Projetos</a>
 						<a href="contatos.html" class="btn-action">Contatos</a>
-					</div>					
+					</div>
 				</div>
 				<div class="linksSociais_Superior">
-					<a href="https://wa.me/5548991059871" target="_blank">
-						<img src="img/icones/rs_whatsapp.png" alt="WhatsApp">
+					<a href="https://wa.me/5548991059871" target="_blank" rel="noopener noreferrer"
+						title="Entre em contato via WhatsApp">
+						<img src="img/icones/rs_whatsapp.png" alt="WhatsApp - Entre em contato e suporte rápido">
 					</a>
-					<a href="https://www.linkedin.com/in/brunogsiq" target="_blank">
-						<img src="img/icones/rs_linkedin.png" alt="LinkedIn">
+					<a href="https://www.linkedin.com/in/brunogsiq" target="_blank" rel="noopener noreferrer"
+						title="Visite meu perfil no LinkedIn">
+						<img src="img/icones/rs_linkedin.png" alt="LinkedIn - Perfil profissional e experiência">
 					</a>
-					<a href="https://github.com/brunogsiq" target="_blank">
-						<img src="img/icones/rs_github.png" alt="GitHub">
+					<a href="https://github.com/brunogsiq" target="_blank" rel="noopener noreferrer"
+						title="Veja meus repositórios no GitHub">
+						<img src="img/icones/rs_github.png" alt="GitHub - Portfólio de projetos e código-fonte">
 					</a>
-					<a href="https://medium.com/@brunogsiq" target="_blank">
-						<img src="img/icones/rs_medium.webp" alt="Medium">
+					<a href="https://medium.com/@brunogsiq" target="_blank" rel="noopener noreferrer"
+						title="Leia meus artigos no Medium">
+						<img src="img/icones/rs_medium.webp" alt="Medium - Artigos e insights sobre QA">
 					</a>
-					<a href="mailto:brunogsiq@gmail.com" target="_blank">
-						<img src="img/icones/rs_emaill.png" alt="E-mail">
+					<a href="mailto:brunogsiq@gmail.com" title="Enviar e-mail">
+						<img src="img/icones/rs_emaill.png" alt="E-mail - brunogsiq@gmail.com">
 					</a>
 				</div>
 			</div>
@@ -123,25 +135,33 @@ gtag("config", "G-PQMKLMGY0H");
 				<p>
 					⚠️ Primeiro, aceita um ☕?!
 
-					• Atuo com foco na prevenção de bugs e conscientização da cultura de qualidade em equipes de ágeis.<br><br>
+					• Atuo com foco na prevenção de bugs e conscientização da cultura de qualidade em equipes de
+					ágeis.<br><br>
 
-					• Acredito que "prevenir é melhor do que reportar", por isso minha atuação é orientada ao shift-left testing, quanto antes iniciarmos, maior a probababilidade de sucesso para o produto<br><br>
+					• Acredito que "prevenir é melhor do que reportar", por isso minha atuação é orientada ao shift-left
+					testing, quanto antes iniciarmos, maior a probababilidade de sucesso para o produto<br><br>
 
-					• Embasado sobre alguns dos princípios de testes, sempre será preciso reimaginar os teste para garintir que não haverão novas falhas no sistema, lembrando que testar apenas apresenta falhas e não garante sua ausência, com a atuação do QA antecipada, novos investimentos poderão ser realizados<br><br>
+					• Embasado sobre alguns dos princípios de testes, sempre será preciso reimaginar os teste para
+					garintir que não haverão novas falhas no sistema, lembrando que testar apenas apresenta falhas e não
+					garante sua ausência, com a atuação do QA antecipada, novos investimentos poderão ser
+					realizados<br><br>
 
-					• Não existe automação sem testes manuais, para ser eficaz, será necessário estar alinhado constantemente com a área de negócio, produto, design e desenvolvimento para garantirmos que os principais fluxos estão protegidos através do fluxo continuo de integração e entregas sem risco<br><br>
+					• Não existe automação sem testes manuais, para ser eficaz, será necessário estar alinhado
+					constantemente com a área de negócio, produto, design e desenvolvimento para garantirmos que os
+					principais fluxos estão protegidos através do fluxo continuo de integração e entregas sem
+					risco<br><br>
 
 					🐞 Atuação como QA<br>
 					• Shif-Lefting Testes<br>
 					• Elaboração de cenários com BDD (Gherkin)<br>
-					• Testes automatizados e manuais<br> 
+					• Testes automatizados e manuais<br>
 					• Planejamento, Estimativa, Documentação<br>
 					• Execução e Evidenciamento<br>
 					• Report e Acompanhamento de bugs<br>
 					• Proposição de melhoria contínua<br><br>
 
 					🌐 Atuação em diferentes níveis de teste<br>
-					• Teste de Integração<br> 
+					• Teste de Integração<br>
 					• Testes de sistemas<br>
 					• Testes de aceitação<br><br>
 
@@ -204,23 +224,26 @@ gtag("config", "G-PQMKLMGY0H");
 			<h2>Projetos - Testes Automatizados</h2>
 			<div class="cards-projetos">
 				<div class="card-projeto">
-					<img src="img/icones/rs_test.png" alt="Projeto 1" />
+					<img src="img/icones/rs_test.png"
+						alt="Projeto de Automação - Testes Automatizados com Cypress e BDD" />
 					<button class="verMais">Projeto </button>
 				</div>
 				<div class="card-projeto">
-					<img src="img/icones/rs_test.png" alt="Projeto 2" />
-					<button class="verMais">Projeto </button>
-				</div>
-					<div class="card-projeto">
-					<img src="img/icones/rs_test.png" alt="Projeto 3" />
+					<img src="img/icones/rs_test.png"
+						alt="Projeto de Automação - Testes com Robot Framework e Gherkin" />
 					<button class="verMais">Projeto </button>
 				</div>
 				<div class="card-projeto">
-					<img src="img/icones/rs_test.png" alt="Projeto 4" />
+					<img src="img/icones/rs_test.png" alt="Projeto de Automação - Testes Web com PlayWright" />
 					<button class="verMais">Projeto </button>
 				</div>
 				<div class="card-projeto">
-					<img src="img/icones/rs_test.png" alt="Projeto 5" />
+					<img src="img/icones/rs_test.png" alt="Projeto de QA - Testes de Integração e Sistema com CI/CD" />
+					<button class="verMais">Projeto </button>
+				</div>
+				<div class="card-projeto">
+					<img src="img/icones/rs_test.png"
+						alt="Projeto de QA - Testes de Aceitação e Regressão Automatizados" />
 					<button class="verMais">Projeto </button>
 				</div>
 			</div>
@@ -229,101 +252,200 @@ gtag("config", "G-PQMKLMGY0H");
 			<h2>Projetos - Front End</h2>
 			<div class="cards-projetos">
 				<div class="card-projeto">
-					<img src="img/icones/rs_test.png" alt="Projeto 1" />
+					<img src="img/icones/rs_test.png"
+						alt="Projeto Front-End - Desenvolvimento e Testes de Interface de Usuário" />
 					<button class="verMais">Projeto </button>
 				</div>
 				<div class="card-projeto">
-					<img src="img/icones/rs_test.png" alt="Projeto 2" />
+					<img src="img/icones/rs_test.png"
+						alt="Projeto Front-End - HTML CSS JavaScript com Design Responsivo" />
 					<button class="verMais">Projeto </button>
 				</div>
 				<div class="card-projeto">
-					<img src="img/icones/rs_test.png" alt="Projeto 3" />
+					<img src="img/icones/rs_test.png" alt="Projeto Front-End - Componentes React e Vue.js com Testes" />
 					<button class="verMais">Projeto </button>
 				</div>
 				<div class="card-projeto">
-					<img src="img/icones/rs_test.png" alt="Projeto 4" />
+					<img src="img/icones/rs_test.png"
+						alt="Projeto Front-End - Design Responsivo e Acessibilidade Web" />
 					<button class="verMais">Projeto </button>
 				</div>
 				<div class="card-projeto">
-					<img src="img/icones/rs_test.png" alt="Projeto 5" />
+					<img src="img/icones/rs_test.png"
+						alt="Projeto Front-End - Otimização Performance e Testes de Velocidade" />
 					<button class="verMais">Projeto </button>
-				</div>				
+				</div>
 			</div>
 		</section>
 		<section class="caixa-conteudo servicos">
 			<h2>Serviços</h2>
 			<div class="cards-servicos">
 				<div class="card-servico">
-					<img src="img/icones/rs_test.png" alt="Projeto 1" />
+					<img src="img/icones/rs_test.png" alt="Serviço - Consultoria em QA e Estratégia de Testes" />
 					<button class="verMais">Ver mais</button>
 				</div>
 				<div class="card-servico">
-					<img src="img/icones/rs_test.png" alt="Projeto 1" />
+					<img src="img/icones/rs_test.png" alt="Serviço - Mentoria em Quality Assurance e Carreira" />
 					<button class="verMais">Ver mais</button>
 				</div>
 				<div class="card-servico">
-					<img src="img/icones/rs_test.png" alt="Projeto 1" />
+					<img src="img/icones/rs_test.png" alt="Serviço - Automação de Testes e CI/CD Pipeline" />
 					<button class="verMais">Ver mais</button>
 				</div>
 				<div class="card-servico">
-					<img src="img/icones/rs_test.png" alt="Projeto 1" />
+					<img src="img/icones/rs_test.png" alt="Serviço - Treinamento em Frameworks de Automação" />
 					<button class="verMais">Ver mais</button>
 				</div>
 				<div class="card-servico">
-					<img src="img/icones/rs_test.png" alt="Projeto 1" />
+					<img src="img/icones/rs_test.png" alt="Serviço - Avaliação e Desenvolvimento de Profissionais QA" />
 					<button class="verMais">Ver mais</button>
 				</div>
 			</div>
 		</section>
-		<section class="caixa-conteudo formularios">
-			<div class="entreEmContato">
-				<h2>
-					Entre em Contato Para Assuntos Diversos
-				</h2>
-				<p>
-					Apoio - Consultoria - Evento - Mentoria 
-					<br><br>
-					Parceria - Palestra - Treinamento - Workshop
-					<br><br>
-					Avaliação: Linkedin - Currículo - Simulação de Entrevista
-				<p>
-				<form id="contactForm">
-					<input id="contactInput" type="text" name="name" placeholder="Nome Completo ou Empresa" required>
-					<!--<input type="text" name="company" placeholder="Empresa" required>-->
-					<!--<input type="text" name="contact" placeholder="E-mail ou Telefone" required>-->
-					<!--<input type="text" name="subject" placeholder="Assunto" required>-->
-			
-					<!-- Instrução antes do textarea -->
-					<div>
-						<p class="formularioAtencao">
-							Por favor, inclua na mensagem: 
-							<br><br>  1 - E-mail ou Telefone:
-							<br>2 - Assunto:
-							<br>[ Estamos melhorando para melhor atendê-lo ]
-						</p>
+		<div class="contact-wrapper">
+			<section class="caixa-conteudo formularios">
+				<article class="entreEmContato">
+					<h2>Entre em Contato Para Assuntos Diversos</h2>
+					<p>Seja qual for seu desafio, estou aqui para ajudar. Com experiência em Quality Assurance e
+						desenvolvimento, posso contribuir com sua visão.</p>
+					<ul style="margin-left: 0; padding-left: 20px;">
+						<li><strong>Apoio & Consultoria</strong><br><span
+								style="margin-left: 0; opacity: 0.9;">Estratégia de qualidade para seu projeto</span>
+						</li>
+						<li><strong>Eventos & Mentoria</strong><br><span
+								style="margin-left: 0; opacity: 0.9;">Compartilhando conhecimento em QA</span></li>
+						<li><strong>Parceria & Treinamento</strong><br><span
+								style="margin-left: 0; opacity: 0.9;">Evoluir juntos com workshops</span></li>
+						<li><strong>Avaliação Profissional</strong><br><span
+								style="margin-left: 0; opacity: 0.9;">LinkedIn, Currículo e Entrevistas</span></li>
+					</ul>
+					<p><em>Vamos criar algo extraordinário juntos?</em></p>
+				</article>
+			</section>
+			<section class="caixa-conteudo whatsapp">
+				<article class="contWhats">
+					<h2>Entre em contato pelo WhatsApp</h2>
+					<p>Resposta rápida e direta para suas dúvidas e projetos</p>
+					<div class="card-servico whatsapp">
+						<a href="https://wa.me/5548991059871" target="_blank" rel="noopener noreferrer"
+							id="btn-whatsapp" title="Abrir WhatsApp">
+							Chamar no WhatsApp
+						</a>
 					</div>
-					<textarea id="messageContato" name="message" placeholder="Digite sua mensagem aqui..." required></textarea>
-					<button type="submit" id="buttonFomrEnviar">
-						Enviar
-					</button>
-				</form>          
-				<p id="formMessage">
-					
-				</p>
-			</div>
-		</section>
-		<section class="caixa-conteudo whatsapp">
-			<div class="contWhats">
-				<h2>Entre em contato pelo Whatsapp</h2>
-				<p>...</p>
-				<br>
-				<div class="card-servico whatsapp">
-					<button type="submit" id="btn-whatsapp">
-						<a href="https://wa.me/5548991059871" target="_blank" >Chamar no WhatsApp</a>
-					</button>
-				</div>
-			</div>
-		</section>
+				</article>
+			</section>
+			<section class="caixa-conteudo googleAgenda">
+				<article class="contGoogleAgenda">
+					<h2>Marque um horário para conversar</h2>
+					<p>Escolha o horário de sua preferência</p>
+					<div class="card-servico googleAgenda">
+						<a href="https://calendar.app.google/diWTpZ6U93gk7xMv9" target="_blank" rel="noopener noreferrer"
+							id="btn-googleAgenda" title="Abrir Google Agenda">
+							Agendar horário
+						</a>
+					</div>
+				</article>
+			</section>
+			<section class="caixa-conteudo formularios">
+				<article class="entreEmContato">
+					<h2>Entre em Contato</h2>
+					<p class="microcopy">
+						Fale sobre seu projeto, dúvidas ou interesse em consultoria, mentoria e treinamento.
+					</p>
+
+					<form id="contactForm" aria-label="Formulário de contato" novalidate>
+						<!-- Nome -->
+						<div class="form-group">
+							<label for="contactInput">Nome Completo *</label>
+							<input id="contactInput" type="text" name="name" placeholder="Seu nome completo"
+								minlength="3" required aria-required="true">
+							<span class="form-error" id="errorContactInput"></span>
+						</div>
+
+						<!-- E-mail (opcional) -->
+						<div class="form-group">
+							<label for="emailInput">E-mail</label>
+							<input id="emailInput" type="email" name="email" placeholder="Seu melhor e-mail">
+							<span class="form-error" id="errorEmailInput"></span>
+						</div>
+
+						<!-- Telefone (opcional) -->
+						<div class="form-group">
+							<label for="phonContact">Telefone</label>
+							<input id="phonContact" type="tel" name="phone" placeholder="(XX) XXXXX-XXXX"
+								maxlength="15">
+							<span class="form-error" id="errorPhonContact"></span>
+						</div>
+
+						<!-- TIPO DE SERVIÇO -->
+						<div class="form-group">
+							<label for="servicoSelect">Qual é seu interesse? *</label>
+							<select id="servicoSelect" name="servico" class="campo-select">
+								<option value="" disabled selected>Qual é seu interesse?</option>
+
+								<optgroup label="Consultoria & Apoio">
+									<option value="consultoria">Consultoria em QA</option>
+									<option value="auditoria">Auditoria de Testes</option>
+								</optgroup>
+
+								<optgroup label="Educação & Mentoria">
+									<option value="mentoria">Mentoria em QA</option>
+									<option value="treinamento">Treinamento em Frameworks</option>
+									<option value="avaliacao-linkedin">Avaliação de LinkedIn</option>
+									<option value="avaliacao-curriculo">Avaliação de Currículo</option>
+								</optgroup>
+
+								<optgroup label="Parceria">
+									<option value="parceria">Parceria/Projeto</option>
+									<option value="workshop">Workshop/Evento</option>
+								</optgroup>
+
+								<optgroup label="Outros">
+									<option value="outros">Outro assunto</option>
+								</optgroup>
+							</select>
+							<span class="form-error" id="errorServicoSelect"></span>
+						</div>
+
+						<!-- COMO PREFERE O RETORNO -->
+						<div class="form-group">
+							<label for="retornoSelect">Como prefere receber o retorno? *</label>
+							<select id="retornoSelect" name="retorno" class="campo-select">
+								<option value="" disabled selected>Como prefere receber o retorno?</option>
+
+								<optgroup label="Digital">
+									<option value="whatsapp">WhatsApp</option>
+									<option value="email">E-mail</option>
+								</optgroup>
+
+								<optgroup label="Telefone">
+									<option value="celular">Telefone celular</option>
+									<option value="horario-comercial">Somente em horário comercial</option>
+								</optgroup>
+
+								<optgroup label="Preferências">
+									<option value="texto">Apenas mensagens de texto</option>
+									<option value="chamada">Pode ser por chamada</option>
+								</optgroup>
+							</select>
+							<span class="form-error" id="errorRetornoSelect"></span>
+						</div>
+
+						<!-- Mensagem -->
+						<div class="form-group">
+							<label for="messageContato">Mensagem *</label>
+							<textarea id="messageContato" name="message"
+								placeholder="Descreva seu projeto, dúvida ou interesse..." required
+								aria-required="true"></textarea>
+							<span class="form-error" id="errorMessageContato"></span>
+						</div>
+
+						<button type="submit" id="buttonFomrEnviar">Enviar Solicitação</button>
+					</form>
+					<p id="formMessage"></p>
+				</article>
+			</section>
+		</div>
 	</main>
 	<footer class="perfil-container">
 		<section class="caixa-conteudo rodape">
@@ -331,32 +453,38 @@ gtag("config", "G-PQMKLMGY0H");
 				<div class="mensagem" id="mensagem">
 					<p>Obrigado por nos visitar!</p>
 				</div>
-				<div id="iconesFooter">
-					<a href="https://wa.me/5548991059871" target="_blank">
-						<img src="img/icones/rs_whatsapp.png" alt="WhatsApp">
+				<nav id="iconesFooter" aria-label="Links de redes sociais">
+					<a href="https://wa.me/5548991059871" target="_blank" rel="noopener noreferrer"
+						title="Entre em contato via WhatsApp">
+						<img src="img/icones/rs_whatsapp.png" alt="WhatsApp - Contato direto para suporte e dúvidas">
 					</a>
-					<a href="https://www.linkedin.com/in/brunogsiq" target="_blank">
-						<img src="img/icones/rs_linkedin.png" alt="LinkedIn">
+					<a href="https://www.linkedin.com/in/brunogsiq" target="_blank" rel="noopener noreferrer"
+						title="Visite meu perfil no LinkedIn">
+						<img src="img/icones/rs_linkedin.png" alt="LinkedIn - Perfil profissional e experiência">
 					</a>
-					<a href="https://github.com/brunogsiq" target="_blank">
-						<img src="img/icones/rs_github.png" alt="GitHub">
+					<a href="https://github.com/brunogsiq" target="_blank" rel="noopener noreferrer"
+						title="Veja meus repositórios no GitHub">
+						<img src="img/icones/rs_github.png" alt="GitHub - Portfólio de projetos e código-fonte">
 					</a>
-					<a href="https://medium.com/@brunogsiq" target="_blank">
-						<img src="img/icones/rs_medium.webp" alt="Medium">
+					<a href="https://medium.com/@brunogsiq" target="_blank" rel="noopener noreferrer"
+						title="Leia meus artigos no Medium">
+						<img src="img/icones/rs_medium.webp" alt="Medium - Artigos e insights sobre QA">
 					</a>
-					<a href="mailto:brunogsiq@gmail.com" target="_blank">
-						<img src="img/icones/rs_emaill.png" alt="E-mail">
+					<a href="mailto:brunogsiq@gmail.com" title="Enviar e-mail">
+						<img src="img/icones/rs_emaill.png" alt="E-mail - brunogsiq@gmail.com">
 					</a>
-				</div>
+				</nav>
 				<div class="direitos" id="direitos">
-					<p>&copy;Bruno Siqueira - 2025<br> Todos os direitos reservados.</p>
+					<p>&copy; Bruno Siqueira - 2025<br>Todos os direitos reservados.</p>
 				</div>
 			</div>
 		</section>
-		<button id="botaoTopo" onclick="voltarAoTopo()" title="Voltar ao topo">
-			<img src="./img/icones/upTop.png" alt="Voltar ao topo">
+		<button id="botaoTopo" onclick="voltarAoTopo()" title="Voltar ao topo da página"
+			aria-label="Botão para voltar ao topo">
+			<img src="./img/icones/upTop.png" alt="Ícone de seta para cima">
 		</button>
-    </footer>
+	</footer>
 	<script src="./js/script.js"></script>
 </body>
+
 </html>

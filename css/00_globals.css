@@ -1,0 +1,65 @@
+/* =============================== */
+/*         VARIÁVEIS GLOBAIS        */
+/* =============================== */
+:root {
+    /*Cores*/
+    --backg-Princ-cor: #0c0c0c;
+    --backg-Sub-cor: #1a1a1a;
+    --borderSolid-padrao: 1px solid #333;
+    --borderRadius-padrao: 8px;
+    --borderShadow-padrao: none;
+    --padding-padrao: 8px 14px;
+
+    /*Links*/
+    --btn-hover-destaque: #aaa;
+    --link-cor: #aaa;
+
+    /*Textos*/
+    --texto-cor-padrao: #ffffff;
+    --texto-cor-padrao-destaque: #aaa;
+    --texto-Style-Padrao: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --texto-Tamanho-Prin: 1.45rem;
+    --texto-Tamanho-Sub: 1.0rem;
+    --texto-Tamanho-Btn: 0.85rem;
+    --texto-Tamanho-Nav: 0.75rem;
+    --line-height-padrao: 1.6;
+    --letter-spacing-padrao: 0.3px;
+
+    /*Transições JS*/
+    --transicao-padrao: opacity 0.3s ease-out;
+    --transform-hover-padrao: scale(1.1);
+}
+
+@media (max-width: 768px) {
+    section {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .linha-informacoes {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    input,
+    textarea {
+        max-width: 100%;
+    }
+}
+
+/* Reset e configuração base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    overflow-x: hidden;
+    background-color: var(--backg-Princ-cor);
+    font-family: var(--texto-Style-Padrao);
+    line-height: var(--line-height-padrao);
+    letter-spacing: var(--letter-spacing-padrao);
+}
