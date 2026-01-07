@@ -1,30 +1,29 @@
 @import url('./00_globals.css');
 
 /* ========================================
-   ESTILO ESPECÍFICO: blog.html
+   ESTILO ESPECÍFICO: curriculo.html
    Layout em 3 colunas inspirado no LinkedIn
-   Coluna Esquerda (Perfil) | Centro (Artigos) | Direita (Arquivo)
+   Coluna Esquerda (Perfil) | Centro (Vazio) | Direita (Acordeões + Botões)
    ======================================== */
 
 /* ========================================
-   CONTAINER PRINCIPAL - BLOG LAYOUT
-   Layout em 3 colunas: esquerda, centro, direita
+   CONTAINER PRINCIPAL - LAYOUT 3 COLUNAS
+   Grid com espaçamento entre colunas
    ======================================== */
 
 /* Blog Container - Wrapper Principal
-   Layout grid com 3 colunas
    - display: grid para controle de tamanhos
-   - grid-template-columns: proporciona 3 colunas (pequena, grande, pequena)
-   - Sem grid-auto-rows: altura determinada pelo conteúdo mais alto
+   - grid-template-columns: 1fr 2fr 1fr (pequena, grande, pequena)
+   - grid-auto-rows: 1fr faz todas as linhas ter a mesma altura
    - gap: 20px espaçamento entre colunas
-   - max-width: 1220px máximo de largura (mesmo que perfil-container)
+   - max-width: 1220px máximo de largura
    - margin: 0 auto centraliza conteúdo
-   - padding: 0 sem padding lateral (como em perfil-container)
-   - align-items: stretch faz todas as colunas acompanharem a altura maior
+   - align-items: stretch faz itens ocuparem altura total
 */
-.blog-container {
+.curriculum-container {
     display: grid;
     grid-template-columns: 1fr 2fr 1fr;
+    grid-auto-rows: 1fr;
     gap: 20px;
     max-width: 1220px;
     margin: 0 auto;
@@ -33,19 +32,19 @@
 }
 
 /* ========================================
-   COLUNA ESQUERDA - RESUMO HOME
-   Card pequeno com informações resumidas
+   COLUNA ESQUERDA - PERFIL
+   Card com informações e foto do usuário
    ======================================== */
 
-/* Blog Sidebar Left - Coluna Esquerda
+/* Curriculum Sidebar Left - Coluna Esquerda
    - position: relative para manter fluxo normal
-   - Contém informações resumidas do perfil
+   - Contém informações do perfil
 */
-.blog-sidebar-left {
+.curriculum-sidebar-left {
     position: relative;
 }
 
-/* Blog Card Left - Card Principal Esquerda (Perfil)
+/* Curriculum Card Left - Card Principal Esquerda (Perfil)
    - background: cor escura do tema
    - border: borda preto/padrão do tema
    - border-radius: cantos arredondados
@@ -56,7 +55,7 @@
    - position: sticky com top 80px (acompanha scroll)
    - transition: transição suave para efeitos hover
 */
-.blog-card-left {
+.curriculum-card-left {
     background-color: var(--backg-Sub-cor);
     border-left: 1px solid #1a1a1a;
     border-right: 1px solid #1a1a1a;
@@ -72,25 +71,12 @@
     transition: var(--transicao-padrao);
 }
 
-/* Blog Card Left - Hover (Feedback Visual) */
-.blog-card-left:hover {
+/* Curriculum Card Left - Hover (Feedback Visual) */
+.curriculum-card-left:hover {
     background-color: #1a1a1a;
     border-left: 1px solid #333;
     border-right: 1px solid #333;
     border-bottom: 1px solid #333;
-}
-
-/* Blog Card Left - Foto
-   - width: 100% ocupa largura total
-   - height: auto mantém proporção
-   - border-radius: cantos arredondados
-   - object-fit: cover preenche espaço mantendo proporção
-*/
-.blog-card-left img {
-    width: 100%;
-    height: auto;
-    border-radius: var(--borderRadius-padrao);
-    object-fit: cover;
 }
 
 /* Profile Photo - Foto do Perfil com borda */
@@ -180,7 +166,7 @@
     margin-top: 15px;
 }
 
-/* Button Secondary - Botão Estilo LinkedIn (Perfil - Ver perfil completo, Entrar em contato) */
+/* Button Secondary - Botão Estilo LinkedIn (Perfil) */
 .btn-secondary {
     background-color: var(--backg-Princ-cor);
     border: var(--borderSolid-padrao);
@@ -208,7 +194,7 @@
    - margin: 0 remove margin
    - line-height: altura da linha padrão
 */
-.blog-card-left h3 {
+.curriculum-card-left h3 {
     font-size: var(--texto-Tamanho-Prin);
     color: var(--texto-cor-padrao);
     margin: 0;
@@ -221,7 +207,7 @@
    - margin: 0 remove margin
    - opacity: 0.8 fica ligeiramente transparente
 */
-.blog-card-left p {
+.curriculum-card-left p {
     font-size: var(--texto-Tamanho-Sub);
     color: var(--texto-cor-padrao-destaque);
     margin: 0;
@@ -236,7 +222,7 @@
    - flex-wrap: wrap permite quebra de linha
    - gap: 10px espaçamento entre itens
 */
-.blog-card-left ul {
+.curriculum-card-left ul {
     list-style: none;
     padding: 0;
     margin: 0;
@@ -252,7 +238,7 @@
    - font-size: texto pequeno
    - color: cor padrão
 */
-.blog-card-left li {
+.curriculum-card-left li {
     background-color: var(--backg-Princ-cor);
     padding: 8px 12px;
     border-radius: var(--borderRadius-padrao);
@@ -265,92 +251,98 @@
    - width: 100% ocupa largura total
    - margin-top: 10px espaçamento superior
 */
-.blog-card-left .btn-action {
+.curriculum-card-left .btn-action {
     width: 100%;
     margin-top: 10px;
     text-align: center;
 }
 
 /* ========================================
-   COLUNA CENTRAL - CONTEÚDO DO BLOG
-   Card grande com artigos e posts
+   COLUNA CENTRAL - CONTEÚDO PRINCIPAL
+   Card grande com artigos/conteúdo da página
    ======================================== */
 
-/* Blog Main Content - Coluna Central
-   - Contém os artigos principais do blog
+/* Curriculum Main Content - Coluna Central
+   - Contém os conteúdos principais da página
 */
-.blog-main-content {
+.curriculum-main-content {
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
 
-/* Blog Card Main - Card Principal Central (Artigos)
+/* Curriculum Sidebar Center - Coluna Central (Container)
+   - position: relative para manter fluxo normal
+*/
+.curriculum-sidebar-center {
+    position: relative;
+}
+
+/* Curriculum Card Main - Card Principal Central
    - background: cor escura do tema
    - border: borda preto/padrão do tema
    - border-radius: cantos arredondados
    - padding: espaçamento interno
+   - min-height: 500px altura mínima para conteúdo
    - display: flex para organizar conteúdo em coluna
    - flex-direction: column para manter estrutura vertical
-   - justify-content: space-between empurra botões para o final
-   - height: auto tamanho automático conforme conteúdo
+   - height: 100% ocupa altura total do grid
    - transition: transição suave para efeitos hover
-   - Destinado para artigos e posts do blog
 */
-.blog-card-main {
+.curriculum-card-main {
     background-color: var(--backg-Sub-cor);
     border-left: 1px solid #1a1a1a;
     border-right: 1px solid #1a1a1a;
     border-bottom: 1px solid #1a1a1a;
     border-radius: var(--borderRadius-padrao);
     padding: 30px;
+    min-height: 500px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    height: auto;
+    height: 100%;
     transition: var(--transicao-padrao);
 }
 
-/* Blog Card Main - Hover (Feedback Visual) */
-.blog-card-main:hover {
+/* Curriculum Card Main - Hover (Feedback Visual) */
+.curriculum-card-main:hover {
     background-color: #1a1a1a;
     border-left: 1px solid #333;
     border-right: 1px solid #333;
     border-bottom: 1px solid #333;
 }
 
-/* Blog Card Main - Header
+/* Curriculum Card Main - Header
    - margin-bottom: 20px espaçamento inferior
    - border-bottom: linha divisória
    - padding-bottom: 20px espaçamento interno inferior
 */
-.blog-card-main-header {
+.curriculum-card-main-header {
     margin-bottom: 20px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     padding-bottom: 20px;
 }
 
-/* Blog Card Main - Título
+/* Curriculum Card Main - Título
    - font-size: texto grande
    - color: cor padrão
    - margin: 0 remove margin
    - line-height: altura da linha padrão
 */
-.blog-card-main h2 {
+.curriculum-card-main h2 {
     font-size: var(--texto-Tamanho-Prin);
     color: var(--texto-cor-padrao);
     margin: 0 0 10px 0;
     line-height: var(--line-height-padrao);
 }
 
-/* Blog Card Main - Data e Autor
+/* Curriculum Card Main - Data e Autor
    - font-size: texto pequeno
    - color: cor secundária
    - display: flex para alinhamento
    - gap: 15px espaçamento entre elementos
    - align-items: center centraliza verticamente
 */
-.blog-card-main-meta {
+.curriculum-card-main-meta {
     font-size: 0.9rem;
     color: var(--texto-cor-padrao-destaque);
     display: flex;
@@ -359,55 +351,55 @@
     flex-wrap: wrap;
 }
 
-/* Blog Card Main - Conteúdo
+/* Curriculum Card Main - Conteúdo
    - margin: 0 remove margin
    - line-height: altura da linha padrão
    - color: cor padrão
    - font-size: texto padrão
 */
-.blog-card-main-content {
+.curriculum-card-main-content {
     margin: 0;
     line-height: var(--line-height-padrao);
     color: var(--texto-cor-padrao);
     font-size: var(--texto-Tamanho-Sub);
 }
 
-/* Blog Card Main - Paragráfo
+/* Curriculum Card Main - Paragráfo
    - margin-bottom: 15px espaçamento entre parágrafos
 */
-.blog-card-main-content p {
+.curriculum-card-main-content p {
     margin-bottom: 15px;
 }
 
-/* Blog Card Main - Heading
+/* Curriculum Card Main - Heading
    - margin: 20px 0 espaçamento vertical
    - font-size: texto maior
    - color: cor padrão
 */
-.blog-card-main-content h3 {
+.curriculum-card-main-content h3 {
     margin: 20px 0 10px 0;
     font-size: 1.2rem;
     color: var(--texto-cor-padrao);
 }
 
-/* Blog Card Main - Lista
+/* Curriculum Card Main - Lista
    - margin-left: 20px indentação
    - margin-bottom: 15px espaçamento inferior
 */
-.blog-card-main-content ul,
-.blog-card-main-content ol {
+.curriculum-card-main-content ul,
+.curriculum-card-main-content ol {
     margin-left: 20px;
     margin-bottom: 15px;
 }
 
-/* Blog Card Main - Item da Lista
+/* Curriculum Card Main - Item da Lista
    - margin-bottom: 8px espaçamento
 */
-.blog-card-main-content li {
+.curriculum-card-main-content li {
     margin-bottom: 8px;
 }
 
-/* Blog Card Main - Footer
+/* Curriculum Card Main - Footer
    - margin-top: 30px espaçamento superior
    - padding-top: 20px espaçamento interno
    - border-top: linha divisória
@@ -415,7 +407,7 @@
    - gap: 15px espaçamento entre botões
    - flex-wrap: wrap permite quebra de linha
 */
-.blog-card-main-footer {
+.curriculum-card-main-footer {
     margin-top: 30px;
     padding-top: 20px;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
@@ -424,28 +416,28 @@
     flex-wrap: wrap;
 }
 
-/* Blog Card Main - Botão
+/* Curriculum Card Main - Botão
    - Utiliza classe .verMais existente
 */
-.blog-card-main .verMais {
+.curriculum-card-main .verMais {
     flex: 1;
     min-width: 150px;
 }
 
 /* ========================================
-   COLUNA DIREITA - SEÇÕES DO PASSADO
-   Card pequeno com arquivo de artigos antigos
+   COLUNA DIREITA - ACORDEÕES + BOTÕES
+   Seções de conteúdo do currículo e contato
    ======================================== */
 
-/* Blog Sidebar Right - Coluna Direita
+/* Curriculum Sidebar Right - Coluna Direita
    - position: relative para manter fluxo normal
-   - Contém arquivo de artigos passados
+   - Contém acordeões e botões de contato
 */
-.blog-sidebar-right {
+.curriculum-sidebar-right {
     position: relative;
 }
 
-/* Blog Card Right - Card Principal Direita (Arquivo)
+/* Curriculum Card Right - Card Principal Direita (Acordeões)
    - background: cor escura do tema
    - border: borda preto/padrão do tema
    - border-radius: cantos arredondados
@@ -455,9 +447,9 @@
    - flex-direction: column para manter estrutura vertical
    - position: sticky com top 80px (acompanha scroll)
    - transition: transição suave para efeitos hover
-   - Contém arquivo de posts anteriores do blog
+   - Contém acordeões com seções do currículo
 */
-.blog-card-right {
+.curriculum-card-right {
     background-color: var(--backg-Sub-cor);
     border-left: 1px solid #1a1a1a;
     border-right: 1px solid #1a1a1a;
@@ -472,15 +464,15 @@
     transition: var(--transicao-padrao);
 }
 
-/* Blog Card Right - Hover (Feedback Visual) */
-.blog-card-right:hover {
+/* Curriculum Card Right - Hover (Feedback Visual) */
+.curriculum-card-right:hover {
     background-color: #1a1a1a;
     border-left: 1px solid #333;
     border-right: 1px solid #333;
     border-bottom: 1px solid #333;
 }
 
-/* Blog Card Right - Título
+/* Curriculum Card Right - Título
    - font-size: texto grande
    - color: cor padrão
    - margin: 0 0 15px 0 espaçamento inferior
@@ -488,16 +480,36 @@
    - border-bottom: linha divisória
    - padding-bottom: 15px espaçamento interno inferior
 */
-.blog-card-right h3 {
+.curriculum-card-right h3 {
     font-size: 1.1rem;
     color: var(--texto-cor-padrao);
     margin: 0 0 15px 0;
     line-height: var(--line-height-padrao);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
     padding-bottom: 15px;
 }
 
-/* Blog Card Right - Lista de Artigos
+/* Curriculum Card Right - Link
+   - color: cor padrão
+   - text-decoration: none remove sublinhado
+   - font-size: texto pequeno
+   - line-height: altura da linha padrão
+*/
+.curriculum-card-right a {
+    color: var(--texto-cor-padrao);
+    text-decoration: none;
+    font-size: 0.95rem;
+    line-height: var(--line-height-padrao);
+}
+
+/* Curriculum Card Right - Link Hover
+   - color: cor de destaque
+*/
+.curriculum-card-right a:hover {
+    color: var(--btn-hover-destaque);
+}
+
+/* Curriculum Card Right - Lista de Artigos
    - list-style: none remove bullets
    - padding: 0 remove padding
    - margin: 0 remove margin
@@ -505,7 +517,7 @@
    - flex-direction: column alinha itens em coluna
    - gap: 10px espaçamento entre itens
 */
-.blog-card-right ul,
+.curriculum-card-right ul,
 .archive-list {
     list-style: none;
     padding: 0;
@@ -515,113 +527,346 @@
     gap: 10px;
 }
 
-/* Blog Card Right - Item da Lista (Botões de Arquivo)
+/* Curriculum Card Right - Item da Lista
    - padding: 10px espaçamento interno
-   - border-radius: cantos arredondados padrão
-   - background: cor escura principal
-   - border: borda padrão
+   - border-radius: cantos arredondados
+   - background: cor secundária
    - transition: transição suave
    - cursor: pointer indica clicabilidade
-   - display: block para ocupar largura total
 */
-.blog-card-right li {
+.curriculum-card-right li {
     padding: 10px;
     border-radius: var(--borderRadius-padrao);
     background-color: var(--backg-Princ-cor);
-    border: var(--borderSolid-padrao);
     transition: var(--transicao-padrao);
     cursor: pointer;
-    display: block;
 }
 
-/* Blog Card Right - Item Hover (Feedback Visual - Padrão Ver Mais) */
-.blog-card-right li:hover {
-    background-color: #1a1a1a;
-    border: var(--borderSolid-padrao);
-}
-
-/* Blog Card Right - Link (Artigos do Arquivo) */
-.blog-card-right a {
-    color: var(--texto-cor-padrao);
-    text-decoration: none;
-    font-size: 0.95rem;
-    line-height: var(--line-height-padrao);
-    transition: var(--transicao-padrao);
-    display: block;
-    width: 100%;
-}
-
-/* Blog Card Right - Link Hover (Feedback Visual - Mesmo padrão Ver Mais) */
-.blog-card-right a:hover {
-    color: var(--texto-cor-padrao);
-    text-decoration: none;
+/* Curriculum Card Right - Item Hover
+   - opacity: 0.8 fica ligeiramente transparente
+   - transform: scale(1.02) amplia ligeiramente
+*/
+.curriculum-card-right li:hover {
+    opacity: 0.8;
+    transform: scale(1.02);
 }
 
 /* ========================================
-   RESPONSIVIDADE - ADAPTAR PARA DISPOSITIVOS
-   Mantém funcionalidade em tablets e mobile
+   ACORDEÕES - SEÇÕES DO CURRÍCULO
+   Estrutura expansível para organizar conteúdo
+   ======================================== */
+
+.curriculum-content {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.accordion-item {
+    border: none;
+    border-radius: 0;
+    overflow: hidden;
+    background: transparent;
+}
+
+/* Accordion Header - Cabeçalho Expansível
+   - width: 100% ocupa largura total
+   - padding: espaçamento interno
+   - background: fundo preto padrão (var(--backg-Princ-cor))
+   - cursor: pointer indica clicabilidade
+   - display: flex para alinhamento
+   - justify-content: space-between distribui itens
+   - font-weight: 600 texto em negrito
+   - transition: transição suave
+   - border: borda padrão da paleta
+   - border-radius: cantos arredondados
+*/
+.accordion-header {
+    width: 100%;
+    padding: 15px 20px;
+    background-color: var(--backg-Princ-cor);
+    border: var(--borderSolid-padrao);
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.1em;
+    font-weight: 600;
+    color: var(--texto-cor-padrao);
+    transition: var(--transicao-padrao);
+    font-family: inherit;
+    border-radius: var(--borderRadius-padrao);
+    margin-bottom: 10px;
+}
+
+.accordion-header:hover {
+    background-color: #1a1a1a;
+    border: var(--borderSolid-padrao);
+    transform: none;
+}
+
+.accordion-title {
+    flex: 1;
+    text-align: left;
+}
+
+/* Accordion Icon - Ícone de Expansão (+/-)
+   - font-size: tamanho grande
+   - transition: rotação suave
+   - Rotaciona 45 graus quando ativo
+*/
+.accordion-icon {
+    font-size: 1.5em;
+    font-weight: bold;
+    transition: transform 0.3s ease;
+    color: var(--texto-cor-padrao);
+}
+
+.accordion-header.active .accordion-icon {
+    transform: rotate(45deg);
+}
+
+/* Accordion Body - Conteúdo Expandível
+   - padding: espaçamento interno
+   - background: cor secundária escura do tema
+   - display: none por padrão (fechado)
+   - animation: slideDown animação de abertura
+   - border: borda padrão
+   - border-top: nenhuma para continuar do header
+*/
+.accordion-body {
+    padding: 20px;
+    background: var(--backg-Sub-cor);
+    border-left: var(--borderSolid-padrao);
+    border-right: var(--borderSolid-padrao);
+    border-bottom: var(--borderSolid-padrao);
+    border-radius: 0 0 var(--borderRadius-padrao) var(--borderRadius-padrao);
+    display: none;
+    animation: slideDown 0.3s ease;
+    margin-bottom: 10px;
+}
+
+.accordion-body.active {
+    display: block;
+}
+
+.accordion-body p {
+    margin: 15px 0;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.accordion-body ul {
+    margin: 15px 0;
+    padding-left: 25px;
+}
+
+.accordion-body ul li {
+    margin: 10px 0;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.accordion-body h4 {
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+/* Animação de Slide Down
+   - Anima a abertura suave do acordeão
+*/
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ========================================
+   BOTÕES DE DOWNLOAD E CONTATO
+   Seções de ação na coluna direita
+   ======================================== */
+
+.download-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 20px;
+}
+
+/* Botão Português - Bordas Coloridas Brasil
+   - Bordas top/bottom: verde (#009c3b)
+   - Bordas left/right: amarelo (#ffcd00)
+   - Background: preto padrão
+*/
+.btn-pt {
+    width: 100%;
+    max-width: 220px;
+    border-top: 3px solid #009c3b !important;
+    border-bottom: 3px solid #009c3b !important;
+    border-left: 3px solid #ffcd00 !important;
+    border-right: 3px solid #ffcd00 !important;
+    background: var(--backg-Princ-cor) !important;
+    color: var(--texto-cor-padrao) !important;
+    padding: 12px 20px;
+    border-radius: var(--borderRadius-padrao);
+    cursor: pointer;
+    transition: var(--transicao-padrao);
+}
+
+.btn-pt:hover {
+    background: rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Botão Espanhol - Bordas Coloridas Espanha
+   - Bordas top/bottom: vermelho (#c60b1e)
+   - Bordas left/right: amarelo (#ffc400)
+   - Background: preto padrão
+*/
+.btn-es {
+    width: 100%;
+    max-width: 220px;
+    border-top: 3px solid #c60b1e !important;
+    border-bottom: 3px solid #c60b1e !important;
+    border-left: 3px solid #ffc400 !important;
+    border-right: 3px solid #ffc400 !important;
+    background: var(--backg-Princ-cor) !important;
+    color: var(--texto-cor-padrao) !important;
+    padding: 12px 20px;
+    border-radius: var(--borderRadius-padrao);
+    cursor: pointer;
+    transition: var(--transicao-padrao);
+}
+
+.btn-es:hover {
+    background: rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Botão LinkedIn - Bordas Coloridas LinkedIn
+   - Bordas top/bottom: azul (#0A66C2)
+   - Bordas left/right: branco (#ffffff)
+   - Background: preto padrão
+*/
+.btn-in {
+    width: 100%;
+    max-width: 220px;
+    border-top: 3px solid #0A66C2 !important;
+    border-bottom: 3px solid #0A66C2 !important;
+    border-left: 3px solid #ffffff !important;
+    border-right: 3px solid #ffffff !important;
+    background: var(--backg-Princ-cor) !important;
+    color: var(--texto-cor-padrao) !important;
+    padding: 12px 20px;
+    border-radius: var(--borderRadius-padrao);
+    cursor: pointer;
+    transition: var(--transicao-padrao);
+}
+
+.btn-in:hover {
+    background: rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Sidebar Contact Buttons - Botões de Contato
+   - Flexbox coluna com espaçamento
+   - Incluem WhatsApp, Google Agenda, LinkedIn
+*/
+.sidebar-contact-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.sidebar-btn {
+    display: block;
+    padding: 12px 16px !important;
+    margin: 0 !important;
+    background: var(--backg-Princ-cor) !important;
+    color: var(--texto-cor-padrao) !important;
+    text-decoration: none !important;
+    text-align: center;
+    border-radius: var(--borderRadius-padrao) !important;
+    font-weight: 600 !important;
+    font-size: 0.95em !important;
+    transition: var(--transicao-padrao) !important;
+    border: var(--borderSolid-padrao) !important;
+    width: 100%;
+}
+
+.sidebar-btn:hover {
+    background: #1a1a1a !important;
+    border: var(--borderSolid-padrao) !important;
+    color: var(--texto-cor-padrao) !important;
+}
+
+/* ========================================
+   RESPONSIVIDADE - TABLETS E MOBILE
+   Adapta layout para dispositivos menores
    ======================================== */
 
 /* Tablets (máximo 1024px)
    - Grid: 2 colunas (perfil + conteúdo)
-   - Arquivo: Movido abaixo, em 2 colunas
+   - Acordeões em layout responsivo
 */
 @media (max-width: 1024px) {
-    .blog-container {
+    .curriculum-container {
         grid-template-columns: 1fr 1.5fr;
         gap: 15px;
     }
 
-    .blog-sidebar-right {
+    .curriculum-sidebar-right {
         position: static;
         grid-column: 1 / -1;
     }
 
-    .blog-card-right {
+    .curriculum-card-right {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 20px;
-    }
-
-    .blog-card-right h3 {
-        grid-column: 1 / -1;
     }
 }
 
 /* Mobile (máximo 768px)
    - Grid: 1 coluna - todos os elementos empilhados
-   - Perfil no topo, Artigos no centro, Arquivo abaixo
+   - Perfil no topo, Acordeões abaixo
    - Padding reduzido para economia de espaço
 */
 @media (max-width: 768px) {
-    .blog-container {
+    .curriculum-container {
         grid-template-columns: 1fr;
         gap: 15px;
         padding: 10px;
     }
 
-    .blog-sidebar-left,
-    .blog-sidebar-right {
+    .curriculum-sidebar-left,
+    .curriculum-sidebar-right {
         position: static;
     }
 
-    .blog-card-main {
-        padding: 15px;
-        min-height: auto;
-    }
-
-    .blog-card-left,
-    .blog-card-right {
+    .curriculum-card-left,
+    .curriculum-card-right {
         padding: 15px;
     }
 
-    .blog-card-main-meta {
-        flex-direction: column;
-        gap: 8px;
-    }
-
-    .blog-card-right {
+    .curriculum-card-right {
         display: flex;
         flex-direction: column;
+    }
+
+    .download-buttons {
+        flex-direction: column;
+    }
+
+    .btn-pt,
+    .btn-es,
+    .btn-in {
+        max-width: 100%;
     }
 }

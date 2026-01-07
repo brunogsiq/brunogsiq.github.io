@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="Portfólio profissional de Bruno Gonçalves Siqueira - QA Software Analyst especializado em testes automatizados, manual testing e quality assurance." />
+    <meta name="keywords"
+        content="QA, Quality Assurance, Testes, Automação, Software Testing, Cypress, Robot Framework, PlayWright" />
+    <title>Bruno Gonçalves Siqueira - Portfólio QA Software Analyst</title>
+    <link rel="stylesheet" href="../../css/00_globals.css" />
+    <link rel="stylesheet" href="../../css/01_header.css" />
+    <link rel="stylesheet" href="../../css/02_head.css" />
+    <link rel="stylesheet" href="../../css/03_body.css" />
+    <link rel="stylesheet" href="../../css/06_footer.css" />
+    <link rel="stylesheet" href="../../css/pageCurriculo.css" />
+    <link rel="stylesheet" href="../../css/pageRecomendacoes.css" />
+    <link rel="stylesheet" href="../../css/button.css" />
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PQMKLMGY0H"></script>
+    <script src="./js/analytics.js"></script>
+    <!-- EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+</head>
+
+<body>
+    <!-- Cabeçalho -->
+    <header class="navbar">
+        <div class="navbar-left">
+            <!-- Botão logo que leva para a Home -->
+            <a href="../../index.html" class="home">
+                <img src="../../img/icones/home.png" alt="Ícone de casa - Voltar para página inicial" />
+            </a>
+            <!-- Campo de busca -->
+            <div class="search-box">
+                <input type="text" placeholder="Pesquisar" />
+                <button type="submit">
+                    <img src="../../img/icones/searchSmall.png" alt="Ícone de lupa - Buscar no portfólio" />
+                </button>
+            </div>
+        </div>
+        <!-- Menu de navegação central -->
+        <nav class="navbar-center">
+            <ul class="nav-links">
+                <li class="nav-item">
+                    <a href="../../index.html" class="nav-link" title="Voltar à página inicial">🏠 Início</a>
+                </li>
+                <li class="nav-item">
+                    <a href="./recomendacoes.html" class="nav-link" title="Ver recomendações recebidas">👥
+                        Recomendações</a>
+                </li>
+                <li class="nav-item">
+                    <a href="./curriculo.html" class="nav-link" title="Visualizar currículo completo">💼 Currículo</a>
+                </li>
+                <li class="nav-item">
+                    <a href="./blog.html" class="nav-link" title="Acessar blog e artigos">💬 Blog</a>
+                </li>
+                <li class="nav-item">
+                    <a href="./testMe.html" class="nav-link" title="Acessar seção de testes interativos">🔔 Test.Me</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <!-- Botão para voltar ao topo da página -->
+    <button id="botaoBase" onclick="voltarABase()" title="Voltar ao topo da página"
+        aria-label="Botão para voltar ao topo">
+        <img src="../../img/icones/upTop.png" alt="Ícone de seta para cima - Voltar para o topo da página" />
+    </button>
+    <main class="perfil-container">
+        <!-- Estrutura 3 colunas -->
+        <div class="curriculum-container">
+            <!-- Coluna Esquerda - Card Perfil (Estilo LinkedIn) -->
+            <aside class="curriculum-sidebar-left">
+                <div class="curriculum-card-left">
+                    <!-- Foto do Perfil -->
+                    <div class="profile-photo">
+                        <img src="../../img/pessoas/fotoLinkedin.jpg"
+                            alt="Bruno Gonçalves Siqueira - QA Software Analyst" />
+                    </div>
+
+                    <!-- Nome -->
+                    <h3 class="profile-name">Bruno Gonçalves Siqueira</h3>
+
+                    <!-- Título Profissional -->
+                    <p class="profile-title">Quality Assurance <br>& <br>Websites Developer</p>
+
+                    <!-- Localização -->
+                    <p class="profile-location">📍 Brasil, SP</p>
+
+                    <!-- Empresa -->
+                    <p class="profile-company">💼 QAtrix Tecnologia</p>
+
+                    <!-- Tags de Habilidades -->
+                    <div class="profile-skills">
+                        <span class="skill-tag">QA</span>
+                        <span class="skill-tag">Testes</span>
+                        <span class="skill-tag">Automação</span>
+                        <span class="skill-tag">Cypress</span>
+                        <span class="skill-tag">PlayWright</span>
+                        <span class="skill-tag">Websites</span>
+                        <span class="skill-tag">Landing Pages</span>
+                    </div>
+
+                    <!-- Botões de Ação -->
+                    <div class="profile-actions">
+                        <a href="../../index.html" class="btn-action btn-secondary">Ver Perfil Completo</a>
+                        <a href="../../index.html#contact" class="btn-action btn-secondary">Entrar em Contato</a>
+                    </div>
+                </div>
+            </aside>
+
+
+            <!-- Coluna Central - Carrossel de Recomendações -->
+            <main class="recommendations-main-content">
+                <article class="recommendations-card-main recommendations-carousel">
+                    <div class="recommendations-card-header">
+                        <h2>Recomendações e Depoimentos</h2>
+                        <div class="recommendations-card-meta">
+                            <span>⭐ Feedback de Colegas e Profissionais ⭐</span>
+                        </div>
+                    </div>
+
+                    <!-- Controles do Carrossel -->
+                    <div class="carousel-controls-wrapper">
+                        <button class="carousel-btn carousel-prev" onclick="changeSlide(-1)">❮ Anterior</button>
+                        <div class="carousel-dots" id="carouselDots">
+                            <span class="dot active" onclick="currentSlide(1)"></span>
+                            <span class="dot" onclick="currentSlide(2)"></span>
+                            <span class="dot" onclick="currentSlide(3)"></span>
+                            <span class="dot" onclick="currentSlide(4)"></span>
+                            <span class="dot" onclick="currentSlide(5)"></span>
+                            <span class="dot" onclick="currentSlide(6)"></span>
+                            <span class="dot" onclick="currentSlide(7)"></span>
+                            <span class="dot" onclick="currentSlide(8)"></span>
+                            <span class="dot" onclick="currentSlide(9)"></span>
+                            <span class="dot" onclick="currentSlide(10)"></span>
+                            <span class="dot" onclick="currentSlide(11)"></span>
+                            <span class="dot" onclick="currentSlide(12)"></span>
+                            <span class="dot" onclick="currentSlide(13)"></span>
+                            <span class="dot" onclick="currentSlide(14)"></span>
+                            <span class="dot" onclick="currentSlide(15)"></span>
+                            <span class="dot" onclick="currentSlide(16)"></span>
+                            <span class="dot" onclick="currentSlide(17)"></span>
+                        </div>
+                        <button class="carousel-btn carousel-next" onclick="changeSlide(1)">Próximo ❯</button>
+                    </div>
+
+                    <div class="carousel-container">
+                        <!-- DEPOIMENTO 1 - Evelin Monteiro -->
+                        <div class="carousel-item">
+                            <div class="recommendation-card">
+                                <div class="recommendation-header">
+                                    <div class="recommendation-author-photo">
+                                        <img src="../../img/pessoas/Evelin.jpg" alt="Evelin Monteiro"
+                                            class="author-photo">
+                                    </div>
+                                    <div class="recommendation-author">
+                                        <h4>Evelin Monteiro</h4>
+                                        <p class="recommendation-role">Product Owner • Agile Methodologies</p>
+                                    </div>
+                                    <div class="recommendation-stars">⭐⭐⭐⭐⭐</div>
+                                </div>
+                                <p class="recommendation-text">
+                                    "Bruno é um QA fora da curva. Suas habilidades técnicas são transparecidas em
+                                    análises minuciosas, sem deixar passar qualquer erro de negócio ou desenvolvimento.
+                                    É muito gratificante poder confiar na qualificação e desempenho dele, além das
+                                    ótimas conversas instrutivas e dos cafézinhos."
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- DEPOIMENTO 2 - Lorena Santos -->
+                        <div class="carousel-item">
+                            <div class="recommendation-card">
+                                <div class="recommendation-header">
+                                    <div class="recommendation-author-photo">
+                                        <img src="../../img/pessoas/lorena.jpg" alt="Lorena Santos"
+                                            class="author-photo">
+                                    </div>
+                                    <div class="recommendation-author">
+                                        <h4>Lorena Santos</h4>
+                                        <p class="recommendation-role">Analista de Testes • Qualidade de Software</p>
+                                    </div>
+                                    <div class="recommendation-stars">⭐⭐⭐⭐⭐</div>
+                                </div>
+                                <p class="recommendation-text">
+                                    "Tive o prazer de conhecer o Bruno durante nosso tempo na Muralis, e mesmo sem
+                                    termos trabalhado diretamente em projetos juntos, ele se destacou pela sua
+                                    generosidade e vasto conhecimento na área de Qualidade de Software. Sua habilidade
+                                    em explicar conceitos complexos de forma clara e acessível é realmente
+                                    impressionante. Recomendo Bruno sem reservas a qualquer equipe que valorize
+                                    profissionalismo, expertise em automação de testes e uma mentalidade colaborativa."
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- DEPOIMENTO 3 - Paulo Henrique Paiva da Silva -->
+                        <div class="carousel-item">
+                            <div class="recommendation-card">
+                                <div class="recommendation-header">
+                                    <div class="recommendation-author-photo">
+                                        <img src="../../img/pessoas/paulo.jpg" alt="Paulo Henrique Paiva da Silva"
+                                            class="author-photo">
+                                    </div>
+                                    <div class="recommendation-author">
+                                        <h4>Paulo Henrique Paiva da Silva</h4>
+                                        <p class="recommendation-role">Desenvolvedor Front-end • Lumini</p>
+                                    </div>
+                                    <div class="recommendation-stars">⭐⭐⭐⭐⭐</div>
+                                </div>
+                                <p class="recommendation-text">
+                                    "Tenho o privilégio de trabalhar com o Bruno em projetos na Lumini e posso afirmar
+                                    que sua atuação na área de QA é simplesmente excepcional. Sua capacidade de garantir
+                                    a qualidade nas entregas, especialmente nos testes de usuários, é uma das suas
+                                    maiores qualidades. Ele tem um olhar clínico para detalhes, assegurando que os
+                                    produtos entregues estejam alinhados com as expectativas dos usuários e com os
+                                    padrões de excelência que a empresa exige. Bruno demonstra um desempenho incrível em
+                                    todos os projetos em que se envolve. Sua proatividade é uma marca registrada; está
+                                    sempre atento às necessidades do time e pronto para sugerir melhorias que impactam
+                                    positivamente o resultado final. Sua habilidade em trabalhar dentro de metodologias
+                                    ágeis - como o Scrum - é admirável, proporcionando um equilíbrio perfeito entre
+                                    rapidez e qualidade nas entregas. Seja qual for o desafio, ele entrega resultados
+                                    consistentes e de alta qualidade, o que faz dele um membro valioso para qualquer
+                                    equipe. Recomendo fortemente o Bruno para qualquer posição que exija um profissional
+                                    comprometido com a excelência em QA."
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- DEPOIMENTO 4 - Diego Araújo -->
+                        <div class="carousel-item">
+                            <div class="recommendation-card">
+                                <div class="recommendation-header">
+                                    <div class="recommendation-author-photo">
+                                        <img src="../../img/pessoas/diegoara.jpg" alt="Diego Araújo"
+                                            class="author-photo">
+                                    </div>
+                                    <div class="recommendation-author">
+                                        <h4>Diego Araújo</h4>
+                                        <p class="recommendation-role">Engenheiro de QA</p>
+                                    </div>
+                                    <div class="recommendation-stars">⭐⭐⭐⭐⭐</div>
+                                </div>
+                                <p class="recommendation-text">
+                                    "Profissional dedicado e altamente capacitado na área de QA - Tester, com um foco
+                                    claro na prevenção de bugs e na transformação do mindset da equipe em prol da
+                                    qualidade. Com expertise em testes automatizados e manuais, além de técnicas como
+                                    BDD, caixas branca e preta, ele aplica as melhores práticas para garantir a robustez
+                                    e confiabilidade dos sistemas testados. Seu domínio de ferramentas como Cypress,
+                                    Postman, e metodologias ágeis, aliado a habilidades de comunicação e colaboração,
+                                    fazem dele um recurso indispensável para qualquer projeto que exija excelência em
+                                    qualidade de software. Seu comprometimento com a melhoria contínua e apoio ao
+                                    cliente complementam seu perfil técnico, tornando-o um profissional completo e
+                                    valioso em qualquer equipe."
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- DEPOIMENTO 5 - Diana Lafuente -->
+                        <div class="carousel-item">
+                            <div class="recommendation-card">
+                                <div class="recommendation-header">
+                                    <div class="recommendation-author-photo">
+                                        <img src="../../img/pessoas/diana.jpg" alt="Diana Lafuente"
+                                            class="author-photo">
+                                    </div>
+                                    <div class="recommendation-author">
+                                        <h4>Diana Lafuente</h4>
+                                        <p class="recommendation-role">Quality Assurance • T.I</p>
+                                    </div>
+                                    <div class="recommendation-stars">⭐⭐⭐⭐⭐</div>
+                                </div>
+                                <p class="recommendation-text">
+                                    "Bruno, um profissional exemplar em Análise de Qualidade e Teste de Software (QA).
+                                    Tive o privilégio de ser orientada por ele e posso afirmar que suas habilidades são
+                                    notáveis. Ele é um analista dedicado com um profundo entendimento na prevenção de
+                                    bugs e falhas. Sua abordagem proativa e foco na qualidade têm transformado as
+                                    equipes com as quais trabalha. Ele é proficiente em ferramentas e metodologias como
+                                    Shift-Left, testes automatizados e manuais, e possui um conhecimento sólido em BDD
+                                    com Gherkin. Além disso, tem experiência com frameworks de automação e ofereceu
+                                    suporte valioso com o Cypress."
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- DEPOIMENTO 6 - Luciano Alves Santos -->
+                        <div class="carousel-item">
+                            <div class="recommendation-card">
+                                <div class="recommendation-header">
+                                    <div class="recommendation-author-photo">
+                                        <img src="../../img/pessoas/luciano.jpg" alt="Luciano Alves Santos"
+                                            class="author-photo">
+                                    </div>
+                                    <div class="recommendation-author">
+                                        <h4>Luciano Alves Santos</h4>
+                                        <p class="recommendation-role">Desenvolvedor Java • Kotlin • Spring Boot</p>
+                                    </div>
+                                    <div class="recommendation-stars">⭐⭐⭐⭐⭐</div>
+                                </div>
+                                <p class="recommendation-text">
+                                    "Bruno, além de ser uma pessoa extremamente acessível, compreensiva e responsável,
+                                    destaca-se como um profissional de excelência em testes manuais e automação. Ele
+                                    possui uma visão diferenciada e oferece insights valiosos para realizar
+                                    implementações baseadas em boas práticas de desenvolvimento, assim como em
+                                    estruturas arquitetônicas voltadas para QA."
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- DEPOIMENTO 7 - Nadya W. -->
+                        <div class="carousel-item">
+                            <div class="recommendation-card">
+                                <div class="recommendation-header">
+                                    <div class="recommendation-author-photo">
+                                        <img src="../../img/pessoas/nadya.jpg" alt="Nadya W." class="author-photo">
+                                    </div>
+                                    <div class="recommendation-author">
+                                        <h4>Nadya W.</h4>
+                                        <p class="recommendation-role">Estágio em Fonoaudiologia / Psicologia</p>
+                                    </div>
+                                    <div class="recommendation-stars">⭐⭐⭐⭐⭐</div>
+                                </div>
+                                <p class="recommendation-text">
+                                    "O Bruno demonstra proficiência notável no uso de ferramentas de teste como Cypress
+                                    e Postman, e habilidades refinadas em JavaScript para a criação de scripts de
+                                    automação. Este profissional possui uma rica experiência em conduzir tanto testes
+                                    manuais quanto automatizados, abrangendo testes de caixa branca e caixa-preta,
+                                    garantindo assim uma análise detalhada e eficaz. Ele também se destaca em executar
+                                    testes de usabilidade e aceitação, assegurando que as soluções de software não
+                                    apenas atendam aos requisitos técnicos mas também ofereçam uma experiência ótima ao
+                                    usuário."
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- DEPOIMENTO 8 - Helder Saboia -->
+                        <div class="carousel-item">
+                            <div class="recommendation-card">
+                                <div class="recommendation-header">
+                                    <div class="recommendation-author-photo">
+                                        <img src="../../img/pessoas/helde.jpg" alt="Helder Saboia" class="author-photo">
+                                    </div>
+                                    <div class="recommendation-author">
+                                        <h4>Helder Saboia</h4>
+                                        <p class="recommendation-role">Analista Dev • .Net • Angular • React JS</p>
+                                    </div>
+                                    <div class="recommendation-stars">⭐⭐⭐⭐⭐</div>
+                                </div>
+                                <p class="recommendation-text">
+                                    "Tive a experiência única de trabalhar com o Bruno e posso afirmar que ele é um dos
+                                    melhores Analistas de Qualidade que conheço. Ele é dedicado, capacitado, e
+                                    totalmente entregue ao que faz. Ele discute, planeja, pensa e tenta buscar sempre as
+                                    melhores maneiras de se melhorar o que foi proposto. Ele é totalmente comunicativo e
+                                    extrovertido. Além de uma pessoa incrível que nos fez criar uma amizade que pretendo
+                                    manter pro resto da vida. Seu único defeito é ser Corintiano rsrs"
+                                </p>
+                            </div>
+                        </div>
+
+
+                        <!-- DEPOIMENTO 9 - Aline Magarão -->
+                        <div class="carousel-item">
+                            <div class="recommendation-card">
+                                <div class="recommendation-header">
+                                    <div class="recommendation-author-photo">
+                                        <img src="../../img/pessoas/aline mara.jpg" alt="Aline Magarão"
+                                            class="author-photo">
+                                    </div>
+                                    <div class="recommendation-author">
+                                        <h4>Aline Magarão</h4>
+                                        <p class="recommendation-role">Consultora de RH • HR Business Partner</p>
+                                    </div>
+                                    <div class="recommendation-stars">⭐⭐⭐⭐⭐</div>
+                                </div>
+                                <p class="recommendation-text">
+                                    "Recomendo Bruno, um profissional de Qualidade e Teste de Software (Q.A.) altamente
+                                    qualificado, que alia expertise técnica em ferramentas como Cypress.io e linguagens
+                                    de programação JavaScript, com uma forte capacidade de colaboração e comunicação.
+                                    Tem uma abordagem preventiva e foco em transformar o mindset da equipe para
+                                    priorizar a qualidade, desempenha um papel crucial na garantia de produtos de alta
+                                    excelência. Sua experiência em metodologias ágeis, habilidades analíticas e
+                                    inteligência emocional fazem do Bruno um membro indispensável em qualquer time,
+                                    agregando valor tanto no nível técnico quanto no humano."
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- DEPOIMENTO 10 - Fabrício Luis Perrone -->
+                        <div class="carousel-item">
+                            <div class="recommendation-card">
+                                <div class="recommendation-header">
+                                    <div class="recommendation-author-photo">
+                                        <img src="../../img/pessoas/fabriicio.jpg" alt="Fabrício Luis Perrone"
+                                            class="author-photo">
+                                    </div>
+                                    <div class="recommendation-author">
+                                        <h4>Fabrício Luis Perrone</h4>
+                                        <p class="recommendation-role">Analista de Testes e Qualidade • QA</p>
+                                    </div>
+                                    <div class="recommendation-stars">⭐⭐⭐⭐⭐</div>
+                                </div>
+                                <p class="recommendation-text">
+                                    "Bruno é um profissional excepcional em testes de software, combinando grande
+                                    conhecimento técnico em automação e metodologias ágeis com excelentes habilidades de
+                                    comunicação e trabalho em equipe. Seu domínio de ferramentas como Cypress e Postman,
+                                    aliado ao foco na qualidade e inovação, o torna uma excelente adição a qualquer
+                                    equipe. É especialista tanto em testes automatizados quanto manuais, aplicando
+                                    técnicas como shift-left testing para antecipar e resolver problemas rapidamente."
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- DEPOIMENTO 11 - Liviah Palma -->
+                        <div class="carousel-item">
+                            <div class="recommendation-card">
+                                <div class="recommendation-header">
+                                    <div class="recommendation-author-photo">
+                                        <img src="../../img/pessoas/livia.jpg" alt="Liviah Palma" class="author-photo">
+                                    </div>
+                                    <div class="recommendation-author">
+                                        <h4>Liviah Palma</h4>
+                                        <p class="recommendation-role">Analista de Qualidade de Software • QA</p>
+                                    </div>
+                                    <div class="recommendation-stars">⭐⭐⭐⭐⭐</div>
+                                </div>
+                                <p class="recommendation-text">
+                                    "Trabalhar com o Bruno é sempre uma experiência enriquecedora. Ele é um analista de
+                                    qualidade e teste de software que realmente se preocupa com a prevenção de bugs e a
+                                    qualidade do produto final. O Bruno tem um talento especial para lidar tanto com
+                                    testes automatizados quanto manuais, sempre buscando melhorar os processos com BDD e
+                                    gestão de bugs. Além disso, ele domina técnicas avançadas como teste de caixa branca
+                                    e preta. O que realmente se destaca em Bruno é sua habilidade de comunicar de forma
+                                    clara, sua atenção aos detalhes e seu espírito de colaboração. Ele é o tipo de
+                                    profissional que todos gostariam de ter em seu time de QA."
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- DEPOIMENTO 12 - Tiago Henrique Sampaio R. Evo -->
+                        <div class="carousel-item">
+                            <div class="recommendation-card">
+                                <div class="recommendation-header">
+                                    <div class="recommendation-author-photo">
+                                        <img src="../../img/pessoas/tiagoh.jpg" alt="Tiago Henrique Sampaio R. Evo"
+                                            class="author-photo">
+                                    </div>
+                                    <div class="recommendation-author">
+                                        <h4>Tiago Henrique Sampaio R. Evo</h4>
+                                        <p class="recommendation-role">Gerente de Produtos • Gestão de Produtos</p>
+                                    </div>
+                                    <div class="recommendation-stars">⭐⭐⭐⭐⭐</div>
+                                </div>
+                                <p class="recommendation-text">
+                                    "Bruno possui vasta experiência em qualidade de software, destacando-se no teste de
+                                    garantia da qualidade, gestão de falhas e revisão de documentos. Com habilidades
+                                    sólidas em metodologias ágeis, Bruno utiliza ferramentas de automação de testes para
+                                    garantir a excelência. Especialista em teste de aceitação de usuários e levantamento
+                                    de requisitos, Bruno tem forte capacidade de apresentação e suporte técnico, além de
+                                    vasta experiência em gestão de projetos e estudos de casos."
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- DEPOIMENTO 13 - Vinny Felipe -->
+                        <div class="carousel-item">
+                            <div class="recommendation-card">
+                                <div class="recommendation-header">
+                                    <div class="recommendation-author-photo">
+                                        <img src="../../img/pessoas/vinny.jpg" alt="Vinny Felipe" class="author-photo">
+                                    </div>
+                                    <div class="recommendation-author">
+                                        <h4>Vinny Felipe</h4>
+                                        <p class="recommendation-role">Analista de Qualidade • Quality Assurance</p>
+                                    </div>
+                                    <div class="recommendation-stars">⭐⭐⭐⭐⭐</div>
+                                </div>
+                                <p class="recommendation-text">
+                                    "Trabalhar com o Bruno é uma experiência incrível. Seu conhecimento em QA e
+                                    habilidades de teste são excepcionais, garantindo sempre a máxima qualidade dos
+                                    projetos. Ele se destaca pela atenção aos detalhes e pela capacidade de identificar
+                                    e resolver problemas complexos com eficiência. Sempre proativo e colaborativo, é uma
+                                    peça-chave para qualquer equipe que busca excelência em qualidade de software."
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- DEPOIMENTO 14 - Jorge Patrício -->
+                        <div class="carousel-item">
+                            <div class="recommendation-card">
+                                <div class="recommendation-header">
+                                    <div class="recommendation-author-photo">
+                                        <img src="../../img/pessoas/jorge.jpg" alt="Jorge Patrício"
+                                            class="author-photo">
+                                    </div>
+                                    <div class="recommendation-author">
+                                        <h4>Jorge Patrício</h4>
+                                        <p class="recommendation-role">Coordenador de Produtos • PSPO I</p>
+                                    </div>
+                                    <div class="recommendation-stars">⭐⭐⭐⭐⭐</div>
+                                </div>
+                                <p class="recommendation-text">
+                                    "Trabalhei com Bruno na Interplayers, apesar de não na mesma squad, como Analista de
+                                    Qualidade e posso afirmar que ele é um profissional excepcional. Sua proatividade e
+                                    capacidade de liderança no projeto de automação eram notáveis. Sempre estava à
+                                    frente, buscando soluções inovadoras e motivando a equipe. Recomendo-o fortemente
+                                    para qualquer posição que exija um profissional engajado e com um forte senso de
+                                    responsabilidade."
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- DEPOIMENTO 15 - Matheus Mariz -->
+                        <div class="carousel-item">
+                            <div class="recommendation-card">
+                                <div class="recommendation-header">
+                                    <div class="recommendation-author-photo">
+                                        <img src="../../img/pessoas/mMariz.png" alt="Matheus Mariz"
+                                            class="author-photo">
+                                    </div>
+                                    <div class="recommendation-author">
+                                        <h4>Matheus Mariz</h4>
+                                        <p class="recommendation-role">Tech Lead • Sr IT Business Analyst</p>
+                                    </div>
+                                    <div class="recommendation-stars">⭐⭐⭐⭐⭐</div>
+                                </div>
+                                <p class="recommendation-text">
+                                    "Um profissional de alta performance, pró-ativo, com ótima lógica, sempre buscando
+                                    as soluções mais inteligentes para os problemas apresentados, um perfil
+                                    imprescindível em qualquer equipe de TI que busque sucesso e excelência no serviço.
+                                    Espero muito que um dia possa trabalhar novamente com esta pessoa incrível!"
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- DEPOIMENTO 16 - Dario Gomes Carvalho -->
+                        <div class="carousel-item">
+                            <div class="recommendation-card">
+                                <div class="recommendation-header">
+                                    <div class="recommendation-author-photo">
+                                        <img src="../../img/pessoas/Dario.png" alt="Dario Gomes Carvalho"
+                                            class="author-photo">
+                                    </div>
+                                    <div class="recommendation-author">
+                                        <h4>Dario Gomes Carvalho</h4>
+                                        <p class="recommendation-role">Gerente de Implantação de ERP • Scrum Master</p>
+                                    </div>
+                                    <div class="recommendation-stars">⭐⭐⭐⭐⭐</div>
+                                </div>
+                                <p class="recommendation-text">
+                                    "Bruno é um profissional capacitado, dedicado, estudioso. Um profissional que busca
+                                    soluções inteligentes, as quais evoluem o software e a equipe de profissionais.
+                                    Possui alto nível de concentração e inteligência demonstrada no cotidiano da
+                                    empresa."
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- DEPOIMENTO 17 - Veja Mais Recomendações -->
+                        <div class="carousel-item">
+                            <div class="recommendation-card see-more-card">
+                                <div class="see-more-header">
+                                    <h4>Veja Mais Recomendações</h4>
+                                    <p>Acesse todas as minhas recomendações no LinkedIn</p>
+                                </div>
+                                <div class="see-more-body">
+                                    <a href="https://www.linkedin.com/in/brunogsiq/details/recommendations/?detailScreenTabIndex=0"
+                                        target="_blank" rel="noopener noreferrer" class="see-more-link">
+                                        <img src="../../img/icones/Linkedin.webp"
+                                            alt="LinkedIn" class="linkedin-icon">
+                                        <span>Acessar LinkedIn</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </main>
+
+
+            <!-- Coluna Direita - Contato e Ações -->
+            <aside class="curriculum-sidebar-right">
+                <div class="curriculum-card-right">
+                    <h3>Vamos Conversar?</h3>
+                    <div class="sidebar-contact-buttons">
+                        <a href="https://calendar.app.google/diWTpZ6U93gk7xMv9" target="_blank"
+                            rel="noopener noreferrer" id="btn-googleAgenda" class="contact-btn sidebar-btn"
+                            title="Abrir Google Agenda">
+                            📅 Agendar
+                        </a>
+                        <a href="https://wa.me/5548991059871" target="_blank" rel="noopener noreferrer"
+                            id="btn-whatsapp" class="contact-btn sidebar-btn" title="Abrir WhatsApp">
+                            💬 WhatsApp
+                        </a>
+                        <a href="https://www.linkedin.com/in/brunogsiq" target="_blank" rel="noopener noreferrer"
+                            id="btn-linkedin" class="contact-btn sidebar-btn linkedin-btn" title="Abrir LinkedIn">
+                            🔗 LinkedIn
+                        </a>
+                    </div>
+                    <div class="recommendations-card-main-footer">
+                        <h2>Baixe meu Currículo Completo</h2>
+                        <div class="download-buttons">
+                            <a href="../../archive/Bruno Gonçalves Siqueira - Janeiro_2026_BR.pdf" download
+                                class="verMais btn-pt">🇧🇷 Português</a>
+                            <a href="../../archive/Bruno Gonçalves Siqueira - Janeiro_2026_ES.pdf" download
+                                class="verMais btn-es">🇪🇸 Español</a>
+                            <a href="../../archive/Bruno Goncalves Siqueira - Linkedin Version.pdf" download
+                                class="verMais btn-in">🔗 LinkedIn</a>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+            </aside>
+        </div>
+    </main>
+    <!-- Seção de Separação (Faixa Cinza) -->
+    <div class="perfil-container">
+        <section class="caixa-conteudo sobre">
+            <h2>Conhecer Minha Trajetória</h2>
+            <div class="texto-sobre">
+                <p>
+                    Viu algo que te interessou? Confira meu portfólio completo com projetos, certificações e
+                    contribuições na área de Quality Assurance e desenvolvimento web.
+                    <br><br>
+                    Tenho experiência com as principais ferramentas de automação, práticas ágeis e estratégias de
+                    testes que garantem a qualidade de software de ponta a ponta.
+                    <br><br>
+                    💼 <strong>Próximo passo:</strong> Entre em contato para conversarmos sobre como posso contribuir
+                    para sua equipe!
+                </p>
+            </div>
+        </section>
+    </div>
+    <!-- Rodapé -->
+    <footer class="perfil-container">
+        <section class="caixa-conteudo rodape">
+            <div class="footer-content">
+                <div class="mensagem" id="mensagem">
+                    <p>Obrigado por nos visitar!</p>
+                </div>
+                <nav id="iconesFooter" aria-label="Links de redes sociais">
+                    <a href="https://wa.me/5548991059871" target="_blank" rel="noopener noreferrer"
+                        title="Entre em contato via WhatsApp">
+                        <img src="../../img/icones/rs_whatsapp.png"
+                            alt="WhatsApp - Contato direto para suporte e dúvidas">
+                    </a>
+                    <a href="https://www.linkedin.com/in/brunogsiq" target="_blank" rel="noopener noreferrer"
+                        title="Visite meu perfil no LinkedIn">
+                        <img src="../../img/icones/rs_linkedin.png" alt="LinkedIn - Perfil profissional e experiência">
+                    </a>
+                    <a href="https://github.com/brunogsiq" target="_blank" rel="noopener noreferrer"
+                        title="Veja meus repositórios no GitHub">
+                        <img src="../../img/icones/rs_github.png" alt="GitHub - Portfólio de projetos e código-fonte">
+                    </a>
+                    <a href="https://medium.com/@brunogsiq" target="_blank" rel="noopener noreferrer"
+                        title="Leia meus artigos no Medium">
+                        <img src="../../img/icones/rs_medium.webp" alt="Medium - Artigos e insights sobre QA">
+                    </a>
+                    <a href="mailto:brunogsiq@gmail.com" title="Enviar e-mail">
+                        <img src="../../img/icones/rs_emaill.png" alt="E-mail - brunogsiq@gmail.com">
+                    </a>
+                </nav>
+                <div class="direitos" id="direitos">
+                    <p>&copy; QAtrix Tecnologia - 2025<br>Todos os direitos reservados.</p>
+                </div>
+            </div>
+        </section>
+
+    </footer>
+    <!-- Botão para voltar ao topo da página -->
+    <button id="botaoTopo" onclick="voltarAoTopo()" title="Voltar ao topo da página"
+        aria-label="Botão para voltar ao topo">
+        <img src="../../img/icones/upTop.png" alt="Ícone de seta para cima">
+    </button>
+    <!-- Botão para voltar à base/rodapé -->
+    <button id="botaoBase" onclick="voltarABase()" title="Voltar ao rodapé" aria-label="Botão para voltar ao rodapé">
+        <img src="../../img/icones/upTop.png" alt="Ícone de seta para baixo">
+    </button>
+    <script src="../../js/script.js"></script>
+    <script src="../../js/carousel.js"></script>
+</body>
+
+</html>

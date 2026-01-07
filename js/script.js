@@ -16,42 +16,36 @@ function toggleTexto() {
 
 /* Botão - Voltar a Base */
 
-// Mostrar/esconder botão de "Voltar à base"
+// Elementos dos botões
 const botaoBase = document.getElementById("botaoBase");
-const secaoFooter = document.querySelector("footer"); 
+const botaoTopo = document.getElementById("botaoTopo");
+const secaoFooter = document.querySelector("footer");
+const secaoSobreMim = document.querySelector('section.sobre h2') || document.querySelector('h2');
 
+// Listener único para controlar ambos os botões
 window.addEventListener("scroll", () => {
     const posicaoRodape = secaoFooter.getBoundingClientRect().top;
 
-    // Se a parte de cima do rodapé estiver visível (ou quase visível)
+    // Controla botão de voltar ao topo (aparece quando footer fica visível)
     if (posicaoRodape < window.innerHeight) {
-        botaoBase.style.display = "none"; // Esconde o botão
-    } else {
-        botaoBase.style.display = "block"; // Mostra o botão
-    }
-});
-
-// Função ao clicar no botão
-function voltarABase() {
-    const rodape = document.querySelector("footer");
-    rodape.scrollIntoView({ behavior: "smooth" });
-}
-
-/* Botão - Voltar ao Topo */
-
-const botaoTopo = document.getElementById("botaoTopo");
-const secaoSobreMim = document.querySelector('h2');
-
-window.addEventListener("scroll", () => {
-    // Verifica a posição do topo da seção "Um pouco sobre mim"
-    const posicaoSecao = secaoSobreMim.getBoundingClientRect().top;
-
-    if (posicaoSecao < window.innerHeight / 2) {
         botaoTopo.style.display = "block";
     } else {
         botaoTopo.style.display = "none";
     }
+
+    // Controla botão de voltar à base (desaparece quando footer fica visível)
+    if (posicaoRodape < window.innerHeight) {
+        botaoBase.style.display = "none";
+    } else {
+        botaoBase.style.display = "block";
+    }
 });
+
+// Função ao clicar no botão de voltar à base
+function voltarABase() {
+    const rodape = document.querySelector("footer");
+    rodape.scrollIntoView({ behavior: "smooth" });
+}
 
 function voltarAoTopo() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -490,6 +484,23 @@ function fecharMensagem() {
         formMessage.style.display = 'none';
         formMessage.style.animation = 'slideInBottom 0.4s ease-out';
     }, 300);
+}
+
+/* Acordeões do Currículo */
+function toggleAccordion(header) {
+    // Remove a classe 'active' de todos os headers
+    const allHeaders = document.querySelectorAll('.accordion-header');
+    allHeaders.forEach(h => {
+        if (h !== header) {
+            h.classList.remove('active');
+            h.nextElementSibling.classList.remove('active');
+        }
+    });
+
+    // Toggle o header e body clicado
+    header.classList.toggle('active');
+    const body = header.nextElementSibling;
+    body.classList.toggle('active');
 }
 
 /*Fim*/

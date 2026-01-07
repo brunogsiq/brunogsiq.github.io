@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="Portfólio profissional de Bruno Gonçalves Siqueira - QA Software Analyst especializado em testes automatizados, manual testing e quality assurance." />
+    <meta name="keywords"
+        content="QA, Quality Assurance, Testes, Automação, Software Testing, Cypress, Robot Framework, PlayWright" />
+    <title>Bruno Gonçalves Siqueira - Portfólio QA Software Analyst</title>
+    <link rel="stylesheet" href="../../css/00_globals.css" />
+    <link rel="stylesheet" href="../../css/01_header.css" />
+    <link rel="stylesheet" href="../../css/02_head.css" />
+    <link rel="stylesheet" href="../../css/03_body.css" />
+    <link rel="stylesheet" href="../../css/06_footer.css" />
+    <link rel="stylesheet" href="../../css/pageCurriculo.css" />
+    <link rel="stylesheet" href="../../css/button.css" />
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PQMKLMGY0H"></script>
+    <script src="./js/analytics.js"></script>
+    <!-- EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+</head>
+
+<body>
+    <!-- Cabeçalho -->
+    <header class="navbar">
+        <div class="navbar-left">
+            <!-- Botão logo que leva para a Home -->
+            <a href="../../index.html" class="home">
+                <img src="../../img/icones/home.png" alt="Ícone de casa - Voltar para página inicial" />
+            </a>
+            <!-- Campo de busca -->
+            <div class="search-box">
+                <input type="text" placeholder="Pesquisar" />
+                <button type="submit">
+                    <img src="../../img/icones/searchSmall.png" alt="Ícone de lupa - Buscar no portfólio" />
+                </button>
+            </div>
+        </div>
+        <!-- Menu de navegação central -->
+        <nav class="navbar-center">
+            <ul class="nav-links">
+                <li class="nav-item">
+                    <a href="../../index.html" class="nav-link" title="Voltar à página inicial">🏠 Início</a>
+                </li>
+                <li class="nav-item">
+                    <a href="./recomendacoes.html" class="nav-link" title="Ver recomendações recebidas">👥
+                        Recomendações</a>
+                </li>
+                <li class="nav-item">
+                    <a href="./curriculo.html" class="nav-link" title="Visualizar currículo completo">💼 Currículo</a>
+                </li>
+                <li class="nav-item">
+                    <a href="./blog.html" class="nav-link" title="Acessar blog e artigos">💬 Blog</a>
+                </li>
+                <li class="nav-item">
+                    <a href="./testMe.html" class="nav-link" title="Acessar seção de testes interativos">🔔 Test.Me</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <!-- Botão para voltar ao topo da página -->
+    <button id="botaoBase" onclick="voltarABase()" title="Voltar ao topo da página"
+        aria-label="Botão para voltar ao topo">
+        <img src="../../img/icones/upTop.png" alt="Ícone de seta para cima - Voltar para o topo da página" />
+    </button>
+    <main class="perfil-container">
+        <!-- Estrutura 3 colunas -->
+        <div class="curriculum-container">
+            <!-- Coluna Esquerda - Card Perfil (Estilo LinkedIn) -->
+            <aside class="curriculum-sidebar-left">
+                <div class="curriculum-card-left">
+                    <!-- Foto do Perfil -->
+                    <div class="profile-photo">
+                        <img src="../../img/pessoas/fotoLinkedin.jpg"
+                            alt="Bruno Gonçalves Siqueira - QA Software Analyst" />
+                    </div>
+
+                    <!-- Nome -->
+                    <h3 class="profile-name">Bruno Gonçalves Siqueira</h3>
+
+                    <!-- Título Profissional -->
+                    <p class="profile-title">Quality Assurance <br>& <br>Websites Developer</p>
+
+                    <!-- Localização -->
+                    <p class="profile-location">📍 Brasil, SP</p>
+
+                    <!-- Empresa -->
+                    <p class="profile-company">💼 QAtrix Tecnologia</p>
+
+                    <!-- Tags de Habilidades -->
+                    <div class="profile-skills">
+                        <span class="skill-tag">QA</span>
+                        <span class="skill-tag">Testes</span>
+                        <span class="skill-tag">Automação</span>
+                        <span class="skill-tag">Cypress</span>
+                        <span class="skill-tag">PlayWright</span>
+                        <span class="skill-tag">Websites</span>
+                        <span class="skill-tag">Landing Pages</span>
+                    </div>
+
+                    <!-- Botões de Ação -->
+                    <div class="profile-actions">
+                        <a href="../../index.html" class="btn-action btn-secondary">Ver Perfil Completo</a>
+                        <a href="../../index.html#contact" class="btn-action btn-secondary">Entrar em Contato</a>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Coluna Central - Conteúdo do Currículo -->
+            <main class="curriculum-main-content">
+                <article class="curriculum-card-main">
+                    <div class="curriculum-card-main-header">
+                        <h2>Meu Currículo Online</h2>
+                        <div class="curriculum-card-main-meta">
+                            <span>🎯 Testes Automatizados e Manuais</span>
+                            <span>💼 QAtrix Tecnologia</span>
+                            <span>📍 Brasil, SP</span>
+                        </div>
+                    </div>
+
+                    <div class="curriculum-card-main-content curriculum-content">
+                        <!-- ACORDEÃO: RESUMO -->
+                        <div class="accordion-item">
+                            <button class="accordion-header" onclick="toggleAccordion(this)">
+                                <span class="accordion-title">📋 Resumo Profissional</span>
+                                <span class="accordion-icon">+</span>
+                            </button>
+                            <div class="accordion-body">
+                                <p>Profissional com foco na prevenção de falhas desde a análise de requisitos
+                                    (shift-left testing). Atuo com testes manuais e automatizados, elaborando cenários
+                                    com BDD, criando dados de teste, documentando evidências e propondo melhorias
+                                    contínuas através do frameworks Cypress, Playwright e Postman.</p>
+                                <p>Fundador da QAtrix Tecnologia, apoiando, contribuindo para evolução de QAs em início
+                                    de carreira, treinando talentos em diversos âmbitos e posicionamento profissional.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- ACORDEÃO: INFORMAÇÕES ADICIONAIS -->
+                        <div class="accordion-item">
+                            <button class="accordion-header" onclick="toggleAccordion(this)">
+                                <span class="accordion-title">ℹ️ Informações Adicionais</span>
+                                <span class="accordion-icon">+</span>
+                            </button>
+                            <div class="accordion-body">
+                                <p><strong>Em todas as oportunidades profissionais atuei em equipes ágeis e formato
+                                        scrum, onde pude contribuir com:</strong></p>
+                                <ul>
+                                    <li>Criação, manutenção e cooperação em projetos automatizados.</li>
+                                    <li>Planejamento de testes com foco em cobertura, riscos e valor de negócio.</li>
+                                    <li>Escrita de cenários BDD com Gherkin (Dado, Quando, Então).</li>
+                                    <li>Criação de massa de dados para execução de testes.</li>
+                                    <li>Registro de evidências, documentação e análise de falhas.</li>
+                                    <li>Reteste de bugs e acompanhamento de correções.</li>
+                                    <li>Participação ativa em cerimônias Scrum (Daily, Planejamento, Refinamento,
+                                        Review, Retrô).</li>
+                                    <li>Colaboração e avaliação de protótipos UI/UX para validação de requisitos
+                                        visuais.</li>
+                                    <li>Sugestão de melhorias com foco em qualidade contínua.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- ACORDEÃO: DESTAQUES -->
+                        <div class="accordion-item">
+                            <button class="accordion-header" onclick="toggleAccordion(this)">
+                                <span class="accordion-title">⭐ Destaques</span>
+                                <span class="accordion-icon">+</span>
+                            </button>
+                            <div class="accordion-body">
+                                <p><strong>Responsável pela iniciativa e oportunidade de liderar dois projetos de
+                                        automação com Cypress.</strong> Padronização, documentações para instalação,
+                                    construção da estrutura, escrita e priorização de contexto, cenários e casos de
+                                    testes, e mentorar e auxiliar os QAs da squad na evolução do framework.</p>
+                            </div>
+                        </div>
+
+                        <!-- ACORDEÃO: EXPERIÊNCIA PROFISSIONAL -->
+                        <div class="accordion-item">
+                            <button class="accordion-header" onclick="toggleAccordion(this)">
+                                <span class="accordion-title">💼 Experiência Profissional</span>
+                                <span class="accordion-icon">+</span>
+                            </button>
+                            <div class="accordion-body">
+                                <p><strong>Visão Geral:</strong> Atuando de forma ativa nos mais distintos projetos,
+                                    pude contribuir com a qualidade em diversos setores junto a equipes de
+                                    desenvolvimento de software, proporcionando insights, levantando questionamentos,
+                                    apresentando melhorias e testando, para garantir que as regras de negócio e
+                                    critérios de aceite eram obedecidos.</p>
+
+                                <p>Atuei em sistemas de gestão bancárias, hospitalares, atendimentos terapêuticos,
+                                    atendimento de telemarketing, plataforma b2b, academia de treinamentos e cursos,
+                                    sistema de geração de boleto, e em alguns destes pude fornecer automação de sistemas
+                                    contribuindo na garantia do funcionamento dos principais fluxos.</p>
+
+                                <p>Ao longo das minhas atuações, contribui com colegas QA/Tester, em suas evoluções e
+                                    também retirada de dúvidas e em seus projetos dos quais os mesmos estavam alocados,
+                                    pude aperfeiçoar características de liderança, passagem de conhecimento em testes
+                                    manuais e automação frontend e parcelas em testes de API.</p>
+
+                                <p>Realizo conversas semanais com colegas que estão em início de carreira onde tenho
+                                    como objetivos destravar conceitos de testes, comportamentais, soft e hard skills.
+                                </p>
+
+                                <h4 style="margin-top: 20px; margin-bottom: 10px;"><strong>🎯 QAtrix Tecnologia -
+                                        Soluções em Qualidade e Testes</strong></h4>
+                                <p><strong>Cargo:</strong> Analista de Qualidade e Testes de Software</p>
+                                <p><strong>Atuação:</strong> Testes automatizados e manuais em projetos Web, Mobile e
+                                    API (Frontend e backend)</p>
+
+                                <p><strong>📌 Projetos Principais:</strong></p>
+                                <ul>
+                                    <li><strong>Mentoria e Treinamentos:</strong> Contribuição e apoio para
+                                        profissionais da área de Qualidade e Testes de Software. Apresentação do dia a
+                                        dia, compartilhamos experiências reais e ajudamos profissionais a obterem mais
+                                        segurança, performance e propósito em sua trajetória como QA.</li>
+                                    <li><strong>Portal Web AtendeBra:</strong> Sistema de Gestão de Tarifas Bancárias,
+                                        Portal voltado para colaboradores e clientes de instituições financeiras, com
+                                        funcionalidades de cancelamento, autorização de tarifas, integração bancária e
+                                        controle de cobranças.</li>
+                                    <li><strong>Portal Web de Portabilidade de Crédito:</strong> Reformulação do portal
+                                        web para facilitar a portabilidade de crédito entre instituições financeiras
+                                        como Crédito Consignado, Pessoal, Imobiliário, Veículos, Cheque Especial e
+                                        Cartão de Crédito.</li>
+                                    <li><strong>Portal Web Simplifique:</strong> Otimização do portal B2B/B2C para
+                                        melhorar a experiência de uso por representantes, vendedores na venda de
+                                        produtos digitais e assinaturas.</li>
+                                    <li><strong>Sistema de Gestão e Controle de Tarifas:</strong> Padronizar o novo
+                                        portal para controle, gestão, criação de tarifa interno de um sistema bancário
+                                        integrado aos sistemas de conta corrente, poupança e outros investimentos
+                                        financeiro proporcionados pela instituição.</li>
+                                    <li><strong>Portal Web PsicoManager Terapias:</strong> Sistema para Clínicas de
+                                        Psicologia, plataforma com agenda inteligente, integração com Google Agenda,
+                                        reserva de salas e agendamento online. Responsável pela automação de testes,
+                                        validação contínua de funcionalidades e atualizações do sistema.</li>
+                                    <li><strong>Sistema Maltego:</strong> Software de Investigação Digital Forense,
+                                        sistema nacional para órgãos de investigação, com uso da ferramenta Maltego.
+                                        Testes rigorosos em APIs via Postman e validação de dados sensíveis com precisão
+                                        de entrada e saída.</li>
+                                    <li><strong>Portal BT Tech:</strong> Portal Jurídico Web, sistema completo para
+                                        escritórios de advocacia, com controle de prazos, gestão de processos,
+                                        andamentos e intimações. Liderança na criação de testes automatizados para
+                                        fluxos críticos e simulações de rotinas jurídicas.</li>
+                                    <li><strong>APP Leve Saúde +45:</strong> Aplicativo de Plano de Saúde 45+, app com
+                                        funcionalidades de consulta de IR, dados pessoais, marcação de exames, lembretes
+                                        e controle de vacinação. Participei de todo o ciclo de testes e conduzi
+                                        validações em ambiente mobile e web.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- ACORDEÃO: COMPETÊNCIAS -->
+                        <div class="accordion-item">
+                            <button class="accordion-header" onclick="toggleAccordion(this)">
+                                <span class="accordion-title">🛠️ Competências e Qualificações</span>
+                                <span class="accordion-icon">+</span>
+                            </button>
+                            <div class="accordion-body">
+                                <p><strong>Automação Frontend:</strong> Cypress, Playwright, Robot Framework</p>
+                                <p><strong>APIs:</strong> Postman, Swagger, API REST</p>
+                                <p><strong>Programação:</strong> JavaScript, HTML, CSS, Python</p>
+                                <p><strong>Testes:</strong> Funcional, Regressão, Usabilidade, Exploratório, API</p>
+                                <p><strong>Práticas:</strong> BDD (Gherkin), TDD, Shift-left, Scrum</p>
+                                <p><strong>Ferramentas:</strong> Jira, Azure DevOps, Trello, Git, Zephyr, QAlity Plus
+                                </p>
+                                <p><strong>Soft Skills:</strong> Comunicação, mentoria, liderança colaborativa,
+                                    proatividade</p>
+                            </div>
+                        </div>
+
+                        <!-- ACORDEÃO: GRADUAÇÃO -->
+                        <div class="accordion-item">
+                            <button class="accordion-header" onclick="toggleAccordion(this)">
+                                <span class="accordion-title">🎓 Graduação e Línguas</span>
+                                <span class="accordion-icon">+</span>
+                            </button>
+                            <div class="accordion-body">
+                                <p><strong>📚 Análise e Desenvolvimento de Sistemas (ADS)</strong> - Em formação
+                                    (Término Dezembro 2028)</p>
+                                <p><strong>🇪🇸 Espanhol (B2)</strong> - Capacidade de participar ativamente junto a
+                                    equipes de desenvolvimento de sistema</p>
+                                <p><strong>🇬🇧 Inglês (A2)</strong> - Leitura e escrita de textos, com curtas
+                                    apresentações</p>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </main>
+
+            <!-- Coluna Direita - Contato e Ações -->
+            <aside class="curriculum-sidebar-right">
+                <div class="curriculum-card-right">
+                    <h3>Vamos Conversar?</h3>
+                    <div class="sidebar-contact-buttons">
+                        <a href="https://calendar.app.google/diWTpZ6U93gk7xMv9" target="_blank" rel="noopener noreferrer"
+                            id="btn-googleAgenda" class="contact-btn sidebar-btn" title="Abrir Google Agenda">
+                            📅 Agendar
+                        </a>
+                        <a href="https://wa.me/5548991059871" target="_blank" rel="noopener noreferrer" id="btn-whatsapp"
+                            class="contact-btn sidebar-btn" title="Abrir WhatsApp">
+                            💬 WhatsApp
+                        </a>
+                        <a href="https://www.linkedin.com/in/brunogsiq" target="_blank" rel="noopener noreferrer"
+                            id="btn-linkedin" class="contact-btn sidebar-btn linkedin-btn" title="Abrir LinkedIn">
+                            🔗 LinkedIn
+                        </a>
+                    </div>
+                    <div class="curriculum-card-main-footer">
+                        <h2>Baixe meu Currículo Completo</h2>
+                        <div class="download-buttons">
+                            <a href="../../archive/Bruno Gonçalves Siqueira - Janeiro_2026_BR.pdf" download
+                                class="verMais btn-pt">🇧🇷 Português</a>
+                            <a href="../../archive/Bruno Gonçalves Siqueira - Janeiro_2026_ES.pdf" download
+                                class="verMais btn-es">🇪🇸 Español</a>
+                            <a href="../../archive/Bruno Goncalves Siqueira - Linkedin Version.pdf" download
+                                class="verMais btn-in">🔗 LinkedIn</a>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+            </aside>
+        </div>
+    </main>
+    <!-- Seção de Separação (Faixa Cinza) -->
+    <div class="perfil-container">
+        <section class="caixa-conteudo sobre">
+            <h2>Conhecer Minha Trajetória</h2>
+            <div class="texto-sobre">
+                <p>
+                    Viu algo que te interessou? Confira meu portfólio completo com projetos, certificações e 
+                    contribuições na área de Quality Assurance e desenvolvimento web.
+                    <br><br>
+                    Tenho experiência com as principais ferramentas de automação, práticas ágeis e estratégias de 
+                    testes que garantem a qualidade de software de ponta a ponta.
+                    <br><br>
+                    💼 <strong>Próximo passo:</strong> Entre em contato para conversarmos sobre como posso contribuir 
+                    para sua equipe!
+                </p>
+            </div>
+        </section>
+    </div>
+    <!-- Rodapé -->
+    <footer class="perfil-container">
+        <section class="caixa-conteudo rodape">
+            <div class="footer-content">
+                <div class="mensagem" id="mensagem">
+                    <p>Obrigado por nos visitar!</p>
+                </div>
+                <nav id="iconesFooter" aria-label="Links de redes sociais">
+                    <a href="https://wa.me/5548991059871" target="_blank" rel="noopener noreferrer"
+                        title="Entre em contato via WhatsApp">
+                        <img src="../../img/icones/rs_whatsapp.png"
+                            alt="WhatsApp - Contato direto para suporte e dúvidas">
+                    </a>
+                    <a href="https://www.linkedin.com/in/brunogsiq" target="_blank" rel="noopener noreferrer"
+                        title="Visite meu perfil no LinkedIn">
+                        <img src="../../img/icones/rs_linkedin.png" alt="LinkedIn - Perfil profissional e experiência">
+                    </a>
+                    <a href="https://github.com/brunogsiq" target="_blank" rel="noopener noreferrer"
+                        title="Veja meus repositórios no GitHub">
+                        <img src="../../img/icones/rs_github.png" alt="GitHub - Portfólio de projetos e código-fonte">
+                    </a>
+                    <a href="https://medium.com/@brunogsiq" target="_blank" rel="noopener noreferrer"
+                        title="Leia meus artigos no Medium">
+                        <img src="../../img/icones/rs_medium.webp" alt="Medium - Artigos e insights sobre QA">
+                    </a>
+                    <a href="mailto:brunogsiq@gmail.com" title="Enviar e-mail">
+                        <img src="../../img/icones/rs_emaill.png" alt="E-mail - brunogsiq@gmail.com">
+                    </a>
+                </nav>
+                <div class="direitos" id="direitos">
+                    <p>&copy; QAtrix Tecnologia - 2025<br>Todos os direitos reservados.</p>
+                </div>
+            </div>
+        </section>
+
+    </footer>
+    <!-- Botão para voltar ao topo da página -->
+    <button id="botaoTopo" onclick="voltarAoTopo()" title="Voltar ao topo da página"
+        aria-label="Botão para voltar ao topo">
+        <img src="../../img/icones/upTop.png" alt="Ícone de seta para cima">
+    </button>
+    <!-- Botão para voltar à base/rodapé -->
+    <button id="botaoBase" onclick="voltarABase()" title="Voltar ao rodapé" aria-label="Botão para voltar ao rodapé">
+        <img src="../../img/icones/upTop.png" alt="Ícone de seta para baixo">
+    </button>
+    <script src="../../js/script.js"></script>
+</body>
+
+</html>

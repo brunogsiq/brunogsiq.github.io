@@ -1,0 +1,1723 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="Portfólio profissional de Bruno Gonçalves Siqueira - QA Software Analyst especializado em testes automatizados, manual testing e quality assurance." />
+    <meta name="keywords"
+        content="QA, Quality Assurance, Testes Automatizados, Automação, Software Testing, Seletores CSS, Seletores XPath, Validação de Testes" />
+    <title>Bruno Gonçalves Siqueira - Portfólio QA Software Analyst</title>
+    <link rel="stylesheet" href="../../css/00_globals.css" />
+    <link rel="stylesheet" href="../../css/01_header.css" />
+    <link rel="stylesheet" href="../../css/02_head.css" />
+    <link rel="stylesheet" href="../../css/03_body.css" />
+    <link rel="stylesheet" href="../../css/06_footer.css" />
+    <link rel="stylesheet" href="../../css/button.css" />
+    <link rel="stylesheet" href="../../css/pageTestMe.css" />
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PQMKLMGY0H"></script>
+    <script src="./js/analytics.js"></script>
+    <!-- EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+</head>
+
+<body>
+    <!-- Cabeçalho -->
+    <header class="navbar">
+        <div class="navbar-left">
+            <!-- Botão logo que leva para a Home -->
+            <a href="../../index.html" class="home">
+                <img src="../../img/icones/home.png" alt="Ícone de casa - Voltar para página inicial" />
+            </a>
+            <!-- Campo de busca -->
+            <div class="search-box">
+                <input type="text" placeholder="Pesquisar" />
+                <button type="submit">
+                    <img src="../../img/icones/searchSmall.png" alt="Ícone de lupa - Buscar no portfólio" />
+                </button>
+            </div>
+        </div>
+        <!-- Menu de navegação central -->
+        <nav class="navbar-center">
+            <ul class="nav-links">
+                <li class="nav-item">
+                    <a href="../../index.html" class="nav-link" title="Voltar à página inicial">🏠 Início</a>
+                </li>
+                <li class="nav-item">
+                    <a href="./recomendacoes.html" class="nav-link" title="Ver recomendações recebidas">👥
+                        Recomendações</a>
+                </li>
+                <li class="nav-item">
+                    <a href="./curriculo.html" class="nav-link" title="Visualizar currículo completo">💼 Currículo</a>
+                </li>
+                <li class="nav-item">
+                    <a href="./blog.html" class="nav-link" title="Acessar blog e artigos">💬 Blog</a>
+                </li>
+                <li class="nav-item">
+                    <a href="./testMe.html" class="nav-link" title="Acessar seção de testes interativos">🔔 Test.Me</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <!-- Botão para voltar ao topo da página -->
+    <button id="botaoTopo" title="Voltar ao topo da página"
+        aria-label="Botão para voltar ao topo">
+        <img src="../../img/icones/upTop.png" alt="Ícone de seta para cima - Voltar para o topo da página" />
+    </button>
+    <!-- Seção Introdutória - Test.Me -->
+    <div class="perfil-container">
+        <section class="caixa-conteudo sobre">
+            <h2>Bem-vindo ao Test.Me - Sua Simulação de Testes</h2>
+            <div class="texto-sobre texto-sobre-full-height">
+                <p>
+                    Explore um ambiente interativo completo com <strong>28 blocos de testes</strong> para praticar e aprimorar suas habilidades em Quality Assurance. 
+                    Aqui você encontrará diversos tipos de componentes e desafios projetados para simular cenários reais de teste.
+                </p>
+                
+                <div class="info-columns-intro">
+                    <div class="column-intro">
+                        <strong>🎯 Componentes Básicos (Blocos 1-13):</strong><br>
+                        Campos de entrada, seleção, ações, dados, dinâmica, upload/download e validação. Pratique seletores CSS, XPath, assertions e interações.
+                    </div>
+                    <div class="column-intro">
+                        <strong>✨ Mundo Zíon (Blocos 14-24):</strong><br>
+                        Componentes avançados como assinatura, checkboxes, selects, date pickers, uploads e código dinâmico para automação.
+                    </div>
+                    <div class="column-intro">
+                        <strong>🔧 Testes Especializados (Blocos 25-28):</strong><br>
+                        API Testing com requisições GET, CTFL Quiz com 12 perguntas, Data Picker com intervalo e Requisições HTTP variadas (GET, POST, PUT, DELETE).
+                    </div>
+            </div>
+        </section>
+    </div>
+    <main class="perfil-container">
+        <!-- GRID DE BLOCOS INTERATIVOS -->
+        <div class="interactive-blocks-grid">
+            
+            <!-- ========== SEÇÃO: CAMPOS DE ENTRADA ========== -->
+            
+            <!-- ========== SEÇÃO: CAMPOS DE ENTRADA ========== -->
+            
+            <!-- BLOCO 1: Entrada de Texto -->
+            <div class="interactive-block test-auto" id="bloco-1-entrada-texto">
+                <h3>1 - 📝 Entrada de Texto</h3>
+                <div class="interactive-block-content">
+                    <label class="label-small">Texto comum (máx 50):</label>
+                    <input type="text" id="bloco1TextComum" placeholder="Texto comum e números" maxlength="50">
+                    <p id="bloco1TextComumContador" class="text-small">0/50</p>
+                    
+                    <label class="label-small">Apenas números:</label>
+                    <input type="text" id="bloco1Numeros" placeholder="Apenas números (0-9)" maxlength="15">
+                    
+                    <label class="label-small label-margin-top">Apenas alfabético:</label>
+                    <input type="text" id="bloco1Alfabetico" placeholder="Apenas texto alfabético (A-Z)" maxlength="30">
+                    
+                    <label class="label-small label-margin-top">Caracteres especiais:</label>
+                    <input type="text" id="bloco1Especiais" placeholder="Caracteres especiais + números" maxlength="40">
+                    <p id="bloco1Validacao" class="text-validation"></p>
+                    
+                    <!-- Accordion Critérios de Aceite -->
+                    <div class="acceptance-accordion">
+                        <div class="acceptance-header">
+                            <span class="acceptance-header-title">📋 Critérios de Aceite</span>
+                            <span class="acceptance-toggle">▼</span>
+                        </div>
+                        <div class="acceptance-body">
+                            <ul>
+                                <li>Texto comum aceita máximo 50 caracteres (alfanuméricos e espaços)</li>
+                                <li>Campo "Apenas números" rejeita automaticamente letras e caracteres especiais</li>
+                                <li>Campo "Apenas alfabético" rejeita números e caracteres especiais</li>
+                                <li>Campo "Caracteres especiais" aceita !@#$%^&*()_+-=[]{};</li>
+                                <li>Contador exibe em cor normal até 40 caracteres, laranja acima disso</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BLOCO 2: Campos Especiais (Senha, Data) -->
+            <div class="interactive-block test-auto" id="bloco-2-campos-especiais">
+                <h3>2 - 🔐 Campos Especiais</h3>
+                <div class="interactive-block-content">
+                    <label class="label-regular">Senha com olho:</label>
+                    <div class="input-flex">
+                        <input type="password" id="bloco2Senha" placeholder="Digite uma senha" class="input-flex-1">
+                        <button type="button" id="bloco2OlhoSenha" class="btn-toggle-password">👁️</button>
+                    </div>
+                    <div class="force-bars">
+                        <p class="text-small">Força da senha:</p>
+                        <div class="force-bar-container">
+                            <div id="bloco2ForcaBar1" class="force-bar"></div>
+                            <div id="bloco2ForcaBar2" class="force-bar"></div>
+                            <div id="bloco2ForcaBar3" class="force-bar"></div>
+                        </div>
+                        <p id="bloco2ForcaTexto" class="force-text">Nenhuma</p>
+                        <ul id="bloco2RequisitosLista" class="requirements-list">
+                            <li id="bloco2Req1">✗ Maiúscula (A-Z)</li>
+                            <li id="bloco2Req2">✗ Minúscula (a-z)</li>
+                            <li id="bloco2Req3">✗ Número (0-9)</li>
+                            <li id="bloco2Req4">✗ Especial (!@#$%)</li>
+                            <li id="bloco2Req5">✗ Mínimo 8 caracteres</li>
+                        </ul>
+                    </div>
+                    <label class="label-regular label-margin-top-10">Confirmar Senha:</label>
+                    <input type="password" id="bloco2SenhaConfirma" placeholder="Confirme a senha" class="input-full-width">
+                    <p id="bloco2SenhaConfirmaMsg" class="text-validation"></p>
+                    <label class="label-regular label-margin-top-10">Data (validada):</label>
+                    <input type="date" id="bloco2Data" class="input-full-width">
+                    <p id="bloco2DataValidacao" class="text-validation"></p>
+                    
+                    <!-- Accordion Critérios de Aceite -->
+                    <div class="acceptance-accordion">
+                        <div class="acceptance-header">
+                            <span class="acceptance-header-title">📋 Critérios de Aceite</span>
+                            <span class="acceptance-toggle">▼</span>
+                        </div>
+                        <div class="acceptance-body">
+                            <ul>
+                                <li>Senha deve ter mínimo 8 caracteres</li>
+                                <li>Senha deve conter pelo menos 1 maiúscula (A-Z)</li>
+                                <li>Senha deve conter pelo menos 1 minúscula (a-z)</li>
+                                <li>Senha deve conter pelo menos 1 número (0-9)</li>
+                                <li>Senha deve conter pelo menos 1 caractere especial (!@#$%^&*)</li>
+                                <li>Confirmação deve ser idêntica à senha informada</li>
+                                <li>Data deve estar em formato válido (DD/MM/AAAA)</li>
+                                <li>Força da senha visual: 1-2 barras = fraca, 3 barras = média, 4+ barras = forte</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BLOCO 3: Radio Buttons Status -->
+            <div class="interactive-block test-auto" id="bloco-3-radio-status">
+                <h3>3 - ⭕ Radio Buttons - Status</h3>
+                <div class="interactive-block-content">
+                    <div class="radio-group">
+                        <label class="radio-label">
+                            <input type="radio" name="status" value="on" class="zion-radio" id="statusOn">
+                            <span>ON</span>
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="status" value="off" class="zion-radio" id="statusOff">
+                            <span>OFF</span>
+                        </label>
+                    </div>
+                    <p class="text-info">Status: <span id="statusResult" class="text-validation">-</span></p>
+                    
+                    <!-- Accordion Critérios de Aceite -->
+                    <div class="acceptance-accordion">
+                        <div class="acceptance-header">
+                            <span class="acceptance-header-title">📋 Critérios de Aceite</span>
+                            <span class="acceptance-toggle">▼</span>
+                        </div>
+                        <div class="acceptance-body">
+                            <ul>
+                                <li>Existem 2 opções mutuamente exclusivas: ON e OFF</li>
+                                <li>Apenas 1 opção pode estar selecionada por vez</li>
+                                <li>Resultado exibe status selecionado em tempo real</li>
+                                <li>Valor padrão é nenhum (vazio)</li>
+                                <li>Clicar em rádio button alterna seleção</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BLOCO 4: Radio Buttons -->
+            <div class="interactive-block test-auto" id="bloco-4-radio-buttons">
+                <h3>4 - 🎯 Radio Buttons</h3>
+                <div class="interactive-block-content">
+                    <label><input type="radio" name="bloco7Genero" value="Masculino"> Masculino</label>
+                    <label><input type="radio" name="bloco7Genero" value="Feminino"> Feminino</label>
+                    <label><input type="radio" name="bloco7Genero" value="Outro"> Outro</label>
+                    <p id="bloco7Resultado" class="text-validation"></p>
+                    
+                    <!-- Accordion Critérios de Aceite -->
+                    <div class="acceptance-accordion">
+                        <div class="acceptance-header">
+                            <span class="acceptance-header-title">📋 Critérios de Aceite</span>
+                            <span class="acceptance-toggle">▼</span>
+                        </div>
+                        <div class="acceptance-body">
+                            <ul>
+                                <li>Existem 3 opções mutuamente exclusivas (Masculino, Feminino, Outro)</li>
+                                <li>Apenas 1 opção pode estar selecionada por vez</li>
+                                <li>Selecionar uma opção desseleciona a opção anterior</li>
+                                <li>Clicar no texto também seleciona o radio button associado</li>
+                                <li>O estado visual diferencia opção selecionada/não selecionada</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ========== SEÇÃO: SELEÇÃO E ENTRADA =========== -->
+
+            <!-- BLOCO 5: Slider e Range -->
+            <div class="interactive-block test-auto" id="bloco-5-slider-range">
+                <h3>5 - 🎚️ Slider e Range</h3>
+                <div class="interactive-block-content">
+                    <label>Nível de Dificuldade (0-10):</label>
+                    <input type="range" id="zionRange" min="0" max="10" value="5" class="zion-range input-full-width">
+                    <div class="slider-bars">
+                        <div id="zionRangeBar1" class="slider-bar"></div>
+                        <div id="zionRangeBar2" class="slider-bar"></div>
+                        <div id="zionRangeBar3" class="slider-bar"></div>
+                    </div>
+                    <p class="text-info">Nível: <span id="rangeResult" class="text-validation">5</span>/10 <span id="zionRangeCategoria">🟡 Médio</span></p>
+                    
+                    <!-- Accordion Critérios de Aceite -->
+                    <div class="acceptance-accordion">
+                        <div class="acceptance-header">
+                            <span class="acceptance-header-title">📋 Critérios de Aceite</span>
+                            <span class="acceptance-toggle">▼</span>
+                        </div>
+                        <div class="acceptance-body">
+                            <ul>
+                                <li>Slider controla valores de 0 a 10 com incrementos de 1</li>
+                                <li>Valor padrão inicial é 5</li>
+                                <li>Ao arrastar o slider, o valor é atualizado em tempo real</li>
+                                <li>As 3 barras visuais preenchem progressivamente</li>
+                                <li>Categorização: 0-3 (Baixo 🔴), 4-7 (Médio 🟡), 8-10 (Alto 🟢)</li>
+                                <li>O texto exibe valor e categoria conforme valor</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BLOCO 6: Checkboxes -->
+            <div class="interactive-block test-auto" id="bloco-6-checkboxes">
+                <h3>6 - ✅ Checkboxes</h3>
+                <div class="interactive-block-content">
+                    <label><input type="checkbox" class="bloco6Check"> Aceito termos</label>
+                    <label><input type="checkbox" class="bloco6Check"> Receber novidades</label>
+                    <label><input type="checkbox" class="bloco6Check"> Concordo com política</label>
+                    <p id="bloco6Resultado" class="text-validation"></p>
+                    
+                    <!-- Accordion Critérios de Aceite -->
+                    <div class="acceptance-accordion">
+                        <div class="acceptance-header">
+                            <span class="acceptance-header-title">📋 Critérios de Aceite</span>
+                            <span class="acceptance-toggle">▼</span>
+                        </div>
+                        <div class="acceptance-body">
+                            <ul>
+                                <li>Existem 3 checkboxes independentes</li>
+                                <li>Cada checkbox pode ser selecionado/desmarcado individualmente</li>
+                                <li>O estado de cada checkbox é visualmente diferenciado (checked/unchecked)</li>
+                                <li>Não é obrigatório selecionar nenhum checkbox (aceita 0 ou mais seleções)</li>
+                                <li>Clique no texto também seleciona/desseleciona a checkbox associada</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BLOCO 7: Checkbox com Toggle -->
+            <div class="interactive-block test-auto" id="bloco-7-checkbox-toggle">
+                <h3>7 - ☑️ Checkbox com Toggle</h3>
+                <div class="interactive-block-content">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="zionShowSignature" class="zion-checkbox">
+                        <span>Mostrar assinatura</span>
+                    </label>
+                    <div id="signaturePreviewContainer" class="preview-container hidden">
+                        <p><span id="signaturePreviewFinal">-</span></p>
+                    </div>
+                    
+                    <!-- Accordion Critérios de Aceite -->
+                    <div class="acceptance-accordion">
+                        <div class="acceptance-header">
+                            <span class="acceptance-header-title">📋 Critérios de Aceite</span>
+                            <span class="acceptance-toggle">▼</span>
+                        </div>
+                        <div class="acceptance-body">
+                            <ul>
+                                <li>Checkbox com label "Mostrar assinatura"</li>
+                                <li>Quando marcado, mostra preview da assinatura</li>
+                                <li>Quando desmarcado, esconde preview</li>
+                                <li>Preview é sincronizado com campo de assinatura (BLOCO 19)</li>
+                                <li>Comportamento toggle funciona sem erros</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BLOCO 8: Seletor de Cores -->
+            <div class="interactive-block test-auto" id="bloco-8-cores">
+                <h3>8 - 🎨 Cores</h3>
+                <div class="interactive-block-content">
+                    <select id="bloco8Input">
+                        <option value="">Selecione uma cor</option>
+                        <option value="#ff0000">Vermelho</option>
+                        <option value="#0000ff">Azul</option>
+                        <option value="#00aa00">Verde</option>
+                    </select>
+                    <div id="bloco8Preview" class="color-preview"></div>
+                    
+                    <!-- Accordion Critérios de Aceite -->
+                    <div class="acceptance-accordion">
+                        <div class="acceptance-header">
+                            <span class="acceptance-header-title">📋 Critérios de Aceite</span>
+                            <span class="acceptance-toggle">▼</span>
+                        </div>
+                        <div class="acceptance-body">
+                            <ul>
+                                <li>Dropdown contém 4 opções: placeholder + 3 cores</li>
+                                <li>Seleção padrão é o placeholder "Selecione uma cor"</li>
+                                <li>Ao selecionar uma cor, a preview atualiza com o código hexadecimal correspondente</li>
+                                <li>Preview deve exibir a cor escolhida em forma visual (quadrado colorido)</li>
+                                <li>Vermelho = #ff0000 | Azul = #0000ff | Verde = #00aa00</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ========== SEÇÃO: AÇÕES ========== -->
+
+            <!-- BLOCO 9: Alertas -->
+            <div class="interactive-block test-auto" id="bloco-9-alertas">
+                <h3>9 - 🛎️ Alertas</h3>
+                <div class="interactive-block-content">
+                    <button class="btn-primary btn-alert-1">Alerta</button>
+                    <button class="btn-primary btn-alert-2">Confirmar</button>
+                    <button class="btn-primary btn-alert-3">Prompt</button>
+                    
+                    <!-- Accordion Critérios de Aceite -->
+                    <div class="acceptance-accordion">
+                        <div class="acceptance-header">
+                            <span class="acceptance-header-title">📋 Critérios de Aceite</span>
+                            <span class="acceptance-toggle">▼</span>
+                        </div>
+                        <div class="acceptance-body">
+                            <ul>
+                                <li>Existem 3 tipos de alertas: Alerta, Confirmar, Prompt</li>
+                                <li>Botão "Alerta" exibe um alert() simples com mensagem</li>
+                                <li>Botão "Confirmar" exibe um confirm() com retorno de true/false</li>
+                                <li>Botão "Prompt" exibe um prompt() aguardando entrada de texto</li>
+                                <li>Cada alertar é selecionável e testável independentemente</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BLOCO 10: Botões de Ação -->
+            <div class="interactive-block test-auto" id="bloco-10-acoes">
+                <h3>10 - 🔘 Ações</h3>
+                <div class="interactive-block-content">
+                    <button id="btnAcao" class="btn-success">✓ Botão de Ação</button>
+                    <button id="btnPerigoso" class="btn-danger">⚠️ Botão Perigoso</button>
+                    
+                    <!-- Accordion Critérios de Aceite -->
+                    <div class="acceptance-accordion">
+                        <div class="acceptance-header">
+                            <span class="acceptance-header-title">📋 Critérios de Aceite</span>
+                            <span class="acceptance-toggle">▼</span>
+                        </div>
+                        <div class="acceptance-body">
+                            <ul>
+                                <li>Existem 2 botões: um verde de ação segura e um vermelho de risco</li>
+                                <li>Botão "Botão de Ação" (verde) executa uma ação segura e bem-sucedida</li>
+                                <li>Botão "Botão Perigoso" (vermelho) executa uma ação que requer atenção</li>
+                                <li>Ambos os botões são clicáveis e dispõem de feedback visual</li>
+                                <li>Cores e estados visuais diferem para indicar risco/segurança</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ========== SEÇÃO: DADOS ========== -->
+
+            <!-- BLOCO 11: Tabela com Busca -->
+            <div class="interactive-block test-auto" id="bloco-11-tabela">
+                <h3>11 - 📊 Tabela</h3>
+                <div class="interactive-block-content">
+                    <div class="table-search">
+                        <input type="text" id="tabelaBusca" placeholder="🔍 Buscar por nome ou email..." class="input-full-width">
+                        <div class="table-buttons">
+                            <button id="tabelaBuscaNome" class="btn-secondary">Ordenar por Nome</button>
+                            <button id="tabelaBuscaEmail" class="btn-secondary">Ordenar por Email</button>
+                            <button id="tabelaBuscaLimpar" class="btn-secondary">Limpar</button>
+                        </div>
+                    </div>
+                    <table id="tabelaDados" class="table-container">
+                        <thead>
+                            <tr class="table-header">
+                                <th>Nome</th>
+                                <th>Email</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="table-row">
+                                <td>Teste Um</td>
+                                <td>um@email.com</td>
+                            </tr>
+                            <tr class="table-row table-row-alt">
+                                <td>Teste Dois</td>
+                                <td>dois@email.com</td>
+                            </tr>
+                            <tr class="table-row">
+                                <td>Teste Três</td>
+                                <td>tres@email.com</td>
+                            </tr>
+                            <tr class="table-row table-row-alt">
+                                <td>Teste Quatro</td>
+                                <td>quatro@email.com</td>
+                            </tr>
+                            <tr class="table-row">
+                                <td>Teste Cinco</td>
+                                <td>cinco@email.com</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p class="text-small">Total de registros: <span id="tabelaTotalRegistros">5</span> | Exibindo: <span id="tabelaTotalExibidos">5</span></p>
+                    
+                    <!-- Accordion Critérios de Aceite -->
+                    <div class="acceptance-accordion">
+                        <div class="acceptance-header">
+                            <span class="acceptance-header-title">📋 Critérios de Aceite</span>
+                            <span class="acceptance-toggle">▼</span>
+                        </div>
+                        <div class="acceptance-body">
+                            <ul>
+                                <li>Tabela exibe 2 colunas: Nome e Email</li>
+                                <li>Exibe 5 linhas de dados padrão</li>
+                                <li>Campo de busca é case-insensitive (maiúsculas/minúsculas)</li>
+                                <li>Busca filtra por Nome OU Email em tempo real</li>
+                                <li>Ordenação por Nome: ordem alfabética crescente (A-Z)</li>
+                                <li>Ordenação por Email: ordem alfabética crescente por domínio</li>
+                                <li>Botão "Limpar" remove filtro e retorna ordenação original</li>
+                                <li>Contador exibe: Total de registros (5) e quantidade exibida após filtro</li>
+                                <li>Linhas alternadas devem ter cores diferentes para melhor legibilidade</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BLOCO 12: Dados Dinâmicos -->
+            <div class="interactive-block test-auto" id="bloco-12-dados-dinamicos">
+                <h3>12 - 👤 Dados Dinâmicos</h3>
+                <div class="interactive-block-content">
+                    <div class="data-card">
+                        <h4>Usuário Teste</h4>
+                        <p>ID: #12345</p>
+                    </div>
+                    <div class="data-card">
+                        <h4>Status: Ativo</h4>
+                        <p>Último: Hoje</p>
+                    </div>
+                    <button id="bloco13Copiar" class="btn-primary">📋 Copiar Dados</button>
+                    <p id="bloco13CopiarMsg" class="text-validation"></p>
+                    
+                    <!-- Accordion Critérios de Aceite -->
+                    <div class="acceptance-accordion">
+                        <div class="acceptance-header">
+                            <span class="acceptance-header-title">📋 Critérios de Aceite</span>
+                            <span class="acceptance-toggle">▼</span>
+                        </div>
+                        <div class="acceptance-body">
+                            <ul>
+                                <li>Exibe 2 cards de dados: "Usuário Teste" e "Status: Ativo"</li>
+                                <li>Cada card contém informações dinâmicas (ID e Último)</li>
+                                <li>Botão "Copiar Dados" copia as informações para clipboard</li>
+                                <li>Mensagem de confirmação aparece após cópia bem-sucedida</li>
+                                <li>Dados são atualizáveis/dinâmicos</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ========== SEÇÃO: DINÂMICA ========== -->
+
+            <!-- BLOCO 13: Elementos Dinâmicos -->
+            <div class="interactive-block test-auto" id="bloco-13-dinamica">
+                <h3>13 - 🔄 Dinâmica</h3>
+                <div class="interactive-block-content">
+                    <button class="btn-primary btn-add-elemento">+ Adicionar</button>
+                    <div id="elementosDinamicos" class="dynamic-elements"></div>
+                    
+                    <!-- Accordion Critérios de Aceite -->
+                    <div class="acceptance-accordion">
+                        <div class="acceptance-header">
+                            <span class="acceptance-header-title">📋 Critérios de Aceite</span>
+                            <span class="acceptance-toggle">▼</span>
+                        </div>
+                        <div class="acceptance-body">
+                            <ul>
+                                <li>Botão "+ Adicionar" está clicável e funcional</li>
+                                <li>Cada clique adiciona um novo elemento à lista</li>
+                                <li>Elementos aparecem em tempo real</li>
+                                <li>Cada elemento novo mostra identificador único</li>
+                                <li>Lista cresce dinamicamente sem limite</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ========== SEÇÃO: VALIDAÇÃO ========== -->
+
+            <!-- BLOCO 14: Validação -->
+            <div class="interactive-block test-auto" id="bloco-14-validacao">
+                <h3>14 - ✔️ Validação</h3>
+                <div class="interactive-block-content">
+                    <p class="text-info">Código esperado: <strong id="bloco18Codigo">010919100407201216122012</strong></p>
+                    <input type="text" id="bloco18Input" placeholder="Digite o código..." class="input-full-width">
+                    <button id="bloco18Validar" class="btn-primary">Validar</button>
+                    <p id="bloco18Resultado" class="text-validation"></p>
+                    
+                    <!-- Accordion Critérios de Aceite -->
+                    <div class="acceptance-accordion">
+                        <div class="acceptance-header">
+                            <span class="acceptance-header-title">📋 Critérios de Aceite</span>
+                            <span class="acceptance-toggle">▼</span>
+                        </div>
+                        <div class="acceptance-body">
+                            <ul>
+                                <li>Código esperado exibido: 010919100407201216122012</li>
+                                <li>Campo de input aceita texto até 50 caracteres</li>
+                                <li>Botão "Validar" compara entrada com código esperado</li>
+                                <li>Validação é case-sensitive (diferencia maiúsculas/minúsculas)</li>
+                                <li>Mensagem de sucesso se código correto, erro se incorreto</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ========== SEÇÃO: ZION - LABORATÓRIO AVANÇADO ========== -->
+            <!-- Blocos agrupados por tipo: Texto, Checkbox/Radio, Select, Upload, Range, Data, Dinâmica -->
+
+            <!-- BLOCO 15: Assinatura com Preview -->
+            <div class="interactive-block test-auto" id="bloco-15-assinatura-preview">
+                <h3>15 - ✍️ Assinatura com Preview</h3>
+                <div class="interactive-block-content">
+                    <label class="label-small">Assinatura (máx 50 caracteres):</label>
+                    <input type="text" id="zionSignature" placeholder="Digite aqui para assinar..." class="zion-input input-full-width" maxlength="50">
+                    <p id="zionSignatureContador" class="label-small">0/50</p>
+                    <p class="signature-preview"><span id="signaturePreview">-</span></p>
+                    
+                    <!-- Accordion Critérios de Aceite -->
+                    <div class="acceptance-accordion">
+                        <div class="acceptance-header">
+                            <span class="acceptance-header-title">📋 Critérios de Aceite</span>
+                            <span class="acceptance-toggle">▼</span>
+                        </div>
+                        <div class="acceptance-body">
+                            <ul>
+                                <li>Campo aceita máximo 50 caracteres</li>
+                                <li>Contador exibe caracteres digitados em tempo real</li>
+                                <li>Preview mostra assinatura conforme digitação</li>
+                                <li>Formatação especial para exibir como assinatura</li>
+                                <li>Não aceita caracteres nulos/inválidos</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BLOCO 16: Select Simples -->
+            <div class="interactive-block test-auto" id="bloco-16-select-tipo">
+                <h3>16 - 📋 Select Tipo</h3>
+                <div class="interactive-block-content">
+                    <select id="zionSelectType" class="zion-select input-full-width">
+                        <option value="">-- Selecione um tipo --</option>
+                        <option value="basic">Básico</option>
+                        <option value="standard">Padrão</option>
+                        <option value="premium">Premium</option>
+                    </select>
+                    <p class="text-info">Tipo: <span id="typeResult" class="text-validation">Nenhum</span></p>
+                    
+                    <!-- Accordion Critérios de Aceite -->
+                    <div class="acceptance-accordion">
+                        <div class="acceptance-header">
+                            <span class="acceptance-header-title">📋 Critérios de Aceite</span>
+                            <span class="acceptance-toggle">▼</span>
+                        </div>
+                        <div class="acceptance-body">
+                            <ul>
+                                <li>Dropdown com 4 opções: placeholder + 3 tipos</li>
+                                <li>Seleção padrão: placeholder "-- Selecione um tipo --"</li>
+                                <li>Opções: Básico, Padrão, Premium</li>
+                                <li>Resultado exibe tipo selecionado ou "Nenhum"</li>
+                                <li>Apenas 1 seleção por vez (select simples)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BLOCO 17: Select Múltiplo -->
+            <div class="interactive-block test-auto" id="bloco-17-select-multiplo">
+                <h3>17 - 🍎 Select Múltiplo</h3>
+                <div class="interactive-block-content">
+                    <select id="zionSelectFruits" class="zion-select input-full-width" multiple>
+                        <option value="apple">Maçã</option>
+                        <option value="banana">Banana</option>
+                        <option value="cherry">Cereja</option>
+                        <option value="date">Tâmara</option>
+                        <option value="elderberry">Sabugueiro</option>
+                    </select>
+                    <p class="label-small">CTRL+Click para selecionar múltiplas</p>
+                    <p class="text-info">Frutas: <span id="fruitsResult" class="text-validation">Nenhuma</span></p>
+                    
+                    <!-- Accordion Critérios de Aceite -->
+                    <div class="acceptance-accordion">
+                        <div class="acceptance-header">
+                            <span class="acceptance-header-title">📋 Critérios de Aceite</span>
+                            <span class="acceptance-toggle">▼</span>
+                        </div>
+                        <div class="acceptance-body">
+                            <ul>
+                                <li>Select com atributo "multiple" para múltiplas seleções</li>
+                                <li>Contém 5 opções de frutas</li>
+                                <li>CTRL+Click (ou CMD+Click) seleciona várias opções</li>
+                                <li>Resultado exibe todas as frutas selecionadas separadas por vírgula</li>
+                                <li>Se nenhuma seleção, exibe "Nenhuma"</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BLOCO 18: Lista - Animais -->
+            <div class="interactive-block test-auto" id="bloco-18-lista-animais">
+                <h3>18 - 📏 Lista - Animais</h3>
+                <div class="interactive-block-content">
+                    <ul id="animalsList" class="items-list">
+                        <li>Camelo</li>
+                        <li>Gato</li>
+                        <li>Lagarta</li>
+                        <li>Vaca</li>
+                        <li>Cachorro</li>
+                    </ul>
+                    <p class="text-info">Total: <span id="animalCount" class="text-validation">5</span></p>
+                    
+                    <!-- Accordion Critérios de Aceite -->
+                    <div class="acceptance-accordion">
+                        <div class="acceptance-header">
+                            <span class="acceptance-header-title">📋 Critérios de Aceite</span>
+                            <span class="acceptance-toggle">▼</span>
+                        </div>
+                        <div class="acceptance-body">
+                            <ul>
+                                <li>Lista contém 5 animais diferentes</li>
+                                <li>Cada animal é exibido em item separado</li>
+                                <li>Ordem está correta e consistente</li>
+                                <li>Contador exibe total de 5 itens</li>
+                                <li>Estrutura semântica da lista preservada</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BLOCO 19: Upload Arquivo com Drag & Drop -->
+            <div class="interactive-block test-auto" id="bloco-19-upload">
+                <h3>19 - 📁 Upload Arquivo</h3>
+                <div class="interactive-block-content">
+                    <input type="file" id="zionFileInput" class="zion-file-input input-margin-bottom" accept=".pdf,.jpg,.jpeg,.png,.gif,.doc,.docx">
+                    <p class="label-small">✓ Aceitos: PDF, JPG, PNG, GIF, DOC, DOCX | ✓ Máximo: 5 MB | ✓ Drag & drop suportado</p>
+                    <p class="text-info">Arquivo: <span id="fileResult" class="text-validation">Nenhum</span></p>
+                    
+                    <!-- Accordion Critérios de Aceite -->
+                    <div class="acceptance-accordion">
+                        <div class="acceptance-header">
+                            <span class="acceptance-header-title">📋 Critérios de Aceite</span>
+                            <span class="acceptance-toggle">▼</span>
+                        </div>
+                        <div class="acceptance-body">
+                            <ul>
+                                <li>Input aceita tipos: PDF, JPG, PNG, GIF, DOC, DOCX</li>
+                                <li>Tamanho máximo: 5 MB</li>
+                                <li>Suporta drag & drop de arquivo</li>
+                                <li>Resultado exibe nome do arquivo selecionado</li>
+                                <li>Rejeita arquivos inválidos com mensagem de erro</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BLOCO 20: Download Arquivo Zion -->
+            <div class="interactive-block test-auto" id="bloco-20-download-arquivo">
+                <h3>20 - ⬇️ Download Arquivo</h3>
+                <div class="interactive-block-content">
+                    <button type="button" id="downloadBtn" class="btn-primary">📥 Download</button>
+                    <p class="text-small">Baixa arquivo .txt de exemplo</p>
+                    
+                    <!-- Accordion Critérios de Aceite -->
+                    <div class="acceptance-accordion">
+                        <div class="acceptance-header">
+                            <span class="acceptance-header-title">📋 Critérios de Aceite</span>
+                            <span class="acceptance-toggle">▼</span>
+                        </div>
+                        <div class="acceptance-body">
+                            <ul>
+                                <li>Botão de download visível e funcional</li>
+                                <li>Click inicia download automático do arquivo</li>
+                                <li>Arquivo tem nome descritivo e válido</li>
+                                <li>Formato é .txt com conteúdo de exemplo</li>
+                                <li>Download não abre em nova aba (salva localmente)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ========== SEÇÃO: DATA/HORA ========== -->
+
+            <!-- BLOCO 21: Data Congelada -->
+            <div class="interactive-block test-auto" id="bloco-21-data-congelada">
+                <h3>21 - 🕰️ Data Congelada</h3>
+                <div class="interactive-block-content">
+                    <p>Data/Hora atual:</p>
+                    <div id="dataAtual"></div>
+                    
+                    <!-- Accordion Critérios de Aceite -->
+                    <div class="acceptance-accordion">
+                        <div class="acceptance-header">
+                            <span class="acceptance-header-title">📋 Critérios de Aceite</span>
+                            <span class="acceptance-toggle">▼</span>
+                        </div>
+                        <div class="acceptance-body">
+                            <ul>
+                                <li>Exibe data/hora atual do sistema</li>
+                                <li>Formato padrão: DD/MM/AAAA HH:MM:SS</li>
+                                <li>Atualiza em tempo real (congelada = não muda)</li>
+                                <li>Elemento é legível e bem posicionado</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BLOCO 22: Date Picker Simples -->
+            <div class="interactive-block test-auto" id="bloco-22-date-picker">
+                <h3>22 - 📅 Date Picker Simples</h3>
+                <div class="interactive-block-content">
+                    <input type="date" id="zionDate" class="zion-date-input input-full-width">
+                    <p class="text-info">Data: <span id="dateResult" class="text-validation">dd/mm/aaaa</span></p>
+                    
+                    <!-- Accordion Critérios de Aceite -->
+                    <div class="acceptance-accordion">
+                        <div class="acceptance-header">
+                            <span class="acceptance-header-title">📋 Critérios de Aceite</span>
+                            <span class="acceptance-toggle">▼</span>
+                        </div>
+                        <div class="acceptance-body">
+                            <ul>
+                                <li>Input type="date" funcional e acessível</li>
+                                <li>Abre datepicker ao clicar no campo</li>
+                                <li>Data selecionada exibida no resultado</li>
+                                <li>Formato padrão: dd/mm/aaaa</li>
+                                <li>Aceita somente datas válidas</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BLOCO 23: DATA PICKER COM INTERVALO -->
+            <div class="interactive-block test-auto" id="bloco-23-seletor-datas-intervalo">
+                <h3>23 - 📅 Seletor de Datas com Intervalo</h3>
+                <div class="interactive-block-content">
+                    <p class="label-small">Selecione uma data inicial e final para definir um intervalo. O sistema valida se a data final é posterior à inicial.</p>
+                    
+                    <div class="date-grid">
+                        <div class="date-item">
+                            <label class="date-label">📍 Data Inicial:</label>
+                            <input type="date" id="dataInicial" class="date-input" />
+                        </div>
+                        <div class="date-item">
+                            <label class="date-label">📍 Data Final:</label>
+                            <input type="date" id="dataFinal" class="date-input" />
+                        </div>
+                    </div>
+
+                    <button id="validarIntervaloBtn" class="btn-primary input-full-width">✅ Validar Intervalo</button>
+                    
+                    <div id="resultadoIntervalo" class="date-result"></div>
+                    
+                    <div class="info-box">
+                        <strong>💡 Dica:</strong> Use este componente para testar validações de datas, seleção de períodos, e cálculo de intervalos em seus testes automatizados.
+                    </div>
+                    
+                    <!-- Accordion Critérios de Aceite -->
+                    <div class="acceptance-accordion">
+                        <div class="acceptance-header">
+                            <span class="acceptance-header-title">📋 Critérios de Aceite</span>
+                            <span class="acceptance-toggle">▼</span>
+                        </div>
+                        <div class="acceptance-body">
+                            <ul>
+                                <li>Input de data inicial aceita datas válidas</li>
+                                <li>Input de data final aceita datas válidas</li>
+                                <li>Validação rejeita data final anterior à inicial</li>
+                                <li>Resultado exibe intervalo selecionado</li>
+                                <li>Cálculo de dias entre as datas está correto</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BLOCO 24: Password Toggle -->
+            <div class="interactive-block test-auto" id="bloco-24-password-toggle">
+                <h3>24 - 🔐 Password Toggle</h3>
+                <div class="interactive-block-content">
+                    <div class="input-flex">
+                        <input type="password" id="zionPassword" placeholder="Digite senha" class="zion-password-input input-flex-1">
+                        <button type="button" id="togglePasswordBtn" class="toggle-password-btn">👁️</button>
+                    </div>
+                    
+                    <!-- Accordion Critérios de Aceite -->
+                    <div class="acceptance-accordion">
+                        <div class="acceptance-header">
+                            <span class="acceptance-header-title">📋 Critérios de Aceite</span>
+                            <span class="acceptance-toggle">▼</span>
+                        </div>
+                        <div class="acceptance-body">
+                            <ul>
+                                <li>Input tipo password oculta senha por padrão</li>
+                                <li>Botão de olho (👁️) alterna visibilidade</li>
+                                <li>Clique no olho muda para text (mostra senha)</li>
+                                <li>Clique novamente volta a password (esconde senha)</li>
+                                <li>Ícone muda visualmente conforme estado</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BLOCO 25: Código Dinâmico -->
+            <div class="interactive-block test-auto" id="bloco-25-codigo-dinamico">
+                <h3>25 - 🔢 Código Dinâmico</h3>
+                <div class="interactive-block-content">
+                    <p class="code-container">Código: <span id="dynamicCode" class="text-validation">-</span></p>
+                    <input type="text" id="zionCodeInput" placeholder="Digite o código..." class="zion-input input-full-width">
+                    <button type="button" id="submitCodeBtn" class="zion-button">✓ Enviar</button>
+                    <p id="codeResult" class="code-result"></p>
+                    
+                    <!-- Accordion Critérios de Aceite -->
+                    <div class="acceptance-accordion">
+                        <div class="acceptance-header">
+                            <span class="acceptance-header-title">📋 Critérios de Aceite</span>
+                            <span class="acceptance-toggle">▼</span>
+                        </div>
+                        <div class="acceptance-body">
+                            <ul>
+                                <li>Código dinâmico é gerado automaticamente</li>
+                                <li>Código é exibido na tela</li>
+                                <li>Campo de input aceita entrada de texto</li>
+                                <li>Botão "Enviar" valida entrada contra código</li>
+                                <li>Mensagem de resultado indica sucesso/erro</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ========== SEÇÃO: COMPONENTES AVANÇADOS ========== -->
+
+            <!-- BLOCO 26: MODAL / DIALOG -->
+            <div class="interactive-block test-auto" id="bloco-26-modal">
+                <h3>26 - 🪟 Modal / Dialog</h3>
+                <div class="interactive-block-content">
+                    <button id="openModalBtn" class="btn-primary">📫 Abrir Modal</button>
+                    
+                    <!-- Modal -->
+                    <div id="modalOverlay" class="modal-overlay" style="display:none;">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4>Confirmação</h4>
+                                <button id="closeModalBtn" class="modal-close">&times;</button>
+                            </div>
+                            <div class="modal-body">
+                                <p>Tem certeza que deseja continuar?</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button id="modalCancelBtn" class="btn-secondary">Cancelar</button>
+                                <button id="modalConfirmBtn" class="btn-primary">Confirmar</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <p id="modalResult" class="text-validation"></p>
+                    
+                    <!-- Accordion Critérios de Aceite -->
+                    <div class="acceptance-accordion">
+                        <div class="acceptance-header">
+                            <span class="acceptance-header-title">📋 Critérios de Aceite</span>
+                            <span class="acceptance-toggle">▼</span>
+                        </div>
+                        <div class="acceptance-body">
+                            <ul>
+                                <li>Botão "Abrir Modal" abre o modal</li>
+                                <li>Overlay escuro cobre o fundo</li>
+                                <li>Botão X fecha o modal</li>
+                                <li>Botão "Cancelar" fecha o modal</li>
+                                <li>Botão "Confirmar" executa ação e fecha</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BLOCO 27: TOAST / NOTIFICAÇÕES -->
+            <div class="interactive-block test-auto" id="bloco-27-toast">
+                <h3>27 - � Toast / Notificações</h3>
+                <div class="interactive-block-content">
+                    <div class="toast-buttons">
+                        <button id="successToastBtn" class="btn-success">✅ Sucesso</button>
+                        <button id="errorToastBtn" class="btn-danger">❌ Erro</button>
+                        <button id="warningToastBtn" class="btn-warning">⚠️ Aviso</button>
+                        <button id="infoToastBtn" class="btn-info">ℹ️ Info</button>
+                    </div>
+                    
+                    <div id="toastContainer" class="toast-container"></div>
+                    
+                    <!-- Accordion Critérios de Aceite -->
+                    <div class="acceptance-accordion">
+                        <div class="acceptance-header">
+                            <span class="acceptance-header-title">📋 Critérios de Aceite</span>
+                            <span class="acceptance-toggle">▼</span>
+                        </div>
+                        <div class="acceptance-body">
+                            <ul>
+                                <li>4 botões para diferentes tipos de notificação</li>
+                                <li>Toast aparece no canto superior direito</li>
+                                <li>Toast desaparece automaticamente após 3 segundos</li>
+                                <li>Cores diferenciam tipo (verde/vermelho/amarelo/azul)</li>
+                                <li>Múltiplos toasts podem ser exibidos simultaneamente</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BLOCO 28: TABS / ABAS -->
+            <div class="interactive-block test-auto" id="bloco-28-tabs">
+                <h3>28 - � Tabs / Abas</h3>
+                <div class="interactive-block-content">
+                    <div class="tabs-container">
+                        <div class="tabs-header">
+                            <button class="tab-button active" data-tab="tab1">Aba 1</button>
+                            <button class="tab-button" data-tab="tab2">Aba 2</button>
+                            <button class="tab-button" data-tab="tab3">Aba 3</button>
+                        </div>
+                        <div class="tabs-content">
+                            <div id="tab1" class="tab-pane active">
+                                <p>Conteúdo da Aba 1</p>
+                            </div>
+                            <div id="tab2" class="tab-pane" style="display:none;">
+                                <p>Conteúdo da Aba 2</p>
+                            </div>
+                            <div id="tab3" class="tab-pane" style="display:none;">
+                                <p>Conteúdo da Aba 3</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <p id="tabResult" class="text-validation"></p>
+                    
+                    <!-- Accordion Critérios de Aceite -->
+                    <div class="acceptance-accordion">
+                        <div class="acceptance-header">
+                            <span class="acceptance-header-title">📋 Critérios de Aceite</span>
+                            <span class="acceptance-toggle">▼</span>
+                        </div>
+                        <div class="acceptance-body">
+                            <ul>
+                                <li>3 abas navegáveis</li>
+                                <li>Aba 1 está selecionada por padrão</li>
+                                <li>Clicar em abas troca conteúdo</li>
+                                <li>Apenas uma aba está ativa por vez</li>
+                                <li>Cada aba tem conteúdo diferente</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BLOCO 29: LOADING STATES -->
+            <div class="interactive-block test-auto" id="bloco-29-loading">
+                <h3>29 - 🔄 Loading States</h3>
+                <div class="interactive-block-content">
+                    <button id="triggerLoadingBtn" class="btn-primary">⚙️ Simular Carregamento</button>
+                    
+                    <div id="loadingContainer" style="display:none; margin-top:20px;">
+                        <div class="spinner"></div>
+                        <p class="text-info">Carregando...</p>
+                    </div>
+                    
+                    <div id="loadedContent" style="display:none; margin-top:20px;">
+                        <p class="text-success">✅ Conteúdo carregado com sucesso!</p>
+                    </div>
+                    
+                    <!-- Accordion Critérios de Aceite -->
+                    <div class="acceptance-accordion">
+                        <div class="acceptance-header">
+                            <span class="acceptance-header-title">📋 Critérios de Aceite</span>
+                            <span class="acceptance-toggle">▼</span>
+                        </div>
+                        <div class="acceptance-body">
+                            <ul>
+                                <li>Botão inicia o carregamento</li>
+                                <li>Spinner (animação) aparece durante carregamento</li>
+                                <li>Texto "Carregando..." é exibido</li>
+                                <li>Após 2 segundos, spinner desaparece</li>
+                                <li>Conteúdo carregado é exibido com mensagem de sucesso</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BLOCO 30: DROPDOWN MENU -->
+            <div class="interactive-block test-auto" id="bloco-30-dropdown">
+                <h3>30 - � Dropdown Menu</h3>
+                <div class="interactive-block-content">
+                    <div class="dropdown-container">
+                        <button id="dropdownBtn" class="btn-primary dropdown-toggle">📂 Menu ▼</button>
+                        <div id="dropdownMenu" class="dropdown-menu" style="display:none;">
+                            <a href="#" class="dropdown-item">Opção 1</a>
+                            <a href="#" class="dropdown-item">Opção 2</a>
+                            <a href="#" class="dropdown-item">Opção 3</a>
+                            <hr>
+                            <a href="#" class="dropdown-item">Sair</a>
+                        </div>
+                    </div>
+                    
+                    <p id="dropdownResult" class="text-validation"></p>
+                    
+                    <!-- Accordion Critérios de Aceite -->
+                    <div class="acceptance-accordion">
+                        <div class="acceptance-header">
+                            <span class="acceptance-header-title">📋 Critérios de Aceite</span>
+                            <span class="acceptance-toggle">▼</span>
+                        </div>
+                        <div class="acceptance-body">
+                            <ul>
+                                <li>Botão abre/fecha o menu dropdown</li>
+                                <li>Menu aparece abaixo do botão</li>
+                                <li>4 opções clicáveis no menu</li>
+                                <li>Clicar em opção executa ação</li>
+                                <li>Menu fecha ao clicar fora</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BLOCO 31: AUTOCOMPLETE -->
+            <div class="interactive-block test-auto" id="bloco-31-autocomplete">
+                <h3>31 - � Autocomplete</h3>
+                <div class="interactive-block-content">
+                    <div class="autocomplete-container">
+                        <input type="text" id="autocompleteInput" class="autocomplete-input" placeholder="Digite um país...">
+                        <ul id="autocompleteList" class="autocomplete-list" style="display:none;">
+                            <li data-value="Brasil">🇧🇷 Brasil</li>
+                            <li data-value="Argentina">🇦🇷 Argentina</li>
+                            <li data-value="Chile">🇨🇱 Chile</li>
+                            <li data-value="Colombia">🇨🇴 Colombia</li>
+                            <li data-value="Peru">🇵🇪 Peru</li>
+                        </ul>
+                    </div>
+                    
+                    <p id="autocompleteResult" class="text-validation"></p>
+                    
+                    <!-- Accordion Critérios de Aceite -->
+                    <div class="acceptance-accordion">
+                        <div class="acceptance-header">
+                            <span class="acceptance-header-title">📋 Critérios de Aceite</span>
+                            <span class="acceptance-toggle">▼</span>
+                        </div>
+                        <div class="acceptance-body">
+                            <ul>
+                                <li>Campo aceita entrada de texto</li>
+                                <li>Ao digitar, lista de sugestões aparece</li>
+                                <li>Sugestões filtram por texto digitado</li>
+                                <li>Clicar em sugestão preenchea o campo</li>
+                                <li>Resultado é exibido após seleção</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BLOCO 32: PAGINATION -->
+            <div class="interactive-block test-auto" id="bloco-32-pagination">
+                <h3>32 - � Pagination</h3>
+                <div class="interactive-block-content">
+                    <div id="paginationContent" class="pagination-content"></div>
+                    
+                    <nav class="pagination">
+                        <button id="prevPageBtn" class="btn-secondary">← Anterior</button>
+                        <span id="pageInfo" class="page-info">Página 1 de 5</span>
+                        <button id="nextPageBtn" class="btn-secondary">Próxima →</button>
+                    </nav>
+                    
+                    <!-- Accordion Critérios de Aceite -->
+                    <div class="acceptance-accordion">
+                        <div class="acceptance-header">
+                            <span class="acceptance-header-title">📋 Critérios de Aceite</span>
+                            <span class="acceptance-toggle">▼</span>
+                        </div>
+                        <div class="acceptance-body">
+                            <ul>
+                                <li>Botão "Anterior" desabilitado na primeira página</li>
+                                <li>Botão "Próxima" desabilitado na última página</li>
+                                <li>Conteúdo muda ao navegar entre páginas</li>
+                                <li>Indicador de página mostra posição atual</li>
+                                <li>Total de 5 páginas com 3 itens cada</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BLOCO 33: DRAG & DROP -->
+            <div class="interactive-block test-auto" id="bloco-33-dragdrop">
+                <h3>33 - ✋ Drag & Drop</h3>
+                <div class="interactive-block-content">
+                    <div class="dragdrop-container">
+                        <div class="dragdrop-source">
+                            <h4>Arraste de aqui</h4>
+                            <div class="draggable-item" draggable="true">📌 Item 1</div>
+                            <div class="draggable-item" draggable="true">📌 Item 2</div>
+                            <div class="draggable-item" draggable="true">📌 Item 3</div>
+                        </div>
+                        <div class="dragdrop-target" id="dropTarget">
+                            <h4>Solte aqui</h4>
+                            <p class="text-info">Área de soltar itens</p>
+                        </div>
+                    </div>
+                    
+                    <p id="dragDropResult" class="text-validation"></p>
+                    
+                    <!-- Accordion Critérios de Aceite -->
+                    <div class="acceptance-accordion">
+                        <div class="acceptance-header">
+                            <span class="acceptance-header-title">📋 Critérios de Aceite</span>
+                            <span class="acceptance-toggle">▼</span>
+                        </div>
+                        <div class="acceptance-body">
+                            <ul>
+                                <li>3 itens arrastáveis na área esquerda</li>
+                                <li>Área direita aceita itens soltos</li>
+                                <li>Feedback visual ao arrastar</li>
+                                <li>Itens podem ser soltos na área alvo</li>
+                                <li>Contagem de itens soltos é exibida</li>
+                                <li>Clique em item solto para remover (com animação)</li>
+                                <li>Item removido atualiza contador</li>
+                                <li>Cor muda para vermelho ao passar mouse (indicativo de remover)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BLOCO 34: BREADCRUMB -->
+            <div class="interactive-block test-auto" id="bloco-34-breadcrumb">
+                <h3>34 - 🗺️ Breadcrumb</h3>
+                <div class="interactive-block-content">
+                    <nav class="breadcrumb">
+                        <a href="#" class="breadcrumb-item">Home</a>
+                        <span class="breadcrumb-separator">/</span>
+                        <a href="#" class="breadcrumb-item">Categoria</a>
+                        <span class="breadcrumb-separator">/</span>
+                        <a href="#" class="breadcrumb-item">Subcategoria</a>
+                        <span class="breadcrumb-separator">/</span>
+                        <span class="breadcrumb-current">Página Atual</span>
+                    </nav>
+                    
+                    <p class="text-info">Navegação estruturada acima</p>
+                    
+                    <!-- Accordion Critérios de Aceite -->
+                    <div class="acceptance-accordion">
+                        <div class="acceptance-header">
+                            <span class="acceptance-header-title">📋 Critérios de Aceite</span>
+                            <span class="acceptance-toggle">▼</span>
+                        </div>
+                        <div class="acceptance-body">
+                            <ul>
+                                <li>Breadcrumb mostra hierarquia de navegação</li>
+                                <li>Links são clicáveis e levam a páginas anteriores</li>
+                                <li>Separadores visuais entre níveis</li>
+                                <li>Página atual não é um link</li>
+                                <li>Estrutura é clara e acessível</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BLOCO 35: TOOLTIP -->
+            <div class="interactive-block test-auto" id="bloco-35-tooltip">
+                <h3>35 - � Tooltip</h3>
+                <div class="interactive-block-content">
+                    <div class="tooltip-container">
+                        <button class="btn-info tooltip-trigger" data-tooltip="🔝 Tooltip Superior">Hover para top</button>
+                        <button class="btn-info tooltip-trigger" data-tooltip="🔽 Tooltip Inferior">Hover para bottom</button>
+                        <button class="btn-info tooltip-trigger" data-tooltip="⬅️ Tooltip Esquerda">Hover para left</button>
+                        <button class="btn-info tooltip-trigger" data-tooltip="➡️ Tooltip Direita">Hover para right</button>
+                    </div>
+                    
+                    <p class="text-info">Passe o mouse sobre os botões</p>
+                    
+                    <!-- Accordion Critérios de Aceite -->
+                    <div class="acceptance-accordion">
+                        <div class="acceptance-header">
+                            <span class="acceptance-header-title">📋 Critérios de Aceite</span>
+                            <span class="acceptance-toggle">▼</span>
+                        </div>
+                        <div class="acceptance-body">
+                            <ul>
+                                <li>4 botões com tooltips diferentes</li>
+                                <li>Tooltip aparece ao passar mouse</li>
+                                <li>Tooltip desaparece ao sair do elemento</li>
+                                <li>Posicionamento é correto em cada direção</li>
+                                <li>Texto do tooltip é legível e acessível</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ========== SEÇÃO: API TESTING & QUIZ ========== -->
+
+            <!-- BLOCO 36: API STATUS 200 -->
+            <div class="interactive-block test-auto" id="bloco-36-api-status-200">
+                <h3>36 - 🌐 API Status 200 - Respostas Bem-sucedidas</h3>
+                <div class="interactive-block-content">
+                    <p class="label-small">Teste diferentes tipos de requisições HTTP (GET, POST, PUT, DELETE) com status 200 (OK), 201 (Criado) e 204 (Sem Conteúdo).</p>
+                    
+                    <div class="api-buttons">
+                        <button id="apiGetBtn" class="btn-get">📥 GET - Buscar Post</button>
+                        <button id="apiPostBtn" class="btn-post">➕ POST - Criar Post</button>
+                        <button id="apiPutBtn" class="btn-put">🔄 PUT - Atualizar Post</button>
+                        <button id="apiDeleteBtn" class="btn-delete">🗑️ DELETE - Deletar Post</button>
+                    </div>
+                    
+                    <div id="resultadoApi" class="api-result"></div>
+                    
+                    <div class="info-box">
+                        <strong>💡 Dica:</strong> Pratique verificar respostas HTTP, status codes, headers e payloads. Use o console do navegador (F12) para análise detalhada.
+                    </div>
+                    
+                    <!-- Accordion Critérios de Aceite -->
+                    <div class="acceptance-accordion">
+                        <div class="acceptance-header">
+                            <span class="acceptance-header-title">📋 Critérios de Aceite</span>
+                            <span class="acceptance-toggle">▼</span>
+                        </div>
+                        <div class="acceptance-body">
+                            <ul>
+                                <li>4 botões funcionais para GET, POST, PUT, DELETE</li>
+                                <li>Cada requisição envia dados corretos para API</li>
+                                <li>Respostas são exibidas no container de resultado</li>
+                                <li>Status codes são verificáveis (200, 201, 404, etc)</li>
+                                <li>Headers e payload estão visíveis para análise</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BLOCO 37: API STATUS 300 -->
+            <div class="interactive-block test-auto" id="bloco-37-api-status-300">
+                <h3>37 - 🌐 API Status 300 - Redirecionamentos</h3>
+                <div class="interactive-block-content">
+                    <p class="label-small">Teste respostas HTTP com status 300 (Múltiplas Escolhas), 301 (Movido Permanentemente), 302 (Encontrado) e 304 (Não Modificado).</p>
+                    
+                    <div class="api-buttons">
+                        <button id="api300Btn" class="btn-warning">🔄 300 - Múltiplas Escolhas</button>
+                        <button id="api301Btn" class="btn-warning">➡️ 301 - Movido Permanente</button>
+                        <button id="api302Btn" class="btn-warning">↪️ 302 - Encontrado</button>
+                        <button id="api304Btn" class="btn-warning">⏸️ 304 - Não Modificado</button>
+                    </div>
+                    
+                    <div id="resultado300" class="api-result"></div>
+                    
+                    <!-- Accordion Critérios de Aceite -->
+                    <div class="acceptance-accordion">
+                        <div class="acceptance-header">
+                            <span class="acceptance-header-title">📋 Critérios de Aceite</span>
+                            <span class="acceptance-toggle">▼</span>
+                        </div>
+                        <div class="acceptance-body">
+                            <ul>
+                                <li>4 botões funcionais para diferentes status 300</li>
+                                <li>Cada requisição retorna status code correto (300, 301, 302, 304)</li>
+                                <li>Respostas são exibidas no container de resultado</li>
+                                <li>Headers indicam redirecionamento/cache</li>
+                                <li>Validação de status codes está correta</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BLOCO 38: API STATUS 400 -->
+            <div class="interactive-block test-auto" id="bloco-38-api-status-400">
+                <h3>38 - 🌐 API Status 400 - Erros do Cliente</h3>
+                <div class="interactive-block-content">
+                    <p class="label-small">Teste respostas HTTP com status 400 (Requisição Inválida), 401 (Não Autorizado), 403 (Proibido) e 404 (Não Encontrado).</p>
+                    
+                    <div class="api-buttons">
+                        <button id="api400Btn" class="btn-danger">❌ 400 - Requisição Inválida</button>
+                        <button id="api401Btn" class="btn-danger">🔒 401 - Não Autorizado</button>
+                        <button id="api403Btn" class="btn-danger">⛔ 403 - Proibido</button>
+                        <button id="api404Btn" class="btn-danger">🔍 404 - Não Encontrado</button>
+                    </div>
+                    
+                    <div id="resultado400" class="api-result"></div>
+                    
+                    <!-- Accordion Critérios de Aceite -->
+                    <div class="acceptance-accordion">
+                        <div class="acceptance-header">
+                            <span class="acceptance-header-title">📋 Critérios de Aceite</span>
+                            <span class="acceptance-toggle">▼</span>
+                        </div>
+                        <div class="acceptance-body">
+                            <ul>
+                                <li>4 botões funcionais para diferentes status 400</li>
+                                <li>Cada requisição retorna status code correto (400, 401, 403, 404)</li>
+                                <li>Respostas são exibidas no container de resultado</li>
+                                <li>Mensagens de erro são informativas</li>
+                                <li>Validação de status codes está correta</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BLOCO 39: API STATUS 500 -->
+            <div class="interactive-block test-auto" id="bloco-39-api-status-500">
+                <h3>39 - 🌐 API Status 500 - Erros do Servidor</h3>
+                <div class="interactive-block-content">
+                    <p class="label-small">Teste respostas HTTP com status 500 (Erro Interno), 501 (Não Implementado), 502 (Gateway Inválido) e 503 (Serviço Indisponível).</p>
+                    
+                    <div class="api-buttons">
+                        <button id="api500Btn" class="btn-error">⚠️ 500 - Erro Interno do Servidor</button>
+                        <button id="api501Btn" class="btn-error">🚫 501 - Não Implementado</button>
+                        <button id="api502Btn" class="btn-error">🌉 502 - Gateway Inválido</button>
+                        <button id="api503Btn" class="btn-error">🔧 503 - Serviço Indisponível</button>
+                    </div>
+                    
+                    <div id="resultado500" class="api-result"></div>
+                    
+                    <!-- Accordion Critérios de Aceite -->
+                    <div class="acceptance-accordion">
+                        <div class="acceptance-header">
+                            <span class="acceptance-header-title">📋 Critérios de Aceite</span>
+                            <span class="acceptance-toggle">▼</span>
+                        </div>
+                        <div class="acceptance-body">
+                            <ul>
+                                <li>4 botões funcionais para diferentes status 500</li>
+                                <li>Cada requisição retorna status code correto (500, 501, 502, 503)</li>
+                                <li>Respostas são exibidas no container de resultado</li>
+                                <li>Mensagens indicam erro do servidor</li>
+                                <li>Validação de status codes está correta</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BLOCO 40: CTFL Quiz - TESTE FINAL -->
+            <div class="interactive-block test-auto" id="bloco-40-ctfl-quiz">
+                <h3>40 - 📨 CTFL Quiz - Teste Seu Conhecimento</h3>
+                <div class="interactive-block-content">
+                    <div class="quiz-header">
+                        <span>Pontuação:</span>
+                        <span id="quizPontuacao" class="text-validation">0/45</span>
+                    </div>
+                    
+                    <h5 id="pergunta">Carregando pergunta...</h5>
+                    
+                    <form id="formRespostas" class="quiz-form">
+                        <label class="quiz-label"><input type="radio" name="resposta" value="0"> <span id="resposta0"></span></label>
+                        <label class="quiz-label"><input type="radio" name="resposta" value="1"> <span id="resposta1"></span></label>
+                        <label class="quiz-label"><input type="radio" name="resposta" value="2"> <span id="resposta2"></span></label>
+                        <label class="quiz-label"><input type="radio" name="resposta" value="3"> <span id="resposta3"></span></label>
+                    </form>
+                    
+                    <div class="quiz-buttons">
+                        <button id="verificarBtn" class="btn-primary">✔️ Verificar</button>
+                        <button id="proximaBtn" class="btn-primary">🔁 Próxima</button>
+                        <button id="reiniciarBtn" class="btn-secondary">🔄 Reiniciar</button>
+                    </div>
+                    <p id="quizMensagem" class="quiz-message"></p>
+                </div>
+            </div>
+
+            <!-- BLOCO 41: DOWNLOAD SYLLABUS 4.0 PT -->
+            <div class="interactive-block test-auto" id="bloco-41-syllabus-pdf">
+                <h3>41 - � Download Syllabus 4.0 - Português</h3>
+                <div class="interactive-block-content">
+                    <p class="label-small">Baixe o documento oficial Syllabus 4.0 em português. Este é o guia completo de conceitos, competências e conhecimentos em Quality Assurance.</p>
+                    
+                    <div class="syllabus-info">
+                        <p><strong>📚 O que é o Syllabus 4.0?</strong></p>
+                        <p>O Syllabus é o documento de referência oficial que define o corpo de conhecimento para certificações ISTQB (International Software Testing Qualifications Board). A versão 4.0 representa a evolução mais recente dos padrões de teste de software.</p>
+                        
+                        <div class="syllabus-features">
+                            <p><strong>✨ Inclui:</strong></p>
+                            <ul>
+                                <li>✓ Fundamentos de Teste de Software</li>
+                                <li>✓ Técnicas de Teste e Estratégias</li>
+                                <li>✓ Automação de Testes</li>
+                                <li>✓ Qualidade e Métricas</li>
+                                <li>✓ Tópicos Avançados em QA</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <button id="downloadSyllabusBtn" class="btn-primary input-full-width">📥 Baixar Syllabus 4.0 (PDF)</button>
+                    
+                    <div id="downloadSyllabusMessage"></div>
+                    
+                    <div class="info-box">
+                        <strong>💡 Dica:</strong> Use este documento para estudar para certificações ISTQB e aprofundar seus conhecimentos em Quality Assurance.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- SEÇÃO INFORMATIVA - Componentes Interativos -->
+    <div class="perfil-container">
+        <section class="caixa-conteudo sobre">
+            <h2>🔴🔵 Bem-vindo a Zion - A Realidade dos Testes</h2>
+            <div class="texto-sobre texto-sobre-full-height">
+                <p class="paragraph-margin-bottom">
+                    <strong class="text-zion-highlight">Você tomou a pílula vermelha.</strong> Agora você vê a realidade dos testes de software. 
+                    A QAtrix Tecnologia construiu <strong>Zion</strong> — um ambiente completo onde profissionais de QA despertam para o conhecimento real, testando cenários que revelam a verdade sobre qualidade de software. 
+                    Aqui, você não está mais imerso na ilusão. Você está na realidade dos testes.
+                </p>
+
+                <div class="info-section-grid">
+                    <!-- Componentes Básicos -->
+                    <div class="info-card">
+                        <h3>🔷 A Camada Base</h3>
+                        <p><strong>Blocos 1-13:</strong> Campos de entrada, seleção, ações e dados. Aqui você constrói a base do seu conhecimento. Campos de texto, selects, checkboxes, radio buttons e tabelas — os tijolos fundamentais para construir seus testes.</p>
+                    </div>
+
+                    <!-- Zion - Laboratório Avançado -->
+                    <div class="info-card">
+                        <h3>⚡ A Camada Avançada</h3>
+                        <p><strong>Blocos 14-24:</strong> Componentes sofisticados para automação. Assinaturas, data pickers, uploads, código dinâmico e validações complexas. Aqui você sente o poder real da automação.</p>
+                    </div>
+
+                    <!-- API & Quiz -->
+                    <div class="info-card">
+                        <h3>🌐 A Verdade Absoluta</h3>
+                        <p><strong>Blocos 25-28:</strong> API Testing com diferentes métodos HTTP, CTFL Quiz expandido com 12 perguntas, Date Picker com validação de intervalo, Requisições HTTP variadas e Download do Syllabus 4.0 PT. Aqui está o teste final de seu conhecimento e os recursos para certificação.</p>
+                    </div>
+
+                    <!-- Pílula Vermelha -->
+                    <div class="info-card">
+                        <h3>🔴 A Pílula Vermelha</h3>
+                        <p>Escolheu despertar? Você agora enxerga os testes como realmente são. Cada bloco é uma camada de conhecimento. Cada teste é uma verdade revelada. Não há volta — apenas crescimento e mestria.</p>
+                    </div>
+
+                    <!-- Pílula Azul -->
+                    <div class="info-card">
+                        <h3>🔵 A Pílula Azul (Se preferir)</h3>
+                        <p>Prefereria não saber? Volte. Durma. E acorde acreditando que é possível fazer testes sem entender sua profundidade. A escolha sempre foi sua.</p>
+                    </div>
+
+                    <!-- QAtrix Tecnologia -->
+                    <div class="info-card">
+                        <h3>⚙️ QAtrix Tecnologia</h3>
+                        <p>Uma organização construída para a <strong>Comunidade Real de QA</strong>. Não vivemos em ilusões de ferramentas ou frameworks. Vivemos na realidade: qualidade importa, testes salvam vidas de software.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Seção: Como Usar -->
+    <div class="perfil-container">
+        <section class="caixa-conteudo sobre">
+            <h2>🎯 Como Usar</h2>
+            <div class="texto-sobre texto-sobre-full-height">
+                <p>
+                    <strong class="text-zion-highlight">Siga os passos para melhor aproveitar a plataforma:</strong>
+                </p>
+                <p>
+                    <span class="step-item"><strong>1.</strong> Navegue pelos blocos de testes, cada um contendo diferentes tipos de componentes.</span>
+                    <span class="step-item"><strong>2.</strong> Utilize as ferramentas de desenvolvedor (DevTools) para inspecionar elementos e treinar seletores CSS/XPath.</span>
+                    <span class="step-item"><strong>3.</strong> Os componentes de <strong>Zion - Laboratório Avançado</strong> são totalmente compatíveis com qualquer framework de automação: <br><strong>Cypress, Selenium, Playwright, Robot Framework</strong> e outros que utilizem seletores padrão.</span>
+                    <span class="step-item"><strong>4.</strong> Pratique diferentes técnicas de teste: manual, automado, assertions e validações em todos os frameworks suportados.</span>
+                    <span class="step-item"><strong>5.</strong> Pratique requisições HTTP variadas com API Testing (Bloco 25): GET, POST, PUT, DELETE.</span>
+                    <span class="step-item"><strong>6.</strong> Valide intervalos de datas (Bloco 26) e teste validações complexas de períodos.</span>
+                    <span class="step-item"><strong>7.</strong> Teste seu conhecimento teórico com o CTFL Quiz (Bloco 27) e suas 12 perguntas de certificação.</span>
+                    <span class="step-item"><strong>8.</strong> Baixe o Syllabus 4.0 em Português (Bloco 28) para estudar para certificações ISTQB.</span>
+                    <span class="step-item"><strong>9.</strong> Documente seus testes e crie casos de teste baseados nos componentes disponíveis.</span>
+                </p>
+            </div>
+        </section>
+    </div>
+
+    <!-- SEÇÃO: Parceria & Feedback -->
+    <div class="perfil-container">
+        <h2 class="section-contribute-title">💡 Contribua e Colabore</h2>
+        
+        <div class="feedback-columns-grid-two">
+            
+            <!-- COLUNA 1: Parceria -->
+            <div class="feedback-column">
+                <div class="column-header">
+                    <h3>🤝 Parceria & Colaboração</h3>
+                </div>
+                <div class="partnership-content">
+                    <p class="partnership-intro">
+                        <strong>Ajude-nos a melhorar e ir além da realidade!</strong>
+                    </p>
+                    <p class="partnership-description">
+                        O <strong>Test.Me</strong> é uma ferramenta construída para a <strong>Comunidade de QA</strong>, pensada pela e desenvolvida pela <strong>QAtrix Tecnologia</strong>. <br>Cada sugestão, cada feedback, cada contribuição torna esta plataforma mais poderosa e relevante para profissionais como você.
+                    </p>
+                    <p class="partnership-highlight destaque-vermelho">
+                        <strong>Contribuir não é apenas importante — é essencial!</strong><br>
+                        Você está ajudando profissionais ao redor do mundo a aprimorarem suas habilidades em testes, qualidade e automação.
+                    </p>
+                    <p class="partnership-actions-intro">
+                        Se você aproveitou o Test.Me e gostaria de:
+                    </p>
+                    <ul class="partnership-list">
+                        <li>💡 Sugerir melhorias e novas funcionalidades</li>
+                        <li>🤝 Explorar oportunidades de colaboração e parceria</li>
+                        <li>📢 Compartilhar feedback e experiências valiosas</li>
+                    </ul>
+                    <p class="partnership-closing">
+                        <strong>Ficaremos felizes em conversar com você!</strong> Sua voz importa e queremos ouvir tudo que você tem a dizer.
+                    </p>
+                    <p class="partnership-credits-highlight destaque-importante">
+                        🌟 <strong>Sugestões aprovadas receberão os devidos créditos no card!</strong><br>
+                        Por isso é muito importante identificar-se caso queira reconhecimento pela sua contribuição.
+                    </p>
+                    <div class="cta-whatsapp-container">
+                        <a href="https://wa.me/5548991059871" target="_blank" rel="noopener noreferrer" class="btn-whatsapp">Chamar no WhatsApp</a>
+                    </div>
+                    <p class="partnership-email email-destaque">
+                        📧 E-mail para: <strong>brunogsiq@gmail.com</strong>
+                    </p>
+                </div>
+            </div>
+
+            <!-- COLUNA 2: Formulário -->
+            <div class="feedback-column">
+                <div class="column-header">
+                    <h3>📝 Sua Sugestão</h3>
+                </div>
+                <div class="feedback-form-container">
+                    <form id="contactFormTestMe" class="feedback-form">
+                        <fieldset class="form-section">
+                            <legend>👤 Dados</legend>
+                            <div class="form-group">
+                                <input type="text" name="name" id="testMeName" placeholder="Nome *" minlength="3" maxlength="100" required>
+                                <span class="form-error" id="errorTestMeName"></span>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" name="email" id="testMeEmail" placeholder="E-mail * (ex: usuario@email.com)" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" required>
+                                <span class="form-error" id="errorTestMeEmail"></span>
+                            </div>
+                            <div class="form-group">
+                                <input type="url" name="linkedin" id="testMeLinkedin" placeholder="LinkedIn (opcional)" pattern="https://.*linkedin.*" title="URL do LinkedIn deve começar com https://linkedin">
+                                <span class="form-error" id="errorTestMeLinkedin"></span>
+                            </div>
+                        </fieldset>
+
+                        <fieldset class="form-section">
+                            <legend>💬 Sua Sugestão</legend>
+                            <div class="form-group">
+                                <textarea name="suggestion" id="testMeSuggestion" placeholder="Descreva sua sugestão com detalhes e caso puder numere a sugestão com o mesmo nome do anexo... " class="suggestion-textarea" required></textarea>
+                                <span class="form-error" id="errorTestMeSuggestion"></span>
+                            </div>
+                        </fieldset>
+
+                        <fieldset class="form-section">
+                            <legend>📎 Anexos (Múltiplos)</legend>
+                            <div class="form-group">
+                                <input type="file" id="testMeScreenshots" name="screenshots" accept=".png,.jpg,.jpeg,.pdf" multiple>
+                                <p class="form-help">✓ Formatos aceitos: PNG, JPG, JPEG, PDF<br>✓ Tamanho máximo por arquivo: 1 MB<br>✗ Vídeos e outros formatos não são permitidos</p>
+                                <p class="form-help-note">📌 <strong>Nota:</strong> Arquivos serão convertidos em Base64 e enviados por email. Para arquivos maiores que 1 MB, envie pelo <strong>WhatsApp</strong> ou por email direto para <strong>brunogsiq@gmail.com</strong>.</p>
+                                <span class="form-error" id="errorTestMeScreenshots"></span>
+                            </div>
+                        </fieldset>
+
+                        <div class="form-consent">
+                            <label>
+                                <input type="checkbox" id="testMeConsent" name="consent" required>
+                                <span>Concordo que minha sugestão pode ser utilizada.</span>
+                            </label>
+                            <span class="form-error" id="errorTestMeConsent"></span>
+                        </div>
+
+                        <button type="submit" class="btn-submit-feedback" disabled>📨 Enviar</button>
+                    </form>
+                    <p id="formMessageTestMe"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Rodapé -->
+	<footer class="perfil-container">
+		<section class="caixa-conteudo rodape">
+			<div class="footer-content">
+				<div class="mensagem" id="mensagem">
+					<p>Obrigado por nos visitar!</p>
+				</div>
+				<nav id="iconesFooter" aria-label="Links de redes sociais">
+					<a href="https://wa.me/5548991059871" target="_blank" rel="noopener noreferrer"
+						title="Entre em contato via WhatsApp">
+						<img src="../../img/icones/rs_whatsapp.png" alt="WhatsApp - Contato direto para suporte e dúvidas">
+					</a>
+					<a href="https://www.linkedin.com/in/brunogsiq" target="_blank" rel="noopener noreferrer"
+						title="Visite meu perfil no LinkedIn">
+						<img src="../../img/icones/rs_linkedin.png" alt="LinkedIn - Perfil profissional e experiência">
+					</a>
+					<a href="https://github.com/brunogsiq" target="_blank" rel="noopener noreferrer"
+						title="Veja meus repositórios no GitHub">
+						<img src="../../img/icones/rs_github.png" alt="GitHub - Portfólio de projetos e código-fonte">
+					</a>
+					<a href="https://medium.com/@brunogsiq" target="_blank" rel="noopener noreferrer"
+						title="Leia meus artigos no Medium">
+						<img src="../../img/icones/rs_medium.webp" alt="Medium - Artigos e insights sobre QA">
+					</a>
+					<a href="mailto:brunogsiq@gmail.com" title="Enviar e-mail">
+						<img src="../../img/icones/rs_emaill.png" alt="E-mail - brunogsiq@gmail.com">
+					</a>
+				</nav>
+				<div class="direitos" id="direitos">
+					<p>&copy; QAtrix Tecnologia - 2025<br>Todos os direitos reservados.</p>
+				</div>
+			</div>
+		</section>
+		
+	</footer>
+    <!-- Botão para voltar à base/rodapé -->
+    <button id="botaoBase" title="Voltar ao rodapé" aria-label="Botão para voltar ao rodapé">
+        <img src="../../img/icones/upTop.png" alt="Ícone de seta para baixo">
+    </button>
+    <script src="../../js/script.js"></script>
+    <script src="../../js/questions.js"></script>
+    <script src="../../js/testMe.js"></script>
+    <script src="../../js/enviaSugestao.js"></script>
+</body>
+
+</html>

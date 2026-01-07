@@ -1,0 +1,1216 @@
+@import url('./00_globals.css');
+
+/* ========================================
+   ESTILO ESPECÍFICO: curriculo.html
+   Layout em 3 colunas inspirado no LinkedIn
+   Coluna Esquerda (Perfil) | Centro (Vazio) | Direita (Acordeões + Botões)
+   ======================================== */
+
+/* ========================================
+   CONTAINER PRINCIPAL - LAYOUT 3 COLUNAS
+   Grid com espaçamento entre colunas
+   ======================================== */
+
+/* Blog Container - Wrapper Principal
+   - display: grid para controle de tamanhos
+   - grid-template-columns: 1fr 2fr 1fr (pequena, grande, pequena)
+   - grid-auto-rows: 1fr faz todas as linhas ter a mesma altura
+   - gap: 20px espaçamento entre colunas
+   - max-width: 1220px máximo de largura
+   - margin: 0 auto centraliza conteúdo
+   - align-items: stretch faz itens ocuparem altura total
+*/
+.curriculum-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-auto-rows: 1fr;
+    gap: 20px;
+    max-width: 1220px;
+    margin: 0 auto;
+    padding: 0;
+    align-items: stretch;
+}
+
+/* ========================================
+   COLUNA ESQUERDA - PERFIL
+   Card com informações e foto do usuário
+   ======================================== */
+
+/* Curriculum Sidebar Left - Coluna Esquerda
+   - position: relative para manter fluxo normal
+   - Contém informações do perfil
+*/
+.curriculum-sidebar-left {
+    position: relative;
+}
+
+/* Curriculum Card Left - Card Principal Esquerda (Perfil)
+   - background: cor escura do tema
+   - border: borda preto/padrão do tema
+   - border-radius: cantos arredondados
+   - padding: espaçamento interno
+   - display: flex para organizar conteúdo em coluna
+   - flex-direction: column alinha itens em coluna
+   - height: 100% ocupa altura total do grid
+   - position: sticky com top 80px (acompanha scroll)
+   - transition: transição suave para efeitos hover
+*/
+.curriculum-card-left {
+    background-color: var(--backg-Sub-cor);
+    border-left: 1px solid #1a1a1a;
+    border-right: 1px solid #1a1a1a;
+    border-bottom: 1px solid #1a1a1a;
+    border-radius: var(--borderRadius-padrao);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    height: 100%;
+    position: sticky;
+    top: 80px;
+    transition: var(--transicao-padrao);
+}
+
+/* Curriculum Card Left - Hover (Feedback Visual) */
+.curriculum-card-left:hover {
+    background-color: #1a1a1a;
+    border-left: 1px solid #333;
+    border-right: 1px solid #333;
+    border-bottom: 1px solid #333;
+}
+
+/* Profile Photo - Foto do Perfil com borda */
+.profile-photo {
+    width: 100%;
+    margin-bottom: 15px;
+    overflow: hidden;
+    border-radius: 50%;
+    aspect-ratio: 1 / 1;
+}
+
+.profile-photo img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* Profile Name - Nome do Usuário */
+.profile-name {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--texto-cor-padrao);
+    margin: 0 0 8px 0;
+    line-height: 1.3;
+}
+
+/* Profile Title - Título Profissional */
+.profile-title {
+    font-size: 0.9rem;
+    color: var(--texto-cor-padrao-destaque);
+    margin: 0 0 12px 0;
+    line-height: 1.4;
+    opacity: 0.85;
+}
+
+/* Profile Location - Localização */
+.profile-location {
+    font-size: 0.85rem;
+    color: var(--texto-cor-padrao);
+    margin: 0 0 4px 0;
+    opacity: 0.7;
+}
+
+/* Profile Company - Empresa/Organização */
+.profile-company {
+    font-size: 0.8rem;
+    color: var(--texto-cor-padrao);
+    margin: 0 0 15px 0;
+    opacity: 0.6;
+}
+
+/* Profile Skills - Seção de Habilidades */
+.profile-skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 15px;
+}
+
+/* Skill Tag - Tag Individual de Habilidade (Perfil) */
+.skill-tag {
+    background-color: var(--backg-Princ-cor);
+    border: var(--borderSolid-padrao);
+    color: var(--texto-cor-padrao);
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    transition: var(--transicao-padrao);
+    cursor: default;
+    display: inline-block;
+}
+
+.skill-tag:hover {
+    background-color: #1a1a1a;
+    border: var(--borderSolid-padrao);
+    color: var(--texto-cor-padrao);
+}
+
+/* Profile Actions - Botões de Ação */
+.profile-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+/* Button Secondary - Botão Estilo LinkedIn (Perfil) */
+.btn-secondary {
+    background-color: var(--backg-Princ-cor);
+    border: var(--borderSolid-padrao);
+    color: var(--texto-cor-padrao);
+    padding: 10px 16px;
+    border-radius: var(--borderRadius-padrao);
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-align: center;
+    transition: var(--transicao-padrao);
+    display: block;
+    width: 100%;
+}
+
+.btn-secondary:hover {
+    background-color: #1a1a1a;
+    border: var(--borderSolid-padrao);
+    color: var(--texto-cor-padrao);
+    transform: none;
+}
+
+/* Blog Card Left - Título
+   - font-size: texto grande
+   - color: cor padrão
+   - margin: 0 remove margin
+   - line-height: altura da linha padrão
+*/
+.curriculum-card-left h3 {
+    font-size: var(--texto-Tamanho-Prin);
+    color: var(--texto-cor-padrao);
+    margin: 0;
+    line-height: var(--line-height-padrao);
+}
+
+/* Blog Card Left - Descrição
+   - font-size: texto pequeno
+   - color: cor secundária
+   - margin: 0 remove margin
+   - opacity: 0.8 fica ligeiramente transparente
+*/
+.curriculum-card-left p {
+    font-size: var(--texto-Tamanho-Sub);
+    color: var(--texto-cor-padrao-destaque);
+    margin: 0;
+    opacity: 0.8;
+}
+
+/* Blog Card Left - Lista
+   - list-style: none remove bullets
+   - padding: 0 remove padding
+   - margin: 0 remove margin
+   - display: flex para organizar horizontalmente
+   - flex-wrap: wrap permite quebra de linha
+   - gap: 10px espaçamento entre itens
+*/
+.curriculum-card-left ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+/* Blog Card Left - Item da Lista
+   - background: cor escura
+   - padding: 8px 12px espaçamento
+   - border-radius: cantos arredondados
+   - font-size: texto pequeno
+   - color: cor padrão
+*/
+.curriculum-card-left li {
+    background-color: var(--backg-Princ-cor);
+    padding: 8px 12px;
+    border-radius: var(--borderRadius-padrao);
+    font-size: 0.85rem;
+    color: var(--texto-cor-padrao);
+}
+
+/* Blog Card Left - Botão
+   - Utiliza classe .btn-action existente
+   - width: 100% ocupa largura total
+   - margin-top: 10px espaçamento superior
+*/
+.curriculum-card-left .btn-action {
+    width: 100%;
+    margin-top: 10px;
+    text-align: center;
+}
+
+/* ========================================
+   COLUNA CENTRAL - CONTEÚDO PRINCIPAL
+   Card grande com artigos/conteúdo da página
+   ======================================== */
+
+/* Recommendations Main Content - Coluna Central
+   - Contém os conteúdos principais da página
+*/
+.recommendations-main-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Curriculum Sidebar Center - Coluna Central (Container)
+   - position: relative para manter fluxo normal
+*/
+.curriculum-sidebar-center {
+    position: relative;
+}
+
+/* Curriculum Card Main - Card Principal Central
+   - background: cor escura do tema
+   - border: borda preto/padrão do tema
+   - border-radius: cantos arredondados
+   - padding: espaçamento interno
+   - min-height: 500px altura mínima para conteúdo
+   - display: flex para organizar conteúdo em coluna
+   - flex-direction: column para manter estrutura vertical
+   - height: 100% ocupa altura total do grid
+   - transition: transição suave para efeitos hover
+*/
+.recommendations-card-main {
+    background-color: var(--backg-Sub-cor);
+    border-left: 1px solid #1a1a1a;
+    border-right: 1px solid #1a1a1a;
+    border-bottom: 1px solid #1a1a1a;
+    border-radius: var(--borderRadius-padrao);
+    padding: 30px;
+    min-height: 500px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    transition: var(--transicao-padrao);
+}
+
+/* Recommendations Card Main - Hover (Feedback Visual) */
+.recommendations-card-main:hover {
+    background-color: #1a1a1a;
+    border-left: 1px solid #333;
+    border-right: 1px solid #333;
+    border-bottom: 1px solid #333;
+}
+
+/* Recommendations Card Main - Header
+   - margin-bottom: 20px espaçamento inferior
+   - border-bottom: linha divisória
+   - padding-bottom: 20px espaçamento interno inferior
+*/
+.recommendations-card-main-header {
+    margin-bottom: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 20px;
+}
+
+/* Recommendations Card Main - Título
+   - font-size: texto grande
+   - color: cor padrão
+   - margin: 0 remove margin
+   - line-height: altura da linha padrão
+*/
+.recommendations-card-main h2 {
+    font-size: var(--texto-Tamanho-Prin);
+    color: var(--texto-cor-padrao);
+    margin: 0 0 10px 0;
+    line-height: var(--line-height-padrao);
+}
+
+/* Recommendations Card Main - Data e Autor
+   - font-size: texto pequeno
+   - color: cor secundária
+   - display: flex para alinhamento
+   - gap: 15px espaçamento entre elementos
+   - align-items: center centraliza verticamente
+*/
+.recommendations-card-main-meta {
+    font-size: 0.9rem;
+    color: var(--texto-cor-padrao-destaque);
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* Curriculum Card Main - Conteúdo
+   - margin: 0 remove margin
+   - line-height: altura da linha padrão
+   - color: cor padrão
+   - font-size: texto padrão
+*/
+.recommendations-card-main-content {
+    margin: 0;
+    line-height: var(--line-height-padrao);
+    color: var(--texto-cor-padrao);
+    font-size: var(--texto-Tamanho-Sub);
+}
+
+/* Recommendations Card Main - Paragráfo
+   - margin-bottom: 15px espaçamento entre parágrafos
+*/
+.recommendations-card-main-content p {
+    margin-bottom: 15px;
+}
+
+/* Recommendations Card Main - Heading
+   - margin: 20px 0 espaçamento vertical
+   - font-size: texto maior
+   - color: cor padrão
+*/
+.recommendations-card-main-content h3 {
+    margin: 20px 0 10px 0;
+    font-size: 1.2rem;
+    color: var(--texto-cor-padrao);
+}
+
+/* Recommendations Card Main - Lista
+   - margin-left: 20px indentação
+   - margin-bottom: 15px espaçamento inferior
+*/
+.recommendations-card-main-content ul,
+.recommendations-card-main-content ol {
+    margin-left: 20px;
+    margin-bottom: 15px;
+}
+
+/* Recommendations Card Main - Item da Lista
+   - margin-bottom: 8px espaçamento
+*/
+.recommendations-card-main-content li {
+    margin-bottom: 8px;
+}
+
+/* Recommendations Card Main - Footer
+   - margin-top: 30px espaçamento superior
+   - padding-top: 20px espaçamento interno
+   - border-top: linha divisória
+   - display: flex para alinhamento
+   - gap: 15px espaçamento entre botões
+   - flex-wrap: wrap permite quebra de linha
+*/
+.recommendations-card-main-footer {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+/* Recommendations Card Main - Botão
+   - Utiliza classe .verMais existente
+*/
+.recommendations-card-main .verMais {
+    flex: 1;
+    min-width: 150px;
+}
+
+/* ========================================
+   COLUNA DIREITA - ACORDEÕES + BOTÕES
+   Seções de conteúdo do currículo e contato
+   ======================================== */
+
+/* Curriculum Sidebar Right - Coluna Direita
+   - position: relative para manter fluxo normal
+   - Contém acordeões e botões de contato
+*/
+.curriculum-sidebar-right {
+    position: relative;
+}
+
+/* Curriculum Card Right - Card Principal Direita (Acordeões)
+   - background: cor escura do tema
+   - border: borda preto/padrão do tema
+   - border-radius: cantos arredondados
+   - padding: espaçamento interno
+   - height: 100% ocupa altura total do grid
+   - display: flex para organizar conteúdo em coluna
+   - flex-direction: column para manter estrutura vertical
+   - position: sticky com top 80px (acompanha scroll)
+   - transition: transição suave para efeitos hover
+   - Contém acordeões com seções do currículo
+*/
+.curriculum-card-right {
+    background-color: var(--backg-Sub-cor);
+    border-left: 1px solid #1a1a1a;
+    border-right: 1px solid #1a1a1a;
+    border-bottom: 1px solid #1a1a1a;
+    border-radius: var(--borderRadius-padrao);
+    padding: 20px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    position: sticky;
+    top: 80px;
+    transition: var(--transicao-padrao);
+}
+
+/* Curriculum Card Right - Hover (Feedback Visual) */
+.curriculum-card-right:hover {
+    background-color: #1a1a1a;
+    border-left: 1px solid #333;
+    border-right: 1px solid #333;
+    border-bottom: 1px solid #333;
+}
+
+/* Curriculum Card Right - Título
+   - font-size: texto grande
+   - color: cor padrão
+   - margin: 0 0 15px 0 espaçamento inferior
+   - line-height: altura da linha padrão
+   - border-bottom: linha divisória
+   - padding-bottom: 15px espaçamento interno inferior
+*/
+.curriculum-card-right h3 {
+    font-size: 1.1rem;
+    color: var(--texto-cor-padrao);
+    margin: 0 0 15px 0;
+    line-height: var(--line-height-padrao);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    padding-bottom: 15px;
+}
+
+/* Curriculum Card Right - Link
+   - color: cor padrão
+   - text-decoration: none remove sublinhado
+   - font-size: texto pequeno
+   - line-height: altura da linha padrão
+*/
+.curriculum-card-right a {
+    color: var(--texto-cor-padrao);
+    text-decoration: none;
+    font-size: 0.95rem;
+    line-height: var(--line-height-padrao);
+}
+
+/* Curriculum Card Right - Link Hover
+   - color: cor de destaque
+*/
+.curriculum-card-right a:hover {
+    color: var(--btn-hover-destaque);
+}
+
+/* Curriculum Card Right - Lista de Artigos
+   - list-style: none remove bullets
+   - padding: 0 remove padding
+   - margin: 0 remove margin
+   - display: flex para organizar em coluna
+   - flex-direction: column alinha itens em coluna
+   - gap: 10px espaçamento entre itens
+*/
+.curriculum-card-right ul,
+.archive-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Curriculum Card Right - Item da Lista
+   - padding: 10px espaçamento interno
+   - border-radius: cantos arredondados
+   - background: cor secundária
+   - transition: transição suave
+   - cursor: pointer indica clicabilidade
+*/
+.curriculum-card-right li {
+    padding: 10px;
+    border-radius: var(--borderRadius-padrao);
+    background-color: var(--backg-Princ-cor);
+    transition: var(--transicao-padrao);
+    cursor: pointer;
+}
+
+/* Curriculum Card Right - Item Hover
+   - opacity: 0.8 fica ligeiramente transparente
+   - transform: scale(1.02) amplia ligeiramente
+*/
+.curriculum-card-right li:hover {
+    opacity: 0.8;
+    transform: scale(1.02);
+}
+
+/* ========================================
+   ACORDEÕES - SEÇÕES DO CURRÍCULO
+   Estrutura expansível para organizar conteúdo
+   ======================================== */
+
+.recommendations-content {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.accordion-item {
+    border: none;
+    border-radius: 0;
+    overflow: hidden;
+    background: transparent;
+}
+
+/* Accordion Header - Cabeçalho Expansível
+   - width: 100% ocupa largura total
+   - padding: espaçamento interno
+   - background: fundo preto padrão (var(--backg-Princ-cor))
+   - cursor: pointer indica clicabilidade
+   - display: flex para alinhamento
+   - justify-content: space-between distribui itens
+   - font-weight: 600 texto em negrito
+   - transition: transição suave
+   - border: borda padrão da paleta
+   - border-radius: cantos arredondados
+*/
+.accordion-header {
+    width: 100%;
+    padding: 15px 20px;
+    background-color: var(--backg-Princ-cor);
+    border: var(--borderSolid-padrao);
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.1em;
+    font-weight: 600;
+    color: var(--texto-cor-padrao);
+    transition: var(--transicao-padrao);
+    font-family: inherit;
+    border-radius: var(--borderRadius-padrao);
+    margin-bottom: 10px;
+}
+
+.accordion-header:hover {
+    background-color: #1a1a1a;
+    border: var(--borderSolid-padrao);
+    transform: none;
+}
+
+.accordion-title {
+    flex: 1;
+    text-align: left;
+}
+
+/* Accordion Icon - Ícone de Expansão (+/-)
+   - font-size: tamanho grande
+   - transition: rotação suave
+   - Rotaciona 45 graus quando ativo
+*/
+.accordion-icon {
+    font-size: 1.5em;
+    font-weight: bold;
+    transition: transform 0.3s ease;
+    color: var(--texto-cor-padrao);
+}
+
+.accordion-header.active .accordion-icon {
+    transform: rotate(45deg);
+}
+
+/* Accordion Body - Conteúdo Expandível
+   - padding: espaçamento interno
+   - background: cor secundária escura do tema
+   - display: none por padrão (fechado)
+   - animation: slideDown animação de abertura
+   - border: borda padrão
+   - border-top: nenhuma para continuar do header
+*/
+.accordion-body {
+    padding: 20px;
+    background: var(--backg-Sub-cor);
+    border-left: var(--borderSolid-padrao);
+    border-right: var(--borderSolid-padrao);
+    border-bottom: var(--borderSolid-padrao);
+    border-radius: 0 0 var(--borderRadius-padrao) var(--borderRadius-padrao);
+    display: none;
+    animation: slideDown 0.3s ease;
+    margin-bottom: 10px;
+}
+
+.accordion-body.active {
+    display: block;
+}
+
+.accordion-body p {
+    margin: 15px 0;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.accordion-body ul {
+    margin: 15px 0;
+    padding-left: 25px;
+}
+
+.accordion-body ul li {
+    margin: 10px 0;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.accordion-body h4 {
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+/* Animação de Slide Down
+   - Anima a abertura suave do acordeão
+*/
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ========================================
+   BOTÕES DE DOWNLOAD E CONTATO
+   Seções de ação na coluna direita
+   ======================================== */
+
+.download-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 20px;
+}
+
+/* Botão Português - Bordas Coloridas Brasil
+   - Bordas top/bottom: verde (#009c3b)
+   - Bordas left/right: amarelo (#ffcd00)
+   - Background: preto padrão
+*/
+.btn-pt {
+    width: 100%;
+    max-width: 220px;
+    border-top: 3px solid #009c3b !important;
+    border-bottom: 3px solid #009c3b !important;
+    border-left: 3px solid #ffcd00 !important;
+    border-right: 3px solid #ffcd00 !important;
+    background: var(--backg-Princ-cor) !important;
+    color: var(--texto-cor-padrao) !important;
+    padding: 12px 20px;
+    border-radius: var(--borderRadius-padrao);
+    cursor: pointer;
+    transition: var(--transicao-padrao);
+}
+
+.btn-pt:hover {
+    background: rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Botão Espanhol - Bordas Coloridas Espanha
+   - Bordas top/bottom: vermelho (#c60b1e)
+   - Bordas left/right: amarelo (#ffc400)
+   - Background: preto padrão
+*/
+.btn-es {
+    width: 100%;
+    max-width: 220px;
+    border-top: 3px solid #c60b1e !important;
+    border-bottom: 3px solid #c60b1e !important;
+    border-left: 3px solid #ffc400 !important;
+    border-right: 3px solid #ffc400 !important;
+    background: var(--backg-Princ-cor) !important;
+    color: var(--texto-cor-padrao) !important;
+    padding: 12px 20px;
+    border-radius: var(--borderRadius-padrao);
+    cursor: pointer;
+    transition: var(--transicao-padrao);
+}
+
+.btn-es:hover {
+    background: rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Botão LinkedIn - Bordas Coloridas LinkedIn
+   - Bordas top/bottom: azul (#0A66C2)
+   - Bordas left/right: branco (#ffffff)
+   - Background: preto padrão
+*/
+.btn-in {
+    width: 100%;
+    max-width: 220px;
+    border-top: 3px solid #0A66C2 !important;
+    border-bottom: 3px solid #0A66C2 !important;
+    border-left: 3px solid #ffffff !important;
+    border-right: 3px solid #ffffff !important;
+    background: var(--backg-Princ-cor) !important;
+    color: var(--texto-cor-padrao) !important;
+    padding: 12px 20px;
+    border-radius: var(--borderRadius-padrao);
+    cursor: pointer;
+    transition: var(--transicao-padrao);
+}
+
+.btn-in:hover {
+    background: rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Sidebar Contact Buttons - Botões de Contato
+   - Flexbox coluna com espaçamento
+   - Incluem WhatsApp, Google Agenda, LinkedIn
+*/
+.sidebar-contact-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.sidebar-btn {
+    display: block;
+    padding: 12px 16px !important;
+    margin: 0 !important;
+    background: var(--backg-Princ-cor) !important;
+    color: var(--texto-cor-padrao) !important;
+    text-decoration: none !important;
+    text-align: center;
+    border-radius: var(--borderRadius-padrao) !important;
+    font-weight: 600 !important;
+    font-size: 0.95em !important;
+    transition: var(--transicao-padrao) !important;
+    border: var(--borderSolid-padrao) !important;
+    width: 100%;
+}
+
+.sidebar-btn:hover {
+    background: #1a1a1a !important;
+    border: var(--borderSolid-padrao) !important;
+    color: var(--texto-cor-padrao) !important;
+}
+
+/* ========================================
+   RESPONSIVIDADE - TABLETS E MOBILE
+   Adapta layout para dispositivos menores
+   ======================================== */
+
+/* Tablets (máximo 1024px)
+   - Grid: 2 colunas (perfil + conteúdo)
+   - Acordeões em layout responsivo
+*/
+@media (max-width: 1024px) {
+    .curriculum-container {
+        grid-template-columns: 1fr 1.5fr;
+        gap: 15px;
+    }
+
+    .curriculum-sidebar-right {
+        position: static;
+        grid-column: 1 / -1;
+    }
+
+    .curriculum-card-right {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+}
+
+/* Mobile (máximo 768px)
+   - Grid: 1 coluna - todos os elementos empilhados
+   - Perfil no topo, Acordeões abaixo
+   - Padding reduzido para economia de espaço
+*/
+@media (max-width: 768px) {
+    .curriculum-container {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        padding: 10px;
+    }
+
+    .curriculum-sidebar-left,
+    .curriculum-sidebar-right {
+        position: static;
+    }
+
+    .curriculum-card-left,
+    .curriculum-card-right {
+        padding: 15px;
+    }
+
+    .curriculum-card-right {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .download-buttons {
+        flex-direction: column;
+    }
+
+    .btn-pt,
+    .btn-es,
+    .btn-in {
+        max-width: 100%;
+    }
+}
+/* ========================================
+   ESTILOS CAROUSEL - CARROSSEL DE RECOMENDAÇÕES
+   ======================================== */
+
+.carousel-container {
+    display: flex;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 650px;
+    margin-bottom: 30px;
+    background-color: var(--backg-Sub-cor);
+    border-radius: var(--borderRadius-padrao);
+    border: var(--borderSolid-padrao);
+}
+
+.carousel-item {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    padding: 40px 35px;
+    box-sizing: border-box;
+}
+
+.carousel-item.active {
+    display: flex;
+    opacity: 1;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.recommendation-card {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    gap: 25px;
+}
+
+.recommendation-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    border-bottom: var(--borderSolid-padrao);
+    padding-bottom: 25px;
+}
+
+.recommendation-author-photo {
+    flex-shrink: 0;
+}
+
+.author-photo {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--texto-cor-padrao-destaque);
+}
+
+.recommendation-author {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.recommendation-author h4 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--texto-cor-padrao);
+}
+
+.recommendation-role {
+    margin: 0;
+    font-size: 13px;
+    color: var(--texto-cor-padrao-destaque);
+    line-height: 1.4;
+}
+
+.recommendation-stars {
+    color: #ffc107;
+    font-size: 16px;
+    margin-top: 8px;
+}
+
+.recommendation-text {
+    flex: 1;
+    overflow-y: auto;
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--texto-cor-padrao);
+    margin: 0;
+    padding-right: 12px;
+}
+
+.recommendation-text::-webkit-scrollbar {
+    width: 6px;
+}
+
+.recommendation-text::-webkit-scrollbar-track {
+    background: var(--backg-Princ-cor);
+    border-radius: 10px;
+}
+
+.recommendation-text::-webkit-scrollbar-thumb {
+    background: var(--texto-cor-padrao-destaque);
+    border-radius: 10px;
+}
+
+.recommendation-text::-webkit-scrollbar-thumb:hover {
+    background: var(--texto-cor-padrao);
+}
+
+/* Estilo especial para card de "Ver Mais" */
+.see-more-card {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    gap: 40px;
+    padding: 0;
+}
+
+.see-more-header {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.see-more-header h4 {
+    margin: 0;
+    font-size: 28px;
+    font-weight: 600;
+    color: var(--texto-cor-padrao);
+}
+
+.see-more-header p {
+    margin: 0;
+    font-size: 16px;
+    color: var(--texto-cor-padrao-destaque);
+    line-height: 1.5;
+}
+
+.see-more-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.see-more-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 32px;
+    background-color: var(--backg-Princ-cor);
+    border: 2px solid #0a66c2;
+    color: #0a66c2;
+    text-decoration: none;
+    border-radius: var(--borderRadius-padrao);
+    font-weight: 600;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.see-more-link:hover {
+    background-color: #0a66c2;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(10, 102, 194, 0.3);
+}
+
+.see-more-link:active {
+    transform: translateY(0);
+}
+
+.linkedin-icon {
+    width: 28px;
+    height: 28px;
+    display: block;
+}
+
+/* Controles do Carousel */
+.carousel-controls-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    padding: 25px 0;
+}
+
+.carousel-btn {
+    padding: 10px 15px;
+    background-color: var(--backg-Princ-cor);
+    border: var(--borderSolid-padrao);
+    color: var(--texto-cor-padrao);
+    border-radius: var(--borderRadius-padrao);
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    transition: var(--transicao-padrao);
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.carousel-btn:hover {
+    border-color: var(--texto-cor-padrao-destaque);
+    color: var(--texto-cor-padrao-destaque);
+    transform: var(--transform-hover-padrao);
+}
+
+.carousel-btn:active {
+    transform: scale(0.95);
+}
+
+/* Dots de Navegação */
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    flex: 1;
+    align-items: center;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: transparent;
+    border: 2px solid var(--texto-cor-padrao-destaque);
+    cursor: pointer;
+    transition: var(--transicao-padrao);
+}
+
+.dot:hover {
+    border-color: var(--texto-cor-padrao);
+}
+
+.dot.active {
+    background-color: var(--texto-cor-padrao);
+    border-color: var(--texto-cor-padrao);
+}
+
+/* Responsividade para Carousel */
+@media (max-width: 768px) {
+    .carousel-container {
+        height: 500px;
+        padding: 20px;
+    }
+
+    .carousel-item {
+        padding: 20px;
+    }
+
+    .recommendation-header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .author-photo {
+        width: 80px;
+        height: 80px;
+    }
+
+    .recommendation-text {
+        max-height: 200px;
+    }
+
+    .carousel-controls {
+        justify-content: center;
+    }
+
+    .carousel-btn {
+        padding: 8px 12px;
+        font-size: 12px;
+    }
+
+    .carousel-dots {
+        gap: 6px;
+    }
+
+    .dot {
+        width: 8px;
+        height: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .carousel-container {
+        height: 550px;
+        padding: 15px;
+    }
+
+    .carousel-item {
+        padding: 15px;
+    }
+
+    .author-photo {
+        width: 70px;
+        height: 70px;
+    }
+
+    .recommendation-author h4 {
+        font-size: 14px;
+    }
+
+    .recommendation-role {
+        font-size: 12px;
+    }
+
+    .recommendation-text {
+        font-size: 13px;
+        max-height: 200px;
+    }
+
+    .carousel-btn {
+        padding: 8px 10px;
+        font-size: 11px;
+    }
+
+    .carousel-dots {
+        gap: 5px;
+    }
+
+    .dot {
+        width: 8px;
+        height: 8px;
+    }
+}

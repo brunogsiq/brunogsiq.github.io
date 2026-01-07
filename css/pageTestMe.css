@@ -1,0 +1,3323 @@
+@import url('./00_globals.css');
+
+/* ========================================
+   ESTILO ESPECÍFICO: testMe.html
+   Playground de Testes Interativos - QA
+   Layout em 3 colunas de TAMANHO IGUAL
+   Coluna Esquerda | Centro (Testes) | Direita
+   ======================================== */
+
+/* ========================================
+   SEÇÃO INTRODUTÓRIA - COLUNAS DE APRESENTAÇÃO
+   ======================================== */
+
+/* Separator Space - Seção Vazia de Separação
+   Herda de .sobre (border-top: 1px solid #333, padding-top: 30px)
+   Adiciona margin-bottom para separar blocos visualmente
+*/
+.caixa-conteudo.sobre {
+    margin-bottom: 40px !important;
+    margin-top: 0 !important;
+}
+
+.info-columns-intro {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin: 25px 0;
+}
+
+.column-intro {
+    background-color: var(--backg-Sub-cor);
+    border-radius: var(--borderRadius-padrao);
+    padding: 18px 20px;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.column-intro strong {
+    color: #0066cc;
+    font-weight: 700;
+    display: block;
+    margin-bottom: 8px;
+}
+
+/* ========================================
+   CONTAINER PRINCIPAL - LAYOUT 3 COLUNAS IGUAIS
+   Grid com colunas de tamanho igual (1fr 1fr 1fr)
+   ======================================== */
+
+.feedback-columns-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin: 0 auto;
+}
+
+.feedback-columns-grid-two {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin: 0 auto 40px auto;
+}
+
+.feedback-column {
+    background-color: var(--backg-Sub-cor);
+    padding: 25px;
+    border-radius: var(--borderRadius-padrao);
+    display: flex;
+    flex-direction: column;
+}
+
+.column-header {
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #333;
+}
+
+.column-header h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    color: var(--texto-cor-padrao);
+}
+
+/* ========================================
+   COLUNA PARCERIA - MELHORIAS
+   ======================================== */
+
+.partnership-content {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.partnership-list {
+    list-style: none;
+    margin: 15px 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.partnership-list li {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    padding-left: 0;
+    margin: 0;
+    color: var(--texto-cor-padrao);
+}
+
+.partnership-list li::before {
+    content: '✓ ';
+    color: #0066cc;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+/* ========================================
+   SEÇÃO PARCERIA & FEEDBACK - ESTILOS DESCRITIVOS
+   ======================================== */
+
+.section-contribute-title {
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.partnership-intro {
+    margin: 0 0 15px 0;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.partnership-description {
+    margin: 0 0 15px 0;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.partnership-highlight {
+    margin: 0 0 15px 0;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.partnership-actions-intro {
+    margin: 0 0 15px 0;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.partnership-closing {
+    margin: 20px 0 0 0;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.partnership-credits-highlight {
+    margin: 20px 0 15px 0;
+    padding: 15px;
+    background-color: rgba(245, 245, 245, 0.1);
+    border-left: 4px solid #e0e0e0;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.cta-whatsapp-container {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.partnership-email {
+    margin: 20px 0 0 0;
+    font-size: 0.85rem;
+    text-align: center;
+}
+
+.testing-playground-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-auto-rows: 1fr;
+    gap: 20px;
+    max-width: 1220px;
+    margin: 40px auto;
+    padding: 0;
+    align-items: stretch;
+    min-height: 600px;
+}
+
+/* ========================================
+   COLUNA ESQUERDA - COMPONENTES ESQUERDA
+   ======================================== */
+
+.testing-sidebar-left {
+    position: relative;
+}
+
+.testing-card-left {
+    background-color: var(--backg-Sub-cor);
+    border: var(--borderSolid-padrao);
+    border-radius: var(--borderRadius-padrao);
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    height: 100%;
+    transition: var(--transicao-padrao);
+}
+
+.testing-card-left:hover {
+    background-color: #1a1a1a;
+    border: 1px solid #333;
+}
+
+/* ========================================
+   COLUNA CENTRAL - PLAYGROUND DE TESTES
+   ======================================== */
+
+.testing-playground-main {
+    position: relative;
+}
+
+.testing-playground-card {
+    background-color: var(--backg-Sub-cor);
+    border: var(--borderSolid-padrao);
+    border-radius: var(--borderRadius-padrao);
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    gap: 20px;
+    overflow-y: auto;
+    transition: var(--transicao-padrao);
+}
+
+.testing-playground-card:hover {
+    background-color: #1a1a1a;
+    border: 1px solid #333;
+}
+
+.testing-playground-card h2 {
+    font-size: var(--texto-Tamanho-Prin);
+    color: var(--texto-cor-padrao);
+    margin: 0 0 10px 0;
+    line-height: var(--line-height-padrao);
+}
+
+.testing-playground-card>p {
+    font-size: var(--texto-Tamanho-Sub);
+    color: var(--texto-cor-padrao-destaque);
+    margin: 0 0 10px 0;
+    line-height: var(--line-height-padrao);
+}
+
+/* ========================================
+   COMPONENTES DE TESTE - SEÇÕES INTERATIVAS
+   ======================================== */
+
+.test-section {
+    background-color: var(--backg-Princ-cor);
+    border: var(--borderSolid-padrao);
+    border-radius: var(--borderRadius-padrao);
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    transition: var(--transicao-padrao);
+}
+
+.test-section:hover {
+    background-color: #1a1a1a;
+    border: 1px solid #333;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.05);
+}
+
+.test-section h3 {
+    font-size: 1.05rem;
+    color: var(--texto-cor-padrao);
+    margin: 0;
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+.test-section p {
+    font-size: 0.9rem;
+    color: var(--texto-cor-padrao-destaque);
+    margin: 0;
+    opacity: 0.85;
+    line-height: 1.4;
+}
+
+.start-test-btn {
+    background-color: var(--backg-Princ-cor);
+    border: 1px solid #333;
+    color: var(--texto-cor-padrao);
+    padding: 10px 20px;
+    border-radius: var(--borderRadius-padrao);
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: var(--transicao-padrao);
+    align-self: flex-start;
+    display: inline-block;
+    text-align: center;
+}
+
+.start-test-btn:hover {
+    background-color: #1a1a1a;
+    border: 1px solid #0a66c2;
+    color: #0a66c2;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(10, 102, 194, 0.2);
+}
+
+.start-test-btn:active {
+    transform: translateY(0);
+}
+
+/* ========================================
+   COLUNA DIREITA - COMPONENTES DIREITA
+   ======================================== */
+
+.testing-sidebar-right {
+    position: relative;
+}
+
+.testing-card-right {
+    background-color: var(--backg-Sub-cor);
+    border: var(--borderSolid-padrao);
+    border-radius: var(--borderRadius-padrao);
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    height: 100%;
+    transition: var(--transicao-padrao);
+}
+
+.testing-card-right:hover {
+    background-color: #1a1a1a;
+    border: 1px solid #333;
+}
+
+/* ========================================
+   RESPONSIVIDADE - TABLETS (≤ 1024px)
+   ======================================== */
+
+@media (max-width: 1024px) {
+    .testing-playground-container {
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+    }
+
+    .testing-sidebar-right {
+        grid-column: 1 / -1;
+    }
+}
+
+/* ========================================
+   RESPONSIVIDADE - MOBILE (≤ 768px)
+   ======================================== */
+
+@media (max-width: 768px) {
+    .testing-playground-container {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        min-height: auto;
+        padding: 10px;
+    }
+
+    .testing-card-left,
+    .testing-playground-card,
+    .testing-card-right {
+        padding: 18px;
+    }
+
+    .start-test-btn {
+        align-self: stretch;
+        width: 100%;
+    }
+}
+
+
+/* ========================================
+   COLUNA ESQUERDA - PERFIL
+   Card com informações e foto do usuário
+   ======================================== */
+
+/* Testing Sidebar Left - Coluna Esquerda
+   - position: relative para manter fluxo normal
+   - Contém informações do perfil
+*/
+.testing-sidebar-left {
+    position: relative;
+}
+
+/* Testing Card Left - Card Principal Esquerda (Perfil)
+   - background: cor escura do tema
+   - border: borda preto/padrão do tema
+   - border-radius: cantos arredondados
+   - padding: espaçamento interno
+   - display: flex para organizar conteúdo em coluna
+   - flex-direction: column alinha itens em coluna
+   - height: 100% ocupa altura total do grid
+   - position: sticky com top 80px (acompanha scroll)
+   - transition: transição suave para efeitos hover
+*/
+.testing-card-left {
+    background-color: var(--backg-Sub-cor);
+    border-left: 1px solid #1a1a1a;
+    border-right: 1px solid #1a1a1a;
+    border-bottom: 1px solid #1a1a1a;
+    border-radius: var(--borderRadius-padrao);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    height: 100%;
+    position: sticky;
+    top: 80px;
+    transition: var(--transicao-padrao);
+}
+
+/* Testing Card Left - Hover (Feedback Visual) */
+.testing-card-left:hover {
+    background-color: #1a1a1a;
+    border-left: 1px solid #333;
+    border-right: 1px solid #333;
+    border-bottom: 1px solid #333;
+}
+
+/* Profile Photo - Foto do Perfil com borda */
+.profile-photo {
+    width: 100%;
+    margin-bottom: 15px;
+    overflow: hidden;
+    border-radius: 50%;
+    aspect-ratio: 1 / 1;
+}
+
+.profile-photo img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* Profile Name - Nome do Usuário */
+.profile-name {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--texto-cor-padrao);
+    margin: 0 0 8px 0;
+    line-height: 1.3;
+}
+
+/* Profile Title - Título Profissional */
+.profile-title {
+    font-size: 0.9rem;
+    color: var(--texto-cor-padrao-destaque);
+    margin: 0 0 12px 0;
+    line-height: 1.4;
+    opacity: 0.85;
+}
+
+/* Profile Location - Localização */
+.profile-location {
+    font-size: 0.85rem;
+    color: var(--texto-cor-padrao);
+    margin: 0 0 4px 0;
+    opacity: 0.7;
+}
+
+/* Profile Company - Empresa/Organização */
+.profile-company {
+    font-size: 0.8rem;
+    color: var(--texto-cor-padrao);
+    margin: 0 0 15px 0;
+    opacity: 0.6;
+}
+
+/* Profile Skills - Seção de Habilidades */
+.profile-skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 15px;
+}
+
+/* Skill Tag - Tag Individual de Habilidade (Perfil) */
+.skill-tag {
+    background-color: var(--backg-Princ-cor);
+    border: var(--borderSolid-padrao);
+    color: var(--texto-cor-padrao);
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    transition: var(--transicao-padrao);
+    cursor: default;
+    display: inline-block;
+}
+
+.skill-tag:hover {
+    background-color: #1a1a1a;
+    border: var(--borderSolid-padrao);
+    color: var(--texto-cor-padrao);
+}
+
+/* Profile Actions - Botões de Ação */
+.profile-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+/* Button Secondary - Botão Estilo LinkedIn (Perfil) */
+.btn-secondary {
+    background-color: var(--backg-Princ-cor);
+    border: var(--borderSolid-padrao);
+    color: var(--texto-cor-padrao);
+    padding: 10px 16px;
+    border-radius: var(--borderRadius-padrao);
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-align: center;
+    transition: var(--transicao-padrao);
+    display: block;
+    width: 100%;
+}
+
+.btn-secondary:hover {
+    background-color: #1a1a1a;
+    border: var(--borderSolid-padrao);
+    color: var(--texto-cor-padrao);
+    transform: none;
+}
+
+/* Testing Card Left - Título
+   - font-size: texto grande
+   - color: cor padrão
+   - margin: 0 remove margin
+   - line-height: altura da linha padrão
+*/
+.testing-card-left h3 {
+    font-size: var(--texto-Tamanho-Prin);
+    color: var(--texto-cor-padrao);
+    margin: 0;
+    line-height: var(--line-height-padrao);
+}
+
+/* Testing Card Left - Descrição
+   - font-size: texto pequeno
+   - color: cor secundária
+   - margin: 0 remove margin
+   - opacity: 0.8 fica ligeiramente transparente
+*/
+.testing-card-left p {
+    font-size: var(--texto-Tamanho-Sub);
+    color: var(--texto-cor-padrao-destaque);
+    margin: 0;
+    opacity: 0.8;
+}
+
+/* Testing Card Left - Lista
+   - list-style: none remove bullets
+   - padding: 0 remove padding
+   - margin: 0 remove margin
+   - display: flex para organizar horizontalmente
+   - flex-wrap: wrap permite quebra de linha
+   - gap: 10px espaçamento entre itens
+*/
+.testing-card-left ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+/* Testing Card Left - Item da Lista
+   - background: cor escura
+   - padding: 8px 12px espaçamento
+   - border-radius: cantos arredondados
+   - font-size: texto pequeno
+   - color: cor padrão
+*/
+.testing-card-left li {
+    background-color: var(--backg-Princ-cor);
+    padding: 8px 12px;
+    border-radius: var(--borderRadius-padrao);
+    font-size: 0.85rem;
+    color: var(--texto-cor-padrao);
+}
+
+/* Testing Card Left - Botão
+   - Utiliza classe .btn-action existente
+   - width: 100% ocupa largura total
+   - margin-top: 10px espaçamento superior
+*/
+.testing-card-left .btn-action {
+    width: 100%;
+    margin-top: 10px;
+    text-align: center;
+}
+
+/* ========================================
+   COLUNA CENTRAL - CONTEÚDO PRINCIPAL
+   Card grande com artigos/conteúdo da página
+   ======================================== */
+
+/* Testing Playground Main - Coluna Central
+   - Contém os conteúdos principais da página
+*/
+.testing-playground-main {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Curriculum Sidebar Center - Coluna Central (Container)
+   - position: relative para manter fluxo normal
+*/
+.curriculum-sidebar-center {
+    position: relative;
+}
+
+/* Testing Playground Card - Card Principal Central
+   - background: cor escura do tema
+   - border: borda preto/padrão do tema
+   - border-radius: cantos arredondados
+   - padding: espaçamento interno
+   - min-height: 500px altura mínima para conteúdo
+   - display: flex para organizar conteúdo em coluna
+   - flex-direction: column para manter estrutura vertical
+   - height: 100% ocupa altura total do grid
+   - transition: transição suave para efeitos hover
+*/
+.testing-playground-card {
+    background-color: var(--backg-Sub-cor);
+    border-left: 1px solid #1a1a1a;
+    border-right: 1px solid #1a1a1a;
+    border-bottom: 1px solid #1a1a1a;
+    border-radius: var(--borderRadius-padrao);
+    padding: 30px;
+    min-height: 500px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    transition: var(--transicao-padrao);
+}
+
+/* Testing Playground Card - Hover (Feedback Visual) */
+.testing-playground-card:hover {
+    background-color: #1a1a1a;
+    border-left: 1px solid #333;
+    border-right: 1px solid #333;
+    border-bottom: 1px solid #333;
+}
+
+/* Testing Playground Card - Header
+   - margin-bottom: 20px espaçamento inferior
+   - border-bottom: linha divisória
+   - padding-bottom: 20px espaçamento interno inferior
+*/
+.testing-playground-card-header {
+    margin-bottom: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 20px;
+}
+
+/* Testing Playground Card - Título
+   - font-size: texto grande
+   - color: cor padrão
+   - margin: 0 remove margin
+   - line-height: altura da linha padrão
+*/
+.testing-playground-card h2 {
+    font-size: var(--texto-Tamanho-Prin);
+    color: var(--texto-cor-padrao);
+    margin: 0 0 10px 0;
+    line-height: var(--line-height-padrao);
+}
+
+/* Testing Playground Card - Meta
+   - font-size: texto pequeno
+   - color: cor secundária
+   - display: flex para alinhamento
+   - gap: 15px espaçamento entre elementos
+   - align-items: center centraliza verticamente
+*/
+.testing-playground-card-meta {
+    font-size: 0.9rem;
+    color: var(--texto-cor-padrao-destaque);
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* Testing Playground Content - Conteúdo
+   - margin: 0 remove margin
+   - line-height: altura da linha padrão
+   - color: cor padrão
+   - font-size: texto padrão
+*/
+.testing-playground-content {
+    margin: 0;
+    line-height: var(--line-height-padrao);
+    color: var(--texto-cor-padrao);
+    font-size: var(--texto-Tamanho-Sub);
+}
+
+/* Testing Playground Content - Paragráfo
+   - margin-bottom: 15px espaçamento entre parágrafos
+*/
+.testing-playground-content p {
+    margin-bottom: 15px;
+}
+
+/* Testing Playground Content - Heading
+   - margin: 20px 0 espaçamento vertical
+   - font-size: texto maior
+   - color: cor padrão
+*/
+.testing-playground-content h3 {
+    margin: 20px 0 10px 0;
+    font-size: 1.2rem;
+    color: var(--texto-cor-padrao);
+}
+
+/* Testing Playground Content - Lista
+   - margin-left: 20px indentação
+   - margin-bottom: 15px espaçamento inferior
+*/
+.testing-playground-content ul,
+.testing-playground-content ol {
+    margin-left: 20px;
+    margin-bottom: 15px;
+}
+
+/* Testing Playground Content - Item da Lista
+   - margin-bottom: 8px espaçamento
+*/
+.testing-playground-content li {
+    margin-bottom: 8px;
+}
+
+/* Testing Resources Footer - Rodapé com Botões
+   - margin-top: 30px espaçamento superior
+   - padding-top: 20px espaçamento interno
+   - border-top: linha divisória
+   - display: flex para alinhamento
+   - gap: 15px espaçamento entre botões
+   - flex-wrap: wrap permite quebra de linha
+*/
+.testing-resources-footer {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+/* Testing Playground Card - Botão
+   - Utiliza classe .verMais existente
+*/
+.testing-playground-card .verMais {
+    flex: 1;
+    min-width: 150px;
+}
+
+/* ========================================
+   COLUNA DIREITA - ACORDEÕES + BOTÕES
+   Seções de conteúdo do currículo e contato
+   ======================================== */
+
+/* Testing Sidebar Right - Coluna Direita
+   - position: relative para manter fluxo normal
+   - Contém acordeões e botões de contato
+*/
+.testing-sidebar-right {
+    position: relative;
+}
+
+/* Testing Card Right - Card Principal Direita (Recursos)
+   - background: cor escura do tema
+   - border: borda preto/padrão do tema
+   - border-radius: cantos arredondados
+   - padding: espaçamento interno
+   - height: 100% ocupa altura total do grid
+   - display: flex para organizar conteúdo em coluna
+   - flex-direction: column para manter estrutura vertical
+   - position: sticky com top 80px (acompanha scroll)
+   - transition: transição suave para efeitos hover
+   - Contém botões de download e contato
+*/
+.testing-card-right {
+    background-color: var(--backg-Sub-cor);
+    border-left: 1px solid #1a1a1a;
+    border-right: 1px solid #1a1a1a;
+    border-bottom: 1px solid #1a1a1a;
+    border-radius: var(--borderRadius-padrao);
+    padding: 20px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    position: sticky;
+    top: 80px;
+    transition: var(--transicao-padrao);
+}
+
+/* Testing Card Right - Hover (Feedback Visual) */
+.testing-card-right:hover {
+    background-color: #1a1a1a;
+    border-left: 1px solid #333;
+    border-right: 1px solid #333;
+    border-bottom: 1px solid #333;
+}
+
+/* Testing Card Right - Título
+   - font-size: texto grande
+   - color: cor padrão
+   - margin: 0 0 15px 0 espaçamento inferior
+   - line-height: altura da linha padrão
+   - border-bottom: linha divisória
+   - padding-bottom: 15px espaçamento interno inferior
+*/
+.testing-card-right h3 {
+    font-size: 1.1rem;
+    color: var(--texto-cor-padrao);
+    margin: 0 0 15px 0;
+    line-height: var(--line-height-padrao);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    padding-bottom: 15px;
+}
+
+/* Testing Card Right - Link
+   - color: cor padrão
+   - text-decoration: none remove sublinhado
+   - font-size: texto pequeno
+   - line-height: altura da linha padrão
+*/
+.testing-card-right a {
+    color: var(--texto-cor-padrao);
+    text-decoration: none;
+    font-size: 0.95rem;
+    line-height: var(--line-height-padrao);
+}
+
+/* Testing Card Right - Link Hover
+   - color: cor de destaque
+*/
+.testing-card-right a:hover {
+    color: var(--btn-hover-destaque);
+}
+
+/* Testing Card Right - Lista de Artigos
+   - list-style: none remove bullets
+   - padding: 0 remove padding
+   - margin: 0 remove margin
+   - display: flex para organizar em coluna
+   - flex-direction: column alinha itens em coluna
+   - gap: 10px espaçamento entre itens
+*/
+.testing-card-right ul,
+.archive-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Testing Card Right - Item da Lista
+   - padding: 10px espaçamento interno
+   - border-radius: cantos arredondados
+   - background: cor secundária
+   - transition: transição suave
+   - cursor: pointer indica clicabilidade
+*/
+.testing-card-right li {
+    padding: 10px;
+    border-radius: var(--borderRadius-padrao);
+    background-color: var(--backg-Princ-cor);
+    transition: var(--transicao-padrao);
+    cursor: pointer;
+}
+
+/* Testing Card Right - Item Hover
+   - opacity: 0.8 fica ligeiramente transparente
+   - transform: scale(1.02) amplia ligeiramente
+*/
+.testing-card-right li:hover {
+    opacity: 0.8;
+    transform: scale(1.02);
+}
+
+/* ========================================
+   ACORDEÕES - SEÇÕES DO CURRÍCULO
+   Estrutura expansível para organizar conteúdo
+   ======================================== */
+
+.curriculum-content {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.accordion-item {
+    border: none;
+    border-radius: 0;
+    overflow: hidden;
+    background: transparent;
+}
+
+/* Accordion Header - Cabeçalho Expansível
+   - width: 100% ocupa largura total
+   - padding: espaçamento interno
+   - background: fundo preto padrão (var(--backg-Princ-cor))
+   - cursor: pointer indica clicabilidade
+   - display: flex para alinhamento
+   - justify-content: space-between distribui itens
+   - font-weight: 600 texto em negrito
+   - transition: transição suave
+   - border: borda padrão da paleta
+   - border-radius: cantos arredondados
+*/
+.accordion-header {
+    width: 100%;
+    padding: 15px 20px;
+    background-color: var(--backg-Princ-cor);
+    border: var(--borderSolid-padrao);
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.1em;
+    font-weight: 600;
+    color: var(--texto-cor-padrao);
+    transition: var(--transicao-padrao);
+    font-family: inherit;
+    border-radius: var(--borderRadius-padrao);
+    margin-bottom: 10px;
+}
+
+.accordion-header:hover {
+    background-color: #1a1a1a;
+    border: var(--borderSolid-padrao);
+    transform: none;
+}
+
+.accordion-title {
+    flex: 1;
+    text-align: left;
+}
+
+/* Accordion Icon - Ícone de Expansão (+/-)
+   - font-size: tamanho grande
+   - transition: rotação suave
+   - Rotaciona 45 graus quando ativo
+*/
+.accordion-icon {
+    font-size: 1.5em;
+    font-weight: bold;
+    transition: transform 0.3s ease;
+    color: var(--texto-cor-padrao);
+}
+
+.accordion-header.active .accordion-icon {
+    transform: rotate(45deg);
+}
+
+/* Accordion Body - Conteúdo Expandível
+   - padding: espaçamento interno
+   - background: cor secundária escura do tema
+   - display: none por padrão (fechado)
+   - animation: slideDown animação de abertura
+   - border: borda padrão
+   - border-top: nenhuma para continuar do header
+*/
+.accordion-body {
+    padding: 20px;
+    background: var(--backg-Sub-cor);
+    border-left: var(--borderSolid-padrao);
+    border-right: var(--borderSolid-padrao);
+    border-bottom: var(--borderSolid-padrao);
+    border-radius: 0 0 var(--borderRadius-padrao) var(--borderRadius-padrao);
+    display: none;
+    animation: slideDown 0.3s ease;
+    margin-bottom: 10px;
+}
+
+.accordion-body.active {
+    display: block;
+}
+
+.accordion-body p {
+    margin: 15px 0;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.accordion-body ul {
+    margin: 15px 0;
+    padding-left: 25px;
+}
+
+.accordion-body ul li {
+    margin: 10px 0;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.accordion-body h4 {
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+/* Animação de Slide Down
+   - Anima a abertura suave do acordeão
+*/
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ========================================
+   BOTÕES DE DOWNLOAD E CONTATO
+   Seções de ação na coluna direita
+   ======================================== */
+
+.download-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 20px;
+}
+
+/* Botão Português - Bordas Coloridas Brasil
+   - Bordas top/bottom: verde (#009c3b)
+   - Bordas left/right: amarelo (#ffcd00)
+   - Background: preto padrão
+*/
+.btn-pt {
+    width: 100%;
+    max-width: 220px;
+    border-top: 3px solid #009c3b !important;
+    border-bottom: 3px solid #009c3b !important;
+    border-left: 3px solid #0066cc !important;
+    border-right: 3px solid #0066cc !important;
+    background: var(--backg-Princ-cor) !important;
+    color: var(--texto-cor-padrao) !important;
+    padding: 12px 20px;
+    border-radius: var(--borderRadius-padrao);
+    cursor: pointer;
+    transition: var(--transicao-padrao);
+}
+
+.btn-pt:hover {
+    background: rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Botão Espanhol - Bordas Coloridas Espanha
+   - Bordas top/bottom: vermelho (#c60b1e)
+   - Bordas left/right: amarelo (#ffc400)
+   - Background: preto padrão
+*/
+.btn-es {
+    width: 100%;
+    max-width: 220px;
+    border-top: 3px solid #c60b1e !important;
+    border-bottom: 3px solid #c60b1e !important;
+    border-left: 3px solid #ffc400 !important;
+    border-right: 3px solid #ffc400 !important;
+    background: var(--backg-Princ-cor) !important;
+    color: var(--texto-cor-padrao) !important;
+    padding: 12px 20px;
+    border-radius: var(--borderRadius-padrao);
+    cursor: pointer;
+    transition: var(--transicao-padrao);
+}
+
+.btn-es:hover {
+    background: rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Botão LinkedIn - Bordas Coloridas LinkedIn
+   - Bordas top/bottom: azul (#0A66C2)
+   - Bordas left/right: branco (#ffffff)
+   - Background: preto padrão
+*/
+.btn-in {
+    width: 100%;
+    max-width: 220px;
+    border-top: 3px solid #0A66C2 !important;
+    border-bottom: 3px solid #0A66C2 !important;
+    border-left: 3px solid #ffffff !important;
+    border-right: 3px solid #ffffff !important;
+    background: var(--backg-Princ-cor) !important;
+    color: var(--texto-cor-padrao) !important;
+    padding: 12px 20px;
+    border-radius: var(--borderRadius-padrao);
+    cursor: pointer;
+    transition: var(--transicao-padrao);
+}
+
+.btn-in:hover {
+    background: rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Sidebar Contact Buttons - Botões de Contato
+   - Flexbox coluna com espaçamento
+   - Incluem WhatsApp, Google Agenda, LinkedIn
+*/
+.sidebar-contact-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.sidebar-btn {
+    display: block;
+    padding: 12px 16px !important;
+    margin: 0 !important;
+    background: var(--backg-Princ-cor) !important;
+    color: var(--texto-cor-padrao) !important;
+    text-decoration: none !important;
+    text-align: center;
+    border-radius: var(--borderRadius-padrao) !important;
+    font-weight: 600 !important;
+    font-size: 0.95em !important;
+    transition: var(--transicao-padrao) !important;
+    border: var(--borderSolid-padrao) !important;
+    width: 100%;
+}
+
+.sidebar-btn:hover {
+    background: #1a1a1a !important;
+    border: var(--borderSolid-padrao) !important;
+    color: var(--texto-cor-padrao) !important;
+}
+
+/* ========================================
+   COMPONENTES DE TESTE - PLAYGROUND
+   Se\u00e7\u00f5es de testes interativos e botões de a\u00e7ão
+   ======================================== */
+
+/* Test Section - Se\u00e7ão Individual de Teste
+   - background: cor escura (backg-Princ-cor)
+   - border: borda padrão do tema
+   - border-radius: cantos arredondados
+   - padding: espaçamento interno gerado
+   - margin-bottom: espaçamento entre seções
+   - transition: transição suave para efeitos hover
+   - Contém título, descrição e botão de ação
+*/
+.test-section {
+    background-color: var(--backg-Princ-cor);
+    border: var(--borderSolid-padrao);
+    border-radius: var(--borderRadius-padrao);
+    padding: 20px;
+    margin-bottom: 20px;
+    transition: var(--transicao-padrao);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* Test Section - Hover (Feedback Visual)
+   - background: cor um pouco mais clara
+   - border: borda com destaque
+   - transform: leve elevação
+*/
+.test-section:hover {
+    background-color: #1a1a1a;
+    border: 1px solid #333;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.05);
+}
+
+/* Test Section - Título (h3)
+   - font-size: 1.1rem texto maior
+   - color: cor padrão branca
+   - margin: 0 remove margin padrão
+   - font-weight: 600 semi-negrito
+*/
+.test-section h3 {
+    font-size: 1.1rem;
+    color: var(--texto-cor-padrao);
+    margin: 0;
+    font-weight: 600;
+}
+
+/* Test Section - Descrição (p)
+   - font-size: 0.95rem texto padrão
+   - color: cor de destaque/cinza
+   - margin: 0 remove margin padrão
+   - opacity: 0.85 ligeiramente transparente
+   - line-height: altura da linha padrão
+*/
+.test-section p {
+    font-size: 0.95rem;
+    color: var(--texto-cor-padrao-destaque);
+    margin: 0;
+    opacity: 0.85;
+    line-height: var(--line-height-padrao);
+}
+
+/* Start Test Button - Botão para Iniciar Teste
+   - background: preto padrão (backg-Princ-cor)
+   - border: borda padrão do tema
+   - color: cor padrão branca
+   - padding: 12px 24px espaçamento interno
+   - border-radius: cantos arredondados
+   - cursor: pointer indica clicabilidade
+   - font-size: 0.95rem texto padrão
+   - font-weight: 600 semi-negrito
+   - transition: transição suave para efeitos hover
+   - align-self: flex-start posiciona à esquerda
+*/
+.start-test-btn {
+    background-color: var(--backg-Princ-cor);
+    border: 1px solid #333;
+    color: var(--texto-cor-padrao);
+    padding: 12px 24px;
+    border-radius: var(--borderRadius-padrao);
+    cursor: pointer;
+    font-size: 0.95rem;
+    font-weight: 600;
+    transition: var(--transicao-padrao);
+    align-self: flex-start;
+    text-align: center;
+    display: inline-block;
+}
+
+/* Start Test Button - Hover (Feedback Visual)
+   - background: cor mais clara para destaque
+   - border: borda mais visível
+   - color: branco mantido
+   - transform: leve elevação
+   - box-shadow: sombra para profundidade
+*/
+.start-test-btn:hover {
+    background-color: #1a1a1a;
+    border: 1px solid #0a66c2;
+    color: #0a66c2;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(10, 102, 194, 0.2);
+}
+
+/* Start Test Button - Active (Estado Pressionado)
+   - transform: leve pressão visual
+*/
+.start-test-btn:active {
+    transform: translateY(0);
+}
+
+/* ========================================
+   RESPONSIVIDADE - TABLETS E MOBILE
+   Adapta layout para dispositivos menores
+   ======================================== */
+
+/* Tablets (máximo 1024px)
+   - Grid: 2 colunas (perfil + conteúdo)
+   - Acordeões em layout responsivo
+*/
+@media (max-width: 1024px) {
+    .curriculum-container {
+        grid-template-columns: 1fr 1.5fr;
+        gap: 15px;
+    }
+
+    .curriculum-sidebar-right {
+        position: static;
+        grid-column: 1 / -1;
+    }
+
+    .curriculum-card-right {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+}
+
+/* Mobile (máximo 768px)
+   - Grid: 1 coluna - todos os elementos empilhados
+   - Perfil no topo, Acordeões abaixo
+   - Padding reduzido para economia de espaço
+*/
+@media (max-width: 768px) {
+    .testing-playground-container {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        padding: 10px;
+    }
+
+    .testing-sidebar-left,
+    .testing-sidebar-right {
+        position: static;
+    }
+
+    .testing-card-left,
+    .testing-card-right {
+        padding: 15px;
+    }
+
+    .testing-card-right {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .download-buttons {
+        flex-direction: column;
+    }
+
+    .btn-pt,
+    .btn-es,
+    .btn-in {
+        max-width: 100%;
+    }
+}
+
+/* ========================================
+   NOVAS CLASSES - BLOCOS INTERATIVOS
+   ======================================== */
+
+/* Grid Principal de Blocos */
+.interactive-blocks-grid {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) !important;
+    gap: 20px !important;
+    margin: 40px 0 !important;
+    max-width: 1220px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+/* Bloco Individual */
+.interactive-block {
+    background: var(--backg-Sub-cor);
+    border: var(--borderSolid-padrao);
+    border-radius: 12px;
+    padding: 25px;
+    display: flex !important;
+    flex-direction: column !important;
+    min-height: 300px !important;
+    width: auto !important;
+    min-width: 0 !important;
+}
+
+.interactive-block h3 {
+    margin: 0 0 15px 0;
+    font-size: 1.1rem;
+    color: var(--texto-cor-padrao);
+}
+
+.interactive-block-content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 1;
+}
+
+.interactive-block input,
+.interactive-block select,
+.interactive-block textarea {
+    padding: 8px;
+    background: var(--backg-Princ-cor);
+    border: var(--borderSolid-padrao);
+    color: var(--texto-cor-padrao);
+    border-radius: var(--borderRadius-padrao);
+    font-size: 0.9rem;
+}
+
+.interactive-block button {
+    padding: 8px;
+    background: var(--backg-Princ-cor);
+    border: 1px solid #333;
+    color: var(--texto-cor-padrao);
+    border-radius: var(--borderRadius-padrao);
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.interactive-block button:hover {
+    background: var(--backg-Sub-cor);
+    transition: var(--transicao-padrao);
+}
+
+.interactive-block label {
+    font-size: 0.9rem;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    cursor: pointer;
+}
+
+.interactive-block p {
+    font-size: 0.9rem;
+    opacity: 0.9;
+    margin: 0;
+}
+
+/* ========================================
+   FORMULÁRIO DE SUGESTÃO - ESTILOS
+   ======================================== */
+
+.feedback-form-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.feedback-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-section {
+    border: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.form-section legend {
+    padding: 0 0 8px 0;
+    margin: 0 0 10px 0;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--texto-cor-padrao);
+    border-bottom: 1px solid #333;
+}
+
+.feedback-form input[type="text"],
+.feedback-form input[type="email"],
+.feedback-form input[type="url"],
+.feedback-form input[type="file"],
+.feedback-form textarea {
+    padding: 10px;
+    background: var(--backg-Princ-cor);
+    border: 1px solid #333;
+    color: var(--texto-cor-padrao);
+    border-radius: var(--borderRadius-padrao);
+    font-size: 0.9rem;
+    font-family: inherit;
+    transition: var(--transicao-padrao);
+}
+
+.feedback-form input[type="text"]:focus,
+.feedback-form input[type="email"]:focus,
+.feedback-form input[type="url"]:focus,
+.feedback-form input[type="file"]:focus,
+.feedback-form textarea:focus {
+    outline: none;
+    background: #1a1a1a;
+    border: 1px solid #0066cc;
+    box-shadow: 0 0 8px rgba(0, 102, 204, 0.3);
+}
+
+.suggestion-textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.form-consent {
+    display: flex;
+    gap: 8px;
+    align-items: flex-start;
+    padding: 10px;
+    margin: 5px 0;
+}
+
+.form-consent input[type="checkbox"] {
+    margin-top: 3px;
+    cursor: pointer;
+}
+
+.form-consent label {
+    display: flex;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.form-consent span {
+    font-size: 0.85rem;
+    color: var(--texto-cor-padrao);
+    line-height: 1.4;
+}
+
+.btn-submit-feedback {
+    padding: 12px 20px;
+    background: var(--backg-Princ-cor);
+    border: 1px solid #333;
+    color: var(--texto-cor-padrao);
+    border-radius: var(--borderRadius-padrao);
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transicao-padrao);
+    font-family: inherit;
+}
+
+.btn-submit-feedback:hover {
+    background: #1a1a1a;
+    border: 1px solid #0066cc;
+    color: #0066cc;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 102, 204, 0.2);
+}
+
+.btn-submit-feedback:active {
+    transform: translateY(0);
+}
+
+#formMessageTestMe {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    padding: 10px;
+    border-radius: var(--borderRadius-padrao);
+    display: none;
+    margin-top: 10px;
+}
+
+#formMessageTestMe.msg-success {
+    background-color: rgba(0, 102, 204, 0.15);
+    border: 1px solid #0066cc;
+    color: #0066cc;
+    display: block;
+}
+
+#formMessageTestMe.msg-error {
+    background-color: rgba(255, 0, 0, 0.15);
+    border: 1px solid #ff0000;
+    color: #ff4444;
+    display: block;
+}
+
+/* ========================================
+   GRUPO DE FORMULÁRIO - VALIDAÇÃO
+   ======================================== */
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.form-group input,
+.form-group textarea {
+    margin: 0;
+}
+
+/* Form Error - Mensagem de Validação
+   - font-size: 0.85rem texto menor
+   - color: #ff6b6b vermelho de erro
+   - opacity: 0 inicialmente invisível
+   - height: 0 não ocupa espaço
+   - transition: anima opacidade e altura
+*/
+.form-error {
+    font-size: 0.85rem;
+    color: #ff6b6b;
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+    transition: opacity 0.3s ease-out, height 0.3s ease-out;
+    padding: 0;
+    display: block;
+}
+
+/* Form Error - Estado Ativo
+   - opacity: 1 fica visível
+   - height: auto ocupa espaço necessário
+   - padding: 5px 0 espaçamento ativo
+*/
+.form-error.active {
+    opacity: 1;
+    height: auto;
+    padding: 5px 0;
+}
+
+/* Input com Erro
+   - border-color: #ff6b6b borda vermelha
+   - background-color: rgba vermelho muito transparente
+*/
+.feedback-form input.invalid,
+.feedback-form textarea.invalid {
+    border-color: #ff6b6b !important;
+    background-color: rgba(255, 107, 107, 0.05) !important;
+}
+
+/* Form Help - Texto de Ajuda
+   - font-size: 0.85rem texto menor
+   - color: opaco/cinza
+   - margin: 5px 0
+   - opacity: 0.7 bem transparente
+*/
+.form-help {
+    font-size: 0.85rem;
+    color: var(--texto-cor-padrao);
+    margin: 5px 0 0 0;
+    opacity: 0.7;
+    line-height: 1.4;
+}
+
+/* Form Help Note - Nota Informativa sobre Anexos
+   - Background suave amarelo/ouro para destaque
+   - Texto mais visível que form-help
+   - Borda esquerda para indicar importância
+*/
+.form-help-note {
+    font-size: 0.85rem;
+    color: var(--texto-cor-padrao);
+    margin: 12px 0 0 0;
+    padding: 10px 12px;
+    background-color: rgba(255, 215, 0, 0.08);
+    border-left: 3px solid #ffd700;
+    border-radius: 4px;
+    opacity: 0.9;
+    line-height: 1.5;
+}
+
+
+/* Bloco de Dados */
+.data-card {
+    background: var(--backg-Princ-cor);
+    border: var(--borderSolid-padrao);
+    border-radius: var(--borderRadius-padrao);
+    padding: 12px;
+}
+
+.data-card h4 {
+    margin: 0 0 8px 0;
+    font-size: 0.95rem;
+}
+
+.data-card p {
+    margin: 0;
+    font-size: 0.85rem;
+    opacity: 0.85;
+}
+
+/* Tabela */
+.interactive-block table {
+    width: 100%;
+    font-size: 0.8rem;
+    border-collapse: collapse;
+}
+
+.interactive-block table thead tr {
+    border-bottom: 1px solid #333;
+}
+
+.interactive-block table th,
+.interactive-block table td {
+    padding: 4px;
+    text-align: left;
+}
+
+.interactive-block table tbody tr {
+    opacity: 0.8;
+}
+
+.interactive-block table tbody tr:not(:last-child) {
+    border-bottom: 1px solid #333;
+}
+
+/* Lista */
+.interactive-block ul {
+    margin: 0;
+    padding-left: 20px;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+/* Preview de Cor */
+.color-preview {
+    width: 100%;
+    height: 50px;
+    border-radius: var(--borderRadius-padrao);
+    border: 1px solid #333;
+    background: #fff;
+}
+
+/* Botões de Ação */
+.btn-success {
+    padding: 10px;
+    background: #4CAF50;
+    border: 1px solid #333;
+    color: white;
+    border-radius: var(--borderRadius-padrao);
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.btn-danger {
+    padding: 10px;
+    background: #f44336;
+    border: 1px solid #333;
+    color: white;
+    border-radius: var(--borderRadius-padrao);
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+/* Seção Informativa */
+.info-section-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    margin: 30px auto;
+    max-width: 1220px;
+    padding: 0 20px;
+}
+
+.info-card {
+    background: var(--backg-Sub-cor);
+    border: var(--borderSolid-padrao);
+    border-radius: var(--borderRadius-padrao);
+    padding: 30px;
+}
+
+.info-card h3 {
+    margin: 0 0 15px 0;
+    font-size: 1.15rem;
+    color: var(--texto-cor-padrao);
+}
+
+.info-card p {
+    margin: 0;
+    font-size: 0.95rem;
+    opacity: 0.85;
+    line-height: 1.5;
+}
+
+/* Formulário de Feedback */
+.feedback-form-container {
+    background: var(--backg-Sub-cor);
+    border: var(--borderSolid-padrao);
+    border-radius: var(--borderRadius-padrao);
+    padding: 30px;
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+.feedback-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.feedback-form input,
+.feedback-form textarea {
+    padding: 10px;
+    background: var(--backg-Princ-cor);
+    border: var(--borderSolid-padrao);
+    color: var(--texto-cor-padrao);
+    border-radius: var(--borderRadius-padrao);
+    font-size: 0.95rem;
+}
+
+.feedback-form textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.feedback-form button {
+    padding: 12px;
+    background: var(--backg-Princ-cor);
+    border: 1px solid #333;
+    color: var(--texto-cor-padrao);
+    border-radius: var(--borderRadius-padrao);
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: var(--transicao-padrao);
+}
+
+.feedback-form button:hover {
+    background: var(--backg-Sub-cor);
+}
+
+/* Mensagem de Feedback */
+.feedback-message {
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: var(--borderRadius-padrao);
+}
+
+.feedback-message.success {
+    background: #4CAF50;
+    color: white;
+    border: 1px solid #2e7d32;
+}
+
+.feedback-message.error {
+    background: #f44336;
+    color: white;
+    border: 1px solid #c62828;
+}
+
+/* Elementos Dinâmicos */
+.dynamic-elements {
+    font-size: 0.85rem;
+    opacity: 0.8;
+}
+
+.dynamic-element {
+    margin: 5px 0;
+}
+
+/* CTA WhatsApp */
+.cta-whatsapp {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.btn-whatsapp {
+    padding: 12px 30px;
+    background: var(--backg-Princ-cor);
+    color: white;
+    border-radius: var(--borderRadius-padrao);
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    border: 1px solid #333;
+    transition: var(--transicao-padrao);
+}
+
+.btn-whatsapp:hover {
+    background: var(--backg-Sub-cor);
+}
+
+/* ========================================
+   FEEDBACK FORM - SEÇÃO INTRODUTÓRIA
+   ======================================== */
+
+.feedback-intro-section {
+    margin-bottom: 30px;
+    padding: 30px;
+    background-color: var(--backg-Princ-cor);
+    border: 1px solid var(--borderSolid-padrao);
+    border-left: 5px solid var(--btn-hover-destaque);
+    border-radius: var(--borderRadius-padrao);
+    max-width: 900px;
+}
+
+.feedback-intro-section p {
+    margin: 16px 0;
+    line-height: 1.8;
+    font-size: 0.98em;
+    color: var(--texto-cor-padrao);
+    word-spacing: 0.1em;
+}
+
+.intro-destaque {
+    font-size: 1.02em;
+    font-weight: 600;
+    margin-bottom: 22px !important;
+    color: var(--texto-cor-padrao);
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--borderSolid-padrao);
+}
+
+.intro-destaque strong {
+    color: var(--btn-hover-destaque);
+    font-weight: 700;
+}
+
+.email-destaque {
+    margin-bottom: 0 !important;
+    margin-top: 22px !important;
+    padding-top: 15px;
+    padding-bottom: 0;
+    border-top: 1px solid var(--borderSolid-padrao);
+    font-weight: 600;
+    color: var(--texto-cor-padrao);
+}
+
+.email-destaque strong {
+    color: var(--btn-hover-destaque);
+    display: block;
+    margin-top: 8px;
+    font-size: 1.08em;
+    font-weight: 700;
+}
+
+.feedback-intro-section p strong {
+    color: var(--btn-hover-destaque);
+    font-weight: 700;
+}
+
+/* ========================================
+   DESTAQUE VERMELHO - Borda Vermelha
+   ======================================== */
+
+.destaque-vermelho {
+    padding: 16px 18px !important;
+    margin: 16px 0 !important;
+    border-left: 5px solid #ff0000 !important;
+    border-radius: 4px !important;
+}
+
+.destaque-vermelho strong {
+    color: #0066cc !important;
+    font-weight: 700 !important;
+}
+
+.feedback-intro-section strong {
+    color: #0066cc !important;
+    font-weight: 700 !important;
+}
+
+.feedback-intro-section p:last-child {
+    margin-bottom: 0;
+}
+
+/* ========================================
+   FEEDBACK FORM - FIELDSET & LEGEND
+   ======================================== */
+
+.feedback-form fieldset {
+    border: var(--borderSolid-padrao);
+    border-radius: var(--borderRadius-padrao);
+    padding: 15px;
+    margin-bottom: 15px;
+    background-color: rgba(255, 255, 255, 0.02);
+}
+
+.feedback-form legend {
+    padding: 0 10px;
+    font-weight: bold;
+    color: var(--btn-hover-destaque);
+    font-size: 0.95em;
+}
+
+.form-section input,
+.form-section textarea,
+.form-section select {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px 12px;
+    border: var(--borderSolid-padrao);
+    border-radius: var(--borderRadius-padrao);
+    font-size: 0.9em;
+    background-color: var(--backg-Sub-cor);
+    color: var(--texto-cor-padrao);
+    transition: var(--transicao-padrao);
+    box-sizing: border-box;
+}
+
+.form-section input:focus,
+.form-section textarea:focus,
+.form-section select:focus {
+    outline: none;
+    border-color: var(--btn-hover-destaque);
+    background-color: var(--backg-Princ-cor);
+    box-shadow: 0 0 0 3px rgba(170, 170, 170, 0.1);
+}
+
+.form-section input:last-child,
+.form-section textarea:last-child {
+    margin-bottom: 0;
+}
+
+.file-label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 0.9em;
+    color: var(--texto-cor-padrao);
+}
+
+.suggestion-textarea {
+    min-height: 120px !important;
+}
+
+/* ========================================
+   FEEDBACK FORM - CONSENT CHECKBOX
+   ======================================== */
+
+.form-consent {
+    margin: 15px 0;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.02);
+    border-left: 3px solid var(--btn-hover-destaque);
+    border-radius: var(--borderRadius-padrao);
+    display: flex;
+    align-items: flex-start;
+}
+
+.form-consent input[type="checkbox"] {
+    width: auto;
+    margin-right: 8px;
+    margin-top: 3px;
+    cursor: pointer;
+    accent-color: var(--btn-hover-destaque);
+}
+
+.form-consent label {
+    cursor: pointer;
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    user-select: none;
+    margin: 0;
+}
+
+.form-consent label span {
+    font-size: 0.85em;
+    color: var(--texto-cor-padrao);
+    line-height: 1.5;
+}
+
+/* ========================================
+   FEEDBACK FORM - SUBMIT BUTTON
+   ======================================== */
+
+.btn-submit-feedback {
+    width: 100%;
+    padding: 12px 20px;
+    background-color: var(--backg-Princ-cor);
+    color: var(--texto-cor-padrao);
+    border: var(--borderSolid-padrao);
+    border-radius: var(--borderRadius-padrao);
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: var(--transicao-padrao);
+    text-transform: uppercase;
+    letter-spacing: var(--letter-spacing-padrao);
+}
+
+.btn-submit-feedback:hover {
+    background-color: var(--backg-Sub-cor);
+    border-color: var(--btn-hover-destaque);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(170, 170, 170, 0.15);
+}
+
+.btn-submit-feedback:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 6px rgba(170, 170, 170, 0.1);
+}
+
+.btn-submit-feedback:disabled {
+    background-color: var(--backg-Sub-cor);
+    color: var(--texto-cor-padrao-destaque);
+    cursor: not-allowed;
+    transform: none;
+    opacity: 0.6;
+    border-color: #666;
+    box-shadow: none;
+}
+
+/* ===== ESTILOS PARA COMPONENTES ZION - LABORATÓRIO AVANÇADO (INTEGRADOS NO GRID) ===== */
+
+.zion-input,
+.zion-date-input,
+.zion-password-input,
+.zion-select,
+.zion-file-input,
+.zion-range {
+    width: 100%;
+    padding: 8px 10px;
+    background-color: var(--backg-Princ-cor);
+    color: var(--texto-cor-padrao);
+    border: 1px solid #444;
+    border-radius: 4px;
+    font-size: 0.9em;
+    font-family: inherit;
+    transition: border-color 0.2s ease;
+}
+
+.zion-input:focus,
+.zion-date-input:focus,
+.zion-password-input:focus,
+.zion-select:focus,
+.zion-file-input:focus,
+.zion-range:focus {
+    outline: none;
+    border-color: #ffd700;
+}
+
+.zion-button {
+    padding: 8px 12px;
+    background-color: #0066cc;
+    color: white;
+    border: 1px solid #0052a3;
+    border-radius: 4px;
+    font-size: 0.85em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.zion-button:hover {
+    background-color: #0052a3;
+    box-shadow: 0 2px 8px rgba(0, 102, 204, 0.2);
+}
+
+.toggle-password-btn {
+    padding: 8px 10px;
+    background-color: #333;
+    color: var(--texto-cor-padrao);
+    border: 1px solid #444;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.85em;
+    transition: all 0.2s ease;
+}
+
+.toggle-password-btn:hover {
+    background-color: #444;
+    border-color: #ffd700;
+}
+
+.code-result {
+    margin-top: 6px;
+    padding: 8px;
+    border-radius: 4px;
+    font-size: 0.85em;
+    font-weight: bold;
+}
+
+.code-result.success {
+    background-color: rgba(76, 175, 80, 0.2);
+    color: #4caf50;
+    border-left: 3px solid #4caf50;
+}
+
+.code-result.error {
+    background-color: rgba(244, 67, 54, 0.2);
+    color: #f44336;
+    border-left: 3px solid #f44336;
+}
+
+/* ========================================
+   ESTILOS INLINE - MOVIDOS DO HTML
+   ======================================== */
+
+/* Labels e Textos */
+.label-small {
+    font-size: 0.75em;
+    color: #999;
+}
+
+.label-regular {
+    font-size: 0.85em;
+}
+
+.text-small {
+    font-size: 0.7em;
+    margin: 2px 0 8px 0;
+    color: #999;
+}
+
+.text-validation {
+    font-size: 0.85em;
+    margin-top: 8px;
+    color: #ffd700;
+}
+
+.text-info {
+    font-size: 0.8em;
+    margin-top: 8px;
+    opacity: 0.8;
+}
+
+/* Inputs e Form Elements */
+.input-flex {
+    display: flex;
+    gap: 8px;
+}
+
+.input-flex-1 {
+    flex: 1;
+}
+
+.input-full-width {
+    width: 100%;
+}
+
+.input-password {
+    padding: 6px;
+    font-size: 0.85rem;
+    border: 1px solid #ccc;
+    border-radius: var(--borderRadius-padrao);
+}
+
+/* Force Password Bars */
+.force-bars {
+    margin-top: 8px;
+    padding: 8px;
+    background: rgba(0, 102, 204, 0.08);
+    border-radius: 4px;
+    border-left: 3px solid #0066cc;
+}
+
+.force-bar-container {
+    display: flex;
+    gap: 4px;
+    margin-bottom: 6px;
+    height: 6px;
+}
+
+.force-bar {
+    flex: 1;
+    background: #ddd;
+    border-radius: 3px;
+}
+
+.force-text {
+    font-size: 0.75em;
+    margin: 0;
+    color: #0066cc;
+    font-weight: 600;
+}
+
+.requirements-list {
+    font-size: 0.7em;
+    margin: 8px 0 0 0;
+    padding-left: 16px;
+    list-style: none;
+}
+
+.requirements-list li {
+    color: #555;
+    margin: 3px 0;
+    transition: color 0.3s ease;
+}
+
+/* Buttons */
+.btn-group {
+    display: flex;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+.btn-primary {
+    padding: 8px 12px;
+    background: #0066cc;
+    color: white;
+    border: 1px solid #0052a3;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.8em;
+}
+
+.btn-secondary {
+    padding: 6px 12px;
+    background: #666;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.8em;
+}
+
+.btn-toggle-password {
+    padding: 8px 10px;
+}
+
+/* Sliders */
+.slider-bars {
+    display: flex;
+    gap: 4px;
+    margin: 8px 0;
+    height: 8px;
+}
+
+.slider-bar {
+    flex: 1;
+    background: #ddd;
+    border-radius: 4px;
+}
+
+.slider-value {
+    margin: 0;
+    font-weight: bold;
+}
+
+/* Data/Tabelas */
+.table-container {
+    margin-bottom: 10px;
+}
+
+.table-search {
+    width: 100%;
+    padding: 8px;
+    background-color: var(--backg-Princ-cor);
+    color: var(--texto-cor-padrao);
+    border: 1px solid #444;
+    border-radius: 4px;
+}
+
+.table-buttons {
+    display: flex;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+.table-info {
+    font-size: 0.8em;
+    margin-top: 8px;
+    color: #999;
+}
+
+.table-header {
+    background: rgba(0, 102, 204, 0.1);
+}
+
+.table-header th {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 2px solid #0066cc;
+}
+
+.table-row {
+    border-bottom: 1px solid #444;
+}
+
+.table-row td {
+    padding: 8px;
+}
+
+.table-row-alt {
+    background: rgba(255, 215, 0, 0.05);
+}
+
+/* Data Picker Intervalo */
+.date-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.date-label {
+    font-size: 0.8rem;
+    display: block;
+    margin-bottom: 4px;
+    font-weight: bold;
+}
+
+.date-input {
+    width: 100%;
+    padding: 6px;
+    font-size: 0.85rem;
+    border: 1px solid #ccc;
+    border-radius: var(--borderRadius-padrao);
+}
+
+.date-result {
+    margin-top: 10px;
+    font-size: 0.85rem;
+    padding: 8px;
+    border-radius: 4px;
+    display: none;
+}
+
+/* Dica/Info */
+.info-box {
+    margin-top: 10px;
+    font-size: 0.8rem;
+    background: rgba(102, 102, 102, 0.1);
+    padding: 8px;
+    border-radius: 4px;
+    color: #999;
+}
+
+/* Cards de Dados */
+.data-card {
+    background: var(--backg-Princ-cor);
+    padding: 8px;
+    margin-bottom: 8px;
+    border-radius: 4px;
+    border-left: 3px solid #0066cc;
+}
+
+.data-card h4 {
+    margin: 0 0 6px 0;
+    font-size: 0.85em;
+}
+
+.data-card p {
+    margin: 0;
+    font-size: 0.8em;
+}
+
+/* Loading e Resultados */
+.loading-spinner {
+    color: #ffd700;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.result-container {
+    display: none;
+}
+
+.result-container-visible {
+    display: block;
+}
+
+.result-success {
+    background: rgba(76, 175, 80, 0.1);
+    color: #4caf50;
+    border-left: 3px solid #4caf50;
+    padding: 8px;
+    margin-top: 10px;
+    border-radius: 4px;
+}
+
+.result-error {
+    background: rgba(244, 67, 54, 0.2);
+    color: #f44336;
+    border-left: 3px solid #f44336;
+    padding: 8px;
+    margin-top: 10px;
+    border-radius: 4px;
+}
+
+/* Novas Classes Complementares */
+.input-margin-bottom {
+    margin-bottom: 8px;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.radio-group {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+}
+
+.text-info {
+    font-size: 0.9em;
+    opacity: 0.85;
+    margin-top: 8px;
+}
+
+.checkbox-label,
+.radio-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    font-size: 0.9em;
+}
+
+.zion-checkbox,
+.zion-radio {
+    cursor: pointer;
+}
+
+.signature-preview {
+    padding: 12px;
+    background: var(--backg-Princ-cor);
+    border: 1px solid #444;
+    border-radius: 4px;
+    margin-top: 8px;
+    font-style: italic;
+    color: #ffd700;
+    font-family: 'Brush Script MT', cursive;
+    font-size: 1.2em;
+}
+
+.input-flex {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.input-flex-1 {
+    flex: 1;
+}
+
+.code-container {
+    font-size: 0.85em;
+    background: var(--backg-Princ-cor);
+    padding: 8px;
+    border-radius: 4px;
+    font-family: monospace;
+    word-break: break-all;
+}
+
+.items-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.items-list li {
+    background: var(--backg-Princ-cor);
+    padding: 6px 10px;
+    border-left: 3px solid #0066cc;
+    border-radius: 3px;
+}
+
+/* Quiz Styles */
+.quiz-header {
+    background: rgba(0, 102, 204, 0.1);
+    padding: 8px;
+    border-radius: 4px;
+    margin-bottom: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.8em;
+    color: #999;
+}
+
+#pergunta {
+    margin: 0 0 12px 0;
+    font-size: 0.9rem;
+}
+
+.quiz-form {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 10px;
+}
+
+.quiz-label {
+    font-size: 0.85rem;
+    display: flex;
+    gap: 8px;
+    align-items: flex-start;
+}
+
+.quiz-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.quiz-message {
+    font-size: 0.85em;
+    margin-top: 10px;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Date Picker Styles */
+.date-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.date-item {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.date-label {
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.date-input {
+    width: 100%;
+    padding: 6px;
+    font-size: 0.85rem;
+    border: 1px solid #ccc;
+    border-radius: var(--borderRadius-padrao);
+}
+
+.date-result {
+    margin-top: 10px;
+    font-size: 0.85rem;
+    padding: 8px;
+    border-radius: 4px;
+    display: none;
+}
+
+.date-result.visible {
+    display: block;
+}
+
+.info-box {
+    margin-top: 10px;
+    font-size: 0.8rem;
+    background: rgba(102, 102, 102, 0.1);
+    padding: 8px;
+    border-radius: 4px;
+    color: #999;
+}
+
+/* API Buttons */
+.api-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 10px;
+}
+
+.btn-get,
+.btn-post,
+.btn-put,
+.btn-delete {
+    padding: 8px;
+    border: 1px solid #333;
+    border-radius: var(--borderRadius-padrao);
+    cursor: pointer;
+    font-size: 0.85rem;
+    color: white;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.btn-get {
+    background: #4caf50;
+}
+
+.btn-get:hover {
+    background: #388e3c;
+    box-shadow: 0 2px 8px rgba(76, 175, 80, 0.3);
+}
+
+.btn-post {
+    background: #2196f3;
+}
+
+.btn-post:hover {
+    background: #1976d2;
+    box-shadow: 0 2px 8px rgba(33, 150, 243, 0.3);
+}
+
+.btn-put {
+    background: #ff9800;
+}
+
+.btn-put:hover {
+    background: #f57c00;
+    box-shadow: 0 2px 8px rgba(255, 152, 0, 0.3);
+}
+
+.btn-delete {
+    background: #f44336;
+}
+
+.btn-delete:hover {
+    background: #d32f2f;
+    box-shadow: 0 2px 8px rgba(244, 67, 54, 0.3);
+}
+
+.api-result {
+    margin-top: 10px;
+    font-size: 0.75rem;
+    padding: 8px;
+    border-radius: 4px;
+    background: rgba(0, 0, 0, 0.1);
+    max-height: 200px;
+    overflow-y: auto;
+    display: none;
+}
+
+.api-result.visible {
+    display: block;
+}
+
+.info-box {
+    margin-top: 10px;
+    font-size: 0.8rem;
+    background: rgba(102, 102, 102, 0.1);
+    padding: 8px;
+    border-radius: 4px;
+    color: #999;
+}
+
+/* ========================================
+   CLASSES PARA ESTILOS INLINE REMOVIDOS
+   ======================================== */
+
+/* Seção sobre com altura máxima removida */
+.texto-sobre-full-height {
+    max-height: none;
+    overflow: visible;
+}
+
+/* Labels com margem superior */
+.label-margin-top {
+    margin-top: 8px;
+}
+
+.label-margin-top-10 {
+    margin-top: 10px;
+}
+
+/* Parágrafo com margem inferior */
+.paragraph-margin-bottom {
+    margin-bottom: 20px;
+}
+
+/* Texto com cor destaque Zion */
+.text-zion-highlight {
+    color: #0066cc;
+}
+
+/* Parágrafo consolidado (removido) */
+.text-consolidated {
+    color: #999;
+}
+
+/* Step item (span com display block) */
+.step-item {
+    display: block;
+    margin-bottom: 12px;
+}
+
+/* ========================================
+   BLOCO 41 - DOWNLOAD SYLLABUS 4.0
+   ======================================== */
+
+.syllabus-info {
+    background-color: rgba(0, 102, 204, 0.1);
+    border-left: 4px solid #0066cc;
+    padding: 15px;
+    border-radius: 4px;
+    margin: 15px 0;
+}
+
+.syllabus-info p {
+    margin: 10px 0;
+    color: var(--texto-cor-padrao);
+}
+
+.syllabus-info strong {
+    color: #0066cc;
+    font-weight: 700;
+}
+
+.syllabus-features {
+    margin-top: 12px;
+    padding-left: 0;
+}
+
+.syllabus-features ul {
+    margin: 10px 0;
+    color: var(--texto-cor-padrao);
+}
+
+.syllabus-features li {
+    margin: 5px 0;
+    font-size: 0.95rem;
+}
+
+/* Lista sem bullet points - Syllabus features */
+/* ========================================
+   ACCORDION - CRITÉRIOS DE ACEITE
+   ======================================== */
+
+.acceptance-accordion {
+    margin-top: auto;
+    margin-bottom: 0;
+    border: 1px solid #444;
+    border-radius: 6px;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.acceptance-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 15px;
+    background-color: rgba(0, 102, 204, 0.1);
+    border-bottom: 1px solid #444;
+    cursor: pointer;
+    user-select: none;
+    transition: background-color 0.3s ease;
+}
+
+.acceptance-header:hover {
+    background-color: rgba(0, 102, 204, 0.2);
+}
+
+.acceptance-header-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 600;
+    color: #0066cc;
+    font-size: 0.95rem;
+}
+
+.acceptance-toggle {
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+    display: inline-block;
+}
+
+.acceptance-toggle.open {
+    transform: rotate(180deg);
+}
+
+.acceptance-body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    padding: 0 15px;
+    background-color: rgba(0, 102, 204, 0.05);
+}
+
+.acceptance-body.open {
+    max-height: 500px;
+    padding: 15px;
+}
+
+.acceptance-body ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.acceptance-body li {
+    padding: 8px 0;
+    padding-left: 25px;
+    position: relative;
+    color: var(--texto-cor-padrao);
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.acceptance-body li:before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #0066cc;
+    font-weight: bold;
+}
+
+.acceptance-body li.warning:before {
+    content: "⚠";
+    color: #ff9800;
+}
+
+.acceptance-body li.error:before {
+    content: "✗";
+    color: #ff4444;
+}
+
+.syllabus-features ul {
+    list-style: none;
+    padding-left: 20px;
+}
+
+/* ========================================
+   NOVOS BLOCOS 26-35: COMPONENTES AVANÇADOS
+   ======================================== */
+
+/* BLOCO 26: MODAL / DIALOG */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    max-width: 500px;
+    width: 90%;
+    overflow: hidden;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+.modal-header h4 {
+    margin: 0;
+    color: #333;
+}
+
+.modal-close {
+    background: none;
+    border: none;
+    font-size: 28px;
+    cursor: pointer;
+    color: #666;
+}
+
+.modal-close:hover {
+    color: #000;
+}
+
+.modal-body {
+    padding: 20px;
+    color: #666;
+}
+
+.modal-footer {
+    padding: 15px 20px;
+    border-top: 1px solid #ddd;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.modal-footer .btn-secondary {
+    background-color: #e0e0e0;
+    color: #333;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.modal-footer .btn-secondary:hover {
+    background-color: #d0d0d0;
+}
+
+/* Animação de entrada do modal */
+@keyframes modalSlideIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.modal-overlay {
+    animation: modalSlideIn 0.3s ease-out;
+}
+
+/* BLOCO 27: TOAST / NOTIFICAÇÕES */
+.toast-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1001;
+    max-width: 400px;
+}
+
+.toast {
+    animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(400px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideOut {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateX(400px);
+        opacity: 0;
+    }
+}
+
+/* BLOCO 28: TABS / ABAS */
+.tabs-container {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #f9f9f9;
+}
+
+.tabs-header {
+    display: flex;
+    border-bottom: 2px solid #ddd;
+    background-color: #f5f5f5;
+}
+
+.tab-button {
+    flex: 1;
+    padding: 12px 16px;
+    border: none;
+    background-color: transparent;
+    color: #666;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-bottom: 3px solid transparent;
+    margin-bottom: -2px;
+}
+
+.tab-button:hover {
+    background-color: #efefef;
+    color: #0066cc;
+}
+
+.tab-button.active {
+    color: #0066cc;
+    border-bottom-color: #0066cc;
+}
+
+.tabs-content {
+    padding: 20px;
+}
+
+.tab-pane {
+    animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* BLOCO 29: LOADING STATES */
+.spinner {
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #0066cc;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    margin: 0 auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.text-info {
+    color: #0066cc;
+    font-weight: bold;
+    text-align: center;
+}
+
+.text-success {
+    color: #4caf50;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* BLOCO 30: DROPDOWN MENU */
+.dropdown-container {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-toggle {
+    cursor: pointer;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    min-width: 200px;
+    z-index: 100;
+    margin-top: 5px;
+}
+
+.dropdown-item {
+    display: block;
+    width: 100%;
+    padding: 12px 16px;
+    color: #333;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+    cursor: pointer;
+}
+
+.dropdown-item:hover {
+    background-color: #f0f0f0;
+    color: #0066cc;
+}
+
+/* BLOCO 31: AUTOCOMPLETE */
+.autocomplete-container {
+    position: relative;
+    width: 100%;
+}
+
+.autocomplete-input {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.autocomplete-input:focus {
+    outline: none;
+    border-color: #0066cc;
+    box-shadow: 0 0 5px rgba(0, 102, 204, 0.3);
+}
+
+.autocomplete-list {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-top: none;
+    border-radius: 0 0 4px 4px;
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 100;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.autocomplete-list li {
+    padding: 10px 12px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.autocomplete-list li:hover {
+    background-color: #f0f0f0;
+    color: #0066cc;
+}
+
+/* BLOCO 32: PAGINATION */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.page-info {
+    font-weight: bold;
+    color: #666;
+    min-width: 120px;
+    text-align: center;
+}
+
+.pagination-content {
+    margin: 15px 0;
+}
+
+/* BLOCO 33: DRAG & DROP */
+.dragdrop-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin: 15px 0;
+}
+
+.dragdrop-source,
+.dragdrop-target {
+    border: 2px dashed #0066cc;
+    border-radius: 8px;
+    padding: 20px;
+    background-color: #f0f7ff;
+    text-align: center;
+}
+
+.dragdrop-source h4,
+.dragdrop-target h4 {
+    margin-top: 0;
+    color: #0066cc;
+    font-size: 14px;
+}
+
+.draggable-item {
+    background-color: #0066cc;
+    color: white;
+    padding: 10px 15px;
+    margin: 8px 0;
+    border-radius: 4px;
+    cursor: move;
+    user-select: none;
+    transition: all 0.3s ease;
+    border: 2px solid #0066cc;
+}
+
+.draggable-item:hover {
+    background-color: #0052a3;
+    transform: scale(1.05);
+}
+
+/* Items soltos na caixa de drop - removível ao clique */
+.dragdrop-target .draggable-item {
+    cursor: pointer !important;
+    transition: all 0.3s ease;
+}
+
+.dragdrop-target .draggable-item:hover {
+    background-color: #d32f2f !important;
+    border-color: #d32f2f !important;
+    transform: scale(0.95) !important;
+    box-shadow: 0 2px 8px rgba(211, 47, 47, 0.4);
+}
+
+.dragdrop-target {
+    min-height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* BLOCO 34: BREADCRUMB */
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    padding: 15px 0;
+    flex-wrap: wrap;
+}
+
+.breadcrumb-item {
+    color: #0066cc;
+    text-decoration: none;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.breadcrumb-item:hover {
+    color: #0052a3;
+    text-decoration: underline;
+}
+
+.breadcrumb-separator {
+    color: #999;
+    margin: 0 8px;
+}
+
+.breadcrumb-current {
+    color: #666;
+    font-weight: bold;
+}
+
+/* BLOCO 35: TOOLTIP */
+.tooltip-trigger {
+    position: relative;
+    margin: 8px;
+}
+
+.tooltip-box {
+    background-color: #333;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-size: 12px;
+    white-space: nowrap;
+    animation: tooltipFadeIn 0.2s ease-out;
+}
+
+@keyframes tooltipFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
