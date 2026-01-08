@@ -215,6 +215,30 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    // ========== BLOCO 3: RADIO BUTTONS COM VALIDAÇÃO ==========
+    const bloco3Validar = document.getElementById('bloco3Validar');
+    const bloco3Validacao = document.getElementById('bloco3Validacao');
+
+    if (bloco3Validar) {
+        bloco3Validar.addEventListener('click', function() {
+            const radiobotoes = document.querySelectorAll('input[name="bloco3Notificacoes"]');
+            const selecionado = Array.from(radiobotoes).find(r => r.checked);
+
+            if (!selecionado) {
+                bloco3Validacao.textContent = '❌ Selecione uma opção de notificação antes de validar';
+                bloco3Validacao.style.color = '#f44336';
+            } else {
+                const opcoes = {
+                    'email': '📧 Email selecionado',
+                    'sms': '📱 SMS selecionado',
+                    'push': '🔔 Push selecionado'
+                };
+                bloco3Validacao.textContent = `✓ ${opcoes[selecionado.value] || 'Opção válida'}`;
+                bloco3Validacao.style.color = '#0066cc';
+            }
+        });
+    }
+
     // ========== BLOCO 5: SELETORES COM VALIDAÇÃO ==========
     const bloco5Select = document.getElementById('bloco5Select');
     const bloco5Btn = document.getElementById('bloco5Btn');
@@ -1521,18 +1545,61 @@ async function enviarRequisicao(metodo, url) {
         }
     });
 
-    // ========== BLOCO 31: AUTOCOMPLETE ==========
-    const autocompleteInput = document.getElementById('autocompleteInput');
-    const autocompleteList = document.getElementById('autocompleteList');
-    const autocompleteItems = document.querySelectorAll('.autocomplete-list li');
+    // ========== BLOCO 31: AUTOCOMPLETE COM MÚLTIPLAS CATEGORIAS ==========
+    const categorySelect = document.getElementById('autocompleteCategorySelect');
+    const countriesContainer = document.getElementById('autocompleteCountries');
+    const teamsContainer = document.getElementById('autocompleteTeams');
+    
+    const autocompleteInputCountries = document.getElementById('autocompleteInputCountries');
+    const autocompleteListCountries = document.getElementById('autocompleteListCountries');
+    const autocompleteItemsCountries = document.querySelectorAll('#autocompleteListCountries li');
+    
+    const autocompleteInputTeams = document.getElementById('autocompleteInputTeams');
+    const autocompleteListTeams = document.getElementById('autocompleteListTeams');
+    const autocompleteItemsTeams = document.querySelectorAll('#autocompleteListTeams li');
+    
     const autocompleteResult = document.getElementById('autocompleteResult');
 
-    if (autocompleteInput) {
-        autocompleteInput.addEventListener('input', function() {
+    // Função para ocultar todos os containers
+    function hideAllAutocompleteContainers() {
+        countriesContainer.style.display = 'none';
+        teamsContainer.style.display = 'none';
+    }
+
+    // Event listener para seletor de categoria
+    if (categorySelect) {
+        categorySelect.addEventListener('change', function() {
+            const selectedCategory = this.value;
+            hideAllAutocompleteContainers();
+            
+            // Limpar inputs e listas
+            autocompleteInputCountries.value = '';
+            autocompleteInputTeams.value = '';
+            autocompleteListCountries.style.display = 'none';
+            autocompleteListTeams.style.display = 'none';
+            autocompleteResult.textContent = '';
+            
+            // Mostrar container selecionado
+            switch(selectedCategory) {
+                case 'paises':
+                    countriesContainer.style.display = 'block';
+                    autocompleteInputCountries.focus();
+                    break;
+                case 'times':
+                    teamsContainer.style.display = 'block';
+                    autocompleteInputTeams.focus();
+                    break;
+            }
+        });
+    }
+
+    // ===== AUTOCOMPLETE PAÍSES =====
+    if (autocompleteInputCountries) {
+        autocompleteInputCountries.addEventListener('input', function() {
             const valor = this.value.toLowerCase();
             let encontrou = false;
 
-            autocompleteItems.forEach(item => {
+            autocompleteItemsCountries.forEach(item => {
                 const texto = item.textContent.toLowerCase();
                 if (valor && texto.includes(valor)) {
                     item.style.display = 'block';
@@ -1542,17 +1609,49 @@ async function enviarRequisicao(metodo, url) {
                 }
             });
 
-            autocompleteList.style.display = valor && encontrou ? 'block' : 'none';
+            autocompleteListCountries.style.display = valor && encontrou ? 'block' : 'none';
         });
     }
 
-    autocompleteItems.forEach(item => {
+    autocompleteItemsCountries.forEach(item => {
         item.addEventListener('click', function() {
             const valor = this.getAttribute('data-value');
-            autocompleteInput.value = valor;
-            autocompleteList.style.display = 'none';
+            autocompleteInputCountries.value = valor;
+            autocompleteListCountries.style.display = 'none';
             if (autocompleteResult) {
-                autocompleteResult.textContent = `✓ Selecionado: "${valor}"`;
+                autocompleteResult.textContent = `✓ País selecionado: "${valor}"`;
+                autocompleteResult.style.color = '#0066cc';
+            }
+        });
+    });
+
+    // ===== AUTOCOMPLETE TIMES =====
+    if (autocompleteInputTeams) {
+        autocompleteInputTeams.addEventListener('input', function() {
+            const valor = this.value.toLowerCase();
+            let encontrou = false;
+
+            autocompleteItemsTeams.forEach(item => {
+                const texto = item.textContent.toLowerCase();
+                if (valor && texto.includes(valor)) {
+                    item.style.display = 'block';
+                    encontrou = true;
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+
+            autocompleteListTeams.style.display = valor && encontrou ? 'block' : 'none';
+        });
+    }
+
+    autocompleteItemsTeams.forEach(item => {
+        item.addEventListener('click', function() {
+            const valor = this.getAttribute('data-value');
+            autocompleteInputTeams.value = valor;
+            autocompleteListTeams.style.display = 'none';
+            if (autocompleteResult) {
+                autocompleteResult.textContent = `✓ Time selecionado: "${valor}"`;
                 autocompleteResult.style.color = '#0066cc';
             }
         });

@@ -1340,6 +1340,20 @@
 }
 
 /* ========================================
+   SUPORTE A EMOJIS - FONTE COM EMOJI
+   ======================================== */
+
+h1, h2, h3, h4, h5, h6, 
+.interactive-block h3,
+.interactive-block-content {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol' !important;
+    font-feature-settings: "normal" !important;
+    text-rendering: optimizeLegibility !important;
+    -webkit-font-smoothing: antialiased !important;
+    -moz-osx-font-smoothing: grayscale !important;
+}
+
+/* ========================================
    NOVAS CLASSES - BLOCOS INTERATIVOS
    ======================================== */
 
@@ -1371,6 +1385,7 @@
     margin: 0 0 15px 0;
     font-size: 1.1rem;
     color: var(--texto-cor-padrao);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol' !important;
 }
 
 .interactive-block-content {
@@ -3160,8 +3175,8 @@
     top: 100%;
     left: 0;
     right: 0;
-    background-color: white;
-    border: 1px solid #ddd;
+    background-color: var(--backg-Sub-cor);
+    border: 1px solid #444;
     border-top: none;
     border-radius: 0 0 4px 4px;
     max-height: 200px;
@@ -3170,17 +3185,48 @@
     list-style: none;
     margin: 0;
     padding: 0;
+    color: var(--texto-cor-padrao);
+}
+
+/* Scroll específico para lista de cidades (8 opções) */
+#autocompleteListCities {
+    max-height: 280px;
+    overflow-y: auto;
 }
 
 .autocomplete-list li {
     padding: 10px 12px;
     cursor: pointer;
     transition: background-color 0.2s ease;
+    color: var(--texto-cor-padrao);
 }
 
 .autocomplete-list li:hover {
-    background-color: #f0f0f0;
-    color: #0066cc;
+    background-color: #0066cc;
+    color: white;
+}
+
+/* Scroll para lista de cidades no accordion */
+.options-cities-scroll {
+    max-height: 200px;
+    overflow-y: auto;
+    border: 1px solid #555;
+    border-radius: 4px;
+    padding: 8px;
+    background-color: var(--backg-Princ-cor);
+    margin-top: 10px;
+}
+
+.options-cities-scroll ul {
+    margin: 0 !important;
+    padding: 0 0 0 20px !important;
+    list-style: disc !important;
+}
+
+.options-cities-scroll li {
+    padding: 4px 0;
+    color: var(--texto-cor-padrao);
+    line-height: 1.6;
 }
 
 /* BLOCO 32: PAGINATION */
@@ -3320,4 +3366,154 @@
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+/* ========================================
+   AUTOCOMPLETE - SELETOR DE CATEGORIA
+   ======================================== */
+
+.autocomplete-category-selector {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 15px;
+    padding: 12px;
+    background-color: rgba(0, 102, 204, 0.08);
+    border: 1px solid rgba(0, 102, 204, 0.3);
+    border-radius: var(--borderRadius-padrao);
+}
+
+.autocomplete-category-selector label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--texto-cor-padrao);
+    margin-bottom: 5px;
+    display: block;
+}
+
+#autocompleteCategorySelector {
+    width: 100%;
+    padding: 10px;
+    background-color: var(--backg-Princ-cor);
+    color: var(--texto-cor-padrao);
+    border: 1px solid #444;
+    border-radius: var(--borderRadius-padrao);
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: var(--transicao-padrao);
+}
+
+#autocompleteCategorySelector:hover {
+    border-color: #0066cc;
+    background-color: #1a1a1a;
+}
+
+#autocompleteCategorySelector:focus {
+    outline: none;
+    border-color: #0066cc;
+    box-shadow: 0 0 8px rgba(0, 102, 204, 0.3);
+}
+
+/* Estilos para cada container de categoria */
+#autocompleteCountries,
+#autocompleteTeams,
+#autocompleteCities {
+    display: none;
+}
+
+#autocompleteCountries.active,
+#autocompleteTeams.active,
+#autocompleteCities.active {
+    display: block;
+}
+
+.autocomplete-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.autocomplete-input-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.autocomplete-input-wrapper label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--texto-cor-padrao);
+}
+
+.autocomplete-input-wrapper input {
+    width: 100%;
+    padding: 8px;
+    background-color: var(--backg-Princ-cor);
+    color: var(--texto-cor-padrao);
+    border: 1px solid #444;
+    border-radius: var(--borderRadius-padrao);
+    font-size: 0.9rem;
+    transition: var(--transicao-padrao);
+}
+
+.autocomplete-input-wrapper input:focus {
+    outline: none;
+    border-color: #0066cc;
+    background-color: #1a1a1a;
+    box-shadow: 0 0 8px rgba(0, 102, 204, 0.3);
+}
+
+.autocomplete-list-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    max-height: 180px;
+    overflow-y: auto;
+}
+
+.autocomplete-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.autocomplete-item {
+    padding: 8px 10px;
+    background-color: var(--backg-Princ-cor);
+    color: var(--texto-cor-padrao);
+    border: 1px solid #444;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: var(--transicao-padrao);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.autocomplete-item:hover {
+    background-color: #1a1a1a;
+    border-color: #0066cc;
+    color: #0066cc;
+    transform: translateX(4px);
+}
+
+.autocomplete-item.selected {
+    background-color: rgba(0, 102, 204, 0.2);
+    border-color: #0066cc;
+    color: #0066cc;
+    font-weight: 600;
+}
+
+.autocomplete-item-emoji {
+    font-size: 1.1rem;
+    min-width: 24px;
+    text-align: center;
+}
+
+.autocomplete-item-text {
+    flex: 1;
 }

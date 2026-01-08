@@ -72,7 +72,7 @@
             <h2>Bem-vindo ao Test.Me - Sua Simulação de Testes</h2>
             <div class="texto-sobre texto-sobre-full-height">
                 <p>
-                    Explore um ambiente interativo completo com <strong>28 blocos de testes</strong> para praticar e aprimorar suas habilidades em Quality Assurance. 
+                    Explore um ambiente interativo completo com <strong>41 blocos de testes</strong> para praticar e aprimorar suas habilidades em Quality Assurance. 
                     Aqui você encontrará diversos tipos de componentes e desafios projetados para simular cenários reais de teste.
                 </p>
                 
@@ -86,8 +86,8 @@
                         Componentes avançados como assinatura, checkboxes, selects, date pickers, uploads e código dinâmico para automação.
                     </div>
                     <div class="column-intro">
-                        <strong>🔧 Testes Especializados (Blocos 25-28):</strong><br>
-                        API Testing com requisições GET, CTFL Quiz com 12 perguntas, Data Picker com intervalo e Requisições HTTP variadas (GET, POST, PUT, DELETE).
+                        <strong>🔧 Testes Especializados (Blocos 25-41):</strong><br>
+                        API Testing com múltiplos status codes (200, 300, 400, 500), Modal, Toast, Tabs, Loading, Dropdown, Autocomplete, Pagination, Drag&Drop, Breadcrumb, Tooltip, CTFL Quiz com 45 perguntas e Download de Syllabus.
                     </div>
             </div>
         </section>
@@ -101,30 +101,30 @@
             <!-- ========== SEÇÃO: CAMPOS DE ENTRADA ========== -->
             
             <!-- BLOCO 1: Entrada de Texto -->
-            <div class="interactive-block test-auto" id="bloco-1-entrada-texto">
+            <div class="interactive-block test-auto" id="bloco-1-entrada-texto" data-test="bloco-1" data-auto="bloco-1-container">
                 <h3>1 - 📝 Entrada de Texto</h3>
-                <div class="interactive-block-content">
+                <div class="interactive-block-content" data-auto="content">
                     <label class="label-small">Texto comum (máx 50):</label>
-                    <input type="text" id="bloco1TextComum" placeholder="Texto comum e números" maxlength="50">
-                    <p id="bloco1TextComumContador" class="text-small">0/50</p>
+                    <input type="text" id="bloco1TextComum" placeholder="Texto comum e números" maxlength="50" data-auto="input-text-comum">
+                    <p id="bloco1TextComumContador" class="text-small" data-auto="counter-text-comum">0/50</p>
                     
                     <label class="label-small">Apenas números:</label>
-                    <input type="text" id="bloco1Numeros" placeholder="Apenas números (0-9)" maxlength="15">
+                    <input type="text" id="bloco1Numeros" placeholder="Apenas números (0-9)" maxlength="15" data-auto="input-numeros">
                     
                     <label class="label-small label-margin-top">Apenas alfabético:</label>
-                    <input type="text" id="bloco1Alfabetico" placeholder="Apenas texto alfabético (A-Z)" maxlength="30">
+                    <input type="text" id="bloco1Alfabetico" placeholder="Apenas texto alfabético (A-Z)" maxlength="30" data-auto="input-alfabetico">
                     
                     <label class="label-small label-margin-top">Caracteres especiais:</label>
-                    <input type="text" id="bloco1Especiais" placeholder="Caracteres especiais + números" maxlength="40">
-                    <p id="bloco1Validacao" class="text-validation"></p>
+                    <input type="text" id="bloco1Especiais" placeholder="Caracteres especiais + números" maxlength="40" data-auto="input-especiais">
+                    <p id="bloco1Validacao" class="text-validation" data-auto="result-validation"></p>
                     
                     <!-- Accordion Critérios de Aceite -->
-                    <div class="acceptance-accordion">
-                        <div class="acceptance-header">
+                    <div class="acceptance-accordion" data-auto="criteria-accordion">
+                        <div class="acceptance-header" data-auto="criteria-header">
                             <span class="acceptance-header-title">📋 Critérios de Aceite</span>
                             <span class="acceptance-toggle">▼</span>
                         </div>
-                        <div class="acceptance-body">
+                        <div class="acceptance-body" data-auto="criteria-body">
                             <ul>
                                 <li>Texto comum aceita máximo 50 caracteres (alfanuméricos e espaços)</li>
                                 <li>Campo "Apenas números" rejeita automaticamente letras e caracteres especiais</li>
@@ -138,44 +138,44 @@
             </div>
 
             <!-- BLOCO 2: Campos Especiais (Senha, Data) -->
-            <div class="interactive-block test-auto" id="bloco-2-campos-especiais">
+            <div class="interactive-block test-auto" id="bloco-2-campos-especiais" data-test="bloco-2" data-auto="bloco-2-container">
                 <h3>2 - 🔐 Campos Especiais</h3>
-                <div class="interactive-block-content">
+                <div class="interactive-block-content" data-auto="content">
                     <label class="label-regular">Senha com olho:</label>
-                    <div class="input-flex">
-                        <input type="password" id="bloco2Senha" placeholder="Digite uma senha" class="input-flex-1">
-                        <button type="button" id="bloco2OlhoSenha" class="btn-toggle-password">👁️</button>
+                    <div class="input-flex" data-auto="password-wrapper">
+                        <input type="password" id="bloco2Senha" placeholder="Digite uma senha" class="input-flex-1" data-auto="input-password">
+                        <button type="button" id="bloco2OlhoSenha" class="btn-toggle-password" data-auto="btn-toggle-password">👁️</button>
                     </div>
-                    <div class="force-bars">
+                    <div class="force-bars" data-auto="force-container">
                         <p class="text-small">Força da senha:</p>
-                        <div class="force-bar-container">
-                            <div id="bloco2ForcaBar1" class="force-bar"></div>
-                            <div id="bloco2ForcaBar2" class="force-bar"></div>
-                            <div id="bloco2ForcaBar3" class="force-bar"></div>
+                        <div class="force-bar-container" data-auto="force-bars">
+                            <div id="bloco2ForcaBar1" class="force-bar" data-auto="force-bar-1"></div>
+                            <div id="bloco2ForcaBar2" class="force-bar" data-auto="force-bar-2"></div>
+                            <div id="bloco2ForcaBar3" class="force-bar" data-auto="force-bar-3"></div>
                         </div>
-                        <p id="bloco2ForcaTexto" class="force-text">Nenhuma</p>
-                        <ul id="bloco2RequisitosLista" class="requirements-list">
-                            <li id="bloco2Req1">✗ Maiúscula (A-Z)</li>
-                            <li id="bloco2Req2">✗ Minúscula (a-z)</li>
-                            <li id="bloco2Req3">✗ Número (0-9)</li>
-                            <li id="bloco2Req4">✗ Especial (!@#$%)</li>
-                            <li id="bloco2Req5">✗ Mínimo 8 caracteres</li>
+                        <p id="bloco2ForcaTexto" class="force-text" data-auto="force-label">Nenhuma</p>
+                        <ul id="bloco2RequisitosLista" class="requirements-list" data-auto="requirements-list">
+                            <li id="bloco2Req1" data-auto="req-uppercase">✗ Maiúscula (A-Z)</li>
+                            <li id="bloco2Req2" data-auto="req-lowercase">✗ Minúscula (a-z)</li>
+                            <li id="bloco2Req3" data-auto="req-number">✗ Número (0-9)</li>
+                            <li id="bloco2Req4" data-auto="req-special">✗ Especial (!@#$%)</li>
+                            <li id="bloco2Req5" data-auto="req-length">✗ Mínimo 8 caracteres</li>
                         </ul>
                     </div>
                     <label class="label-regular label-margin-top-10">Confirmar Senha:</label>
-                    <input type="password" id="bloco2SenhaConfirma" placeholder="Confirme a senha" class="input-full-width">
-                    <p id="bloco2SenhaConfirmaMsg" class="text-validation"></p>
+                    <input type="password" id="bloco2SenhaConfirma" placeholder="Confirme a senha" class="input-full-width" data-auto="input-password-confirm">
+                    <p id="bloco2SenhaConfirmaMsg" class="text-validation" data-auto="result-password-confirm"></p>
                     <label class="label-regular label-margin-top-10">Data (validada):</label>
-                    <input type="date" id="bloco2Data" class="input-full-width">
-                    <p id="bloco2DataValidacao" class="text-validation"></p>
+                    <input type="date" id="bloco2Data" class="input-full-width" data-auto="input-date">
+                    <p id="bloco2DataValidacao" class="text-validation" data-auto="result-date"></p>
                     
                     <!-- Accordion Critérios de Aceite -->
-                    <div class="acceptance-accordion">
-                        <div class="acceptance-header">
+                    <div class="acceptance-accordion" data-auto="criteria-accordion">
+                        <div class="acceptance-header" data-auto="criteria-header">
                             <span class="acceptance-header-title">📋 Critérios de Aceite</span>
                             <span class="acceptance-toggle">▼</span>
                         </div>
-                        <div class="acceptance-body">
+                        <div class="acceptance-body" data-auto="criteria-body">
                             <ul>
                                 <li>Senha deve ter mínimo 8 caracteres</li>
                                 <li>Senha deve conter pelo menos 1 maiúscula (A-Z)</li>
@@ -191,35 +191,43 @@
                 </div>
             </div>
 
-            <!-- BLOCO 3: Radio Buttons Status -->
-            <div class="interactive-block test-auto" id="bloco-3-radio-status">
-                <h3>3 - ⭕ Radio Buttons - Status</h3>
-                <div class="interactive-block-content">
-                    <div class="radio-group">
-                        <label class="radio-label">
-                            <input type="radio" name="status" value="on" class="zion-radio" id="statusOn">
-                            <span>ON</span>
+            <!-- BLOCO 3: Radio Buttons - Email -->
+            <div class="interactive-block test-auto" id="bloco-3-radio-email" data-test="bloco-3" data-auto="bloco-3-container">
+                <h3>3 - ⭕ Radio Buttons - Notificações</h3>
+                <div class="interactive-block-content" data-auto="content">
+                    <label class="label-regular">Prefira receber notificações por:</label>
+                    <div class="radio-group" data-auto="radio-group">
+                        <label class="radio-label" data-auto="label-option-email">
+                            <input type="radio" name="bloco3Notificacoes" value="email" id="bloco3Email" data-auto="radio-email">
+                            <span>📧 Email</span>
                         </label>
-                        <label class="radio-label">
-                            <input type="radio" name="status" value="off" class="zion-radio" id="statusOff">
-                            <span>OFF</span>
+                        <label class="radio-label" data-auto="label-option-sms">
+                            <input type="radio" name="bloco3Notificacoes" value="sms" id="bloco3SMS" data-auto="radio-sms">
+                            <span>📱 SMS</span>
+                        </label>
+                        <label class="radio-label" data-auto="label-option-push">
+                            <input type="radio" name="bloco3Notificacoes" value="push" id="bloco3Push" data-auto="radio-push">
+                            <span>🔔 Push</span>
                         </label>
                     </div>
-                    <p class="text-info">Status: <span id="statusResult" class="text-validation">-</span></p>
+                    
+                    <button type="button" id="bloco3Validar" class="btn-primary" data-auto="btn-primary">Validar</button>
+                    <p id="bloco3Validacao" class="text-validation" data-auto="result-validation"></p>
                     
                     <!-- Accordion Critérios de Aceite -->
-                    <div class="acceptance-accordion">
-                        <div class="acceptance-header">
+                    <div class="acceptance-accordion" data-auto="criteria-accordion">
+                        <div class="acceptance-header" data-auto="criteria-header">
                             <span class="acceptance-header-title">📋 Critérios de Aceite</span>
                             <span class="acceptance-toggle">▼</span>
                         </div>
-                        <div class="acceptance-body">
+                        <div class="acceptance-body" data-auto="criteria-body">
                             <ul>
-                                <li>Existem 2 opções mutuamente exclusivas: ON e OFF</li>
+                                <li>Existem 3 opções mutuamente exclusivas: Email, SMS e Push</li>
                                 <li>Apenas 1 opção pode estar selecionada por vez</li>
-                                <li>Resultado exibe status selecionado em tempo real</li>
+                                <li>Botão "Validar" confirma a seleção</li>
+                                <li>Sem seleção deve exibir mensagem de erro</li>
+                                <li>Com seleção válida exibe mensagem de sucesso</li>
                                 <li>Valor padrão é nenhum (vazio)</li>
-                                <li>Clicar em rádio button alterna seleção</li>
                             </ul>
                         </div>
                     </div>
@@ -227,21 +235,21 @@
             </div>
 
             <!-- BLOCO 4: Radio Buttons -->
-            <div class="interactive-block test-auto" id="bloco-4-radio-buttons">
+            <div class="interactive-block test-auto" id="bloco-4-radio-buttons" data-test="bloco-4" data-auto="bloco-4-container">
                 <h3>4 - 🎯 Radio Buttons</h3>
-                <div class="interactive-block-content">
-                    <label><input type="radio" name="bloco7Genero" value="Masculino"> Masculino</label>
-                    <label><input type="radio" name="bloco7Genero" value="Feminino"> Feminino</label>
-                    <label><input type="radio" name="bloco7Genero" value="Outro"> Outro</label>
-                    <p id="bloco7Resultado" class="text-validation"></p>
+                <div class="interactive-block-content" data-auto="content">
+                    <label data-auto="label-option-masculino"><input type="radio" name="bloco7Genero" value="Masculino" data-auto="radio-masculino"> Masculino</label>
+                    <label data-auto="label-option-feminino"><input type="radio" name="bloco7Genero" value="Feminino" data-auto="radio-feminino"> Feminino</label>
+                    <label data-auto="label-option-outro"><input type="radio" name="bloco7Genero" value="Outro" data-auto="radio-outro"> Outro</label>
+                    <p id="bloco7Resultado" class="text-validation" data-auto="result-value"></p>
                     
                     <!-- Accordion Critérios de Aceite -->
-                    <div class="acceptance-accordion">
-                        <div class="acceptance-header">
+                    <div class="acceptance-accordion" data-auto="criteria-accordion">
+                        <div class="acceptance-header" data-auto="criteria-header">
                             <span class="acceptance-header-title">📋 Critérios de Aceite</span>
                             <span class="acceptance-toggle">▼</span>
                         </div>
-                        <div class="acceptance-body">
+                        <div class="acceptance-body" data-auto="criteria-body">
                             <ul>
                                 <li>Existem 3 opções mutuamente exclusivas (Masculino, Feminino, Outro)</li>
                                 <li>Apenas 1 opção pode estar selecionada por vez</li>
@@ -257,25 +265,25 @@
             <!-- ========== SEÇÃO: SELEÇÃO E ENTRADA =========== -->
 
             <!-- BLOCO 5: Slider e Range -->
-            <div class="interactive-block test-auto" id="bloco-5-slider-range">
+            <div class="interactive-block test-auto" id="bloco-5-slider-range" data-test="bloco-5" data-auto="bloco-5-container">
                 <h3>5 - 🎚️ Slider e Range</h3>
-                <div class="interactive-block-content">
+                <div class="interactive-block-content" data-auto="content">
                     <label>Nível de Dificuldade (0-10):</label>
-                    <input type="range" id="zionRange" min="0" max="10" value="5" class="zion-range input-full-width">
-                    <div class="slider-bars">
-                        <div id="zionRangeBar1" class="slider-bar"></div>
-                        <div id="zionRangeBar2" class="slider-bar"></div>
-                        <div id="zionRangeBar3" class="slider-bar"></div>
+                    <input type="range" id="zionRange" min="0" max="10" value="5" class="zion-range input-full-width" data-auto="input-slider">
+                    <div class="slider-bars" data-auto="slider-bars">
+                        <div id="zionRangeBar1" class="slider-bar" data-auto="slider-bar-1"></div>
+                        <div id="zionRangeBar2" class="slider-bar" data-auto="slider-bar-2"></div>
+                        <div id="zionRangeBar3" class="slider-bar" data-auto="slider-bar-3"></div>
                     </div>
-                    <p class="text-info">Nível: <span id="rangeResult" class="text-validation">5</span>/10 <span id="zionRangeCategoria">🟡 Médio</span></p>
+                    <p class="text-info" data-auto="result-wrapper">Nível: <span id="rangeResult" class="text-validation" data-auto="result-value">5</span>/10 <span id="zionRangeCategoria" data-auto="result-category">🟡 Médio</span></p>
                     
                     <!-- Accordion Critérios de Aceite -->
-                    <div class="acceptance-accordion">
-                        <div class="acceptance-header">
+                    <div class="acceptance-accordion" data-auto="criteria-accordion">
+                        <div class="acceptance-header" data-auto="criteria-header">
                             <span class="acceptance-header-title">📋 Critérios de Aceite</span>
                             <span class="acceptance-toggle">▼</span>
                         </div>
-                        <div class="acceptance-body">
+                        <div class="acceptance-body" data-auto="criteria-body">
                             <ul>
                                 <li>Slider controla valores de 0 a 10 com incrementos de 1</li>
                                 <li>Valor padrão inicial é 5</li>
@@ -290,21 +298,21 @@
             </div>
 
             <!-- BLOCO 6: Checkboxes -->
-            <div class="interactive-block test-auto" id="bloco-6-checkboxes">
+            <div class="interactive-block test-auto" id="bloco-6-checkboxes" data-test="bloco-6" data-auto="bloco-6-container">
                 <h3>6 - ✅ Checkboxes</h3>
-                <div class="interactive-block-content">
-                    <label><input type="checkbox" class="bloco6Check"> Aceito termos</label>
-                    <label><input type="checkbox" class="bloco6Check"> Receber novidades</label>
-                    <label><input type="checkbox" class="bloco6Check"> Concordo com política</label>
-                    <p id="bloco6Resultado" class="text-validation"></p>
+                <div class="interactive-block-content" data-auto="content">
+                    <label data-auto="label-check-1"><input type="checkbox" class="bloco6Check" data-auto="checkbox-1"> Aceito termos</label>
+                    <label data-auto="label-check-2"><input type="checkbox" class="bloco6Check" data-auto="checkbox-2"> Receber novidades</label>
+                    <label data-auto="label-check-3"><input type="checkbox" class="bloco6Check" data-auto="checkbox-3"> Concordo com política</label>
+                    <p id="bloco6Resultado" class="text-validation" data-auto="result-value"></p>
                     
                     <!-- Accordion Critérios de Aceite -->
-                    <div class="acceptance-accordion">
-                        <div class="acceptance-header">
+                    <div class="acceptance-accordion" data-auto="criteria-accordion">
+                        <div class="acceptance-header" data-auto="criteria-header">
                             <span class="acceptance-header-title">📋 Critérios de Aceite</span>
                             <span class="acceptance-toggle">▼</span>
                         </div>
-                        <div class="acceptance-body">
+                        <div class="acceptance-body" data-auto="criteria-body">
                             <ul>
                                 <li>Existem 3 checkboxes independentes</li>
                                 <li>Cada checkbox pode ser selecionado/desmarcado individualmente</li>
@@ -318,24 +326,24 @@
             </div>
 
             <!-- BLOCO 7: Checkbox com Toggle -->
-            <div class="interactive-block test-auto" id="bloco-7-checkbox-toggle">
+            <div class="interactive-block test-auto" id="bloco-7-checkbox-toggle" data-test="bloco-7" data-auto="bloco-7-container">
                 <h3>7 - ☑️ Checkbox com Toggle</h3>
-                <div class="interactive-block-content">
-                    <label class="checkbox-label">
-                        <input type="checkbox" id="zionShowSignature" class="zion-checkbox">
+                <div class="interactive-block-content" data-auto="content">
+                    <label class="checkbox-label" data-auto="label-show-signature">
+                        <input type="checkbox" id="zionShowSignature" class="zion-checkbox" data-auto="checkbox-show-signature">
                         <span>Mostrar assinatura</span>
                     </label>
-                    <div id="signaturePreviewContainer" class="preview-container hidden">
-                        <p><span id="signaturePreviewFinal">-</span></p>
+                    <div id="signaturePreviewContainer" class="preview-container hidden" data-auto="signature-preview-container">
+                        <p><span id="signaturePreviewFinal" data-auto="signature-preview-value">-</span></p>
                     </div>
                     
                     <!-- Accordion Critérios de Aceite -->
-                    <div class="acceptance-accordion">
-                        <div class="acceptance-header">
+                    <div class="acceptance-accordion" data-auto="criteria-accordion">
+                        <div class="acceptance-header" data-auto="criteria-header">
                             <span class="acceptance-header-title">📋 Critérios de Aceite</span>
                             <span class="acceptance-toggle">▼</span>
                         </div>
-                        <div class="acceptance-body">
+                        <div class="acceptance-body" data-auto="criteria-body">
                             <ul>
                                 <li>Checkbox com label "Mostrar assinatura"</li>
                                 <li>Quando marcado, mostra preview da assinatura</li>
@@ -349,24 +357,24 @@
             </div>
 
             <!-- BLOCO 8: Seletor de Cores -->
-            <div class="interactive-block test-auto" id="bloco-8-cores">
+            <div class="interactive-block test-auto" id="bloco-8-cores" data-test="bloco-8" data-auto="bloco-8-container">
                 <h3>8 - 🎨 Cores</h3>
-                <div class="interactive-block-content">
-                    <select id="bloco8Input">
+                <div class="interactive-block-content" data-auto="content">
+                    <select id="bloco8Input" data-auto="select-colors">
                         <option value="">Selecione uma cor</option>
                         <option value="#ff0000">Vermelho</option>
                         <option value="#0000ff">Azul</option>
                         <option value="#00aa00">Verde</option>
                     </select>
-                    <div id="bloco8Preview" class="color-preview"></div>
+                    <div id="bloco8Preview" class="color-preview" data-auto="color-preview"></div>
                     
                     <!-- Accordion Critérios de Aceite -->
-                    <div class="acceptance-accordion">
-                        <div class="acceptance-header">
+                    <div class="acceptance-accordion" data-auto="criteria-accordion">
+                        <div class="acceptance-header" data-auto="criteria-header">
                             <span class="acceptance-header-title">📋 Critérios de Aceite</span>
                             <span class="acceptance-toggle">▼</span>
                         </div>
-                        <div class="acceptance-body">
+                        <div class="acceptance-body" data-auto="criteria-body">
                             <ul>
                                 <li>Dropdown contém 4 opções: placeholder + 3 cores</li>
                                 <li>Seleção padrão é o placeholder "Selecione uma cor"</li>
@@ -382,20 +390,20 @@
             <!-- ========== SEÇÃO: AÇÕES ========== -->
 
             <!-- BLOCO 9: Alertas -->
-            <div class="interactive-block test-auto" id="bloco-9-alertas">
+            <div class="interactive-block test-auto" id="bloco-9-alertas" data-test="bloco-9" data-auto="bloco-9-container">
                 <h3>9 - 🛎️ Alertas</h3>
-                <div class="interactive-block-content">
-                    <button class="btn-primary btn-alert-1">Alerta</button>
-                    <button class="btn-primary btn-alert-2">Confirmar</button>
-                    <button class="btn-primary btn-alert-3">Prompt</button>
+                <div class="interactive-block-content" data-auto="content">
+                    <button class="btn-primary btn-alert-1" data-auto="btn-alert">Alerta</button>
+                    <button class="btn-primary btn-alert-2" data-auto="btn-confirm">Confirmar</button>
+                    <button class="btn-primary btn-alert-3" data-auto="btn-prompt">Prompt</button>
                     
                     <!-- Accordion Critérios de Aceite -->
-                    <div class="acceptance-accordion">
-                        <div class="acceptance-header">
+                    <div class="acceptance-accordion" data-auto="criteria-accordion">
+                        <div class="acceptance-header" data-auto="criteria-header">
                             <span class="acceptance-header-title">📋 Critérios de Aceite</span>
                             <span class="acceptance-toggle">▼</span>
                         </div>
-                        <div class="acceptance-body">
+                        <div class="acceptance-body" data-auto="criteria-body">
                             <ul>
                                 <li>Existem 3 tipos de alertas: Alerta, Confirmar, Prompt</li>
                                 <li>Botão "Alerta" exibe um alert() simples com mensagem</li>
@@ -409,19 +417,19 @@
             </div>
 
             <!-- BLOCO 10: Botões de Ação -->
-            <div class="interactive-block test-auto" id="bloco-10-acoes">
+            <div class="interactive-block test-auto" id="bloco-10-acoes" data-test="bloco-10" data-auto="bloco-10-container">
                 <h3>10 - 🔘 Ações</h3>
-                <div class="interactive-block-content">
-                    <button id="btnAcao" class="btn-success">✓ Botão de Ação</button>
-                    <button id="btnPerigoso" class="btn-danger">⚠️ Botão Perigoso</button>
+                <div class="interactive-block-content" data-auto="content">
+                    <button id="btnAcao" class="btn-success" data-auto="btn-action-safe">✓ Botão de Ação</button>
+                    <button id="btnPerigoso" class="btn-danger" data-auto="btn-action-dangerous">⚠️ Botão Perigoso</button>
                     
                     <!-- Accordion Critérios de Aceite -->
-                    <div class="acceptance-accordion">
-                        <div class="acceptance-header">
+                    <div class="acceptance-accordion" data-auto="criteria-accordion">
+                        <div class="acceptance-header" data-auto="criteria-header">
                             <span class="acceptance-header-title">📋 Critérios de Aceite</span>
                             <span class="acceptance-toggle">▼</span>
                         </div>
-                        <div class="acceptance-body">
+                        <div class="acceptance-body" data-auto="criteria-body">
                             <ul>
                                 <li>Existem 2 botões: um verde de ação segura e um vermelho de risco</li>
                                 <li>Botão "Botão de Ação" (verde) executa uma ação segura e bem-sucedida</li>
@@ -437,18 +445,18 @@
             <!-- ========== SEÇÃO: DADOS ========== -->
 
             <!-- BLOCO 11: Tabela com Busca -->
-            <div class="interactive-block test-auto" id="bloco-11-tabela">
+            <div class="interactive-block test-auto" id="bloco-11-tabela" data-test="bloco-11" data-auto="bloco-11-container">
                 <h3>11 - 📊 Tabela</h3>
-                <div class="interactive-block-content">
-                    <div class="table-search">
-                        <input type="text" id="tabelaBusca" placeholder="🔍 Buscar por nome ou email..." class="input-full-width">
-                        <div class="table-buttons">
-                            <button id="tabelaBuscaNome" class="btn-secondary">Ordenar por Nome</button>
-                            <button id="tabelaBuscaEmail" class="btn-secondary">Ordenar por Email</button>
-                            <button id="tabelaBuscaLimpar" class="btn-secondary">Limpar</button>
+                <div class="interactive-block-content" data-auto="content">
+                    <div class="table-search" data-auto="search-container">
+                        <input type="text" id="tabelaBusca" placeholder="🔍 Buscar por nome ou email..." class="input-full-width" data-auto="input-search">
+                        <div class="table-buttons" data-auto="button-group">
+                            <button id="tabelaBuscaNome" class="btn-secondary" data-auto="btn-sort-name">Ordenar por Nome</button>
+                            <button id="tabelaBuscaEmail" class="btn-secondary" data-auto="btn-sort-email">Ordenar por Email</button>
+                            <button id="tabelaBuscaLimpar" class="btn-secondary" data-auto="btn-clear-search">Limpar</button>
                         </div>
                     </div>
-                    <table id="tabelaDados" class="table-container">
+                    <table id="tabelaDados" class="table-container" data-auto="table">
                         <thead>
                             <tr class="table-header">
                                 <th>Nome</th>
@@ -478,15 +486,15 @@
                             </tr>
                         </tbody>
                     </table>
-                    <p class="text-small">Total de registros: <span id="tabelaTotalRegistros">5</span> | Exibindo: <span id="tabelaTotalExibidos">5</span></p>
+                    <p class="text-small" data-auto="table-info">Total de registros: <span id="tabelaTotalRegistros" data-auto="total-records">5</span> | Exibindo: <span id="tabelaTotalExibidos" data-auto="displayed-records">5</span></p>
                     
                     <!-- Accordion Critérios de Aceite -->
-                    <div class="acceptance-accordion">
-                        <div class="acceptance-header">
+                    <div class="acceptance-accordion" data-auto="criteria-accordion">
+                        <div class="acceptance-header" data-auto="criteria-header">
                             <span class="acceptance-header-title">📋 Critérios de Aceite</span>
                             <span class="acceptance-toggle">▼</span>
                         </div>
-                        <div class="acceptance-body">
+                        <div class="acceptance-body" data-auto="criteria-body">
                             <ul>
                                 <li>Tabela exibe 2 colunas: Nome e Email</li>
                                 <li>Exibe 5 linhas de dados padrão</li>
@@ -504,27 +512,27 @@
             </div>
 
             <!-- BLOCO 12: Dados Dinâmicos -->
-            <div class="interactive-block test-auto" id="bloco-12-dados-dinamicos">
+            <div class="interactive-block test-auto" id="bloco-12-dados-dinamicos" data-test="bloco-12" data-auto="bloco-12-container">
                 <h3>12 - 👤 Dados Dinâmicos</h3>
-                <div class="interactive-block-content">
-                    <div class="data-card">
+                <div class="interactive-block-content" data-auto="content">
+                    <div class="data-card" data-auto="card-user">
                         <h4>Usuário Teste</h4>
                         <p>ID: #12345</p>
                     </div>
-                    <div class="data-card">
+                    <div class="data-card" data-auto="card-status">
                         <h4>Status: Ativo</h4>
                         <p>Último: Hoje</p>
                     </div>
-                    <button id="bloco13Copiar" class="btn-primary">📋 Copiar Dados</button>
-                    <p id="bloco13CopiarMsg" class="text-validation"></p>
+                    <button id="bloco13Copiar" class="btn-primary" data-auto="btn-copy-data">📋 Copiar Dados</button>
+                    <p id="bloco13CopiarMsg" class="text-validation" data-auto="result-copy"></p>
                     
                     <!-- Accordion Critérios de Aceite -->
-                    <div class="acceptance-accordion">
-                        <div class="acceptance-header">
+                    <div class="acceptance-accordion" data-auto="criteria-accordion">
+                        <div class="acceptance-header" data-auto="criteria-header">
                             <span class="acceptance-header-title">📋 Critérios de Aceite</span>
                             <span class="acceptance-toggle">▼</span>
                         </div>
-                        <div class="acceptance-body">
+                        <div class="acceptance-body" data-auto="criteria-body">
                             <ul>
                                 <li>Exibe 2 cards de dados: "Usuário Teste" e "Status: Ativo"</li>
                                 <li>Cada card contém informações dinâmicas (ID e Último)</li>
@@ -540,19 +548,19 @@
             <!-- ========== SEÇÃO: DINÂMICA ========== -->
 
             <!-- BLOCO 13: Elementos Dinâmicos -->
-            <div class="interactive-block test-auto" id="bloco-13-dinamica">
+            <div class="interactive-block test-auto" id="bloco-13-dinamica" data-test="bloco-13" data-auto="bloco-13-container">
                 <h3>13 - 🔄 Dinâmica</h3>
-                <div class="interactive-block-content">
-                    <button class="btn-primary btn-add-elemento">+ Adicionar</button>
-                    <div id="elementosDinamicos" class="dynamic-elements"></div>
+                <div class="interactive-block-content" data-auto="content">
+                    <button class="btn-primary btn-add-elemento" data-auto="btn-add-element">+ Adicionar</button>
+                    <div id="elementosDinamicos" class="dynamic-elements" data-auto="dynamic-container"></div>
                     
                     <!-- Accordion Critérios de Aceite -->
-                    <div class="acceptance-accordion">
-                        <div class="acceptance-header">
+                    <div class="acceptance-accordion" data-auto="criteria-accordion">
+                        <div class="acceptance-header" data-auto="criteria-header">
                             <span class="acceptance-header-title">📋 Critérios de Aceite</span>
                             <span class="acceptance-toggle">▼</span>
                         </div>
-                        <div class="acceptance-body">
+                        <div class="acceptance-body" data-auto="criteria-body">
                             <ul>
                                 <li>Botão "+ Adicionar" está clicável e funcional</li>
                                 <li>Cada clique adiciona um novo elemento à lista</li>
@@ -568,21 +576,21 @@
             <!-- ========== SEÇÃO: VALIDAÇÃO ========== -->
 
             <!-- BLOCO 14: Validação -->
-            <div class="interactive-block test-auto" id="bloco-14-validacao">
+            <div class="interactive-block test-auto" id="bloco-14-validacao" data-test="bloco-14" data-auto="bloco-14-container">
                 <h3>14 - ✔️ Validação</h3>
-                <div class="interactive-block-content">
-                    <p class="text-info">Código esperado: <strong id="bloco18Codigo">010919100407201216122012</strong></p>
-                    <input type="text" id="bloco18Input" placeholder="Digite o código..." class="input-full-width">
-                    <button id="bloco18Validar" class="btn-primary">Validar</button>
-                    <p id="bloco18Resultado" class="text-validation"></p>
+                <div class="interactive-block-content" data-auto="content">
+                    <p class="text-info" data-auto="info-code">Código esperado: <strong id="bloco18Codigo" data-auto="expected-code">010919100407201216122012</strong></p>
+                    <input type="text" id="bloco18Input" placeholder="Digite o código..." class="input-full-width" data-auto="input-code">
+                    <button id="bloco18Validar" class="btn-primary" data-auto="btn-validate">Validar</button>
+                    <p id="bloco18Resultado" class="text-validation" data-auto="result-validation"></p>
                     
                     <!-- Accordion Critérios de Aceite -->
-                    <div class="acceptance-accordion">
-                        <div class="acceptance-header">
+                    <div class="acceptance-accordion" data-auto="criteria-accordion">
+                        <div class="acceptance-header" data-auto="criteria-header">
                             <span class="acceptance-header-title">📋 Critérios de Aceite</span>
                             <span class="acceptance-toggle">▼</span>
                         </div>
-                        <div class="acceptance-body">
+                        <div class="acceptance-body" data-auto="criteria-body">
                             <ul>
                                 <li>Código esperado exibido: 010919100407201216122012</li>
                                 <li>Campo de input aceita texto até 50 caracteres</li>
@@ -599,21 +607,21 @@
             <!-- Blocos agrupados por tipo: Texto, Checkbox/Radio, Select, Upload, Range, Data, Dinâmica -->
 
             <!-- BLOCO 15: Assinatura com Preview -->
-            <div class="interactive-block test-auto" id="bloco-15-assinatura-preview">
+            <div class="interactive-block test-auto" id="bloco-15-assinatura-preview" data-test="bloco-15" data-auto="bloco-15-container">
                 <h3>15 - ✍️ Assinatura com Preview</h3>
-                <div class="interactive-block-content">
-                    <label class="label-small">Assinatura (máx 50 caracteres):</label>
-                    <input type="text" id="zionSignature" placeholder="Digite aqui para assinar..." class="zion-input input-full-width" maxlength="50">
-                    <p id="zionSignatureContador" class="label-small">0/50</p>
-                    <p class="signature-preview"><span id="signaturePreview">-</span></p>
+                <div class="interactive-block-content" data-auto="content">
+                    <label class="label-small" data-auto="label-signature">Assinatura (máx 50 caracteres):</label>
+                    <input type="text" id="zionSignature" placeholder="Digite aqui para assinar..." class="zion-input input-full-width" maxlength="50" data-auto="input-signature">
+                    <p id="zionSignatureContador" class="label-small" data-auto="counter-signature">0/50</p>
+                    <p class="signature-preview" data-auto="signature-preview-wrapper"><span id="signaturePreview" data-auto="signature-preview-text">-</span></p>
                     
                     <!-- Accordion Critérios de Aceite -->
-                    <div class="acceptance-accordion">
-                        <div class="acceptance-header">
+                    <div class="acceptance-accordion" data-auto="criteria-accordion">
+                        <div class="acceptance-header" data-auto="criteria-header">
                             <span class="acceptance-header-title">📋 Critérios de Aceite</span>
                             <span class="acceptance-toggle">▼</span>
                         </div>
-                        <div class="acceptance-body">
+                        <div class="acceptance-body" data-auto="criteria-body">
                             <ul>
                                 <li>Campo aceita máximo 50 caracteres</li>
                                 <li>Contador exibe caracteres digitados em tempo real</li>
@@ -627,24 +635,24 @@
             </div>
 
             <!-- BLOCO 16: Select Simples -->
-            <div class="interactive-block test-auto" id="bloco-16-select-tipo">
+            <div class="interactive-block test-auto" id="bloco-16-select-tipo" data-test="bloco-16" data-auto="bloco-16-container">
                 <h3>16 - 📋 Select Tipo</h3>
-                <div class="interactive-block-content">
-                    <select id="zionSelectType" class="zion-select input-full-width">
+                <div class="interactive-block-content" data-auto="content">
+                    <select id="zionSelectType" class="zion-select input-full-width" data-auto="select-type">
                         <option value="">-- Selecione um tipo --</option>
                         <option value="basic">Básico</option>
                         <option value="standard">Padrão</option>
                         <option value="premium">Premium</option>
                     </select>
-                    <p class="text-info">Tipo: <span id="typeResult" class="text-validation">Nenhum</span></p>
+                    <p class="text-info" data-auto="info-type">Tipo: <span id="typeResult" class="text-validation" data-auto="result-type">Nenhum</span></p>
                     
                     <!-- Accordion Critérios de Aceite -->
-                    <div class="acceptance-accordion">
-                        <div class="acceptance-header">
+                    <div class="acceptance-accordion" data-auto="criteria-accordion">
+                        <div class="acceptance-header" data-auto="criteria-header">
                             <span class="acceptance-header-title">📋 Critérios de Aceite</span>
                             <span class="acceptance-toggle">▼</span>
                         </div>
-                        <div class="acceptance-body">
+                        <div class="acceptance-body" data-auto="criteria-body">
                             <ul>
                                 <li>Dropdown com 4 opções: placeholder + 3 tipos</li>
                                 <li>Seleção padrão: placeholder "-- Selecione um tipo --"</li>
@@ -658,26 +666,26 @@
             </div>
 
             <!-- BLOCO 17: Select Múltiplo -->
-            <div class="interactive-block test-auto" id="bloco-17-select-multiplo">
+            <div class="interactive-block test-auto" id="bloco-17-select-multiplo" data-test="bloco-17" data-auto="bloco-17-container">
                 <h3>17 - 🍎 Select Múltiplo</h3>
-                <div class="interactive-block-content">
-                    <select id="zionSelectFruits" class="zion-select input-full-width" multiple>
+                <div class="interactive-block-content" data-auto="content">
+                    <select id="zionSelectFruits" class="zion-select input-full-width" multiple data-auto="select-fruits">
                         <option value="apple">Maçã</option>
                         <option value="banana">Banana</option>
                         <option value="cherry">Cereja</option>
                         <option value="date">Tâmara</option>
                         <option value="elderberry">Sabugueiro</option>
                     </select>
-                    <p class="label-small">CTRL+Click para selecionar múltiplas</p>
-                    <p class="text-info">Frutas: <span id="fruitsResult" class="text-validation">Nenhuma</span></p>
+                    <p class="label-small" data-auto="info-help">CTRL+Click para selecionar múltiplas</p>
+                    <p class="text-info" data-auto="info-fruits">Frutas: <span id="fruitsResult" class="text-validation" data-auto="result-fruits">Nenhuma</span></p>
                     
                     <!-- Accordion Critérios de Aceite -->
-                    <div class="acceptance-accordion">
-                        <div class="acceptance-header">
+                    <div class="acceptance-accordion" data-auto="criteria-accordion">
+                        <div class="acceptance-header" data-auto="criteria-header">
                             <span class="acceptance-header-title">📋 Critérios de Aceite</span>
                             <span class="acceptance-toggle">▼</span>
                         </div>
-                        <div class="acceptance-body">
+                        <div class="acceptance-body" data-auto="criteria-body">
                             <ul>
                                 <li>Select com atributo "multiple" para múltiplas seleções</li>
                                 <li>Contém 5 opções de frutas</li>
@@ -691,25 +699,25 @@
             </div>
 
             <!-- BLOCO 18: Lista - Animais -->
-            <div class="interactive-block test-auto" id="bloco-18-lista-animais">
+            <div class="interactive-block test-auto" id="bloco-18-lista-animais" data-test="bloco-18" data-auto="bloco-18-container">
                 <h3>18 - 📏 Lista - Animais</h3>
-                <div class="interactive-block-content">
-                    <ul id="animalsList" class="items-list">
-                        <li>Camelo</li>
-                        <li>Gato</li>
-                        <li>Lagarta</li>
-                        <li>Vaca</li>
-                        <li>Cachorro</li>
+                <div class="interactive-block-content" data-auto="content">
+                    <ul id="animalsList" class="items-list" data-auto="animals-list">
+                        <li data-auto="item-camel">Camelo</li>
+                        <li data-auto="item-cat">Gato</li>
+                        <li data-auto="item-caterpillar">Lagarta</li>
+                        <li data-auto="item-cow">Vaca</li>
+                        <li data-auto="item-dog">Cachorro</li>
                     </ul>
-                    <p class="text-info">Total: <span id="animalCount" class="text-validation">5</span></p>
+                    <p class="text-info" data-auto="info-count">Total: <span id="animalCount" class="text-validation" data-auto="result-count">5</span></p>
                     
                     <!-- Accordion Critérios de Aceite -->
-                    <div class="acceptance-accordion">
-                        <div class="acceptance-header">
+                    <div class="acceptance-accordion" data-auto="criteria-accordion">
+                        <div class="acceptance-header" data-auto="criteria-header">
                             <span class="acceptance-header-title">📋 Critérios de Aceite</span>
                             <span class="acceptance-toggle">▼</span>
                         </div>
-                        <div class="acceptance-body">
+                        <div class="acceptance-body" data-auto="criteria-body">
                             <ul>
                                 <li>Lista contém 5 animais diferentes</li>
                                 <li>Cada animal é exibido em item separado</li>
@@ -723,20 +731,20 @@
             </div>
 
             <!-- BLOCO 19: Upload Arquivo com Drag & Drop -->
-            <div class="interactive-block test-auto" id="bloco-19-upload">
+            <div class="interactive-block test-auto" id="bloco-19-upload" data-test="bloco-19" data-auto="bloco-19-container">
                 <h3>19 - 📁 Upload Arquivo</h3>
-                <div class="interactive-block-content">
-                    <input type="file" id="zionFileInput" class="zion-file-input input-margin-bottom" accept=".pdf,.jpg,.jpeg,.png,.gif,.doc,.docx">
-                    <p class="label-small">✓ Aceitos: PDF, JPG, PNG, GIF, DOC, DOCX | ✓ Máximo: 5 MB | ✓ Drag & drop suportado</p>
-                    <p class="text-info">Arquivo: <span id="fileResult" class="text-validation">Nenhum</span></p>
+                <div class="interactive-block-content" data-auto="content">
+                    <input type="file" id="zionFileInput" class="zion-file-input input-margin-bottom" accept=".pdf,.jpg,.jpeg,.png,.gif,.doc,.docx" data-auto="input-file">
+                    <p class="label-small" data-auto="info-help">✓ Aceitos: PDF, JPG, PNG, GIF, DOC, DOCX | ✓ Máximo: 5 MB | ✓ Drag & drop suportado</p>
+                    <p class="text-info" data-auto="info-file">Arquivo: <span id="fileResult" class="text-validation" data-auto="result-file">Nenhum</span></p>
                     
                     <!-- Accordion Critérios de Aceite -->
-                    <div class="acceptance-accordion">
-                        <div class="acceptance-header">
+                    <div class="acceptance-accordion" data-auto="criteria-accordion">
+                        <div class="acceptance-header" data-auto="criteria-header">
                             <span class="acceptance-header-title">📋 Critérios de Aceite</span>
                             <span class="acceptance-toggle">▼</span>
                         </div>
-                        <div class="acceptance-body">
+                        <div class="acceptance-body" data-auto="criteria-body">
                             <ul>
                                 <li>Input aceita tipos: PDF, JPG, PNG, GIF, DOC, DOCX</li>
                                 <li>Tamanho máximo: 5 MB</li>
@@ -750,19 +758,19 @@
             </div>
 
             <!-- BLOCO 20: Download Arquivo Zion -->
-            <div class="interactive-block test-auto" id="bloco-20-download-arquivo">
+            <div class="interactive-block test-auto" id="bloco-20-download-arquivo" data-test="bloco-20" data-auto="bloco-20-container">
                 <h3>20 - ⬇️ Download Arquivo</h3>
-                <div class="interactive-block-content">
-                    <button type="button" id="downloadBtn" class="btn-primary">📥 Download</button>
-                    <p class="text-small">Baixa arquivo .txt de exemplo</p>
+                <div class="interactive-block-content" data-auto="content">
+                    <button type="button" id="downloadBtn" class="btn-primary" data-auto="btn-download">📥 Download</button>
+                    <p class="text-small" data-auto="info-download">Baixa arquivo .txt de exemplo</p>
                     
                     <!-- Accordion Critérios de Aceite -->
-                    <div class="acceptance-accordion">
-                        <div class="acceptance-header">
+                    <div class="acceptance-accordion" data-auto="criteria-accordion">
+                        <div class="acceptance-header" data-auto="criteria-header">
                             <span class="acceptance-header-title">📋 Critérios de Aceite</span>
                             <span class="acceptance-toggle">▼</span>
                         </div>
-                        <div class="acceptance-body">
+                        <div class="acceptance-body" data-auto="criteria-body">
                             <ul>
                                 <li>Botão de download visível e funcional</li>
                                 <li>Click inicia download automático do arquivo</li>
@@ -778,19 +786,19 @@
             <!-- ========== SEÇÃO: DATA/HORA ========== -->
 
             <!-- BLOCO 21: Data Congelada -->
-            <div class="interactive-block test-auto" id="bloco-21-data-congelada">
+            <div class="interactive-block test-auto" id="bloco-21-data-congelada" data-test="bloco-21" data-auto="bloco-21-container">
                 <h3>21 - 🕰️ Data Congelada</h3>
-                <div class="interactive-block-content">
-                    <p>Data/Hora atual:</p>
-                    <div id="dataAtual"></div>
+                <div class="interactive-block-content" data-auto="content">
+                    <p data-auto="info-label">Data/Hora atual:</p>
+                    <div id="dataAtual" data-auto="datetime-display"></div>
                     
                     <!-- Accordion Critérios de Aceite -->
-                    <div class="acceptance-accordion">
-                        <div class="acceptance-header">
+                    <div class="acceptance-accordion" data-auto="criteria-accordion">
+                        <div class="acceptance-header" data-auto="criteria-header">
                             <span class="acceptance-header-title">📋 Critérios de Aceite</span>
                             <span class="acceptance-toggle">▼</span>
                         </div>
-                        <div class="acceptance-body">
+                        <div class="acceptance-body" data-auto="criteria-body">
                             <ul>
                                 <li>Exibe data/hora atual do sistema</li>
                                 <li>Formato padrão: DD/MM/AAAA HH:MM:SS</li>
@@ -803,19 +811,19 @@
             </div>
 
             <!-- BLOCO 22: Date Picker Simples -->
-            <div class="interactive-block test-auto" id="bloco-22-date-picker">
+            <div class="interactive-block test-auto" id="bloco-22-date-picker" data-test="bloco-22" data-auto="bloco-22-container">
                 <h3>22 - 📅 Date Picker Simples</h3>
-                <div class="interactive-block-content">
-                    <input type="date" id="zionDate" class="zion-date-input input-full-width">
-                    <p class="text-info">Data: <span id="dateResult" class="text-validation">dd/mm/aaaa</span></p>
+                <div class="interactive-block-content" data-auto="content">
+                    <input type="date" id="zionDate" class="zion-date-input input-full-width" data-auto="input-date">
+                    <p class="text-info" data-auto="info-date">Data: <span id="dateResult" class="text-validation" data-auto="result-date">dd/mm/aaaa</span></p>
                     
                     <!-- Accordion Critérios de Aceite -->
-                    <div class="acceptance-accordion">
-                        <div class="acceptance-header">
+                    <div class="acceptance-accordion" data-auto="criteria-accordion">
+                        <div class="acceptance-header" data-auto="criteria-header">
                             <span class="acceptance-header-title">📋 Critérios de Aceite</span>
                             <span class="acceptance-toggle">▼</span>
                         </div>
-                        <div class="acceptance-body">
+                        <div class="acceptance-body" data-auto="criteria-body">
                             <ul>
                                 <li>Input type="date" funcional e acessível</li>
                                 <li>Abre datepicker ao clicar no campo</li>
@@ -829,37 +837,37 @@
             </div>
 
             <!-- BLOCO 23: DATA PICKER COM INTERVALO -->
-            <div class="interactive-block test-auto" id="bloco-23-seletor-datas-intervalo">
+            <div class="interactive-block test-auto" id="bloco-23-seletor-datas-intervalo" data-test="bloco-23" data-auto="bloco-23-container">
                 <h3>23 - 📅 Seletor de Datas com Intervalo</h3>
-                <div class="interactive-block-content">
-                    <p class="label-small">Selecione uma data inicial e final para definir um intervalo. O sistema valida se a data final é posterior à inicial.</p>
+                <div class="interactive-block-content" data-auto="content">
+                    <p class="label-small" data-auto="info-help">Selecione uma data inicial e final para definir um intervalo. O sistema valida se a data final é posterior à inicial.</p>
                     
-                    <div class="date-grid">
-                        <div class="date-item">
-                            <label class="date-label">📍 Data Inicial:</label>
-                            <input type="date" id="dataInicial" class="date-input" />
+                    <div class="date-grid" data-auto="date-grid">
+                        <div class="date-item" data-auto="date-item-initial">
+                            <label class="date-label" data-auto="label-initial-date">📍 Data Inicial:</label>
+                            <input type="date" id="dataInicial" class="date-input" data-auto="input-initial-date"/>
                         </div>
-                        <div class="date-item">
-                            <label class="date-label">📍 Data Final:</label>
-                            <input type="date" id="dataFinal" class="date-input" />
+                        <div class="date-item" data-auto="date-item-final">
+                            <label class="date-label" data-auto="label-final-date">📍 Data Final:</label>
+                            <input type="date" id="dataFinal" class="date-input" data-auto="input-final-date"/>
                         </div>
                     </div>
 
-                    <button id="validarIntervaloBtn" class="btn-primary input-full-width">✅ Validar Intervalo</button>
+                    <button id="validarIntervaloBtn" class="btn-primary input-full-width" data-auto="btn-validate-interval">✅ Validar Intervalo</button>
                     
-                    <div id="resultadoIntervalo" class="date-result"></div>
+                    <div id="resultadoIntervalo" class="date-result" data-auto="result-interval"></div>
                     
-                    <div class="info-box">
+                    <div class="info-box" data-auto="info-box">
                         <strong>💡 Dica:</strong> Use este componente para testar validações de datas, seleção de períodos, e cálculo de intervalos em seus testes automatizados.
                     </div>
                     
                     <!-- Accordion Critérios de Aceite -->
-                    <div class="acceptance-accordion">
-                        <div class="acceptance-header">
+                    <div class="acceptance-accordion" data-auto="criteria-accordion">
+                        <div class="acceptance-header" data-auto="criteria-header">
                             <span class="acceptance-header-title">📋 Critérios de Aceite</span>
                             <span class="acceptance-toggle">▼</span>
                         </div>
-                        <div class="acceptance-body">
+                        <div class="acceptance-body" data-auto="criteria-body">
                             <ul>
                                 <li>Input de data inicial aceita datas válidas</li>
                                 <li>Input de data final aceita datas válidas</li>
@@ -873,21 +881,21 @@
             </div>
 
             <!-- BLOCO 24: Password Toggle -->
-            <div class="interactive-block test-auto" id="bloco-24-password-toggle">
+            <div class="interactive-block test-auto" id="bloco-24-password-toggle" data-test="bloco-24" data-auto="bloco-24-container">
                 <h3>24 - 🔐 Password Toggle</h3>
-                <div class="interactive-block-content">
-                    <div class="input-flex">
-                        <input type="password" id="zionPassword" placeholder="Digite senha" class="zion-password-input input-flex-1">
-                        <button type="button" id="togglePasswordBtn" class="toggle-password-btn">👁️</button>
+                <div class="interactive-block-content" data-auto="content">
+                    <div class="input-flex" data-auto="password-wrapper">
+                        <input type="password" id="zionPassword" placeholder="Digite senha" class="zion-password-input input-flex-1" data-auto="input-password">
+                        <button type="button" id="togglePasswordBtn" class="toggle-password-btn" data-auto="btn-toggle-visibility">👁️</button>
                     </div>
                     
                     <!-- Accordion Critérios de Aceite -->
-                    <div class="acceptance-accordion">
-                        <div class="acceptance-header">
+                    <div class="acceptance-accordion" data-auto="criteria-accordion">
+                        <div class="acceptance-header" data-auto="criteria-header">
                             <span class="acceptance-header-title">📋 Critérios de Aceite</span>
                             <span class="acceptance-toggle">▼</span>
                         </div>
-                        <div class="acceptance-body">
+                        <div class="acceptance-body" data-auto="criteria-body">
                             <ul>
                                 <li>Input tipo password oculta senha por padrão</li>
                                 <li>Botão de olho (👁️) alterna visibilidade</li>
@@ -901,9 +909,9 @@
             </div>
 
             <!-- BLOCO 25: Código Dinâmico -->
-            <div class="interactive-block test-auto" id="bloco-25-codigo-dinamico">
+            <div class="interactive-block test-auto" id="bloco-25-codigo-dinamico" data-test="bloco-25" data-auto="bloco-25-container">
                 <h3>25 - 🔢 Código Dinâmico</h3>
-                <div class="interactive-block-content">
+                <div class="interactive-block-content" data-auto="content">
                     <p class="code-container">Código: <span id="dynamicCode" class="text-validation">-</span></p>
                     <input type="text" id="zionCodeInput" placeholder="Digite o código..." class="zion-input input-full-width">
                     <button type="button" id="submitCodeBtn" class="zion-button">✓ Enviar</button>
@@ -930,9 +938,9 @@
             <!-- ========== SEÇÃO: COMPONENTES AVANÇADOS ========== -->
 
             <!-- BLOCO 26: MODAL / DIALOG -->
-            <div class="interactive-block test-auto" id="bloco-26-modal">
+            <div class="interactive-block test-auto" id="bloco-26-modal" data-test="bloco-26" data-auto="bloco-26-container">
                 <h3>26 - 🪟 Modal / Dialog</h3>
-                <div class="interactive-block-content">
+                <div class="interactive-block-content" data-auto="content">
                     <button id="openModalBtn" class="btn-primary">📫 Abrir Modal</button>
                     
                     <!-- Modal -->
@@ -974,9 +982,9 @@
             </div>
 
             <!-- BLOCO 27: TOAST / NOTIFICAÇÕES -->
-            <div class="interactive-block test-auto" id="bloco-27-toast">
-                <h3>27 - � Toast / Notificações</h3>
-                <div class="interactive-block-content">
+            <div class="interactive-block test-auto" id="bloco-27-toast" data-test="bloco-27" data-auto="bloco-27-container">
+                <h3>27 - ✔️ Toast / Notificações</h3>
+                <div class="interactive-block-content" data-auto="content">
                     <div class="toast-buttons">
                         <button id="successToastBtn" class="btn-success">✅ Sucesso</button>
                         <button id="errorToastBtn" class="btn-danger">❌ Erro</button>
@@ -1006,9 +1014,9 @@
             </div>
 
             <!-- BLOCO 28: TABS / ABAS -->
-            <div class="interactive-block test-auto" id="bloco-28-tabs">
-                <h3>28 - � Tabs / Abas</h3>
-                <div class="interactive-block-content">
+            <div class="interactive-block test-auto" id="bloco-28-tabs" data-test="bloco-28" data-auto="bloco-28-container">
+                <h3>28 - → Tabs / Abas</h3>
+                <div class="interactive-block-content" data-auto="content">
                     <div class="tabs-container">
                         <div class="tabs-header">
                             <button class="tab-button active" data-tab="tab1">Aba 1</button>
@@ -1050,9 +1058,9 @@
             </div>
 
             <!-- BLOCO 29: LOADING STATES -->
-            <div class="interactive-block test-auto" id="bloco-29-loading">
+            <div class="interactive-block test-auto" id="bloco-29-loading" data-test="bloco-29" data-auto="bloco-29-container">
                 <h3>29 - 🔄 Loading States</h3>
-                <div class="interactive-block-content">
+                <div class="interactive-block-content" data-auto="content">
                     <button id="triggerLoadingBtn" class="btn-primary">⚙️ Simular Carregamento</button>
                     
                     <div id="loadingContainer" style="display:none; margin-top:20px;">
@@ -1084,9 +1092,9 @@
             </div>
 
             <!-- BLOCO 30: DROPDOWN MENU -->
-            <div class="interactive-block test-auto" id="bloco-30-dropdown">
-                <h3>30 - � Dropdown Menu</h3>
-                <div class="interactive-block-content">
+            <div class="interactive-block test-auto" id="bloco-30-dropdown" data-test="bloco-30" data-auto="bloco-30-container">
+                <h3>30 - 💾 Dropdown Menu</h3>
+                <div class="interactive-block-content" data-auto="content">
                     <div class="dropdown-container">
                         <button id="dropdownBtn" class="btn-primary dropdown-toggle">📂 Menu ▼</button>
                         <div id="dropdownMenu" class="dropdown-menu" style="display:none;">
@@ -1120,35 +1128,105 @@
             </div>
 
             <!-- BLOCO 31: AUTOCOMPLETE -->
-            <div class="interactive-block test-auto" id="bloco-31-autocomplete">
-                <h3>31 - � Autocomplete</h3>
+            <div class="interactive-block test-auto" id="bloco-31-autocomplete" data-test="bloco-31-autocomplete">
+                <h3>31 - 💬 Autocomplete</h3>
                 <div class="interactive-block-content">
-                    <div class="autocomplete-container">
-                        <input type="text" id="autocompleteInput" class="autocomplete-input" placeholder="Digite um país...">
-                        <ul id="autocompleteList" class="autocomplete-list" style="display:none;">
-                            <li data-value="Brasil">🇧🇷 Brasil</li>
-                            <li data-value="Argentina">🇦🇷 Argentina</li>
-                            <li data-value="Chile">🇨🇱 Chile</li>
-                            <li data-value="Colombia">🇨🇴 Colombia</li>
-                            <li data-value="Peru">🇵🇪 Peru</li>
+                    <!-- Seletor de Categoria -->
+                    <div class="autocomplete-category-selector" data-auto="category-selector">
+                        <label for="autocompleteCategorySelect">Selecione uma categoria:</label>
+                        <select id="autocompleteCategorySelect" class="autocomplete-category-select" data-test="category-select" data-auto="category-dropdown">
+                            <option value="paises">🌍 Países</option>
+                            <option value="times">⚽ Times de Futebol</option>
+                        </select>
+                    </div>
+
+                    <!-- Grupo 1: Países -->
+                    <div id="autocompleteCountries" class="autocomplete-container active" data-test="autocomplete-countries" data-auto="countries-container">
+                        <input type="text" id="autocompleteInputCountries" class="autocomplete-input" placeholder="Digite um país..." data-test="autocomplete-input-countries" data-auto="input-countries">
+                        <ul id="autocompleteListCountries" class="autocomplete-list" style="display:none;" data-test="autocomplete-list-countries" data-auto="list-countries">
+                            <li data-value="Brasil" data-test="option-brasil" data-auto="item-brasil">🇧🇷 Brasil</li>
+                            <li data-value="Argentina" data-test="option-argentina" data-auto="item-argentina">🇦🇷 Argentina</li>
+                            <li data-value="Espanha" data-test="option-espanha" data-auto="item-espanha">🇪🇸 Espanha</li>
+                            <li data-value="Colombia" data-test="option-colombia" data-auto="item-colombia">🇨🇴 Colombia</li>
+                            <li data-value="Peru" data-test="option-peru" data-auto="item-peru">🇵🇪 Peru</li>
+                        </ul>
+                    </div>
+
+                    <!-- Grupo 2: Times de Futebol -->
+                    <div id="autocompleteTeams" class="autocomplete-container" style="display:none;" data-test="autocomplete-teams" data-auto="teams-container">
+                        <input type="text" id="autocompleteInputTeams" class="autocomplete-input" placeholder="Digite um time..." data-test="autocomplete-input-teams" data-auto="input-teams">
+                        <ul id="autocompleteListTeams" class="autocomplete-list" style="display:none;" data-test="autocomplete-list-teams" data-auto="list-teams">
+                            <li data-value="Boca Juniors" data-test="option-bocajuniors" data-auto="item-bocajuniors">🔵💛 Boca Juniors</li>
+                            <li data-value="Corinthians" data-test="option-corinthians" data-auto="item-corinthians">⚫⚪ Corinthians</li>
+                            <li data-value="Barcelona" data-test="option-barcelona" data-auto="item-barcelona">🔵🔴 Barcelona</li>
+                            <li data-value="Milan" data-test="option-milan" data-auto="item-milan">🔴⚫ Milan</li>
+                            <li data-value="Manchester City" data-test="option-manchestercity" data-auto="item-manchestercity">🔵 Manchester City</li>
                         </ul>
                     </div>
                     
-                    <p id="autocompleteResult" class="text-validation"></p>
+                    <p id="autocompleteResult" class="text-validation" data-test="autocomplete-result" data-auto="result-message"></p>
+
+                    <!-- Accordion Regras de Funcionamento -->
+                    <div class="acceptance-accordion" data-test="rules-section" data-auto="rules-accordion">
+                        <div class="acceptance-header" data-auto="rules-header">
+                            <span class="acceptance-header-title">⚙️ Regras de Funcionamento</span>
+                            <span class="acceptance-toggle">▼</span>
+                        </div>
+                        <div class="acceptance-body" data-auto="rules-body">
+                            <ul data-auto="rules-list">
+                                <li>Selecione uma categoria acima</li>
+                                <li>Digite para filtrar as opções</li>
+                                <li>Clique na opção desejada para selecionar</li>
+                                <li>A busca não diferencia maiúsculas de minúsculas</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Accordion Opções Autocompleáveis -->
+                    <div class="acceptance-accordion" data-test="options-section" data-auto="options-accordion">
+                        <div class="acceptance-header" data-auto="options-header">
+                            <span class="acceptance-header-title">📍 Opções Autocompleáveis por Categoria</span>
+                            <span class="acceptance-toggle">▼</span>
+                        </div>
+                        <div class="acceptance-body" data-auto="options-body">
+                            <div data-auto="options-countries" style="margin-bottom: 15px;">
+                                <strong style="color: #0066cc;">🌍 Países (5 opções):</strong>
+                                <ul style="margin-top: 8px; margin-left: 20px; list-style: disc;">
+                                    <li data-auto="option-desc-brasil">Brasil (🇧🇷)</li>
+                                    <li data-auto="option-desc-argentina">Argentina (🇦🇷)</li>
+                                    <li data-auto="option-desc-espanha">Espanha (🇪🇸)</li>
+                                    <li data-auto="option-desc-colombia">Colombia (🇨🇴)</li>
+                                    <li data-auto="option-desc-peru">Peru (🇵🇪)</li>
+                                </ul>
+                            </div>
+
+                            <div data-auto="options-teams" style="margin-bottom: 15px;">
+                                <strong style="color: #0066cc;">⚽ Times de Futebol (5 opções):</strong>
+                                <ul style="margin-top: 8px; margin-left: 20px; list-style: disc;">
+                                    <li data-auto="option-desc-bocajuniors">Boca Juniors (🔵💛)</li>
+                                    <li data-auto="option-desc-corinthians">Corinthians (⚫⚪)</li>
+                                    <li data-auto="option-desc-barcelona">Barcelona (🔵🔴)</li>
+                                    <li data-auto="option-desc-milan">Milan (🔴⚫)</li>
+                                    <li data-auto="option-desc-manchestercity">Manchester City (🔵)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
                     
                     <!-- Accordion Critérios de Aceite -->
-                    <div class="acceptance-accordion">
-                        <div class="acceptance-header">
+                    <div class="acceptance-accordion" data-test="acceptance-criteria" data-auto="criteria-accordion">
+                        <div class="acceptance-header" data-auto="criteria-header">
                             <span class="acceptance-header-title">📋 Critérios de Aceite</span>
                             <span class="acceptance-toggle">▼</span>
                         </div>
-                        <div class="acceptance-body">
-                            <ul>
-                                <li>Campo aceita entrada de texto</li>
-                                <li>Ao digitar, lista de sugestões aparece</li>
-                                <li>Sugestões filtram por texto digitado</li>
-                                <li>Clicar em sugestão preenchea o campo</li>
-                                <li>Resultado é exibido após seleção</li>
+                        <div class="acceptance-body" data-auto="criteria-body">
+                            <ul data-auto="criteria-list">
+                                <li>2 categorias disponíveis: Países e Times de Futebol</li>
+                                <li>Campo de texto aceita qualquer entrada</li>
+                                <li>Lista de sugestões aparece ao digitar</li>
+                                <li>Filtro funciona de forma dinâmica</li>
+                                <li>Clicar na opção preenche o campo e mostra mensagem de sucesso</li>
+                                <li>Total de 10 opções: Países (5) + Times (5)</li>
                             </ul>
                         </div>
                     </div>
@@ -1156,9 +1234,9 @@
             </div>
 
             <!-- BLOCO 32: PAGINATION -->
-            <div class="interactive-block test-auto" id="bloco-32-pagination">
-                <h3>32 - � Pagination</h3>
-                <div class="interactive-block-content">
+            <div class="interactive-block test-auto" id="bloco-32-pagination" data-test="bloco-32" data-auto="bloco-32-container">
+                <h3>32 - ⏩ Pagination</h3>
+                <div class="interactive-block-content" data-auto="content">
                     <div id="paginationContent" class="pagination-content"></div>
                     
                     <nav class="pagination">
@@ -1187,9 +1265,9 @@
             </div>
 
             <!-- BLOCO 33: DRAG & DROP -->
-            <div class="interactive-block test-auto" id="bloco-33-dragdrop">
+            <div class="interactive-block test-auto" id="bloco-33-dragdrop" data-test="bloco-33" data-auto="bloco-33-container">
                 <h3>33 - ✋ Drag & Drop</h3>
-                <div class="interactive-block-content">
+                <div class="interactive-block-content" data-auto="content">
                     <div class="dragdrop-container">
                         <div class="dragdrop-source">
                             <h4>Arraste de aqui</h4>
@@ -1228,9 +1306,9 @@
             </div>
 
             <!-- BLOCO 34: BREADCRUMB -->
-            <div class="interactive-block test-auto" id="bloco-34-breadcrumb">
+            <div class="interactive-block test-auto" id="bloco-34-breadcrumb" data-test="bloco-34" data-auto="bloco-34-container">
                 <h3>34 - 🗺️ Breadcrumb</h3>
-                <div class="interactive-block-content">
+                <div class="interactive-block-content" data-auto="content">
                     <nav class="breadcrumb">
                         <a href="#" class="breadcrumb-item">Home</a>
                         <span class="breadcrumb-separator">/</span>
@@ -1263,9 +1341,9 @@
             </div>
 
             <!-- BLOCO 35: TOOLTIP -->
-            <div class="interactive-block test-auto" id="bloco-35-tooltip">
-                <h3>35 - � Tooltip</h3>
-                <div class="interactive-block-content">
+            <div class="interactive-block test-auto" id="bloco-35-tooltip" data-test="bloco-35" data-auto="bloco-35-container">
+                <h3>35 - 🔍 Tooltip</h3>
+                <div class="interactive-block-content" data-auto="content">
                     <div class="tooltip-container">
                         <button class="btn-info tooltip-trigger" data-tooltip="🔝 Tooltip Superior">Hover para top</button>
                         <button class="btn-info tooltip-trigger" data-tooltip="🔽 Tooltip Inferior">Hover para bottom</button>
@@ -1297,9 +1375,9 @@
             <!-- ========== SEÇÃO: API TESTING & QUIZ ========== -->
 
             <!-- BLOCO 36: API STATUS 200 -->
-            <div class="interactive-block test-auto" id="bloco-36-api-status-200">
+            <div class="interactive-block test-auto" id="bloco-36-api-status-200" data-test="bloco-36" data-auto="bloco-36-container">
                 <h3>36 - 🌐 API Status 200 - Respostas Bem-sucedidas</h3>
-                <div class="interactive-block-content">
+                <div class="interactive-block-content" data-auto="content">
                     <p class="label-small">Teste diferentes tipos de requisições HTTP (GET, POST, PUT, DELETE) com status 200 (OK), 201 (Criado) e 204 (Sem Conteúdo).</p>
                     
                     <div class="api-buttons">
@@ -1335,9 +1413,9 @@
             </div>
 
             <!-- BLOCO 37: API STATUS 300 -->
-            <div class="interactive-block test-auto" id="bloco-37-api-status-300">
+            <div class="interactive-block test-auto" id="bloco-37-api-status-300" data-test="bloco-37" data-auto="bloco-37-container">
                 <h3>37 - 🌐 API Status 300 - Redirecionamentos</h3>
-                <div class="interactive-block-content">
+                <div class="interactive-block-content" data-auto="content">
                     <p class="label-small">Teste respostas HTTP com status 300 (Múltiplas Escolhas), 301 (Movido Permanentemente), 302 (Encontrado) e 304 (Não Modificado).</p>
                     
                     <div class="api-buttons">
@@ -1369,9 +1447,9 @@
             </div>
 
             <!-- BLOCO 38: API STATUS 400 -->
-            <div class="interactive-block test-auto" id="bloco-38-api-status-400">
+            <div class="interactive-block test-auto" id="bloco-38-api-status-400" data-test="bloco-38" data-auto="bloco-38-container">
                 <h3>38 - 🌐 API Status 400 - Erros do Cliente</h3>
-                <div class="interactive-block-content">
+                <div class="interactive-block-content" data-auto="content">
                     <p class="label-small">Teste respostas HTTP com status 400 (Requisição Inválida), 401 (Não Autorizado), 403 (Proibido) e 404 (Não Encontrado).</p>
                     
                     <div class="api-buttons">
@@ -1403,7 +1481,7 @@
             </div>
 
             <!-- BLOCO 39: API STATUS 500 -->
-            <div class="interactive-block test-auto" id="bloco-39-api-status-500">
+            <div class="interactive-block test-auto" id="bloco-39-api-status-500" data-test="bloco-39">
                 <h3>39 - 🌐 API Status 500 - Erros do Servidor</h3>
                 <div class="interactive-block-content">
                     <p class="label-small">Teste respostas HTTP com status 500 (Erro Interno), 501 (Não Implementado), 502 (Gateway Inválido) e 503 (Serviço Indisponível).</p>
@@ -1436,37 +1514,37 @@
                 </div>
             </div>
 
-            <!-- BLOCO 40: CTFL Quiz - TESTE FINAL -->
-            <div class="interactive-block test-auto" id="bloco-40-ctfl-quiz">
+            <!-- BLOCO 40: CTFL QUIZ - TESTE FINAL -->
+            <div class="interactive-block test-auto" id="bloco-40-ctfl-quiz" data-test="bloco-40">
                 <h3>40 - 📨 CTFL Quiz - Teste Seu Conhecimento</h3>
-                <div class="interactive-block-content">
-                    <div class="quiz-header">
+                <div class="interactive-block-content" data-auto="quiz-content">
+                    <div class="quiz-header" data-auto="quiz-header">
                         <span>Pontuação:</span>
-                        <span id="quizPontuacao" class="text-validation">0/45</span>
+                        <span id="quizPontuacao" class="text-validation" data-test="quiz-score">0/45</span>
                     </div>
                     
-                    <h5 id="pergunta">Carregando pergunta...</h5>
+                    <h5 id="pergunta" data-test="quiz-question">Carregando pergunta...</h5>
                     
-                    <form id="formRespostas" class="quiz-form">
-                        <label class="quiz-label"><input type="radio" name="resposta" value="0"> <span id="resposta0"></span></label>
-                        <label class="quiz-label"><input type="radio" name="resposta" value="1"> <span id="resposta1"></span></label>
-                        <label class="quiz-label"><input type="radio" name="resposta" value="2"> <span id="resposta2"></span></label>
-                        <label class="quiz-label"><input type="radio" name="resposta" value="3"> <span id="resposta3"></span></label>
+                    <form id="formRespostas" class="quiz-form" data-test="quiz-form">
+                        <label class="quiz-label"><input type="radio" name="resposta" value="0" data-test="quiz-option-1"> <span id="resposta0"></span></label>
+                        <label class="quiz-label"><input type="radio" name="resposta" value="1" data-test="quiz-option-2"> <span id="resposta1"></span></label>
+                        <label class="quiz-label"><input type="radio" name="resposta" value="2" data-test="quiz-option-3"> <span id="resposta2"></span></label>
+                        <label class="quiz-label"><input type="radio" name="resposta" value="3" data-test="quiz-option-4"> <span id="resposta3"></span></label>
                     </form>
                     
-                    <div class="quiz-buttons">
-                        <button id="verificarBtn" class="btn-primary">✔️ Verificar</button>
-                        <button id="proximaBtn" class="btn-primary">🔁 Próxima</button>
-                        <button id="reiniciarBtn" class="btn-secondary">🔄 Reiniciar</button>
+                    <div class="quiz-buttons" data-auto="quiz-buttons">
+                        <button id="verificarBtn" class="btn-primary" data-test="btn-verify-answer">✔️ Verificar</button>
+                        <button id="proximaBtn" class="btn-primary" data-test="btn-next-question">🔁 Próxima</button>
+                        <button id="reiniciarBtn" class="btn-secondary" data-test="btn-restart-quiz">🔄 Reiniciar</button>
                     </div>
-                    <p id="quizMensagem" class="quiz-message"></p>
+                    <p id="quizMensagem" class="quiz-message" data-auto="quiz-message"></p>
                 </div>
             </div>
 
             <!-- BLOCO 41: DOWNLOAD SYLLABUS 4.0 PT -->
-            <div class="interactive-block test-auto" id="bloco-41-syllabus-pdf">
-                <h3>41 - � Download Syllabus 4.0 - Português</h3>
-                <div class="interactive-block-content">
+            <div class="interactive-block test-auto" id="bloco-41-syllabus-pdf" data-test="bloco-41" data-auto="bloco-41-container">
+                <h3>41 - 📚 Download Syllabus 4.0 - Português</h3>
+                <div class="interactive-block-content" data-auto="content">
                     <p class="label-small">Baixe o documento oficial Syllabus 4.0 em português. Este é o guia completo de conceitos, competências e conhecimentos em Quality Assurance.</p>
                     
                     <div class="syllabus-info">
@@ -1524,7 +1602,7 @@
                     <!-- API & Quiz -->
                     <div class="info-card">
                         <h3>🌐 A Verdade Absoluta</h3>
-                        <p><strong>Blocos 25-28:</strong> API Testing com diferentes métodos HTTP, CTFL Quiz expandido com 12 perguntas, Date Picker com validação de intervalo, Requisições HTTP variadas e Download do Syllabus 4.0 PT. Aqui está o teste final de seu conhecimento e os recursos para certificação.</p>
+                        <p><strong>Blocos 25-41:</strong> Código Dinâmico, Modal, Toast, Tabs, Loading, Dropdown, Autocomplete com sugestões, Pagination, Drag&Drop, Breadcrumb, Tooltip, API Testing com múltiplos status codes (200, 300, 400, 500), CTFL Quiz expandido com 45 perguntas e Download do Syllabus 4.0 PT. Aqui está o teste final de seu conhecimento e os recursos para certificação.</p>
                     </div>
 
                     <!-- Pílula Vermelha -->
