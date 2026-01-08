@@ -1875,3 +1875,639 @@ if (document.readyState === 'loading') {
 } else {
     inicializarZionComponents();
 }
+
+// ========== HANDLERS PARA OS 27 NOVOS COMPONENTES (BLOCOS 42-68) ==========
+
+// BLOCO 42: Spinner/Input Numérico
+const spinnerMinus = document.getElementById('spinnerMinus');
+const spinnerPlus = document.getElementById('spinnerPlus');
+const spinnerValue = document.getElementById('spinnerValue');
+if (spinnerMinus && spinnerPlus && spinnerValue) {
+    spinnerMinus.addEventListener('click', function() {
+        let val = parseInt(spinnerValue.value) || 0;
+        if (val > 0) spinnerValue.value = val - 1;
+    });
+    spinnerPlus.addEventListener('click', function() {
+        let val = parseInt(spinnerValue.value) || 0;
+        if (val < 100) spinnerValue.value = val + 1;
+    });
+}
+
+// BLOCO 43: Máscara de Entrada
+function formatPhone(value) {
+    return value.replace(/\D/g, '').replace(/(\d{2})(\d)/, '($1) $2').replace(/(\d{4})(\d)/, '$1-$2').substring(0, 15);
+}
+function formatCPF(value) {
+    return value.replace(/\D/g, '').replace(/(\d{3})(\d)/, '$1.$2').replace(/(\d{3})(\d)/, '$1.$2').replace(/(\d{3})(\d{2})$/, '$1-$2').substring(0, 14);
+}
+function formatDate(value) {
+    return value.replace(/\D/g, '').replace(/(\d{2})(\d)/, '$1/$2').replace(/(\d{2})(\d)/, '$1/$2').substring(0, 10);
+}
+const telefoneMask = document.getElementById('telefoneMask');
+const cpfMask = document.getElementById('cpfMask');
+const dataMask = document.getElementById('dataMask');
+if (telefoneMask) telefoneMask.addEventListener('input', function() { this.value = formatPhone(this.value); });
+if (cpfMask) cpfMask.addEventListener('input', function() { this.value = formatCPF(this.value); });
+if (dataMask) dataMask.addEventListener('input', function() { this.value = formatDate(this.value); });
+
+// BLOCO 49: Collapse/Accordion
+document.querySelectorAll('.accordion-button').forEach(button => {
+    button.addEventListener('click', function() {
+        const content = this.nextElementSibling;
+        const icon = this.querySelector('.accordion-icon');
+        const isOpen = content.style.maxHeight && content.style.maxHeight !== '0px';
+        
+        if (isOpen) {
+            content.style.maxHeight = '0px';
+            content.style.paddingTop = '0px';
+            content.style.paddingBottom = '0px';
+            icon.textContent = '►';
+        } else {
+            content.style.maxHeight = content.scrollHeight + 'px';
+            content.style.paddingTop = '12px';
+            content.style.paddingBottom = '12px';
+            icon.textContent = '▼';
+        }
+    });
+});
+
+// BLOCO 44: Busca com Debounce
+const debounceSearch = document.getElementById('debounceSearch');
+const debounceResults = document.getElementById('debounceResults');
+const debounceStatus = document.getElementById('debounceStatus');
+let debounceTimer;
+
+// Dados simulados de ferramentas de teste
+const mockUserData = [
+    { name: 'Cypress', email: 'cypress@testing.com', phone: '(11) 98765-4321' },
+    { name: 'Robot Framework', email: 'robot@framework.com', phone: '(21) 99876-5432' },
+    { name: 'Postman', email: 'postman@api.com', phone: '(31) 99654-3210' },
+    { name: 'Playwright', email: 'playwright@browser.com', phone: '(41) 99543-2109' },
+    { name: 'Selenium', email: 'selenium@webdriver.com', phone: '(51) 99432-1098' },
+    { name: 'JavaScript Expert', email: 'js@expert.com', phone: '(61) 99321-0987' },
+    { name: 'Python Developer', email: 'py@dev.com', phone: '(71) 99210-9876' },
+    { name: 'QA Testing Specialist', email: 'qa@test.com', phone: '(81) 99109-8765' }
+];
+
+function performSearch(query) {
+    if (!query.trim()) {
+        debounceResults.innerHTML = '';
+        debounceStatus.textContent = 'Aguardando entrada...';
+        return;
+    }
+    
+    debounceStatus.textContent = 'Buscando...';
+    debounceResults.innerHTML = '';
+    
+    // Simula delay de requisição
+    setTimeout(() => {
+        const searchLower = query.toLowerCase();
+        
+        // Filtra resultados com busca inteligente:
+        // - Case-insensitive (ignora maiúsculas/minúsculas)
+        // - Busca parcial (substring match) apenas no NOME
+        // - Apenas retorna combinações válidas que existem no nome da ferramenta
+        const results = mockUserData.filter(user => {
+            const nameLower = user.name.toLowerCase();
+            
+            // Verifica se a busca é um substring válido APENAS do nome
+            return nameLower.includes(searchLower);
+        });
+        
+        if (results.length > 0) {
+            debounceResults.innerHTML = results.map(r => 
+                `<div style="padding:8px; border-bottom:1px solid #ddd; background:#f9f9f9;">
+                    <strong>👤 ${r.name}</strong><br>
+                    <small>📧 ${r.email}</small><br>
+                    <small>📱 ${r.phone}</small>
+                </div>`
+            ).join('');
+        } else {
+            debounceResults.innerHTML = '<div style="padding:8px; color:#999;">Nenhum resultado encontrado</div>';
+        }
+        
+        debounceStatus.textContent = `Encontrados ${results.length} resultado(s)`;
+    }, 300);
+}
+
+if (debounceSearch) {
+    // Handler para digitação com debounce
+    debounceSearch.addEventListener('input', function() {
+        clearTimeout(debounceTimer);
+        debounceTimer = setTimeout(() => {
+            performSearch(this.value);
+        }, 800);
+    });
+    
+    // Handler para botões de busca rápida
+    document.querySelectorAll('.quick-search-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+            const searchTerm = this.dataset.search;
+            debounceSearch.value = searchTerm;
+            performSearch(searchTerm);
+        });
+    });
+}
+
+// BLOCO 45: Tabela Ordenável
+const sortableTable = document.getElementById('sortableTable');
+if (sortableTable) {
+    const headers = sortableTable.querySelectorAll('th.sortable');
+    headers.forEach(header => {
+        header.addEventListener('click', function() {
+            const column = this.dataset.column;
+            const tbody = sortableTable.querySelector('tbody');
+            const rows = Array.from(tbody.querySelectorAll('tr'));
+            const columnIndex = Array.from(headers).indexOf(this);
+            rows.sort((a, b) => {
+                const aVal = a.children[columnIndex].textContent;
+                const bVal = b.children[columnIndex].textContent;
+                return isNaN(aVal) ? aVal.localeCompare(bVal) : aVal - bVal;
+            });
+            tbody.innerHTML = '';
+            rows.forEach(row => tbody.appendChild(row));
+        });
+    });
+}
+
+// BLOCO 46: Tabela com Filtros
+const filterName = document.getElementById('filterName');
+const filterDept = document.getElementById('filterDept');
+const filteredTable = document.getElementById('filteredTable');
+const filterResult = document.getElementById('filterResult');
+function updateTableFilter() {
+    const nameValue = (filterName?.value || '').toLowerCase();
+    const deptValue = (filterDept?.value || '').toLowerCase();
+    const rows = filteredTable?.querySelectorAll('tbody tr') || [];
+    let visibleCount = 0;
+    rows.forEach(row => {
+        const name = row.children[0]?.textContent?.toLowerCase() || '';
+        const dept = row.children[1]?.textContent?.toLowerCase() || '';
+        const visible = name.includes(nameValue) && dept.includes(deptValue);
+        row.style.display = visible ? '' : 'none';
+        if (visible) visibleCount++;
+    });
+    if (filterResult) filterResult.textContent = `Exibindo ${visibleCount} de ${rows.length} registros`;
+}
+if (filterName) filterName.addEventListener('input', updateTableFilter);
+if (filterDept) filterDept.addEventListener('input', updateTableFilter);
+
+// BLOCO 47: Carrossel/Slider
+const carouselSlide = document.getElementById('carouselSlide');
+const prevSlide = document.getElementById('prevSlide');
+const nextSlide = document.getElementById('nextSlide');
+const carouselIndicator = document.getElementById('carouselIndicator');
+let currentSlide = 0;
+
+function updateCarousel() {
+    if (!carouselSlide) return;
+    
+    const slides = carouselSlide.querySelectorAll('.carousel-item');
+    const dots = document.querySelectorAll('.carousel-dot');
+    
+    slides.forEach((slide, i) => {
+        slide.classList.toggle('active', i === currentSlide);
+    });
+    
+    dots.forEach((dot, i) => {
+        dot.classList.toggle('active', i === currentSlide);
+    });
+    
+    if (carouselIndicator) {
+        carouselIndicator.textContent = `Slide ${currentSlide + 1} de ${slides.length}`;
+    }
+    
+    // Desabilita botões no início/fim (opcional)
+    if (prevSlide) prevSlide.disabled = currentSlide === 0;
+    if (nextSlide) nextSlide.disabled = currentSlide === slides.length - 1;
+}
+
+if (prevSlide && carouselSlide) {
+    prevSlide.addEventListener('click', () => {
+        const slides = carouselSlide.querySelectorAll('.carousel-item').length;
+        if (currentSlide > 0) {
+            currentSlide--;
+        }
+        updateCarousel();
+    });
+}
+
+if (nextSlide && carouselSlide) {
+    nextSlide.addEventListener('click', () => {
+        const slides = carouselSlide.querySelectorAll('.carousel-item').length;
+        if (currentSlide < slides - 1) {
+            currentSlide++;
+        }
+        updateCarousel();
+    });
+}
+
+// Handler para dots (pontos indicadores)
+document.querySelectorAll('.carousel-dot').forEach(dot => {
+    dot.addEventListener('click', function() {
+        currentSlide = parseInt(this.dataset.slide);
+        updateCarousel();
+    });
+});
+
+// Inicializa o carrossel
+if (carouselSlide) {
+    updateCarousel();
+}
+
+// BLOCO 49: Popover
+const popoverBtn = document.getElementById('popoverBtn');
+const popover = document.getElementById('popover');
+const popoverClose = document.getElementById('popoverClose');
+if (popoverBtn) popoverBtn.addEventListener('click', () => { if (popover) popover.style.display = 'block'; });
+if (popoverClose) popoverClose.addEventListener('click', () => { if (popover) popover.style.display = 'none'; });
+
+// BLOCO 50: Notificação Persistente
+const notifSuccessBtn = document.getElementById('notifSuccessBtn');
+const notifWarningBtn = document.getElementById('notifWarningBtn');
+const notifErrorBtn = document.getElementById('notifErrorBtn');
+const notificationContainer = document.getElementById('notificationContainer');
+function createNotification(type, message) {
+    const notif = document.createElement('div');
+    notif.className = `notification notification-${type}`;
+    const colors = { success: '#4CAF50', warning: '#ff9800', error: '#f44336' };
+    notif.style.cssText = `background:${colors[type]};color:white;padding:15px;margin:5px;border-radius:4px;display:flex;justify-content:space-between;align-items:center;`;
+    notif.innerHTML = `<span>${message}</span><button onclick="this.parentElement.remove()" style="background:none;border:none;color:white;cursor:pointer;">✕</button>`;
+    if (notificationContainer) notificationContainer.appendChild(notif);
+}
+if (notifSuccessBtn) notifSuccessBtn.addEventListener('click', () => createNotification('success', '✓ Operação realizada com sucesso!'));
+if (notifWarningBtn) notifWarningBtn.addEventListener('click', () => createNotification('warning', '⚠️ Atenção: verifique os dados!'));
+if (notifErrorBtn) notifErrorBtn.addEventListener('click', () => createNotification('error', '❌ Erro ao processar solicitação!'));
+
+// BLOCO 51: Stepper/Wizard
+const stepperBack = document.getElementById('stepperBack');
+const stepperNext = document.getElementById('stepperNext');
+const stepperContent = document.getElementById('stepperContent');
+let currentStep = 2;
+function updateStepper() {
+    const steps = document.querySelectorAll('.step');
+    steps.forEach((step, i) => {
+        step.classList.remove('active', 'completed');
+        if (i < currentStep - 1) step.classList.add('completed');
+        if (i === currentStep - 1) step.classList.add('active');
+    });
+    const contents = ['Passo 1 de 3: Preencha seus dados pessoais', 'Passo 2 de 3: Preencha seu endereço', 'Passo 3 de 3: Confirme seus dados'];
+    if (stepperContent) stepperContent.innerHTML = `<p>${contents[currentStep - 1]}</p>`;
+}
+if (stepperBack) stepperBack.addEventListener('click', () => { if (currentStep > 1) { currentStep--; updateStepper(); } });
+if (stepperNext) stepperNext.addEventListener('click', () => { if (currentStep < 3) { currentStep++; updateStepper(); } });
+
+// BLOCO 52: Chips/Tags
+const chipsInput = document.getElementById('chipsInput');
+const chipsList = document.getElementById('chipsList');
+const chipsResult = document.getElementById('chipsResult');
+if (chipsInput) {
+    chipsInput.addEventListener('keypress', function(e) {
+        if (e.key === 'Enter' && this.value) {
+            const chip = document.createElement('span');
+            chip.className = 'chip';
+            chip.textContent = this.value + ' ×';
+            chip.style.cssText = 'display:inline-block;background:#2196F3;color:white;padding:5px 10px;margin:3px;border-radius:20px;cursor:pointer;';
+            chip.addEventListener('click', () => chip.remove());
+            chipsList?.appendChild(chip);
+            this.value = '';
+        }
+    });
+}
+
+// BLOCO 53: Segmented Control
+const segmentButtons = document.querySelectorAll('.segmented-control .segment');
+const segmentedResult = document.getElementById('segmentedResult');
+segmentButtons.forEach(btn => {
+    btn.addEventListener('click', function() {
+        segmentButtons.forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+        if (segmentedResult) segmentedResult.textContent = `Modo selecionado: ${this.dataset.value}`;
+    });
+});
+
+// BLOCO 54: Tree View
+const treeToggles = document.querySelectorAll('.tree-toggle');
+treeToggles.forEach(toggle => {
+    toggle.addEventListener('click', function() {
+        const parent = this.closest('.tree-item');
+        const children = parent?.querySelector('.tree-children');
+        if (children) {
+            const isExpanded = children.style.display !== 'none';
+            children.style.display = isExpanded ? 'none' : 'block';
+            this.textContent = isExpanded ? '►' : '▼';
+            parent?.classList.toggle('expanded');
+        }
+    });
+});
+
+// BLOCO 55: Combobox
+const comboboxInput = document.getElementById('comboboxInput');
+const comboboxBtn = document.getElementById('comboboxBtn');
+const comboboxList = document.getElementById('comboboxList');
+const comboboxResult = document.getElementById('comboboxResult');
+if (comboboxBtn) comboboxBtn.addEventListener('click', () => {
+    if (comboboxList) comboboxList.style.display = comboboxList.style.display === 'none' ? 'block' : 'none';
+});
+const comboboxItems = comboboxList?.querySelectorAll('li');
+comboboxItems?.forEach(item => {
+    item.addEventListener('click', function() {
+        if (comboboxInput) comboboxInput.value = this.textContent;
+        if (comboboxList) comboboxList.style.display = 'none';
+        if (comboboxResult) comboboxResult.textContent = `Selecionado: ${this.textContent}`;
+    });
+});
+
+// BLOCO 56: Resize Handle
+const resizableBox = document.getElementById('resizableBox');
+const resizeHandle = resizableBox?.querySelector('.resize-handle');
+const resizeInfo = document.getElementById('resizeInfo');
+let isResizing = false;
+if (resizeHandle) {
+    resizeHandle.addEventListener('mousedown', () => { isResizing = true; });
+    document.addEventListener('mouseup', () => { isResizing = false; });
+    document.addEventListener('mousemove', function(e) {
+        if (isResizing && resizableBox) {
+            const newWidth = Math.max(100, e.clientX - resizableBox.getBoundingClientRect().left);
+            const newHeight = Math.max(100, e.clientY - resizableBox.getBoundingClientRect().top);
+            resizableBox.style.width = newWidth + 'px';
+            resizableBox.style.height = newHeight + 'px';
+            if (resizeInfo) resizeInfo.textContent = `Tamanho: ${Math.round(newWidth)}px × ${Math.round(newHeight)}px`;
+        }
+    });
+}
+
+// BLOCO 57: Context Menu
+const contextTarget = document.getElementById('contextTarget');
+const contextMenu = document.getElementById('contextMenu');
+const contextResult = document.getElementById('contextResult');
+if (contextTarget) {
+    contextTarget.addEventListener('contextmenu', function(e) {
+        e.preventDefault();
+        if (contextMenu) {
+            contextMenu.style.display = 'block';
+            contextMenu.style.left = e.clientX + 'px';
+            contextMenu.style.top = e.clientY + 'px';
+        }
+    });
+}
+document.addEventListener('click', () => { if (contextMenu) contextMenu.style.display = 'none'; });
+const contextItems = contextMenu?.querySelectorAll('.context-item');
+contextItems?.forEach(item => {
+    item.addEventListener('click', function() {
+        const action = this.dataset.action;
+        if (contextResult) contextResult.textContent = `Ação executada: ${action}`;
+        if (contextMenu) contextMenu.style.display = 'none';
+    });
+});
+
+// BLOCO 58: Validação Async
+const usernameInput = document.getElementById('usernameInput');
+const asyncStatus = document.getElementById('asyncStatus');
+const asyncMessage = document.getElementById('asyncMessage');
+let asyncValidTimer;
+if (usernameInput) {
+    usernameInput.addEventListener('input', function() {
+        clearTimeout(asyncValidTimer);
+        if (asyncStatus) asyncStatus.textContent = '...';
+        asyncValidTimer = setTimeout(() => {
+            const username = this.value;
+            const takenUsernames = ['admin', 'user', 'test'];
+            if (username && !takenUsernames.includes(username.toLowerCase())) {
+                if (asyncStatus) asyncStatus.textContent = '✓';
+                if (asyncMessage) asyncMessage.textContent = '✓ Username disponível!';
+            } else {
+                if (asyncStatus) asyncStatus.textContent = '✗';
+                if (asyncMessage) asyncMessage.textContent = '✗ Username indisponível!';
+            }
+        }, 600);
+    });
+}
+
+// BLOCO 59: Campo com Prefixo/Sufixo
+const currencyInput = document.getElementById('currencyInput');
+const percentInput = document.getElementById('percentInput');
+const prefixResult = document.getElementById('prefixResult');
+if (currencyInput) currencyInput.addEventListener('input', () => {
+    if (prefixResult) prefixResult.textContent = `Valor: R$ ${currencyInput.value || '0'}`;
+});
+if (percentInput) percentInput.addEventListener('input', () => {
+    if (prefixResult) prefixResult.textContent = `Percentual: ${percentInput.value || '0'}%`;
+});
+
+// BLOCO 60: Erro com Dica Inline
+const emailWithHint = document.getElementById('emailWithHint');
+const emailError = document.getElementById('emailError');
+const passwordWithHint = document.getElementById('passwordWithHint');
+const passwordError = document.getElementById('passwordError');
+if (emailWithHint) {
+    emailWithHint.addEventListener('blur', function() {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (this.value && !emailRegex.test(this.value)) {
+            if (emailError) { emailError.textContent = '❌ E-mail inválido!'; emailError.style.display = 'block'; }
+        } else {
+            if (emailError) emailError.style.display = 'none';
+        }
+    });
+}
+if (passwordWithHint) {
+    passwordWithHint.addEventListener('blur', function() {
+        if (this.value.length < 8) {
+            if (passwordError) { passwordError.textContent = '❌ Mínimo 8 caracteres!'; passwordError.style.display = 'block'; }
+        } else {
+            if (passwordError) passwordError.style.display = 'none';
+        }
+    });
+}
+
+// BLOCO 61: Dropzone
+const dropzone = document.getElementById('dropzone');
+const dropzoneInput = document.getElementById('dropzoneInput');
+const uploadedFiles = document.getElementById('uploadedFiles');
+if (dropzone) {
+    dropzone.addEventListener('click', () => dropzoneInput?.click());
+    dropzone.addEventListener('dragover', (e) => { e.preventDefault(); dropzone.style.background = '#f0f0f0'; });
+    dropzone.addEventListener('dragleave', () => { dropzone.style.background = ''; });
+    dropzone.addEventListener('drop', (e) => {
+        e.preventDefault();
+        dropzone.style.background = '';
+        const files = e.dataTransfer?.files || [];
+        addFilesToList(files);
+    });
+}
+if (dropzoneInput) {
+    dropzoneInput.addEventListener('change', function() {
+        addFilesToList(this.files);
+    });
+}
+function addFilesToList(files) {
+    Array.from(files).forEach(file => {
+        const fileDiv = document.createElement('div');
+        fileDiv.style.cssText = 'padding:10px;background:#f5f5f5;margin:5px 0;border-radius:4px;';
+        fileDiv.textContent = `📄 ${file.name} (${(file.size / 1024).toFixed(2)} KB)`;
+        uploadedFiles?.appendChild(fileDiv);
+    });
+}
+
+// BLOCO 62: Progress Upload
+const fileInput = document.getElementById('fileInput');
+const uploadBtn = document.getElementById('uploadBtn');
+const progressContainer = document.getElementById('progressContainer');
+const progressBar = document.getElementById('progressBar');
+const progressText = document.getElementById('progressText');
+const uploadResult = document.getElementById('uploadResult');
+if (uploadBtn) {
+    uploadBtn.addEventListener('click', function() {
+        if (!fileInput?.files.length) return;
+        if (progressContainer) progressContainer.style.display = 'block';
+        let progress = 0;
+        const interval = setInterval(() => {
+            progress += Math.random() * 30;
+            if (progress >= 100) {
+                progress = 100;
+                clearInterval(interval);
+                if (progressBar) progressBar.style.width = '100%';
+                if (progressText) progressText.textContent = '100%';
+                if (uploadResult) uploadResult.textContent = '✓ Upload concluído!';
+            } else {
+                if (progressBar) progressBar.style.width = progress + '%';
+                if (progressText) progressText.textContent = Math.round(progress) + '%';
+            }
+        }, 300);
+    });
+}
+
+// BLOCO 63: Visualização de Arquivo
+const previewInput = document.getElementById('previewInput');
+const previewContainer = document.getElementById('previewContainer');
+const imagePreview = document.getElementById('imagePreview');
+const pdfPreview = document.getElementById('pdfPreview');
+const previewInfo = document.getElementById('previewInfo');
+if (previewInput) {
+    previewInput.addEventListener('change', function() {
+        const file = this.files?.[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                if (previewContainer) previewContainer.style.display = 'block';
+                if (file.type.startsWith('image')) {
+                    if (imagePreview) { imagePreview.src = e.target?.result; imagePreview.style.display = 'block'; }
+                    if (pdfPreview) pdfPreview.style.display = 'none';
+                } else if (file.type === 'application/pdf') {
+                    if (pdfPreview) { pdfPreview.src = e.target?.result; pdfPreview.style.display = 'block'; }
+                    if (imagePreview) imagePreview.style.display = 'none';
+                }
+                if (previewInfo) previewInfo.textContent = `Arquivo: ${file.name}`;
+            };
+            reader.readAsDataURL(file);
+        }
+    });
+}
+
+// BLOCO 64: Rating/Estrelas
+const stars = document.querySelectorAll('.rating-container .star');
+const ratingResult = document.getElementById('ratingResult');
+stars.forEach((star, index) => {
+    star.addEventListener('click', () => {
+        stars.forEach((s, i) => {
+            s.style.color = i <= index ? '#FFD700' : '#ccc';
+        });
+        if (ratingResult) ratingResult.textContent = `Classificação: ${index + 1} de 5 estrelas`;
+    });
+    star.addEventListener('mouseenter', () => {
+        stars.forEach((s, i) => {
+            s.style.color = i <= index ? '#FFC700' : '#ccc';
+        });
+    });
+});
+const ratingContainer = document.querySelector('.rating-container');
+if (ratingContainer) {
+    ratingContainer.addEventListener('mouseleave', () => {
+        const selected = Array.from(stars).findIndex(s => s.style.color === '#FFD700');
+        stars.forEach((s, i) => {
+            s.style.color = i <= selected ? '#FFD700' : '#ccc';
+        });
+    });
+}
+
+// BLOCO 65: Avaliação com Emoji
+const emojiButtons = document.querySelectorAll('.emoji-btn');
+const emojiResult = document.getElementById('emojiResult');
+emojiButtons.forEach(btn => {
+    btn.addEventListener('click', function() {
+        emojiButtons.forEach(b => b.style.transform = 'scale(1)');
+        this.style.transform = 'scale(1.3)';
+        if (emojiResult) emojiResult.textContent = `Você selecionou: ${this.textContent}`;
+    });
+});
+
+// BLOCO 66: Mapa Interativo
+const marker = document.getElementById('marker');
+const mapContainer = document.getElementById('mapContainer');
+const mapResult = document.getElementById('mapResult');
+if (mapContainer) {
+    mapContainer.addEventListener('click', function(e) {
+        const svg = this.querySelector('.map-svg');
+        const rect = svg?.getBoundingClientRect();
+        if (rect && marker) {
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            marker.setAttribute('cx', (x / rect.width * 400).toFixed(0));
+            marker.setAttribute('cy', (y / rect.height * 300).toFixed(0));
+            if (mapResult) mapResult.textContent = `Marcador em: (${marker.getAttribute('cx')}, ${marker.getAttribute('cy')})`;
+        }
+    });
+}
+
+// BLOCO 67: Canvas Drawing
+const drawingCanvas = document.getElementById('drawingCanvas');
+const clearCanvasBtn = document.getElementById('clearCanvasBtn');
+const downloadCanvasBtn = document.getElementById('downloadCanvasBtn');
+let isDrawing = false;
+if (drawingCanvas) {
+    const ctx = drawingCanvas.getContext('2d');
+    ctx.strokeStyle = '#000';
+    ctx.lineWidth = 2;
+    drawingCanvas.addEventListener('mousedown', (e) => {
+        isDrawing = true;
+        const rect = drawingCanvas.getBoundingClientRect();
+        ctx.beginPath();
+        ctx.moveTo(e.clientX - rect.left, e.clientY - rect.top);
+    });
+    document.addEventListener('mousemove', (e) => {
+        if (isDrawing) {
+            const rect = drawingCanvas.getBoundingClientRect();
+            ctx.lineTo(e.clientX - rect.left, e.clientY - rect.top);
+            ctx.stroke();
+        }
+    });
+    document.addEventListener('mouseup', () => { isDrawing = false; });
+}
+if (clearCanvasBtn) {
+    clearCanvasBtn.addEventListener('click', () => {
+        const ctx = drawingCanvas?.getContext('2d');
+        if (ctx && drawingCanvas) ctx.clearRect(0, 0, drawingCanvas.width, drawingCanvas.height);
+    });
+}
+if (downloadCanvasBtn) {
+    downloadCanvasBtn.addEventListener('click', () => {
+        const link = document.createElement('a');
+        link.href = drawingCanvas?.toDataURL() || '';
+        link.download = 'desenho.png';
+        link.click();
+    });
+}
+
+// BLOCO 68: Code Highlight
+const copyCodeBtn = document.getElementById('copyCodeBtn');
+const codeResult = document.getElementById('codeResult');
+if (copyCodeBtn) {
+    copyCodeBtn.addEventListener('click', () => {
+        const codeText = document.querySelector('.code-block code')?.textContent || '';
+        navigator.clipboard.writeText(codeText).then(() => {
+            if (codeResult) codeResult.textContent = '✓ Código copiado para clipboard!';
+            setTimeout(() => { if (codeResult) codeResult.textContent = ''; }, 2000);
+        });
+    });
+}
+
