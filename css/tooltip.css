@@ -1,0 +1,122 @@
+/* ========================================
+   TOOLTIP CUSTOMIZADO
+   ======================================== */
+
+/* Elemento com atributo data-tooltip */
+[data-tooltip] {
+  position: relative;
+  cursor: pointer;
+  overflow: visible;
+}
+
+/* Hover - Mostra o tooltip */
+[data-tooltip]:hover::before {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: calc(100% + 12px);
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #0066cc;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 6px;
+  white-space: nowrap;
+  font-size: 13px;
+  font-weight: 600;
+  z-index: 1001;
+  opacity: 1;
+  animation: fadeInTooltip 0.3s ease-in-out;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  pointer-events: none;
+}
+
+/* Seta do tooltip (arrow) */
+[data-tooltip]:hover::after {
+  content: '';
+  position: absolute;
+  bottom: calc(100% + 6px);
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 6px solid #0066cc;
+  z-index: 1001;
+  opacity: 1;
+  animation: fadeInTooltip 0.3s ease-in-out;
+  pointer-events: none;
+}
+
+/* Animação de fade-in */
+@keyframes fadeInTooltip {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+/* ========================================
+   PROJECT LINK - IMAGEM COMO BOTÃO
+   ======================================== */
+
+/* Project Link - Container
+   Wraps the project image with link behavior
+   - display: block faz a tag <a> se comportar como bloco
+   - border-radius: mantém cantos arredondados
+   - transition: anima mudanças de estado
+   - Recebe o data-tooltip através da tag <a>
+*/
+.project-link {
+  display: block;
+  border-radius: 8px;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  text-decoration: none;
+  overflow: visible;
+}
+
+/* Project Link - Hover Effect
+   Efeito visual ao passar o mouse
+   - transform: scale(1.08) amplia ligeiramente
+   - filter: brightness(1.2) ilumina a imagem
+   - Indica que é clicável
+*/
+.project-link:hover {
+  transform: scale(1.08);
+  filter: brightness(1.2);
+}
+
+/* Project Link - Imagem
+   Estilo da imagem dentro do link
+   - Herda tamanho do card
+   - display: block remove espaços em branco
+*/
+.project-link img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Responsivo - Para mobile, tooltip fica em cima com menos espaço */
+@media (max-width: 768px) {
+  [data-tooltip]:hover::before {
+    bottom: calc(100% + 8px);
+    font-size: 12px;
+    padding: 6px 10px;
+  }
+
+  [data-tooltip]:hover::after {
+    bottom: calc(100% + 2px);
+    border-left-width: 5px;
+    border-right-width: 5px;
+    border-top-width: 5px;
+  }
+
+  .project-link:hover {
+    transform: scale(1.05);
+  }
+}

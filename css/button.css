@@ -132,7 +132,7 @@
    - align-items: center centraliza verticalmente
    - justify-content: center centraliza horizontalmente
    - white-space: nowrap impede quebra de linha do texto
-   - overflow: hidden evita texto extravasado
+   - overflow: visible permite que o tooltip apareça
    - text-overflow: ellipsis trunca com reticências se necessário
 */
 .more-btn {
@@ -144,7 +144,7 @@
     justify-content: center;
     text-align: center;
     white-space: nowrap;
-    overflow: hidden;
+    overflow: visible;
     text-overflow: ellipsis;
 }
 
