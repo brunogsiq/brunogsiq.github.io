@@ -306,15 +306,18 @@
 
 /* Card Projeto - Ícone
    Imagem do ícone dentro do card
-   - width: 30px largura do ícone
-   - height: 30px altura do ícone
-   - margin-bottom: 10px espaço entre ícone e texto
-   - Elemento decorativo do card
+   - width: 150px largura da imagem do projeto
+   - height: 150px altura da imagem do projeto
+   - margin-bottom: 10px espaço entre imagem e texto
+   - object-fit: cover garante proporção sem distorção
+   - border-radius: cantos arredondados na imagem
 */
 .card-projeto img {
-    width: 30px;
-    height: 30px;
+    width: 150px;
+    height: 150px;
     margin-bottom: 10px;
+    object-fit: cover;
+    border-radius: 8px;
 }
 
 /* ==========================================

@@ -125,19 +125,27 @@
 /* Padronização de Tamanho para Botões Ver Mais
    Garante que todos os botões Ver Mais tenham tamanho consistente
    - min-width: 120px evita botões muito pequenos
+   - max-width: 140px evita botões muito grandes
    - min-height: 44px padrão de acessibilidade
    - text-align: center centraliza texto
    - display: inline-flex permite melhor alinhamento
    - align-items: center centraliza verticalmente
    - justify-content: center centraliza horizontalmente
+   - white-space: nowrap impede quebra de linha do texto
+   - overflow: hidden evita texto extravasado
+   - text-overflow: ellipsis trunca com reticências se necessário
 */
 .more-btn {
     min-width: 120px;
+    max-width: 140px;
     min-height: 44px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
     text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 /* Ver Mais - Estado Hover
