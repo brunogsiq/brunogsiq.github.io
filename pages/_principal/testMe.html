@@ -2720,8 +2720,7 @@
                     <p class="label-small">Gere IDs únicos aleatórios (UUID v4) para testes de criação de recursos.</p>
                     <button id="generateUuidBtn" class="btn-primary" data-auto="btn-generate">🔑 Gerar UUID</button>
                     <input type="text" id="uuidOutput" placeholder="UUID será exibido aqui" readonly
-                        class="input-full-width" data-auto="uuid-output"
-                        style="margin-top: 10px; background: #0c0c0c;" />
+                        class="input-full-width input-spaced input-dark-bg" data-auto="uuid-output" />
                     <button id="copyUuidBtn" class="btn-secondary" data-auto="btn-copy">📋 Copiar</button>
                     <p id="uuidResult" class="text-validation" data-auto="result-value"></p>
                     <div class="acceptance-accordion" data-auto="criteria-accordion">
@@ -2748,18 +2747,13 @@
                 <div class="interactive-block-content" data-auto="content">
                     <p class="label-small">Crie timers para testes de timeout e performance.</p>
                     <input type="number" id="timerSeconds" placeholder="Segundos" min="1" max="3600" value="10"
-                        class="input-full-width" data-auto="input-seconds" style="margin-bottom: 10px;" />
-                    <div style="display: flex; gap: 10px;">
-                        <button id="timerStartBtn" class="btn-primary" data-auto="btn-start" style="flex: 1;">▶️
-                            Iniciar</button>
-                        <button id="timerStopBtn" class="btn-secondary" data-auto="btn-stop" style="flex: 1;"
-                            disabled>⏸️ Parar</button>
-                        <button id="timerResetBtn" class="btn-secondary" data-auto="btn-reset" style="flex: 1;">🔄
-                            Resetar</button>
+                        class="input-full-width input-spaced-bottom" data-auto="input-seconds" />
+                    <div class="flex-button-group">
+                        <button id="timerStartBtn" class="btn-primary" data-auto="btn-start">▶️ Iniciar</button>
+                        <button id="timerStopBtn" class="btn-secondary" data-auto="btn-stop" disabled>⏸️ Parar</button>
+                        <button id="timerResetBtn" class="btn-secondary" data-auto="btn-reset">🔄 Resetar</button>
                     </div>
-                    <p id="timerDisplay"
-                        style="text-align: center; font-size: 1.5rem; font-weight: bold; margin-top: 15px; color: #0066cc;"
-                        data-auto="timer-display">00:10</p>
+                    <p id="timerDisplay" class="result-text-timer" data-auto="timer-display">00:10</p>
                     <div class="acceptance-accordion" data-auto="criteria-accordion">
                         <div class="acceptance-header" data-auto="criteria-header">
                             <span class="acceptance-header-title">📋 Critérios de Aceite</span>
@@ -2784,7 +2778,7 @@
                 <h3>66 - 🎲 Gerador de Dados Mock</h3>
                 <div class="interactive-block-content" data-auto="content">
                     <p class="label-small">Gere dados aleatórios para testes.</p>
-                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                    <div class="grid-container-2col">
                         <button class="btn-secondary"
                             onclick="document.getElementById('mockName').value = gerarNomeAleatorio()"
                             data-auto="btn-gen-name">👤 Nome</button>
@@ -2798,8 +2792,8 @@
                             onclick="document.getElementById('mockCpf').value = gerarCpfAleatorio()"
                             data-auto="btn-gen-cpf">🆔 CPF</button>
                     </div>
-                    <input type="text" id="mockName" placeholder="Nome" readonly class="input-full-width"
-                        data-auto="output-name" style="margin-top: 10px;" />
+                    <input type="text" id="mockName" placeholder="Nome" readonly class="input-full-width input-spaced"
+                        data-auto="output-name" />
                     <input type="text" id="mockEmail" placeholder="Email" readonly class="input-full-width"
                         data-auto="output-email" />
                     <input type="text" id="mockPhone" placeholder="Telefone" readonly class="input-full-width"
@@ -2829,18 +2823,14 @@
                 <h3>67 - 📄 JSON Formatter/Validator</h3>
                 <div class="interactive-block-content" data-auto="content">
                     <p class="label-small">Formata e valida JSON para análise de respostas API.</p>
-                    <textarea id="jsonInput" placeholder='Cole JSON aqui, ex: {"nome":"teste"}' class="input-full-width"
-                        data-auto="input-json"
-                        style="min-height: 100px; margin-bottom: 10px; background: #0c0c0c;"></textarea>
-                    <div style="display: flex; gap: 10px;">
-                        <button id="jsonFormatBtn" class="btn-primary" data-auto="btn-format" style="flex: 1;">✨
-                            Formatar</button>
-                        <button id="jsonValidateBtn" class="btn-secondary" data-auto="btn-validate" style="flex: 1;">✔️
-                            Validar</button>
+                    <textarea id="jsonInput" placeholder='Cole JSON aqui, ex: {"nome":"teste"}' class="input-full-width textarea-large"
+                        data-auto="input-json"></textarea>
+                    <div class="flex-button-group">
+                        <button id="jsonFormatBtn" class="btn-primary" data-auto="btn-format">✨ Formatar</button>
+                        <button id="jsonValidateBtn" class="btn-secondary" data-auto="btn-validate">✔️ Validar</button>
                     </div>
                     <textarea id="jsonOutput" placeholder="JSON formatado aparecerá aqui" readonly
-                        class="input-full-width" data-auto="output-json"
-                        style="min-height: 100px; margin-top: 10px; background: #0c0c0c;"></textarea>
+                        class="input-full-width textarea-large-spaced" data-auto="output-json"></textarea>
                     <p id="jsonStatus" class="text-validation" data-auto="status-json"></p>
                     <div class="acceptance-accordion" data-auto="criteria-accordion">
                         <div class="acceptance-header" data-auto="criteria-header">
@@ -2865,16 +2855,13 @@
                 <h3>68 - ✔️ Validador de Documentos (CPF/CNPJ)</h3>
                 <div class="interactive-block-content" data-auto="content">
                     <p class="label-small">Valida documentos brasileiros.</p>
-                    <input type="text" id="cpfInput" placeholder="CPF: 123.456.789-10" class="input-full-width"
-                        data-auto="input-cpf" style="margin-bottom: 10px;" />
-                    <button id="cpfValidateBtn" class="btn-primary" data-auto="btn-validate-cpf"
-                        style="width: 100%;">Validar CPF</button>
-                    <input type="text" id="cnpjInput" placeholder="CNPJ: 12.345.678/0001-90" class="input-full-width"
-                        data-auto="input-cnpj" style="margin-top: 10px; margin-bottom: 10px;" />
-                    <button id="cnpjValidateBtn" class="btn-primary" data-auto="btn-validate-cnpj"
-                        style="width: 100%;">Validar CNPJ</button>
-                    <p id="documentResult" class="text-validation" data-auto="result-value" style="margin-top: 10px;">
-                    </p>
+                    <input type="text" id="cpfInput" placeholder="CPF: 123.456.789-10" class="input-full-width input-spaced-bottom"
+                        data-auto="input-cpf" />
+                    <button id="cpfValidateBtn" class="btn-primary btn-fullwidth" data-auto="btn-validate-cpf">Validar CPF</button>
+                    <input type="text" id="cnpjInput" placeholder="CNPJ: 12.345.678/0001-90" class="input-full-width input-spaced"
+                        data-auto="input-cnpj" />
+                    <button id="cnpjValidateBtn" class="btn-primary btn-fullwidth" data-auto="btn-validate-cnpj">Validar CNPJ</button>
+                    <p id="documentResult" class="text-validation result-text" data-auto="result-value"></p>
                     <div class="acceptance-accordion" data-auto="criteria-accordion">
                         <div class="acceptance-header" data-auto="criteria-header">
                             <span class="acceptance-header-title">📋 Critérios de Aceite</span>
@@ -2898,11 +2885,11 @@
                 <h3>69 - 🔐 Gerador de Senhas</h3>
                 <div class="interactive-block-content" data-auto="content">
                     <p class="label-small">Gere senhas aleatórias customizadas.</p>
-                    <div style="display: flex; gap: 10px; margin-bottom: 10px;">
-                        <label style="flex: 1;"><input type="number" id="passLength" value="12" min="8" max="32"
-                                data-auto="input-length" style="width: 100%;" /> Caracteres</label>
+                    <div class="flex-container">
+                        <label class="label-flex"><input type="number" id="passLength" value="12" min="8" max="32"
+                                data-auto="input-length" class="input-full-width" /> Caracteres</label>
                     </div>
-                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 10px;">
+                    <div class="grid-container-2col">
                         <label><input type="checkbox" id="passUpper" checked data-auto="check-upper" />
                             Maiúsculas</label>
                         <label><input type="checkbox" id="passLower" checked data-auto="check-lower" />
@@ -2912,13 +2899,10 @@
                         <label><input type="checkbox" id="passSpecial" checked data-auto="check-special" />
                             Especiais</label>
                     </div>
-                    <button id="generatePassBtn" class="btn-primary" data-auto="btn-generate" style="width: 100%;">🔐
-                        Gerar Senha</button>
+                    <button id="generatePassBtn" class="btn-primary btn-fullwidth" data-auto="btn-generate">🔐 Gerar Senha</button>
                     <input type="text" id="passwordOutput" placeholder="Senha gerada aparecerá aqui" readonly
-                        class="input-full-width" data-auto="output-password"
-                        style="margin-top: 10px; background: #0c0c0c;" />
-                    <button id="copyPassBtn" class="btn-secondary" data-auto="btn-copy"
-                        style="width: 100%; margin-top: 10px;">📋 Copiar</button>
+                        class="input-full-width input-spaced input-dark-bg" data-auto="output-password" />
+                    <button id="copyPassBtn" class="btn-secondary btn-fullwidth-spaced" data-auto="btn-copy">📋 Copiar</button>
                     <div class="acceptance-accordion" data-auto="criteria-accordion">
                         <div class="acceptance-header" data-auto="criteria-header">
                             <span class="acceptance-header-title">📋 Critérios de Aceite</span>
@@ -2942,21 +2926,20 @@
                 <h3>70 - 💾 LocalStorage/SessionStorage Tester</h3>
                 <div class="interactive-block-content" data-auto="content">
                     <p class="label-small">Teste persistência de dados.</p>
-                    <div style="display: flex; gap: 10px; margin-bottom: 10px;">
+                    <div class="flex-container">
                         <input type="text" id="storageKey" placeholder="Chave" class="input-full-width"
-                            data-auto="input-key" style="flex: 1;" />
+                            data-auto="input-key" />
                         <input type="text" id="storageValue" placeholder="Valor" class="input-full-width"
-                            data-auto="input-value" style="flex: 1;" />
+                            data-auto="input-value" />
                     </div>
-                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 10px;">
+                    <div class="grid-container-2col">
                         <button id="storageSaveBtn" class="btn-primary" data-auto="btn-save">💾 Salvar</button>
                         <button id="storageGetBtn" class="btn-primary" data-auto="btn-get">📖 Recuperar</button>
-                        <button id="storageClearBtn" class="btn-secondary" data-auto="btn-clear">🗑️ Limpar
-                            Tudo</button>
+                        <button id="storageClearBtn" class="btn-secondary" data-auto="btn-clear">🗑️ Limpar Tudo</button>
                         <button id="storageListBtn" class="btn-secondary" data-auto="btn-list">📋 Listar</button>
                     </div>
-                    <textarea id="storageOutput" placeholder="Dados aparecerão aqui" readonly class="input-full-width"
-                        data-auto="output-storage" style="min-height: 80px; background: #0c0c0c;"></textarea>
+                    <textarea id="storageOutput" placeholder="Dados aparecerão aqui" readonly class="input-full-width textarea-medium"
+                        data-auto="output-storage"></textarea>
                     <p id="storageStatus" class="text-validation" data-auto="status-storage"></p>
                     <div class="acceptance-accordion" data-auto="criteria-accordion">
                         <div class="acceptance-header" data-auto="criteria-header">
@@ -2981,13 +2964,9 @@
                 <h3>71 - 📊 Performance Metrics</h3>
                 <div class="interactive-block-content" data-auto="content">
                     <p class="label-small">Meça tempo de execução de operações.</p>
-                    <button id="perfStartBtn" class="btn-primary" data-auto="btn-start"
-                        style="width: 100%; margin-bottom: 10px;">⏱️ Iniciar Medição</button>
-                    <button id="perfStopBtn" class="btn-secondary" data-auto="btn-stop" style="width: 100%;" disabled>⏹️
-                        Parar Medição</button>
-                    <div id="perfOutput" class="text-validation" data-auto="output-metrics"
-                        style="margin-top: 15px; padding: 15px; background: #0c0c0c; border-radius: 8px; min-height: 60px;">
-                    </div>
+                    <button id="perfStartBtn" class="btn-primary btn-fullwidth-margin-bottom" data-auto="btn-start">⏱️ Iniciar Medição</button>
+                    <button id="perfStopBtn" class="btn-secondary btn-fullwidth" data-auto="btn-stop" disabled>⏹️ Parar Medição</button>
+                    <div id="perfOutput" class="text-validation output-container" data-auto="output-metrics"></div>
                     <div class="acceptance-accordion" data-auto="criteria-accordion">
                         <div class="acceptance-header" data-auto="criteria-header">
                             <span class="acceptance-header-title">📋 Critérios de Aceite</span>
@@ -3011,10 +2990,8 @@
                 <h3>72 - 🌓 Alternador de Tema (Dark/Light)</h3>
                 <div class="interactive-block-content" data-auto="content">
                     <p class="label-small">Alterna entre tema escuro e claro. Preferência salva em localStorage.</p>
-                    <button id="themeToggleBtn" class="btn-primary" data-auto="btn-toggle" style="width: 100%;">🌙
-                        Alternar para Light</button>
-                    <p id="themeStatus" class="text-validation" data-auto="status-theme"
-                        style="margin-top: 10px; text-align: center;">Tema atual: Escuro</p>
+                    <button id="themeToggleBtn" class="btn-primary btn-fullwidth" data-auto="btn-toggle">🌙 Alternar para Light</button>
+                    <p id="themeStatus" class="text-validation result-text" data-auto="status-theme">Tema atual: Escuro</p>
                     <div class="acceptance-accordion" data-auto="criteria-accordion">
                         <div class="acceptance-header" data-auto="criteria-header">
                             <span class="acceptance-header-title">📋 Critérios de Aceite</span>
@@ -3038,19 +3015,14 @@
                 <h3>73 - 📥 Exportador de Dados</h3>
                 <div class="interactive-block-content" data-auto="content">
                     <p class="label-small">Exporte resultados de testes em diferentes formatos.</p>
-                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 10px;">
-                        <button id="exportCsvBtn" class="btn-primary" data-auto="btn-export-csv">📊 Exportar
-                            CSV</button>
-                        <button id="exportJsonBtn" class="btn-primary" data-auto="btn-export-json">📄 Exportar
-                            JSON</button>
-                        <button id="exportHtmlBtn" class="btn-secondary" data-auto="btn-export-html">🌐 Exportar
-                            HTML</button>
-                        <button id="exportTxtBtn" class="btn-secondary" data-auto="btn-export-txt">📝 Exportar
-                            TXT</button>
+                    <div class="grid-container-2col">
+                        <button id="exportCsvBtn" class="btn-primary" data-auto="btn-export-csv">📊 Exportar CSV</button>
+                        <button id="exportJsonBtn" class="btn-primary" data-auto="btn-export-json">📄 Exportar JSON</button>
+                        <button id="exportHtmlBtn" class="btn-secondary" data-auto="btn-export-html">🌐 Exportar HTML</button>
+                        <button id="exportTxtBtn" class="btn-secondary" data-auto="btn-export-txt">📝 Exportar TXT</button>
                     </div>
                     <textarea id="exportData" placeholder="Dados para exportar (ex: teste1, teste2, teste3)"
-                        class="input-full-width" data-auto="input-data"
-                        style="min-height: 100px; margin-bottom: 10px; background: #0c0c0c;"></textarea>
+                        class="input-full-width textarea-large" data-auto="input-data"></textarea>
                     <p id="exportStatus" class="text-validation" data-auto="status-export"></p>
                     <div class="acceptance-accordion" data-auto="criteria-accordion">
                         <div class="acceptance-header" data-auto="criteria-header">
@@ -3338,45 +3310,26 @@
             <!-- BLOCO 81: EASTER EGG MATRIX -->
             <div class="interactive-block test-auto" id="bloco-81-matrix-easter-egg" data-test="bloco-81"
                 data-auto="bloco-81-container">
-                <div class="interactive-block-content" data-auto="content"
-                    style="padding: 0; min-height: 600px; display: flex; align-items: center; justify-content: center;">
-                    <div id="matrixContainer"
-                        style="position: relative; width: 95%; height: 95%; background: #ff0000; border: 2px solid #00d4ff; border-radius: 20px; overflow: hidden; display: flex; align-items: center; justify-content: center; clip-path: inset(0 round 20px);">
-                        <canvas id="matrixCanvas" style="display: block; width: 100%; height: 100%;"></canvas>
-                        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 10; text-align: center; 
-                            background: rgba(0, 0, 0, 0.85); 
-                            backdrop-filter: blur(10px);
-                            padding: 20px 10px;
-                            border-radius: 25px;
-                            border: 2px solid #FF0055;
-                            display: flex;
-                            flex-direction: column;
-                            align-items: center;
-                            justify-content: center;
-                            box-shadow: 
-                                0 0 30px #ff0000,
-                                0 0 60px rgba(0, 212, 255, 0.3),
-                                inset 0 0 20px rgba(255, 255, 255, 0.1);
-                        ">
+                <div class="interactive-block-content" data-auto="content">
+                    <div id="matrixContainer">
+                        <canvas id="matrixCanvas"></canvas>
+                        <div class="matrix-text-overlay">
                             <a href="https://www.linkedin.com/company/qatrixtecnologia" target="_blank"
-                                rel="noopener noreferrer" style="text-decoration: none;">
-                                <div
-                                    style="font-size: 3.5em; font-weight: 900; margin-bottom: 15px; letter-spacing: 3px;">
-                                    <span
-                                        style="color: #ff0000; text-shadow: 0 0 30px #ff0000, 0 0 60px #ff0000; font-family: 'Courier New', monospace;">Q</span><span
-                                        style="color: #ff0000; text-shadow: 0 0 30px #ff0000, 0 0 60px #ff0000; font-family: 'Courier New', monospace;">A</span><span
-                                        style="color: #00D4FF; text-shadow: 0 0 30px #00D4FF, 0 0 60px #00D4FF; font-family: 'Courier New', monospace;">t</span><span
-                                        style="color: #00D4FF; text-shadow: 0 0 30px #00D4FF, 0 0 60px #00D4FF; font-family: 'Courier New', monospace;">r</span><span
-                                        style="color: #00D4FF; text-shadow: 0 0 30px #00D4FF, 0 0 60px #00D4FF; font-family: 'Courier New', monospace;">i</span><span
-                                        style="color: #00D4FF; text-shadow: 0 0 30px #00D4FF, 0 0 60px #00D4FF; font-family: 'Courier New', monospace;">x</span>
-                                    <span
-                                        style="font-size: 0.4em; color: #b0b0b0; letter-spacing: 2px; display: block; margin-top: 5px;">Tecnologia</span>
+                                rel="noopener noreferrer" class="matrix-logo-link">
+                                <div class="matrix-logo">
+                                    <span class="matrix-logo-char-red">Q</span><span
+                                        class="matrix-logo-char-red">A</span><span
+                                        class="matrix-logo-char-blue">t</span><span
+                                        class="matrix-logo-char-blue">r</span><span
+                                        class="matrix-logo-char-blue">i</span><span
+                                        class="matrix-logo-char-blue">x</span>
+                                    <span class="matrix-logo-subtitle">Tecnologia</span>
                                 </div>
                             </a>
 
-                            <div style="margin-top: 20px; font-size: 0.7em; color: #b0b0b0;">
-                                <span style="color: #ff0000;">█</span> Quality Assurance <span
-                                    style="color: #00D4FF;">█</span>
+                            <div class="matrix-badge">
+                                <span class="matrix-badge-symbol">█</span> Quality Assurance <span
+                                    class="matrix-badge-symbol-right">█</span>
                             </div>
                         </div>
                     </div>

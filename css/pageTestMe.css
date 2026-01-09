@@ -4018,3 +4018,237 @@ body {
     max-height: 300px;
     overflow-y: auto;
 }
+
+/* ========================================
+   BLOCO 81: EASTER EGG - MATRIX EFFECT
+   
+   Estrutura:
+   - interactive-block-content: Container flexível
+   - matrixContainer: Canvas + overlay absoluto
+   - matrix-text-overlay: Texto centralizado com fundo
+   - matrix-logo: Logo QAtrix (spans coloridas)
+   - matrix-logo-link: Âncora para LinkedIn
+   - matrix-badge: Quality Assurance badge
+   ======================================== */
+
+/* Container interno do bloco - centraliza conteúdo */
+#bloco-81-matrix-easter-egg .interactive-block-content {
+    padding: 0;
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Container da matriz - canvas + overlay */
+#matrixContainer {
+    position: relative;
+    width: 95%;
+    height: 95%;
+    background: #000000;
+    border: 2px solid #ffffff;
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    clip-path: inset(0 round 20px);
+}
+
+/* Canvas que renderiza a animação Matrix */
+#matrixCanvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+/* Overlay com texto centralizado - sobreposto ao canvas */
+.matrix-text-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(10px);
+    padding: 20px 10px;
+    border-radius: 25px;
+    border: 2px solid #FF0055;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 
+        0 0 30px #ff0000,
+        0 0 60px rgba(0, 212, 255, 0.3),
+        inset 0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+/* Âncora do logo - sem decoração */
+.matrix-logo-link {
+    text-decoration: none;
+}
+
+/* Logo principal - QAtrix */
+.matrix-logo {
+    font-size: 3.5em;
+    font-weight: 900;
+    margin-bottom: 15px;
+    letter-spacing: 3px;
+}
+
+/* Spans do logo com cores alternadas */
+.matrix-logo-char-red {
+    color: #ff0000;
+    text-shadow: 0 0 30px #ff0000, 0 0 60px #ff0000;
+    font-family: 'Courier New', monospace;
+}
+
+.matrix-logo-char-blue {
+    color: #00D4FF;
+    text-shadow: 0 0 30px #00D4FF, 0 0 60px #00D4FF;
+    font-family: 'Courier New', monospace;
+}
+
+/* Subtítulo "Tecnologia" */
+.matrix-logo-subtitle {
+    font-size: 0.4em;
+    color: #b0b0b0;
+    letter-spacing: 2px;
+    display: block;
+    margin-top: 5px;
+}
+
+/* Badge QA - Quality Assurance */
+.matrix-badge {
+    margin-top: 20px;
+    font-size: 0.7em;
+    color: #b0b0b0;
+}
+
+.matrix-badge-symbol {
+    color: #ff0000;
+}
+
+.matrix-badge-symbol-right {
+    color: #00D4FF;
+}
+
+/* ========================================
+   BLOCOS 64-80: UTILIDADES QA E TESTES
+   
+   Estilos para componentes de entrada,
+   botões, containers flex/grid, e elementos
+   de output/resultado
+   ======================================== */
+
+/* Container Flex - Botões/inputs lado a lado */
+.flex-container {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.flex-container > * {
+    flex: 1;
+}
+
+/* Container Grid - 2 colunas */
+.grid-container-2col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+/* Input com espaçamento */
+.input-spaced {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.input-spaced-bottom {
+    margin-bottom: 10px;
+}
+
+.input-spaced-top {
+    margin-top: 10px;
+}
+
+/* Input com fundo escuro */
+.input-dark-bg {
+    background: #0c0c0c;
+}
+
+/* Botão fullwidth com espaçamento */
+.btn-fullwidth {
+    width: 100%;
+}
+
+.btn-fullwidth-spaced {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.btn-fullwidth-margin-bottom {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+/* Container flex para botões com flex:1 */
+.flex-button-group {
+    display: flex;
+    gap: 10px;
+}
+
+.flex-button-group button {
+    flex: 1;
+}
+
+/* Label com flex para inputs */
+.label-flex {
+    flex: 1;
+}
+
+/* Textarea com altura mínima e fundo escuro */
+.textarea-large {
+    min-height: 100px;
+    margin-bottom: 10px;
+    background: #0c0c0c;
+}
+
+.textarea-large-spaced {
+    min-height: 100px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background: #0c0c0c;
+}
+
+.textarea-medium {
+    min-height: 80px;
+    background: #0c0c0c;
+}
+
+/* Paragráfo de resultado/status com espaçamento */
+.result-text {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.result-text-timer {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: 15px;
+    color: #0066cc;
+}
+
+/* Container de output com espaçamento e estilo */
+.output-container {
+    margin-top: 15px;
+    padding: 15px;
+    background: #0c0c0c;
+    border-radius: 8px;
+    min-height: 60px;
+}
