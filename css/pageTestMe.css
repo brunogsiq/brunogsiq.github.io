@@ -3857,7 +3857,7 @@ h1, h2, h3, h4, h5, h6,
 
 /* Acceptance Accordion Styling */
 .acceptance-accordion {
-    margin-top: 15px;
+    margin-top: auto;
     border: 1px solid #444;
     border-radius: 4px;
     overflow: hidden;
