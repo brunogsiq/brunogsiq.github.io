@@ -285,8 +285,6 @@ Se você fechar contrato comigo (PJ, CLT ou Freelancer), você também ganha:
 
 ---
 
-## 🔥 Estatísticas de Resultado - Casos Reais
-
 Estes números não são teóricos. Vêm de projetos reais que entreguei:
 
 **Setor Bancário:**
@@ -315,7 +313,7 @@ Estes números não são teóricos. Vêm de projetos reais que entreguei:
 
 **Não vendo promessas. Vendo resultados.**
 
-- 📊 **Experiência comprovada**: 8+ anos em setores críticos
+- 📊 **Experiência comprovada**: 4+ anos em setores críticos
 - 🎯 **Foco em impacto**: Não é volume de testes, é qualidade de testes
 - 🤝 **Comunicação clara**: Converso em termos de negócio, não apenas técnica
 - 📈 **Mentalidade de crescimento**: Equipes comigo saem mais fortes
@@ -358,11 +356,9 @@ Este portfólio não é apenas um currículo digital. É:
 
 ---
 
-## ⚠️ Aviso: Vagas Limitadas
-
-- 🔴 **Projetos PJ** (3-6 meses de contrato)
-- 🔴 **Mentorias Personalizadas** (1 slot/mês)
-- 🔴 **Consultoria Estratégica** (2-3 empresas/ano)
+- 🔴 **Projetos PJ
+- 🔴 **Mentorias Personalizadas
+- 🔴 **Consultoria Estratégica
 
 Se sua empresa/projeto é prioridade, **envie mensagem agora**. 
 
