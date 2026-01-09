@@ -910,10 +910,14 @@
             <div class="interactive-block test-auto" id="bloco-25-codigo-dinamico" data-test="bloco-25" data-auto="bloco-25-container">
                 <h3>25 - 🔢 Código Dinâmico</h3>
                 <div class="interactive-block-content" data-auto="content">
-                    <p class="code-container">Código: <span id="dynamicCode" class="text-validation">-</span></p>
-                    <input type="text" id="zionCodeInput" placeholder="Digite o código..." class="zion-input input-full-width">
-                    <button type="button" id="submitCodeBtn" class="zion-button">✓ Enviar</button>
-                    <p id="codeResult" class="code-result"></p>
+                    <div class="code-display-container" data-auto="code-display" style="background-color: #1a1a40; padding: 15px; border-radius: 8px; margin-bottom: 15px; border: 1px solid #2d2d60;">
+                        <p style="margin: 0 0 10px 0; color: #999; font-size: 12px;">Código Gerado:</p>
+                        <p class="code-container" style="margin: 0; font-size: 20px; font-weight: bold; color: #007fff; font-family: 'Courier New', monospace;"><span id="dynamicCode" class="text-validation" data-auto="code-value">-</span></p>
+                    </div>
+                    <button type="button" id="copyDynamicCodeBtn" class="btn-secondary" data-auto="btn-copy-code" style="width: 100%; margin-bottom: 15px;">📋 Copiar Código</button>
+                    <input type="text" id="zionCodeInput" placeholder="Digite o código aqui para validar..." class="zion-input input-full-width" data-auto="input-code" maxlength="20">
+                    <button type="button" id="submitCodeBtn" class="zion-button" data-auto="btn-submit">✓ Enviar</button>
+                    <p id="codeResult" class="code-result" data-auto="result-message" style="min-height: 20px;"></p>
                     
                     <!-- Accordion Critérios de Aceite -->
                     <div class="acceptance-accordion">
@@ -923,11 +927,13 @@
                         </div>
                         <div class="acceptance-body">
                             <ul>
-                                <li>Código dinâmico é gerado automaticamente</li>
-                                <li>Código é exibido na tela</li>
-                                <li>Campo de input aceita entrada de texto</li>
-                                <li>Botão "Enviar" valida entrada contra código</li>
-                                <li>Mensagem de resultado indica sucesso/erro</li>
+                                <li>Código dinâmico é gerado automaticamente (timestamp)</li>
+                                <li>Código é exibido em destaque visual (fundo escuro)</li>
+                                <li>Botão "Copiar Código" copia para clipboard com feedback</li>
+                                <li>Campo de input aceita entrada de texto (máx 20 chars)</li>
+                                <li>Botão "Enviar" valida entrada contra código gerado</li>
+                                <li>Sucesso gera novo código automaticamente</li>
+                                <li>Mensagem de resultado indica sucesso/erro com cores</li>
                             </ul>
                         </div>
                     </div>
@@ -1126,7 +1132,7 @@
             </div>
 
             <!-- BLOCO 31: AUTOCOMPLETE -->
-            <div class="interactive-block test-auto" id="bloco-31-autocomplete" data-test="bloco-31-autocomplete">
+            <div class="interactive-block test-auto" id="bloco-31-autocomplete" data-test="bloco-31" data-auto="bloco-31-container">
                 <h3>31 - 💬 Autocomplete</h3>
                 <div class="interactive-block-content">
                     <!-- Seletor de Categoria -->
@@ -1412,6 +1418,8 @@
                     <input type="text" id="cpfMask" class="input-masked" placeholder="000.000.000-00" maxlength="14" data-auto="input-cpf">
                     <label class="label-small label-margin-top">Data DD/MM/YYYY:</label>
                     <input type="text" id="dataMask" class="input-masked" placeholder="00/00/0000" maxlength="10" data-auto="input-date">
+                    <label class="label-small label-margin-top">CNPJ 12.345.678/0001-00:</label>
+                    <input type="text" id="cnpjMask" class="input-masked" placeholder="00.000.000/0000-00" maxlength="18" data-auto="input-cnpj">
                     <p id="maskaResult" class="text-validation" data-auto="result-value"></p>
                     <div class="acceptance-accordion" data-auto="criteria-accordion">
                         <div class="acceptance-header" data-auto="criteria-header">
@@ -1421,7 +1429,8 @@
                         <div class="acceptance-body" data-auto="criteria-body">
                             <ul>
                                 <li>Telefone formata automaticamente para (XX) XXXXX-XXXX</li>
-                                <li>CPF formata automaticamente para XXX.XXX.XXX-XX</li>
+                                <li>CPF formata automaticamente para XXX.XXX.XXX-XX (máx 14 chars sem pontos)</li>
+                                <li>CNPJ formata automaticamente para XX.XXX.XXX/XXXX-XX (máx 14 chars sem pontos, 18 com máscara)</li>
                                 <li>Data formata automaticamente para DD/MM/YYYY</li>
                                 <li>Caracteres especiais são inseridos automaticamente</li>
                                 <li>Aceita apenas dígitos nas posições corretas</li>
@@ -2073,6 +2082,13 @@
                         <span class="suffix" data-auto="suffix">.00</span>
                     </div>
                     
+                    <label class="label-small label-margin-top">Valor Base (R$):</label>
+                    <div class="prefix-suffix-group" data-auto="container">
+                        <span class="prefix" data-auto="prefix">R$</span>
+                        <input type="number" id="baseValueInput" class="input-numeric" placeholder="0.00" step="0.01" min="0" data-auto="input-base-value">
+                        <span class="suffix" data-auto="suffix">.00</span>
+                    </div>
+
                     <label class="label-small label-margin-top">Percentual (%):</label>
                     <div class="prefix-suffix-group" data-auto="container">
                         <input type="number" id="percentInput" class="input-numeric" placeholder="0" min="0" max="100" data-auto="input-percent">
@@ -2080,6 +2096,7 @@
                     </div>
 
                     <p id="prefixResult" class="text-validation" data-auto="result-value"></p>
+                    <p id="percentResultValue" class="text-info" data-auto="result-percent-value"></p>
                     <div class="acceptance-accordion" data-auto="criteria-accordion">
                         <div class="acceptance-header" data-auto="criteria-header">
                             <span class="acceptance-header-title">📋 Critérios de Aceite</span>
@@ -2101,18 +2118,31 @@
             <div class="interactive-block test-auto" id="bloco-55-inline-hint" data-test="bloco-55" data-auto="bloco-55-container">
                 <h3>55 - 💡 Erro com Dica Inline</h3>
                 <div class="interactive-block-content" data-auto="content">
-                    <label class="label-small">E-mail (com validação):</label>
+                    <label class="label-small">E-mail (com validação - máx 100 caracteres):</label>
                     <div class="input-group-with-hint" data-auto="container">
-                        <input type="email" id="emailWithHint" class="input-validatable" placeholder="seu@email.com" data-auto="input-email">
+                        <input type="email" id="emailWithHint" class="input-validatable" placeholder="seu@email.com" maxlength="100" data-auto="input-email">
                         <span class="hint-text" data-auto="hint">💡 Dica: use um e-mail válido (ex: usuario@dominio.com)</span>
                         <span class="error-text" id="emailError" data-auto="error" style="display:none;"></span>
                     </div>
                     
-                    <label class="label-small label-margin-top">Senha (com requisitos):</label>
+                    <label class="label-small label-margin-top">Senha (com requisitos - máx 12 caracteres):</label>
                     <div class="input-group-with-hint" data-auto="container">
-                        <input type="password" id="passwordWithHint" class="input-validatable" placeholder="Mínimo 8 caracteres" data-auto="input-password">
+                        <input type="password" id="passwordWithHint" class="input-validatable" placeholder="Máx 12 caracteres" maxlength="12" data-auto="input-password">
                         <span class="hint-text" data-auto="hint">💡 Dica: use maiúsculas, minúsculas, números e caracteres especiais</span>
                         <span class="error-text" id="passwordError" data-auto="error" style="display:none;"></span>
+                    </div>
+
+                    <label class="label-small label-margin-top">Arraste arquivo aqui:</label>
+                    <div id="dropAreaBlock55" class="drop-area-white" data-auto="drop-area" style="width: 100%; height: 120px; border: 2px dashed #007fff; border-radius: 8px; background-color: #fff; display: flex; align-items: center; justify-content: center; margin-bottom: 15px;">
+                        <p style="color: #666; text-align: center; margin: 0;">Arraste arquivos aqui</p>
+                    </div>
+
+                    <label class="label-small label-margin-top">Username (validar disponibilidade):</label>
+                    <div class="input-group-with-hint" data-auto="container">
+                        <input type="text" id="usernameInput" class="input-validatable" placeholder="seu_usuario" data-auto="input-username">
+                        <span class="hint-text" data-auto="hint">💡 Dica: escolha um username único (mín 4 caracteres)</span>
+                        <span class="error-text" id="usernameError" data-auto="error" style="display:none;"></span>
+                        <span class="hint-text" id="usernameStatus" data-auto="status" style="color: #0066cc; display:none;"></span>
                     </div>
 
                     <div class="acceptance-accordion" data-auto="criteria-accordion">
@@ -2328,9 +2358,10 @@
                     <canvas id="drawingCanvas" class="drawing-canvas" width="400" height="300" data-auto="canvas"></canvas>
                     <div class="canvas-buttons" data-auto="buttons">
                         <button id="clearCanvasBtn" class="btn-secondary" data-auto="btn-clear">🗑️ Limpar</button>
-                        <button id="downloadCanvasBtn" class="btn-primary" data-auto="btn-download">📥 Baixar</button>
+                        <button id="downloadCanvasBtn" class="btn-primary" data-auto="btn-download">📥 Baixar Imagem</button>
                     </div>
                     <p class="text-info">Arraste o mouse para desenhar</p>
+                    <p id="canvasResult" class="text-validation" data-auto="result-value"></p>
                     <div class="acceptance-accordion" data-auto="criteria-accordion">
                         <div class="acceptance-header" data-auto="criteria-header">
                             <span class="acceptance-header-title">📋 Critérios de Aceite</span>
@@ -2349,9 +2380,9 @@
                 </div>
             </div>
 
-            <!-- BLOCO 68: Code Highlight -->
-            <div class="interactive-block test-auto" id="bloco-68-code" data-test="bloco-68" data-auto="bloco-68-container">
-                <h3>68 - 💻 Code Highlight</h3>
+            <!-- BLOCO 63: Code Highlight -->
+            <div class="interactive-block test-auto" id="bloco-63-code" data-test="bloco-63" data-auto="bloco-63-container">
+                <h3>63 - 💻 Code Highlight</h3>
                 <div class="interactive-block-content" data-auto="content">
                     <label class="label-small">Exemplo de código com syntax highlighting:</label>
                     <pre class="code-block" data-auto="code-container"><code class="language-javascript" data-auto="code-content">function testarElemento(seletor) {
@@ -2366,7 +2397,7 @@
     }
 }</code></pre>
                     <button id="copyCodeBtn" class="btn-secondary" data-auto="btn-copy">📋 Copiar Código</button>
-                    <p id="codeResult" class="text-validation" data-auto="result-value"></p>
+                    <p id="codeResult" class="text-validation" data-auto="result-value" style="min-height: 20px;"></p>
                     <div class="acceptance-accordion" data-auto="criteria-accordion">
                         <div class="acceptance-header" data-auto="criteria-header">
                             <span class="acceptance-header-title">📋 Critérios de Aceite</span>
@@ -2384,11 +2415,305 @@
                 </div>
             </div>
 
+            <!-- ========== SEÇÃO: UTILITÁRIOS QA (NOVOS BLOCOS 64-73) ========== -->
+
+            <!-- BLOCO 64: UUID Generator -->
+            <div class="interactive-block test-auto" id="bloco-64-uuid-generator" data-test="bloco-64" data-auto="bloco-64-container">
+                <h3>64 - 🔑 Gerador de UUID</h3>
+                <div class="interactive-block-content" data-auto="content">
+                    <p class="label-small">Gere IDs únicos aleatórios (UUID v4) para testes de criação de recursos.</p>
+                    <button id="generateUuidBtn" class="btn-primary" data-auto="btn-generate">🔑 Gerar UUID</button>
+                    <input type="text" id="uuidOutput" placeholder="UUID será exibido aqui" readonly class="input-full-width" data-auto="uuid-output" style="margin-top: 10px; background: #0c0c0c;"/>
+                    <button id="copyUuidBtn" class="btn-secondary" data-auto="btn-copy">📋 Copiar</button>
+                    <p id="uuidResult" class="text-validation" data-auto="result-value"></p>
+                    <div class="acceptance-accordion" data-auto="criteria-accordion">
+                        <div class="acceptance-header" data-auto="criteria-header">
+                            <span class="acceptance-header-title">📋 Critérios de Aceite</span>
+                            <span class="acceptance-toggle">▼</span>
+                        </div>
+                        <div class="acceptance-body" data-auto="criteria-body">
+                            <ul>
+                                <li>Botão gera UUID v4 aleatório válido</li>
+                                <li>Formato: 8-4-4-4-12 hexadecimal</li>
+                                <li>Cada geração produz ID único</li>
+                                <li>Copiar leva para clipboard</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BLOCO 65: Timer/Contador -->
+            <div class="interactive-block test-auto" id="bloco-65-timer" data-test="bloco-65" data-auto="bloco-65-container">
+                <h3>65 - ⏱️ Timer/Contador Regressivo</h3>
+                <div class="interactive-block-content" data-auto="content">
+                    <p class="label-small">Crie timers para testes de timeout e performance.</p>
+                    <input type="number" id="timerSeconds" placeholder="Segundos" min="1" max="3600" value="10" class="input-full-width" data-auto="input-seconds" style="margin-bottom: 10px;"/>
+                    <div style="display: flex; gap: 10px;">
+                        <button id="timerStartBtn" class="btn-primary" data-auto="btn-start" style="flex: 1;">▶️ Iniciar</button>
+                        <button id="timerStopBtn" class="btn-secondary" data-auto="btn-stop" style="flex: 1;" disabled>⏸️ Parar</button>
+                        <button id="timerResetBtn" class="btn-secondary" data-auto="btn-reset" style="flex: 1;">🔄 Resetar</button>
+                    </div>
+                    <p id="timerDisplay" style="text-align: center; font-size: 1.5rem; font-weight: bold; margin-top: 15px; color: #0066cc;" data-auto="timer-display">00:10</p>
+                    <div class="acceptance-accordion" data-auto="criteria-accordion">
+                        <div class="acceptance-header" data-auto="criteria-header">
+                            <span class="acceptance-header-title">📋 Critérios de Aceite</span>
+                            <span class="acceptance-toggle">▼</span>
+                        </div>
+                        <div class="acceptance-body" data-auto="criteria-body">
+                            <ul>
+                                <li>Input aceita segundos (1-3600)</li>
+                                <li>Botão Iniciar começa contagem regressiva</li>
+                                <li>Botão Parar congela contador</li>
+                                <li>Botão Resetar volta ao valor original</li>
+                                <li>Display mostra MM:SS</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BLOCO 66: Dados Mock Generator -->
+            <div class="interactive-block test-auto" id="bloco-66-dados-mock" data-test="bloco-66" data-auto="bloco-66-container">
+                <h3>66 - 🎲 Gerador de Dados Mock</h3>
+                <div class="interactive-block-content" data-auto="content">
+                    <p class="label-small">Gere dados aleatórios para testes.</p>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                        <button class="btn-secondary" onclick="document.getElementById('mockName').value = gerarNomeAleatorio()" data-auto="btn-gen-name">👤 Nome</button>
+                        <button class="btn-secondary" onclick="document.getElementById('mockEmail').value = gerarEmailAleatorio()" data-auto="btn-gen-email">📧 Email</button>
+                        <button class="btn-secondary" onclick="document.getElementById('mockPhone').value = gerarTelefoneAleatorio()" data-auto="btn-gen-phone">📱 Telefone</button>
+                        <button class="btn-secondary" onclick="document.getElementById('mockCpf').value = gerarCpfAleatorio()" data-auto="btn-gen-cpf">🆔 CPF</button>
+                    </div>
+                    <input type="text" id="mockName" placeholder="Nome" readonly class="input-full-width" data-auto="output-name" style="margin-top: 10px;"/>
+                    <input type="text" id="mockEmail" placeholder="Email" readonly class="input-full-width" data-auto="output-email"/>
+                    <input type="text" id="mockPhone" placeholder="Telefone" readonly class="input-full-width" data-auto="output-phone"/>
+                    <input type="text" id="mockCpf" placeholder="CPF" readonly class="input-full-width" data-auto="output-cpf"/>
+                    <div class="acceptance-accordion" data-auto="criteria-accordion">
+                        <div class="acceptance-header" data-auto="criteria-header">
+                            <span class="acceptance-header-title">📋 Critérios de Aceite</span>
+                            <span class="acceptance-toggle">▼</span>
+                        </div>
+                        <div class="acceptance-body" data-auto="criteria-body">
+                            <ul>
+                                <li>Botão Nome gera nomes aleatórios válidos</li>
+                                <li>Botão Email gera emails com domínio</li>
+                                <li>Botão Telefone gera formato brasileiro (11)9xxxx-xxxx</li>
+                                <li>Botão CPF gera números válidos (11 dígitos)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BLOCO 67: JSON Formatter -->
+            <div class="interactive-block test-auto" id="bloco-67-json-formatter" data-test="bloco-67" data-auto="bloco-67-container">
+                <h3>67 - 📄 JSON Formatter/Validator</h3>
+                <div class="interactive-block-content" data-auto="content">
+                    <p class="label-small">Formata e valida JSON para análise de respostas API.</p>
+                    <textarea id="jsonInput" placeholder='Cole JSON aqui, ex: {"nome":"teste"}' class="input-full-width" data-auto="input-json" style="min-height: 100px; margin-bottom: 10px; background: #0c0c0c;"></textarea>
+                    <div style="display: flex; gap: 10px;">
+                        <button id="jsonFormatBtn" class="btn-primary" data-auto="btn-format" style="flex: 1;">✨ Formatar</button>
+                        <button id="jsonValidateBtn" class="btn-secondary" data-auto="btn-validate" style="flex: 1;">✔️ Validar</button>
+                    </div>
+                    <textarea id="jsonOutput" placeholder="JSON formatado aparecerá aqui" readonly class="input-full-width" data-auto="output-json" style="min-height: 100px; margin-top: 10px; background: #0c0c0c;"></textarea>
+                    <p id="jsonStatus" class="text-validation" data-auto="status-json"></p>
+                    <div class="acceptance-accordion" data-auto="criteria-accordion">
+                        <div class="acceptance-header" data-auto="criteria-header">
+                            <span class="acceptance-header-title">📋 Critérios de Aceite</span>
+                            <span class="acceptance-toggle">▼</span>
+                        </div>
+                        <div class="acceptance-body" data-auto="criteria-body">
+                            <ul>
+                                <li>Botão Formatar indenta JSON com 2 espaços</li>
+                                <li>Botão Validar verifica estrutura JSON válida</li>
+                                <li>Mostra erro se JSON inválido</li>
+                                <li>Preserva conteúdo original</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BLOCO 68: Validador CPF/CNPJ -->
+            <div class="interactive-block test-auto" id="bloco-68-validador-documentos" data-test="bloco-68" data-auto="bloco-68-container">
+                <h3>68 - ✔️ Validador de Documentos (CPF/CNPJ)</h3>
+                <div class="interactive-block-content" data-auto="content">
+                    <p class="label-small">Valida documentos brasileiros.</p>
+                    <input type="text" id="cpfInput" placeholder="CPF: 123.456.789-10" class="input-full-width" data-auto="input-cpf" style="margin-bottom: 10px;"/>
+                    <button id="cpfValidateBtn" class="btn-primary" data-auto="btn-validate-cpf" style="width: 100%;">Validar CPF</button>
+                    <input type="text" id="cnpjInput" placeholder="CNPJ: 12.345.678/0001-90" class="input-full-width" data-auto="input-cnpj" style="margin-top: 10px; margin-bottom: 10px;"/>
+                    <button id="cnpjValidateBtn" class="btn-primary" data-auto="btn-validate-cnpj" style="width: 100%;">Validar CNPJ</button>
+                    <p id="documentResult" class="text-validation" data-auto="result-value" style="margin-top: 10px;"></p>
+                    <div class="acceptance-accordion" data-auto="criteria-accordion">
+                        <div class="acceptance-header" data-auto="criteria-header">
+                            <span class="acceptance-header-title">📋 Critérios de Aceite</span>
+                            <span class="acceptance-toggle">▼</span>
+                        </div>
+                        <div class="acceptance-body" data-auto="criteria-body">
+                            <ul>
+                                <li>CPF validado com algoritmo 11 dígitos</li>
+                                <li>CNPJ validado com algoritmo 14 dígitos</li>
+                                <li>Aceita com ou sem formatação</li>
+                                <li>Mostra resultado OK ou erro</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BLOCO 69: Gerador de Senhas -->
+            <div class="interactive-block test-auto" id="bloco-69-gerador-senhas" data-test="bloco-69" data-auto="bloco-69-container">
+                <h3>69 - 🔐 Gerador de Senhas</h3>
+                <div class="interactive-block-content" data-auto="content">
+                    <p class="label-small">Gere senhas aleatórias customizadas.</p>
+                    <div style="display: flex; gap: 10px; margin-bottom: 10px;">
+                        <label style="flex: 1;"><input type="number" id="passLength" value="12" min="8" max="32" data-auto="input-length" style="width: 100%;"/> Caracteres</label>
+                    </div>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 10px;">
+                        <label><input type="checkbox" id="passUpper" checked data-auto="check-upper"/> Maiúsculas</label>
+                        <label><input type="checkbox" id="passLower" checked data-auto="check-lower"/> Minúsculas</label>
+                        <label><input type="checkbox" id="passNumbers" checked data-auto="check-numbers"/> Números</label>
+                        <label><input type="checkbox" id="passSpecial" checked data-auto="check-special"/> Especiais</label>
+                    </div>
+                    <button id="generatePassBtn" class="btn-primary" data-auto="btn-generate" style="width: 100%;">🔐 Gerar Senha</button>
+                    <input type="text" id="passwordOutput" placeholder="Senha gerada aparecerá aqui" readonly class="input-full-width" data-auto="output-password" style="margin-top: 10px; background: #0c0c0c;"/>
+                    <button id="copyPassBtn" class="btn-secondary" data-auto="btn-copy" style="width: 100%; margin-top: 10px;">📋 Copiar</button>
+                    <div class="acceptance-accordion" data-auto="criteria-accordion">
+                        <div class="acceptance-header" data-auto="criteria-header">
+                            <span class="acceptance-header-title">📋 Critérios de Aceite</span>
+                            <span class="acceptance-toggle">▼</span>
+                        </div>
+                        <div class="acceptance-body" data-auto="criteria-body">
+                            <ul>
+                                <li>Gera senhas com tamanho 8-32 caracteres</li>
+                                <li>Respeita opções selecionadas (maiúsc/minúsc/número/especial)</li>
+                                <li>Cada geração é diferente</li>
+                                <li>Copiar leva para clipboard</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BLOCO 70: LocalStorage Tester -->
+            <div class="interactive-block test-auto" id="bloco-70-storage-tester" data-test="bloco-70" data-auto="bloco-70-container">
+                <h3>70 - 💾 LocalStorage/SessionStorage Tester</h3>
+                <div class="interactive-block-content" data-auto="content">
+                    <p class="label-small">Teste persistência de dados.</p>
+                    <div style="display: flex; gap: 10px; margin-bottom: 10px;">
+                        <input type="text" id="storageKey" placeholder="Chave" class="input-full-width" data-auto="input-key" style="flex: 1;"/>
+                        <input type="text" id="storageValue" placeholder="Valor" class="input-full-width" data-auto="input-value" style="flex: 1;"/>
+                    </div>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 10px;">
+                        <button id="storageSaveBtn" class="btn-primary" data-auto="btn-save">💾 Salvar</button>
+                        <button id="storageGetBtn" class="btn-primary" data-auto="btn-get">📖 Recuperar</button>
+                        <button id="storageClearBtn" class="btn-secondary" data-auto="btn-clear">🗑️ Limpar Tudo</button>
+                        <button id="storageListBtn" class="btn-secondary" data-auto="btn-list">📋 Listar</button>
+                    </div>
+                    <textarea id="storageOutput" placeholder="Dados aparecerão aqui" readonly class="input-full-width" data-auto="output-storage" style="min-height: 80px; background: #0c0c0c;"></textarea>
+                    <p id="storageStatus" class="text-validation" data-auto="status-storage"></p>
+                    <div class="acceptance-accordion" data-auto="criteria-accordion">
+                        <div class="acceptance-header" data-auto="criteria-header">
+                            <span class="acceptance-header-title">📋 Critérios de Aceite</span>
+                            <span class="acceptance-toggle">▼</span>
+                        </div>
+                        <div class="acceptance-body" data-auto="criteria-body">
+                            <ul>
+                                <li>Salvar persiste dados em localStorage</li>
+                                <li>Recuperar traz dados salvos</li>
+                                <li>Limpar apaga todos dados</li>
+                                <li>Listar mostra todas as chaves</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BLOCO 71: Performance Metrics -->
+            <div class="interactive-block test-auto" id="bloco-71-performance-metrics" data-test="bloco-71" data-auto="bloco-71-container">
+                <h3>71 - 📊 Performance Metrics</h3>
+                <div class="interactive-block-content" data-auto="content">
+                    <p class="label-small">Meça tempo de execução de operações.</p>
+                    <button id="perfStartBtn" class="btn-primary" data-auto="btn-start" style="width: 100%; margin-bottom: 10px;">⏱️ Iniciar Medição</button>
+                    <button id="perfStopBtn" class="btn-secondary" data-auto="btn-stop" style="width: 100%;" disabled>⏹️ Parar Medição</button>
+                    <div id="perfOutput" class="text-validation" data-auto="output-metrics" style="margin-top: 15px; padding: 15px; background: #0c0c0c; border-radius: 8px; min-height: 60px;"></div>
+                    <div class="acceptance-accordion" data-auto="criteria-accordion">
+                        <div class="acceptance-header" data-auto="criteria-header">
+                            <span class="acceptance-header-title">📋 Critérios de Aceite</span>
+                            <span class="acceptance-toggle">▼</span>
+                        </div>
+                        <div class="acceptance-body" data-auto="criteria-body">
+                            <ul>
+                                <li>Botão Iniciar começa contagem de tempo</li>
+                                <li>Botão Parar finaliza e exibe tempo em ms</li>
+                                <li>Exibe tempo wall clock (milissegundos)</li>
+                                <li>Permite múltiplas medições</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BLOCO 72: Dark/Light Theme Toggle -->
+            <div class="interactive-block test-auto" id="bloco-72-theme-toggle" data-test="bloco-72" data-auto="bloco-72-container">
+                <h3>72 - 🌓 Alternador de Tema (Dark/Light)</h3>
+                <div class="interactive-block-content" data-auto="content">
+                    <p class="label-small">Alterna entre tema escuro e claro. Preferência salva em localStorage.</p>
+                    <button id="themeToggleBtn" class="btn-primary" data-auto="btn-toggle" style="width: 100%;">🌙 Alternar para Light</button>
+                    <p id="themeStatus" class="text-validation" data-auto="status-theme" style="margin-top: 10px; text-align: center;">Tema atual: Escuro</p>
+                    <div class="acceptance-accordion" data-auto="criteria-accordion">
+                        <div class="acceptance-header" data-auto="criteria-header">
+                            <span class="acceptance-header-title">📋 Critérios de Aceite</span>
+                            <span class="acceptance-toggle">▼</span>
+                        </div>
+                        <div class="acceptance-body" data-auto="criteria-body">
+                            <ul>
+                                <li>Toggle alterna dark ↔ light</li>
+                                <li>Preferência salva em localStorage</li>
+                                <li>Página recarrega mantém tema escolhido</li>
+                                <li>Animação de transição suave</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BLOCO 73: Exportador de Dados -->
+            <div class="interactive-block test-auto" id="bloco-73-exportador-dados" data-test="bloco-73" data-auto="bloco-73-container">
+                <h3>73 - 📥 Exportador de Dados</h3>
+                <div class="interactive-block-content" data-auto="content">
+                    <p class="label-small">Exporte resultados de testes em diferentes formatos.</p>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 10px;">
+                        <button id="exportCsvBtn" class="btn-primary" data-auto="btn-export-csv">📊 Exportar CSV</button>
+                        <button id="exportJsonBtn" class="btn-primary" data-auto="btn-export-json">📄 Exportar JSON</button>
+                        <button id="exportHtmlBtn" class="btn-secondary" data-auto="btn-export-html">🌐 Exportar HTML</button>
+                        <button id="exportTxtBtn" class="btn-secondary" data-auto="btn-export-txt">📝 Exportar TXT</button>
+                    </div>
+                    <textarea id="exportData" placeholder="Dados para exportar (ex: teste1, teste2, teste3)" class="input-full-width" data-auto="input-data" style="min-height: 100px; margin-bottom: 10px; background: #0c0c0c;"></textarea>
+                    <p id="exportStatus" class="text-validation" data-auto="status-export"></p>
+                    <div class="acceptance-accordion" data-auto="criteria-accordion">
+                        <div class="acceptance-header" data-auto="criteria-header">
+                            <span class="acceptance-header-title">📋 Critérios de Aceite</span>
+                            <span class="acceptance-toggle">▼</span>
+                        </div>
+                        <div class="acceptance-body" data-auto="criteria-body">
+                            <ul>
+                                <li>Botões exportam dados em formatos específicos</li>
+                                <li>CSV com separador vírgula</li>
+                                <li>JSON com estrutura válida</li>
+                                <li>HTML com tabela formatada</li>
+                                <li>Download automático com nome timestamp</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <!-- ========== SEÇÃO: API TESTING & QUIZ (TESTES FINAIS) ========== -->
 
-            <!-- BLOCO 63: API STATUS 200 -->
-            <div class="interactive-block test-auto" id="bloco-63-api-status-200" data-test="bloco-63" data-auto="bloco-63-container">
-                <h3>63 - 🌐 API Status 200 - Respostas Bem-sucedidas</h3>
+            <!-- BLOCO 74: API STATUS 200 -->
+            <div class="interactive-block test-auto" id="bloco-74-api-status-200" data-test="bloco-74" data-auto="bloco-74-container">
+                <h3>74 - 🌐 API Status 200 - Respostas Bem-sucedidas</h3>
                 <div class="interactive-block-content" data-auto="content">
                     <p class="label-small">Teste diferentes tipos de requisições HTTP (GET, POST, PUT, DELETE) com status 200 (OK), 201 (Criado) e 204 (Sem Conteúdo).</p>
                     
@@ -2424,9 +2749,9 @@
                 </div>
             </div>
             
-            <!-- BLOCO 64: API STATUS 300 -->
-            <div class="interactive-block test-auto" id="bloco-64-api-status-300" data-test="bloco-64" data-auto="bloco-64-container">
-                <h3>64 - 🌐 API Status 300 - Redirecionamentos</h3>
+            <!-- BLOCO 75: API STATUS 300 -->
+            <div class="interactive-block test-auto" id="bloco-75-api-status-300" data-test="bloco-75" data-auto="bloco-75-container">
+                <h3>75 - 🌐 API Status 300 - Redirecionamentos</h3>
                 <div class="interactive-block-content" data-auto="content">
                     <p class="label-small">Teste respostas HTTP com status 300 (Múltiplas Escolhas), 301 (Movido Permanentemente), 302 (Encontrado) e 304 (Não Modificado).</p>
                     
@@ -2458,9 +2783,9 @@
                 </div>
             </div>
             
-            <!-- BLOCO 65: API STATUS 400 -->
-            <div class="interactive-block test-auto" id="bloco-65-api-status-400" data-test="bloco-65" data-auto="bloco-65-container">
-                <h3>65 - 🌐 API Status 400 - Erros do Cliente</h3>
+            <!-- BLOCO 76: API STATUS 400 -->
+            <div class="interactive-block test-auto" id="bloco-76-api-status-400" data-test="bloco-76" data-auto="bloco-76-container">
+                <h3>76 - 🌐 API Status 400 - Erros do Cliente</h3>
                 <div class="interactive-block-content" data-auto="content">
                     <p class="label-small">Teste respostas HTTP com status 400 (Requisição Inválida), 401 (Não Autorizado), 403 (Proibido) e 404 (Não Encontrado).</p>
                     
@@ -2492,9 +2817,9 @@
                 </div>
             </div>
             
-            <!-- BLOCO 66: API STATUS 500 -->
-            <div class="interactive-block test-auto" id="bloco-66-api-status-500" data-test="bloco-66">
-                <h3>66 - 🌐 API Status 500 - Erros do Servidor</h3>
+            <!-- BLOCO 77: API STATUS 500 -->
+            <div class="interactive-block test-auto" id="bloco-77-api-status-500" data-test="bloco-77" data-auto="bloco-77-container">
+                <h3>77 - 🌐 API Status 500 - Erros do Servidor</h3>
                 <div class="interactive-block-content">
                     <p class="label-small">Teste respostas HTTP com status 500 (Erro Interno), 501 (Não Implementado), 502 (Gateway Inválido) e 503 (Serviço Indisponível).</p>
                     
@@ -2526,9 +2851,9 @@
                 </div>
             </div>
             
-            <!-- BLOCO 67: CTFL QUIZ - TESTE FINAL -->
-            <div class="interactive-block test-auto" id="bloco-67-ctfl-quiz" data-test="bloco-67">
-                <h3>67 - 📨 CTFL Quiz - Teste Seu Conhecimento</h3>
+            <!-- BLOCO 78: CTFL QUIZ - TESTE FINAL -->
+            <div class="interactive-block test-auto" id="bloco-78-ctfl-quiz" data-test="bloco-78" data-auto="bloco-78-container">
+                <h3>78 - 📨 CTFL Quiz - Teste Seu Conhecimento</h3>
                 <div class="interactive-block-content" data-auto="quiz-content">
                     <div class="quiz-header" data-auto="quiz-header">
                         <span>Pontuação:</span>
@@ -2553,9 +2878,9 @@
                 </div>
             </div>
 
-            <!-- BLOCO 68: DOWNLOAD SYLLABUS 4.0 PT -->
-            <div class="interactive-block test-auto" id="bloco-68-syllabus-pdf" data-test="bloco-68" data-auto="bloco-68-container">
-                <h3>68 - 📚 Download Syllabus 4.0 - Português</h3>
+            <!-- BLOCO 79: DOWNLOAD SYLLABUS 4.0 PT -->
+            <div class="interactive-block test-auto" id="bloco-79-syllabus-pdf" data-test="bloco-79" data-auto="bloco-79-container">
+                <h3>79 - 📚 Download Syllabus 4.0 - Português</h3>
                 <div class="interactive-block-content" data-auto="content">
                     <p class="label-small">Baixe o documento oficial Syllabus 4.0 em português. Este é o guia completo de conceitos, competências e conhecimentos em Quality Assurance.</p>
                     

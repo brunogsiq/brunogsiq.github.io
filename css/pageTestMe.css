@@ -3518,6 +3518,60 @@ h1, h2, h3, h4, h5, h6,
     box-shadow: 0 0 8px rgba(0, 102, 204, 0.3);
 }
 
+/* ============================= */
+/*  CODE BLOCK - Bloco de Código */
+/* ============================= */
+.code-block {
+    background-color: #0f0f1e;
+    border: 1px solid #2d2d60;
+    border-radius: 8px;
+    padding: 16px;
+    margin: 12px 0;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: #ffffff;
+    overflow-x: auto;
+    overflow-y: auto;
+    max-height: 300px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    -webkit-overflow-scrolling: touch;
+}
+
+.code-block code {
+    display: block;
+    font-family: 'Courier New', monospace;
+    color: #58a6ff;
+}
+
+.code-block code.language-javascript,
+.code-block code.language-python,
+.code-block code.language-html {
+    color: #58a6ff;
+}
+
+/* Scroll bar styling para code blocks */
+.code-block::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+.code-block::-webkit-scrollbar-track {
+    background: #1a1a40;
+    border-radius: 4px;
+}
+
+.code-block::-webkit-scrollbar-thumb {
+    background: #007fff;
+    border-radius: 4px;
+}
+
+.code-block::-webkit-scrollbar-thumb:hover {
+    background: #005fcc;
+}
+
 .autocomplete-list-wrapper {
     display: flex;
     flex-direction: column;
@@ -3571,4 +3625,396 @@ h1, h2, h3, h4, h5, h6,
 
 .autocomplete-item-text {
     flex: 1;
+}
+
+/* ========== BLOCO 64-73: NOVOS UTILITÁRIOS QA ========== */
+
+/* BLOCO 64: UUID Generator */
+#bloco-64-uuid-generator .interactive-block-content input[readonly] {
+    background: #0c0c0c !important;
+    border: 1px solid #444;
+    padding: 8px;
+    border-radius: 4px;
+    color: #0066cc;
+    font-family: 'Courier New', monospace;
+    font-size: 0.85em;
+}
+
+/* BLOCO 65: Timer */
+#timerDisplay {
+    font-family: 'Courier New', monospace;
+    letter-spacing: 2px;
+    padding: 15px;
+    background: rgba(0, 102, 204, 0.1);
+    border-left: 4px solid #0066cc;
+    border-radius: 4px;
+}
+
+#timerSeconds {
+    padding: 8px;
+    border: 1px solid #444;
+    background: #0c0c0c;
+    color: white;
+    border-radius: 4px;
+}
+
+/* BLOCO 66: Mock Data Generator */
+#bloco-66-dados-mock .interactive-block-content input[readonly] {
+    background: #0c0c0c !important;
+    border: 1px solid #444;
+    padding: 8px;
+    margin-top: 8px;
+    border-radius: 4px;
+}
+
+#bloco-66-dados-mock .btn-secondary {
+    font-size: 0.75em;
+    padding: 6px 8px;
+}
+
+/* BLOCO 67: JSON Formatter */
+#jsonInput, #jsonOutput {
+    font-family: 'Courier New', monospace !important;
+    font-size: 0.8em !important;
+    background: #0c0c0c !important;
+    border: 1px solid #444;
+    color: #00ff00;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+#jsonInput::placeholder, #jsonOutput::placeholder {
+    color: #555;
+}
+
+#jsonStatus {
+    margin-top: 10px;
+    padding: 8px;
+    border-radius: 4px;
+    font-weight: 500;
+}
+
+/* BLOCO 68: CPF/CNPJ Validator */
+#cpfInput, #cnpjInput {
+    border: 1px solid #444;
+    padding: 8px;
+    border-radius: 4px;
+    background: #0c0c0c;
+    color: white;
+}
+
+#cpfInput:focus, #cnpjInput:focus {
+    border-color: #0066cc;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(0, 102, 204, 0.2);
+}
+
+#bloco-68-validador-documentos .btn-primary {
+    font-size: 0.8em;
+    padding: 8px 12px;
+}
+
+/* BLOCO 69: Password Generator */
+#bloco-69-gerador-senhas label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9em;
+    cursor: pointer;
+}
+
+#bloco-69-gerador-senhas input[type="checkbox"] {
+    cursor: pointer;
+    width: 18px;
+    height: 18px;
+    accent-color: #0066cc;
+}
+
+#bloco-69-gerador-senhas input[type="number"] {
+    background: #0c0c0c;
+    border: 1px solid #444;
+    color: white;
+    padding: 6px;
+    border-radius: 4px;
+}
+
+#passwordOutput {
+    font-family: 'Courier New', monospace !important;
+    background: #0c0c0c !important;
+    border: 1px solid #444 !important;
+    color: #00ff00 !important;
+    padding: 10px !important;
+}
+
+/* BLOCO 70: Storage Tester */
+#storageKey, #storageValue {
+    background: #0c0c0c;
+    border: 1px solid #444;
+    padding: 8px;
+    color: white;
+    border-radius: 4px;
+}
+
+#storageOutput {
+    font-family: 'Courier New', monospace;
+    background: #0c0c0c !important;
+    border: 1px solid #444;
+    color: #00ff00;
+    padding: 10px;
+    font-size: 0.8em;
+}
+
+#bloco-70-storage-tester .btn-primary,
+#bloco-70-storage-tester .btn-secondary {
+    font-size: 0.75em;
+    padding: 6px 8px;
+}
+
+/* BLOCO 71: Performance Metrics */
+#perfOutput {
+    font-family: 'Courier New', monospace;
+    background: #0c0c0c !important;
+    border: 1px solid #0066cc;
+    border-left: 4px solid #0066cc;
+    color: #0066cc;
+    padding: 15px;
+    border-radius: 4px;
+    font-size: 0.85em;
+    line-height: 1.6;
+}
+
+/* BLOCO 72: Theme Toggle */
+#themeToggleBtn {
+    transition: all 0.3s ease;
+}
+
+#themeToggleBtn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 102, 204, 0.3);
+}
+
+#themeStatus {
+    padding: 10px;
+    background: rgba(0, 102, 204, 0.1);
+    border-left: 3px solid #0066cc;
+    border-radius: 4px;
+    font-weight: 500;
+}
+
+/* BLOCO 73: Data Exporter */
+#exportData {
+    font-family: 'Courier New', monospace;
+    background: #0c0c0c !important;
+    border: 1px solid #444;
+    color: white;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+#bloco-73-exportador-dados .btn-primary,
+#bloco-73-exportador-dados .btn-secondary {
+    font-size: 0.75em;
+    padding: 8px 10px;
+}
+
+#exportStatus {
+    margin-top: 10px;
+    padding: 8px;
+    border-radius: 4px;
+    font-weight: 500;
+}
+
+/* ========== ESTILOS GERAIS DOS NOVOS BLOCOS ========== */
+
+.label-small {
+    font-size: 0.85em;
+    color: #aaa;
+    margin-bottom: 10px;
+    line-height: 1.4;
+}
+
+.text-validation {
+    font-size: 0.85em;
+    font-weight: 500;
+    margin-top: 8px;
+    padding: 6px 8px;
+    border-radius: 4px;
+}
+
+.info-box {
+    margin-top: 12px;
+    padding: 12px;
+    background: rgba(0, 102, 204, 0.08);
+    border-left: 3px solid #0066cc;
+    border-radius: 4px;
+    font-size: 0.85em;
+    color: #ccc;
+}
+
+.info-box strong {
+    color: #0066cc;
+}
+
+/* Acceptance Accordion Styling */
+.acceptance-accordion {
+    margin-top: 15px;
+    border: 1px solid #444;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.acceptance-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    background: rgba(0, 102, 204, 0.1);
+    cursor: pointer;
+    user-select: none;
+    transition: background 0.3s ease;
+}
+
+.acceptance-header:hover {
+    background: rgba(0, 102, 204, 0.15);
+}
+
+.acceptance-header-title {
+    font-weight: 600;
+    font-size: 0.9em;
+    color: #0066cc;
+}
+
+.acceptance-toggle {
+    font-size: 0.8em;
+    transition: transform 0.3s ease;
+}
+
+.acceptance-body {
+    padding: 12px;
+    background: #0c0c0c;
+    display: none;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+
+.acceptance-body.show {
+    display: block;
+    max-height: 500px;
+}
+
+.acceptance-body ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.acceptance-body li {
+    padding: 6px 0;
+    color: #ccc;
+    font-size: 0.85em;
+    border-bottom: 1px solid #333;
+}
+
+.acceptance-body li:last-child {
+    border-bottom: none;
+}
+
+.acceptance-body li:before {
+    content: '✓ ';
+    color: #0066cc;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+/* Dark mode enhancements */
+html {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Botões coloridos para API (compatível com novos blocos) */
+.btn-get {
+    background: #00a854;
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.8em;
+}
+
+.btn-post {
+    background: #0066cc;
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.8em;
+}
+
+.btn-put {
+    background: #ffa500;
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.8em;
+}
+
+.btn-delete {
+    background: #f44336;
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.8em;
+}
+
+.btn-warning {
+    background: #ff9800;
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.8em;
+}
+
+.btn-danger {
+    background: #f44336;
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.8em;
+}
+
+.api-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.api-result {
+    background: #0c0c0c;
+    border: 1px solid #444;
+    border-radius: 4px;
+    padding: 12px;
+    margin: 12px 0;
+    font-family: 'Courier New', monospace;
+    font-size: 0.8em;
+    color: #00ff00;
+    white-space: pre-wrap;
+    word-break: break-all;
+    max-height: 300px;
+    overflow-y: auto;
 }

@@ -1159,11 +1159,32 @@ function inicializarZionComponents() {
     const dynamicCode = document.getElementById('dynamicCode');
     const zionCodeInput = document.getElementById('zionCodeInput');
     const submitCodeBtn = document.getElementById('submitCodeBtn');
+    const copyDynamicCodeBtn = document.getElementById('copyDynamicCodeBtn');
     const codeResult = document.getElementById('codeResult');
     
     if (dynamicCode) {
-        const codigoGerado = Date.now().toString();
+        let codigoGerado = Date.now().toString();
         dynamicCode.textContent = codigoGerado;
+        
+        // Copiar código para clipboard
+        if (copyDynamicCodeBtn) {
+            copyDynamicCodeBtn.addEventListener('click', () => {
+                const codigoText = dynamicCode.textContent;
+                navigator.clipboard.writeText(codigoText).then(() => {
+                    codeResult.textContent = '✓ Código copiado!';
+                    codeResult.style.color = '#0066cc';
+                    copyDynamicCodeBtn.textContent = '✓ Copiado!';
+                    setTimeout(() => {
+                        codeResult.textContent = '';
+                        copyDynamicCodeBtn.textContent = '📋 Copiar Código';
+                    }, 2000);
+                }).catch(() => {
+                    codeResult.textContent = '❌ Erro ao copiar!';
+                    codeResult.style.color = '#f44336';
+                    setTimeout(() => { codeResult.textContent = ''; }, 2000);
+                });
+            });
+        }
         
         if (submitCodeBtn) {
             submitCodeBtn.addEventListener('click', function() {
@@ -1171,19 +1192,20 @@ function inicializarZionComponents() {
                 
                 if (codigoDigitado === codigoGerado) {
                     codeResult.textContent = '✓ Código correto! Sucesso!';
+                    codeResult.style.color = '#0066cc';
                     codeResult.className = 'code-result success';
                     zionCodeInput.value = '';
                     // Gera novo código
-                    const novoCodigoGerado = Date.now().toString();
-                    dynamicCode.textContent = novoCodigoGerado;
+                    codigoGerado = Date.now().toString();
+                    dynamicCode.textContent = codigoGerado;
                 } else {
                     codeResult.textContent = '✗ Código incorreto. Tente novamente.';
+                    codeResult.style.color = '#f44336';
                     codeResult.className = 'code-result error';
                 }
                 
                 setTimeout(() => {
                     codeResult.textContent = '';
-                    codeResult.className = 'code-result';
                 }, 3000);
             });
         }
@@ -1900,14 +1922,19 @@ function formatPhone(value) {
 function formatCPF(value) {
     return value.replace(/\D/g, '').replace(/(\d{3})(\d)/, '$1.$2').replace(/(\d{3})(\d)/, '$1.$2').replace(/(\d{3})(\d{2})$/, '$1-$2').substring(0, 14);
 }
+function formatCNPJ(value) {
+    return value.replace(/\D/g, '').replace(/(\d{2})(\d)/, '$1.$2').replace(/(\d{3})(\d)/, '$1.$2').replace(/(\d{3})(\d)/, '$1/$2').replace(/(\d{4})(\d{2})$/, '$1-$2').substring(0, 18);
+}
 function formatDate(value) {
     return value.replace(/\D/g, '').replace(/(\d{2})(\d)/, '$1/$2').replace(/(\d{2})(\d)/, '$1/$2').substring(0, 10);
 }
 const telefoneMask = document.getElementById('telefoneMask');
 const cpfMask = document.getElementById('cpfMask');
+const cnpjMask = document.getElementById('cnpjMask');
 const dataMask = document.getElementById('dataMask');
 if (telefoneMask) telefoneMask.addEventListener('input', function() { this.value = formatPhone(this.value); });
 if (cpfMask) cpfMask.addEventListener('input', function() { this.value = formatCPF(this.value); });
+if (cnpjMask) cnpjMask.addEventListener('input', function() { this.value = formatCNPJ(this.value); });
 if (dataMask) dataMask.addEventListener('input', function() { this.value = formatDate(this.value); });
 
 // BLOCO 49: Collapse/Accordion
@@ -2115,14 +2142,14 @@ if (carouselSlide) {
     updateCarousel();
 }
 
-// BLOCO 49: Popover
+// BLOCO 43: Popover
 const popoverBtn = document.getElementById('popoverBtn');
 const popover = document.getElementById('popover');
 const popoverClose = document.getElementById('popoverClose');
 if (popoverBtn) popoverBtn.addEventListener('click', () => { if (popover) popover.style.display = 'block'; });
 if (popoverClose) popoverClose.addEventListener('click', () => { if (popover) popover.style.display = 'none'; });
 
-// BLOCO 50: Notificação Persistente
+// BLOCO 44: Notificação Persistente
 const notifSuccessBtn = document.getElementById('notifSuccessBtn');
 const notifWarningBtn = document.getElementById('notifWarningBtn');
 const notifErrorBtn = document.getElementById('notifErrorBtn');
@@ -2139,7 +2166,7 @@ if (notifSuccessBtn) notifSuccessBtn.addEventListener('click', () => createNotif
 if (notifWarningBtn) notifWarningBtn.addEventListener('click', () => createNotification('warning', '⚠️ Atenção: verifique os dados!'));
 if (notifErrorBtn) notifErrorBtn.addEventListener('click', () => createNotification('error', '❌ Erro ao processar solicitação!'));
 
-// BLOCO 51: Stepper/Wizard
+// BLOCO 45: Stepper/Wizard
 const stepperBack = document.getElementById('stepperBack');
 const stepperNext = document.getElementById('stepperNext');
 const stepperContent = document.getElementById('stepperContent');
@@ -2157,7 +2184,7 @@ function updateStepper() {
 if (stepperBack) stepperBack.addEventListener('click', () => { if (currentStep > 1) { currentStep--; updateStepper(); } });
 if (stepperNext) stepperNext.addEventListener('click', () => { if (currentStep < 3) { currentStep++; updateStepper(); } });
 
-// BLOCO 52: Chips/Tags
+// BLOCO 46: Chips/Tags
 const chipsInput = document.getElementById('chipsInput');
 const chipsList = document.getElementById('chipsList');
 const chipsResult = document.getElementById('chipsResult');
@@ -2175,7 +2202,7 @@ if (chipsInput) {
     });
 }
 
-// BLOCO 53: Segmented Control
+// BLOCO 47: Segmented Control
 const segmentButtons = document.querySelectorAll('.segmented-control .segment');
 const segmentedResult = document.getElementById('segmentedResult');
 segmentButtons.forEach(btn => {
@@ -2186,7 +2213,7 @@ segmentButtons.forEach(btn => {
     });
 });
 
-// BLOCO 54: Tree View
+// BLOCO 48: Tree View
 const treeToggles = document.querySelectorAll('.tree-toggle');
 treeToggles.forEach(toggle => {
     toggle.addEventListener('click', function() {
@@ -2201,7 +2228,7 @@ treeToggles.forEach(toggle => {
     });
 });
 
-// BLOCO 55: Combobox
+// BLOCO 50: Combobox
 const comboboxInput = document.getElementById('comboboxInput');
 const comboboxBtn = document.getElementById('comboboxBtn');
 const comboboxList = document.getElementById('comboboxList');
@@ -2218,7 +2245,7 @@ comboboxItems?.forEach(item => {
     });
 });
 
-// BLOCO 56: Resize Handle
+// BLOCO 51: Resize Handle
 const resizableBox = document.getElementById('resizableBox');
 const resizeHandle = resizableBox?.querySelector('.resize-handle');
 const resizeInfo = document.getElementById('resizeInfo');
@@ -2237,7 +2264,7 @@ if (resizeHandle) {
     });
 }
 
-// BLOCO 57: Context Menu
+// BLOCO 52: Context Menu
 const contextTarget = document.getElementById('contextTarget');
 const contextMenu = document.getElementById('contextMenu');
 const contextResult = document.getElementById('contextResult');
@@ -2261,7 +2288,7 @@ contextItems?.forEach(item => {
     });
 });
 
-// BLOCO 58: Validação Async
+// BLOCO 53: Validação Async
 const usernameInput = document.getElementById('usernameInput');
 const asyncStatus = document.getElementById('asyncStatus');
 const asyncMessage = document.getElementById('asyncMessage');
@@ -2284,22 +2311,44 @@ if (usernameInput) {
     });
 }
 
-// BLOCO 59: Campo com Prefixo/Sufixo
+// BLOCO 54: Campo com Prefixo/Sufixo
 const currencyInput = document.getElementById('currencyInput');
+const baseValueInput = document.getElementById('baseValueInput');
 const percentInput = document.getElementById('percentInput');
 const prefixResult = document.getElementById('prefixResult');
-if (currencyInput) currencyInput.addEventListener('input', () => {
-    if (prefixResult) prefixResult.textContent = `Valor: R$ ${currencyInput.value || '0'}`;
-});
-if (percentInput) percentInput.addEventListener('input', () => {
-    if (prefixResult) prefixResult.textContent = `Percentual: ${percentInput.value || '0'}%`;
-});
+const percentResultValue = document.getElementById('percentResultValue');
 
-// BLOCO 60: Erro com Dica Inline
+function updatePrefixResult() {
+    if (currencyInput && prefixResult) {
+        prefixResult.textContent = `Valor: R$ ${currencyInput.value || '0'}`;
+    }
+}
+
+function updatePercentResult() {
+    if (baseValueInput && percentInput && percentResultValue) {
+        const baseValue = parseFloat(baseValueInput.value) || 0;
+        const percent = parseFloat(percentInput.value) || 0;
+        const result = (baseValue * percent) / 100;
+        percentResultValue.textContent = `${percent}% de R$ ${baseValue.toFixed(2)} = R$ ${result.toFixed(2)}`;
+    }
+}
+
+if (currencyInput) currencyInput.addEventListener('input', updatePrefixResult);
+if (baseValueInput) baseValueInput.addEventListener('input', updatePercentResult);
+if (percentInput) percentInput.addEventListener('input', updatePercentResult);
+
+// BLOCO 55: Erro com Dica Inline
 const emailWithHint = document.getElementById('emailWithHint');
 const emailError = document.getElementById('emailError');
 const passwordWithHint = document.getElementById('passwordWithHint');
 const passwordError = document.getElementById('passwordError');
+const usernameInputBlock55 = document.getElementById('usernameInput');
+const usernameError = document.getElementById('usernameError');
+const usernameStatus = document.getElementById('usernameStatus');
+
+// Usernames não disponíveis
+const unavailableUsernames = ['qatrix tecnologia', 'qatrix', 'qatrix tec', 'bruno siqueira'];
+
 if (emailWithHint) {
     emailWithHint.addEventListener('blur', function() {
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -2310,6 +2359,7 @@ if (emailWithHint) {
         }
     });
 }
+
 if (passwordWithHint) {
     passwordWithHint.addEventListener('blur', function() {
         if (this.value.length < 8) {
@@ -2320,7 +2370,58 @@ if (passwordWithHint) {
     });
 }
 
-// BLOCO 61: Dropzone
+if (usernameInputBlock55) {
+    usernameInputBlock55.addEventListener('input', function() {
+        if (usernameError) usernameError.style.display = 'none';
+        if (usernameStatus) usernameStatus.style.display = 'none';
+    });
+    
+    usernameInputBlock55.addEventListener('blur', function() {
+        const username = this.value.toLowerCase().trim();
+        if (username.length < 4) {
+            if (usernameError) { 
+                usernameError.textContent = '❌ Username deve ter no mínimo 4 caracteres!'; 
+                usernameError.style.display = 'block'; 
+            }
+        } else if (unavailableUsernames.includes(username)) {
+            if (usernameError) { 
+                usernameError.textContent = '❌ Username não disponível!'; 
+                usernameError.style.display = 'block'; 
+            }
+        } else {
+            if (usernameStatus) {
+                usernameStatus.textContent = '✓ Username disponível!';
+                usernameStatus.style.display = 'block';
+                usernameStatus.style.color = '#0066cc';
+            }
+        }
+    });
+}
+
+// Drag & Drop para BLOCO 55
+const dropAreaBlock55 = document.getElementById('dropAreaBlock55');
+if (dropAreaBlock55) {
+    dropAreaBlock55.addEventListener('dragover', (e) => {
+        e.preventDefault();
+        dropAreaBlock55.style.backgroundColor = '#f0f8ff';
+        dropAreaBlock55.style.borderColor = '#0066cc';
+    });
+    dropAreaBlock55.addEventListener('dragleave', () => {
+        dropAreaBlock55.style.backgroundColor = '#fff';
+        dropAreaBlock55.style.borderColor = '#007fff';
+    });
+    dropAreaBlock55.addEventListener('drop', (e) => {
+        e.preventDefault();
+        dropAreaBlock55.style.backgroundColor = '#fff';
+        const files = e.dataTransfer.files;
+        if (files.length > 0) {
+            const fileName = Array.from(files).map(f => f.name).join(', ');
+            dropAreaBlock55.innerHTML = `<p style="color: #0066cc; text-align: center; margin: 0;">📁 ${fileName}</p>`;
+        }
+    });
+}
+
+// BLOCO 56: Dropzone
 const dropzone = document.getElementById('dropzone');
 const dropzoneInput = document.getElementById('dropzoneInput');
 const uploadedFiles = document.getElementById('uploadedFiles');
@@ -2377,7 +2478,7 @@ if (uploadBtn) {
     });
 }
 
-// BLOCO 63: Visualização de Arquivo
+// BLOCO 59: Visualização de Arquivo
 const previewInput = document.getElementById('previewInput');
 const previewContainer = document.getElementById('previewContainer');
 const imagePreview = document.getElementById('imagePreview');
@@ -2404,7 +2505,7 @@ if (previewInput) {
     });
 }
 
-// BLOCO 64: Rating/Estrelas
+// BLOCO 60: Rating/Estrelas
 const stars = document.querySelectorAll('.rating-container .star');
 const ratingResult = document.getElementById('ratingResult');
 stars.forEach((star, index) => {
@@ -2430,7 +2531,7 @@ if (ratingContainer) {
     });
 }
 
-// BLOCO 65: Avaliação com Emoji
+// BLOCO 61: Avaliação com Emoji
 const emojiButtons = document.querySelectorAll('.emoji-btn');
 const emojiResult = document.getElementById('emojiResult');
 emojiButtons.forEach(btn => {
@@ -2441,7 +2542,7 @@ emojiButtons.forEach(btn => {
     });
 });
 
-// BLOCO 66: Mapa Interativo
+// BLOCO 62: Mapa Interativo
 const marker = document.getElementById('marker');
 const mapContainer = document.getElementById('mapContainer');
 const mapResult = document.getElementById('mapResult');
@@ -2459,10 +2560,11 @@ if (mapContainer) {
     });
 }
 
-// BLOCO 67: Canvas Drawing
+// BLOCO 63: Canvas Drawing
 const drawingCanvas = document.getElementById('drawingCanvas');
 const clearCanvasBtn = document.getElementById('clearCanvasBtn');
 const downloadCanvasBtn = document.getElementById('downloadCanvasBtn');
+const canvasResult = document.getElementById('canvasResult');
 let isDrawing = false;
 if (drawingCanvas) {
     const ctx = drawingCanvas.getContext('2d');
@@ -2486,7 +2588,14 @@ if (drawingCanvas) {
 if (clearCanvasBtn) {
     clearCanvasBtn.addEventListener('click', () => {
         const ctx = drawingCanvas?.getContext('2d');
-        if (ctx && drawingCanvas) ctx.clearRect(0, 0, drawingCanvas.width, drawingCanvas.height);
+        if (ctx && drawingCanvas) {
+            ctx.clearRect(0, 0, drawingCanvas.width, drawingCanvas.height);
+            if (canvasResult) {
+                canvasResult.textContent = '✓ Canvas limpo com sucesso!';
+                canvasResult.style.color = '#0066cc';
+                setTimeout(() => { if (canvasResult) canvasResult.textContent = ''; }, 2000);
+            }
+        }
     });
 }
 if (downloadCanvasBtn) {
@@ -2495,19 +2604,642 @@ if (downloadCanvasBtn) {
         link.href = drawingCanvas?.toDataURL() || '';
         link.download = 'desenho.png';
         link.click();
+        if (canvasResult) {
+            canvasResult.textContent = '📥 Imagem baixada!';
+            canvasResult.style.color = '#0066cc';
+            setTimeout(() => { if (canvasResult) canvasResult.textContent = ''; }, 2000);
+        }
     });
 }
 
-// BLOCO 68: Code Highlight
+// BLOCO 63: Code Highlight
 const copyCodeBtn = document.getElementById('copyCodeBtn');
 const codeResult = document.getElementById('codeResult');
 if (copyCodeBtn) {
     copyCodeBtn.addEventListener('click', () => {
         const codeText = document.querySelector('.code-block code')?.textContent || '';
         navigator.clipboard.writeText(codeText).then(() => {
-            if (codeResult) codeResult.textContent = '✓ Código copiado para clipboard!';
-            setTimeout(() => { if (codeResult) codeResult.textContent = ''; }, 2000);
+            if (codeResult) {
+                codeResult.textContent = '✓ Código copiado para clipboard!';
+                codeResult.style.color = '#0066cc';
+                copyCodeBtn.textContent = '✓ Copiado!';
+                setTimeout(() => {
+                    if (codeResult) codeResult.textContent = '';
+                    if (copyCodeBtn) copyCodeBtn.textContent = '📋 Copiar Código';
+                }, 2000);
+            }
+        }).catch(() => {
+            if (codeResult) {
+                codeResult.textContent = '❌ Erro ao copiar código!';
+                codeResult.style.color = '#f44336';
+                setTimeout(() => { if (codeResult) codeResult.textContent = ''; }, 2000);
+            }
         });
     });
 }
+
+// ========== SEÇÃO: UTILITÁRIOS QA (NOVOS BLOCOS 64-73) ==========
+
+// BLOCO 64: UUID Generator
+const generateUuidBtn = document.getElementById('generateUuidBtn');
+const copyUuidBtn = document.getElementById('copyUuidBtn');
+const uuidOutput = document.getElementById('uuidOutput');
+const uuidResult = document.getElementById('uuidResult');
+
+function gerarUuid() {
+    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+        const r = Math.random() * 16 | 0;
+        const v = c === 'x' ? r : (r & 0x3 | 0x8);
+        return v.toString(16);
+    });
+}
+
+if (generateUuidBtn) {
+    generateUuidBtn.addEventListener('click', () => {
+        const uuid = gerarUuid();
+        if (uuidOutput) uuidOutput.value = uuid;
+        if (uuidResult) {
+            uuidResult.textContent = '✓ UUID gerado com sucesso!';
+            uuidResult.style.color = '#0066cc';
+        }
+    });
+}
+
+if (copyUuidBtn) {
+    copyUuidBtn.addEventListener('click', () => {
+        if (uuidOutput && uuidOutput.value) {
+            navigator.clipboard.writeText(uuidOutput.value).then(() => {
+                if (uuidResult) {
+                    uuidResult.textContent = '✓ UUID copiado para clipboard!';
+                    uuidResult.style.color = '#0066cc';
+                    copyUuidBtn.textContent = '✓ Copiado!';
+                    setTimeout(() => {
+                        if (copyUuidBtn) copyUuidBtn.textContent = '📋 Copiar';
+                    }, 2000);
+                }
+            });
+        }
+    });
+}
+
+// BLOCO 65: Timer/Contador
+const timerSeconds = document.getElementById('timerSeconds');
+const timerStartBtn = document.getElementById('timerStartBtn');
+const timerStopBtn = document.getElementById('timerStopBtn');
+const timerResetBtn = document.getElementById('timerResetBtn');
+const timerDisplay = document.getElementById('timerDisplay');
+
+let timerInterval = null;
+let timerRunning = false;
+let initialSeconds = 10;
+
+function atualizarTimerDisplay(seconds) {
+    const mins = Math.floor(seconds / 60);
+    const secs = seconds % 60;
+    if (timerDisplay) {
+        timerDisplay.textContent = `${String(mins).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
+    }
+}
+
+// Sincronizar display inicial com valor do input e adicionar listener
+if (timerSeconds) {
+    timerSeconds.addEventListener('change', () => {
+        initialSeconds = parseInt(timerSeconds.value) || 10;
+        if (!timerRunning) {
+            atualizarTimerDisplay(initialSeconds);
+        }
+    });
+    // Inicializar display com valor do input
+    atualizarTimerDisplay(initialSeconds);
+}
+
+if (timerStartBtn) {
+    timerStartBtn.addEventListener('click', () => {
+        if (!timerRunning) {
+            initialSeconds = parseInt(timerSeconds?.value || 10);
+            timerRunning = true;
+            if (timerStartBtn) timerStartBtn.disabled = true;
+            if (timerStopBtn) timerStopBtn.disabled = false;
+            
+            timerInterval = setInterval(() => {
+                initialSeconds--;
+                atualizarTimerDisplay(initialSeconds);
+                
+                if (initialSeconds <= 0) {
+                    clearInterval(timerInterval);
+                    timerRunning = false;
+                    if (timerStartBtn) timerStartBtn.disabled = false;
+                    if (timerStopBtn) timerStopBtn.disabled = true;
+                }
+            }, 1000);
+        }
+    });
+}
+
+if (timerStopBtn) {
+    timerStopBtn.addEventListener('click', () => {
+        if (timerInterval) {
+            clearInterval(timerInterval);
+            timerRunning = false;
+            if (timerStartBtn) timerStartBtn.disabled = false;
+            if (timerStopBtn) timerStopBtn.disabled = true;
+        }
+    });
+}
+
+if (timerResetBtn) {
+    timerResetBtn.addEventListener('click', () => {
+        if (timerInterval) clearInterval(timerInterval);
+        timerRunning = false;
+        initialSeconds = parseInt(timerSeconds?.value || 10);
+        atualizarTimerDisplay(initialSeconds);
+        if (timerStartBtn) timerStartBtn.disabled = false;
+        if (timerStopBtn) timerStopBtn.disabled = true;
+    });
+}
+
+// BLOCO 66: Mock Data Generator
+function gerarNomeAleatorio() {
+    const nomes = ['João Silva', 'Maria Santos', 'Pedro Costa', 'Ana Oliveira', 'Carlos Mendes', 'Lucia Dias', 'Roberto Alves', 'Fernanda Rocha'];
+    return nomes[Math.floor(Math.random() * nomes.length)];
+}
+
+function gerarEmailAleatorio() {
+    const dominios = ['gmail.com', 'outlook.com', 'hotmail.com', 'yahoo.com', 'test.com'];
+    const nome = Math.random().toString(36).substring(7);
+    return `${nome}@${dominios[Math.floor(Math.random() * dominios.length)]}`;
+}
+
+function gerarTelefoneAleatorio() {
+    const ddd = Math.floor(Math.random() * 100) + 11;
+    const parte1 = Math.floor(Math.random() * 10000) + 90000;
+    const parte2 = Math.floor(Math.random() * 10000);
+    return `(${ddd})${String(parte1).slice(0, 5)}-${String(parte2).padStart(4, '0')}`;
+}
+
+function gerarCpfAleatorio() {
+    let cpf = '';
+    for (let i = 0; i < 9; i++) {
+        cpf += Math.floor(Math.random() * 10);
+    }
+    let s1 = 0, s2 = 0;
+    for (let i = 0; i < 9; i++) {
+        s1 += parseInt(cpf[i]) * (10 - i);
+        s2 += parseInt(cpf[i]) * (11 - i);
+    }
+    const d1 = 11 - (s1 % 11);
+    const d2 = 11 - (s2 % 11);
+    cpf += (d1 < 10 ? d1 : 0) + '' + (d2 < 10 ? d2 : 0);
+    return cpf;
+}
+
+// BLOCO 67: JSON Formatter
+const jsonInput = document.getElementById('jsonInput');
+const jsonFormatBtn = document.getElementById('jsonFormatBtn');
+const jsonValidateBtn = document.getElementById('jsonValidateBtn');
+const jsonOutput = document.getElementById('jsonOutput');
+const jsonStatus = document.getElementById('jsonStatus');
+
+if (jsonFormatBtn) {
+    jsonFormatBtn.addEventListener('click', () => {
+        const input = jsonInput?.value?.trim();
+        if (!input) {
+            if (jsonStatus) {
+                jsonStatus.textContent = '⚠️ Cole JSON válido para formatar';
+                jsonStatus.style.color = '#ff9800';
+            }
+            if (jsonOutput) jsonOutput.value = '';
+            return;
+        }
+        try {
+            const obj = JSON.parse(input);
+            const formatted = JSON.stringify(obj, null, 2);
+            if (jsonOutput) jsonOutput.value = formatted;
+            if (jsonStatus) {
+                jsonStatus.textContent = '✓ JSON formatado com sucesso!';
+                jsonStatus.style.color = '#0066cc';
+            }
+        } catch (e) {
+            if (jsonStatus) {
+                jsonStatus.textContent = `❌ Erro: ${e.message}`;
+                jsonStatus.style.color = '#f44336';
+            }
+        }
+    });
+}
+
+if (jsonValidateBtn) {
+    jsonValidateBtn.addEventListener('click', () => {
+        try {
+            JSON.parse(jsonInput?.value || '{}');
+            if (jsonStatus) {
+                jsonStatus.textContent = '✓ JSON válido!';
+                jsonStatus.style.color = '#0066cc';
+            }
+        } catch (e) {
+            if (jsonStatus) {
+                jsonStatus.textContent = `❌ JSON inválido: ${e.message}`;
+                jsonStatus.style.color = '#f44336';
+            }
+        }
+    });
+}
+
+// BLOCO 68: Validador CPF/CNPJ
+const cpfInput = document.getElementById('cpfInput');
+const cnpjInput = document.getElementById('cnpjInput');
+const cpfValidateBtn = document.getElementById('cpfValidateBtn');
+const cnpjValidateBtn = document.getElementById('cnpjValidateBtn');
+const documentResult = document.getElementById('documentResult');
+
+function validarCpf(cpf) {
+    cpf = cpf.replace(/\D/g, '');
+    if (cpf.length !== 11 || /^(\d)\1{10}$/.test(cpf)) return false;
+    
+    // Validação extra: rejeitar CPFs conhecidamente inválidos (todos dígitos iguais)
+    const digitosIguais = /^\d{11}$/.test(cpf) && cpf === cpf[0].repeat(11);
+    if (digitosIguais) return false;
+    
+    let s1 = 0, s2 = 0;
+    for (let i = 0; i < 9; i++) {
+        s1 += parseInt(cpf[i]) * (10 - i);
+        s2 += parseInt(cpf[i]) * (11 - i);
+    }
+    const d1 = 11 - (s1 % 11);
+    const d2 = 11 - (s2 % 11);
+    
+    return (d1 === parseInt(cpf[9]) || d1 === 10) && (d2 === parseInt(cpf[10]) || d2 === 10);
+}
+
+function validarCnpj(cnpj) {
+    cnpj = cnpj.replace(/\D/g, '');
+    if (cnpj.length !== 14 || /^(\d)\1{13}$/.test(cnpj)) return false;
+    
+    // Validação extra: rejeitar CNPJs com todos dígitos iguais
+    const digitosIguais = /^\d{14}$/.test(cnpj) && cnpj === cnpj[0].repeat(14);
+    if (digitosIguais) return false;
+    
+    let s1 = 0, s2 = 0;
+    const m1 = [5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2];
+    const m2 = [6, 5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2];
+    
+    for (let i = 0; i < 12; i++) {
+        s1 += parseInt(cnpj[i]) * m1[i];
+        s2 += parseInt(cnpj[i]) * m2[i];
+    }
+    
+    const d1 = 11 - (s1 % 11);
+    const d2 = 11 - (s2 % 11);
+    
+    return (d1 === parseInt(cnpj[12]) || d1 === 10) && (d2 === parseInt(cnpj[13]) || d2 === 10);
+}
+
+if (cpfValidateBtn) {
+    cpfValidateBtn.addEventListener('click', () => {
+        const cpf = cpfInput?.value || '';
+        const valido = validarCpf(cpf);
+        if (documentResult) {
+            documentResult.textContent = valido ? '✓ CPF válido!' : '❌ CPF inválido!';
+            documentResult.style.color = valido ? '#0066cc' : '#f44336';
+        }
+    });
+}
+
+if (cnpjValidateBtn) {
+    cnpjValidateBtn.addEventListener('click', () => {
+        const cnpj = cnpjInput?.value || '';
+        const valido = validarCnpj(cnpj);
+        if (documentResult) {
+            documentResult.textContent = valido ? '✓ CNPJ válido!' : '❌ CNPJ inválido!';
+            documentResult.style.color = valido ? '#0066cc' : '#f44336';
+        }
+    });
+}
+
+// BLOCO 69: Gerador de Senhas
+const passLength = document.getElementById('passLength');
+const passUpper = document.getElementById('passUpper');
+const passLower = document.getElementById('passLower');
+const passNumbers = document.getElementById('passNumbers');
+const passSpecial = document.getElementById('passSpecial');
+const generatePassBtn = document.getElementById('generatePassBtn');
+const copyPassBtn = document.getElementById('copyPassBtn');
+const passwordOutput = document.getElementById('passwordOutput');
+
+function gerarSenha() {
+    const upper = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    const lower = 'abcdefghijklmnopqrstuvwxyz';
+    const numbers = '0123456789';
+    const special = '!@#$%^&*()_+-=[]{}|;:,.<>?';
+    
+    let chars = '';
+    if (passUpper?.checked) chars += upper;
+    if (passLower?.checked) chars += lower;
+    if (passNumbers?.checked) chars += numbers;
+    if (passSpecial?.checked) chars += special;
+    
+    // Validar se pelo menos uma opção foi selecionada
+    if (chars.length === 0) {
+        return null; // Sinaliza erro
+    }
+    
+    const length = parseInt(passLength?.value || 12);
+    let senha = '';
+    for (let i = 0; i < length; i++) {
+        senha += chars.charAt(Math.floor(Math.random() * chars.length));
+    }
+    return senha;
+}
+
+if (generatePassBtn) {
+    generatePassBtn.addEventListener('click', () => {
+        const senha = gerarSenha();
+        if (senha === null) {
+            if (passwordOutput) {
+                passwordOutput.style.borderColor = '#f44336';
+                passwordOutput.value = '';
+            }
+            alert('❌ Selecione pelo menos uma opção de caracteres!');
+        } else {
+            if (passwordOutput) {
+                passwordOutput.value = senha;
+                passwordOutput.style.borderColor = '';
+            }
+        }
+    });
+}
+
+if (copyPassBtn) {
+    copyPassBtn.addEventListener('click', () => {
+        if (passwordOutput && passwordOutput.value) {
+            navigator.clipboard.writeText(passwordOutput.value).then(() => {
+                if (copyPassBtn) {
+                    copyPassBtn.textContent = '✓ Copiado!';
+                    setTimeout(() => {
+                        if (copyPassBtn) copyPassBtn.textContent = '📋 Copiar';
+                    }, 2000);
+                }
+            });
+        }
+    });
+}
+
+// BLOCO 70: LocalStorage Tester
+const storageKey = document.getElementById('storageKey');
+const storageValue = document.getElementById('storageValue');
+const storageSaveBtn = document.getElementById('storageSaveBtn');
+const storageGetBtn = document.getElementById('storageGetBtn');
+const storageClearBtn = document.getElementById('storageClearBtn');
+const storageListBtn = document.getElementById('storageListBtn');
+const storageOutput = document.getElementById('storageOutput');
+const storageStatus = document.getElementById('storageStatus');
+
+if (storageSaveBtn) {
+    storageSaveBtn.addEventListener('click', () => {
+        const key = storageKey?.value || '';
+        const value = storageValue?.value || '';
+        if (key) {
+            localStorage.setItem(key, value);
+            if (storageStatus) {
+                storageStatus.textContent = `✓ Dados salvos: "${key}"`;
+                storageStatus.style.color = '#0066cc';
+            }
+        }
+    });
+}
+
+if (storageGetBtn) {
+    storageGetBtn.addEventListener('click', () => {
+        const key = storageKey?.value || '';
+        if (key) {
+            const valor = localStorage.getItem(key);
+            if (storageOutput) {
+                storageOutput.value = valor !== null ? valor : '(vazio)';
+            }
+            if (storageStatus) {
+                if (valor === null) {
+                    storageStatus.textContent = `⚠️ Chave "${key}" não encontrada`;
+                    storageStatus.style.color = '#ff9800';
+                } else {
+                    storageStatus.textContent = `✓ Valor recuperado de "${key}"`;
+                    storageStatus.style.color = '#0066cc';
+                }
+            }
+        } else {
+            if (storageStatus) {
+                storageStatus.textContent = '❌ Digite uma chave para recuperar';
+                storageStatus.style.color = '#f44336';
+            }
+        }
+    });
+}
+
+if (storageClearBtn) {
+    storageClearBtn.addEventListener('click', () => {
+        localStorage.clear();
+        if (storageOutput) storageOutput.value = '';
+        if (storageStatus) {
+            storageStatus.textContent = '✓ Todos os dados removidos';
+            storageStatus.style.color = '#0066cc';
+        }
+    });
+}
+
+if (storageListBtn) {
+    storageListBtn.addEventListener('click', () => {
+        const items = [];
+        for (let i = 0; i < localStorage.length; i++) {
+            const key = localStorage.key(i);
+            const valor = localStorage.getItem(key);
+            items.push(`${key}: ${valor}`);
+        }
+        if (storageOutput) {
+            storageOutput.value = items.length > 0 ? items.join('\n') : '(vazio)';
+        }
+    });
+}
+
+// BLOCO 71: Performance Metrics
+const perfStartBtn = document.getElementById('perfStartBtn');
+const perfStopBtn = document.getElementById('perfStopBtn');
+const perfOutput = document.getElementById('perfOutput');
+
+let perfStart = null;
+
+if (perfStartBtn) {
+    perfStartBtn.addEventListener('click', () => {
+        perfStart = performance.now();
+        if (perfOutput) perfOutput.innerHTML = '⏱️ Medição iniciada...';
+        if (perfStartBtn) perfStartBtn.disabled = true;
+        if (perfStopBtn) perfStopBtn.disabled = false;
+    });
+}
+
+if (perfStopBtn) {
+    perfStopBtn.addEventListener('click', () => {
+        if (perfStart !== null) {
+            const perfEnd = performance.now();
+            const elapsed = (perfEnd - perfStart).toFixed(3);
+            if (perfOutput) {
+                perfOutput.innerHTML = `<strong>⏱️ Tempo decorrido:</strong><br><span style="color: #0066cc; font-size: 1.3rem; font-weight: bold;">${elapsed} ms</span>`;
+            }
+            perfStart = null;
+            if (perfStartBtn) perfStartBtn.disabled = false;
+            if (perfStopBtn) perfStopBtn.disabled = true;
+        }
+    });
+}
+
+// BLOCO 72: Dark/Light Theme Toggle
+const themeToggleBtn = document.getElementById('themeToggleBtn');
+const themeStatus = document.getElementById('themeStatus');
+const html = document.documentElement;
+
+// Carregar tema salvo e sincronizar button text + status
+const temaSalvo = localStorage.getItem('tema') || 'dark';
+if (temaSalvo === 'light') {
+    html.style.background = '#ffffff';
+    html.style.color = '#000000';
+    document.body.style.background = '#ffffff';
+    document.body.style.color = '#000000';
+    if (themeToggleBtn) themeToggleBtn.textContent = '☀️ Alternar para Dark';
+    if (themeStatus) themeStatus.textContent = 'Tema atual: Claro';
+} else {
+    // Dark mode é padrão
+    if (themeToggleBtn) themeToggleBtn.textContent = '🌙 Alternar para Light';
+    if (themeStatus) themeStatus.textContent = 'Tema atual: Escuro';
+}
+
+if (themeToggleBtn) {
+    themeToggleBtn.addEventListener('click', () => {
+        const temaAtual = localStorage.getItem('tema') || 'dark';
+        const novoTema = temaAtual === 'dark' ? 'light' : 'dark';
+        
+        localStorage.setItem('tema', novoTema);
+        
+        if (novoTema === 'light') {
+            html.style.background = '#ffffff';
+            html.style.color = '#000000';
+            document.body.style.background = '#ffffff';
+            document.body.style.color = '#000000';
+            if (themeToggleBtn) themeToggleBtn.textContent = '☀️ Alternar para Dark';
+        } else {
+            html.style.background = '#0c0c0c';
+            html.style.color = '#ffffff';
+            document.body.style.background = '#0c0c0c';
+            document.body.style.color = '#ffffff';
+            if (themeToggleBtn) themeToggleBtn.textContent = '🌙 Alternar para Light';
+        }
+        
+        if (themeStatus) {
+            themeStatus.textContent = `Tema atual: ${novoTema === 'dark' ? 'Escuro' : 'Claro'}`;
+        }
+    });
+}
+
+// BLOCO 73: Exportador de Dados
+const exportCsvBtn = document.getElementById('exportCsvBtn');
+const exportJsonBtn = document.getElementById('exportJsonBtn');
+const exportHtmlBtn = document.getElementById('exportHtmlBtn');
+const exportTxtBtn = document.getElementById('exportTxtBtn');
+const exportData = document.getElementById('exportData');
+const exportStatus = document.getElementById('exportStatus');
+
+function escaparCsv(texto) {
+    // Escapar aspas duplas e envolver em aspas se contiver caracteres especiais
+    if (texto.includes(',') || texto.includes('"') || texto.includes('\n')) {
+        return `"${texto.replace(/"/g, '""')}"`;
+    }
+    return texto;
+}
+
+function escaparHtml(texto) {
+    // Escapar caracteres HTML especiais
+    const div = document.createElement('div');
+    div.textContent = texto;
+    return div.innerHTML;
+}
+
+function baixarArquivo(conteudo, nome, tipo) {
+    const blob = new Blob([conteudo], { type: tipo });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = `${nome}_${new Date().toISOString().slice(0, 10)}.${nome.includes('csv') ? 'csv' : nome.includes('json') ? 'json' : nome.includes('html') ? 'html' : 'txt'}`;
+    link.click();
+    URL.revokeObjectURL(url);
+}
+
+if (exportCsvBtn) {
+    exportCsvBtn.addEventListener('click', () => {
+        const dados = exportData?.value || 'dados_teste';
+        const linhas = dados.split('\n').map(l => escaparCsv(l)).join('\n');
+        baixarArquivo(linhas, 'export', 'text/csv');
+        if (exportStatus) {
+            exportStatus.textContent = '✓ Arquivo CSV exportado!';
+            exportStatus.style.color = '#0066cc';
+        }
+    });
+}
+
+if (exportJsonBtn) {
+    exportJsonBtn.addEventListener('click', () => {
+        const dados = exportData?.value || 'dados_teste';
+        const json = JSON.stringify({ dados: dados.split('\n'), timestamp: new Date().toISOString() }, null, 2);
+        baixarArquivo(json, 'export', 'application/json');
+        if (exportStatus) {
+            exportStatus.textContent = '✓ Arquivo JSON exportado!';
+            exportStatus.style.color = '#0066cc';
+        }
+    });
+}
+
+if (exportHtmlBtn) {
+    exportHtmlBtn.addEventListener('click', () => {
+        const dados = exportData?.value || 'dados_teste';
+        const linhas = dados.split('\n').map(d => `<tr><td>${escaparHtml(d)}</td></tr>`).join('');
+        const html = `<table border="1"><tr><th>Dados</th></tr>${linhas}</table>`;
+        baixarArquivo(html, 'export', 'text/html');
+        if (exportStatus) {
+            exportStatus.textContent = '✓ Arquivo HTML exportado!';
+            exportStatus.style.color = '#0066cc';
+        }
+    });
+}
+
+if (exportTxtBtn) {
+    exportTxtBtn.addEventListener('click', () => {
+        const dados = exportData?.value || 'dados_teste';
+        baixarArquivo(dados, 'export', 'text/plain');
+        if (exportStatus) {
+            exportStatus.textContent = '✓ Arquivo TXT exportado!';
+            exportStatus.style.color = '#0066cc';
+        }
+    });
+}
+
+// ========== FUNCIONALIDADE GLOBAL: ACCEPTANCE ACCORDION ==========
+
+// Adicionar funcionalidade de accordion para todos os critérios de aceite
+document.querySelectorAll('.acceptance-header').forEach(header => {
+    header.addEventListener('click', function() {
+        const body = this.nextElementSibling;
+        const toggle = this.querySelector('.acceptance-toggle');
+        
+        // Fechar outros accordions no mesmo bloco
+        const block = this.closest('.interactive-block-content');
+        if (block) {
+            block.querySelectorAll('.acceptance-body.show').forEach(openBody => {
+                if (openBody !== body) {
+                    openBody.classList.remove('show');
+                    openBody.previousElementSibling.querySelector('.acceptance-toggle').textContent = '▼';
+                }
+            });
+        }
+        
+        // Toggle do accordion atual
+        body.classList.toggle('show');
+        toggle.textContent = body.classList.contains('show') ? '▲' : '▼';
+    });
+});
 
