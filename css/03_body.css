@@ -285,7 +285,7 @@
 .card-projeto {
     flex: 0 1 200px;
     border-radius: var(--borderRadius-padrao);
-    padding: 10px;
+    padding: 60px 10px 25px 10px;
     text-align: center;
     transition: var(--transicao-padrao);
     display: flex;
